@@ -1,0 +1,13 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+log/*.log
+.DS_Store
+.yardoc/
+.yardoc/*
+spec/rails_app/db/*.sqlite3
+spec/rails_app/log/*.log
+spec/rails_app/tmp/
+doc/*
+
