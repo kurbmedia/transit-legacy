@@ -1,3 +1,14 @@
+require 'rails'
+require 'active_support'
+require 'mongoid'
+
 module Transit
-  # Your code goes here...
+  
+  module Models
+    autoload :Package, 'transit/models/package'
+    autoload :Context, 'transit/models/context'
+  end
+  
 end
+
+require 'transit/rails/engine'
