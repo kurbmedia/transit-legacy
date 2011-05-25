@@ -5,7 +5,7 @@ guard 'rspec', :version => 2, :cli => '--colour --drb --format documentation --f
   watch(%r{^spec/.+_spec\.rb})
   watch(%r{^lib/(.+)\.rb})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb') { "spec" }
-
+  watch(%r{^lib/transit/(.+)\.rb})                   { |m| "spec/transit/#{m[1]}_spec.rb" }
   # Rails example
   watch('spec/spec_helper.rb')                       { "spec" }
   watch('config/routes.rb')                          { "spec/routing" }

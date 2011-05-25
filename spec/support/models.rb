@@ -1,4 +1,6 @@
-class Post < Transit::Package
+class Post
+  include Mongoid::Document
+  transit :post
 end
 class Article < Post
 end
@@ -6,10 +8,10 @@ end
 class ContextField < Transit::Context
 end
 
-class BodyCopy < ContextField
+class BodyCopy < Transit::Context
 end
 
-class Heading < ContextField
+class Heading < Transit::Context
 end
 
 Fabricator(:context, :class_name => :context_field) do

@@ -1,4 +1,8 @@
 class Transit::ContextsController < Transit::TransitController
+  include Transit::Helpers::ControllerHelpers
+  
+  unloadable
+  
   before_filter :ensure_authenticated!  
   respond_to :js
   

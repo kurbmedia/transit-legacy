@@ -3,6 +3,10 @@ require 'spec_helper'
 describe 'a Transit::Context' do
   extend ModelHelpers
   
+  subject{ ContextField }
+  
+  its(:ancestors){ should include(Transit::Context) }
+  
   before(:all){ @post = Fabricate(:post) }
   let!(:post){ @post }
   after(:all){ Post.delete_all }

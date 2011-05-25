@@ -1,0 +1,18 @@
+@import 'includes/global';
+@import 'includes/compat';
+@import 'includes/defaults';
+$debug: false;
+$grid-background-baseline-height:18px;
+@if($debug){ 	
+	#wrapper{ @include grid-background; }
+}@else{ #maincontent{ background:white; } }
+
+$base-font-size:12px;
+$base-line-height:18px;
+
+@include establish-baseline;
+body{ border-top:5px solid #333; background:url('#{$cdn}/top.png') 0px -173px repeat-x; }
+#wrapper{ @include container; @include min-height(400px); }
+#homelink{ display:block; width:200px; height:35px; text-indent:-9999em; background:url("#{$cdn}/logo_white.png") no-repeat; 
+	position:relative; top:rhythm(1);
+}
