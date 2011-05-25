@@ -21,7 +21,7 @@ Fabricator(:context, :class_name => :context_field) do
 end
 
 Fabricator(:post) do
-  title Faker::Lorem.words(3)  
+  title { Fabricate.sequence(:title) { |i| "This is post number #{i}" } }
 end
 
 module ModelHelpers

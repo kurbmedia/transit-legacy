@@ -5,24 +5,18 @@ module Transit
       extend ActiveSupport::Concern
       
       included do
+        class_attribute :transit_config, :instance_writer => false
+        self.transit_config ||= {}
+        
         include Mongoid::Timestamps
         include Mongoid::MultiParameterAttributes
+        include Transit::Helpers::ModelHelpers
         
-        field :uid,         :type => Integer
-        field :published,   :type => Boolean, :default => false
-        
-        before_create :generate_uid
-        
+        field :published, :type => Boolean, :default => false
+      
         embeds_many :contexts, as: :package, class_name: 'Transit::Context'
         accepts_nested_attributes_for :contexts, :allow_destroy => true
-        alias :contexts_attributes= :process_context_attributes=
-        scope :published, where(:published => true)
-      end
-      
-      def generate_uid
-        return true unless self.uid.nil?        
-        ref = self.class.collection.name.singularize.classify.constantize
-        self.uid = ref.max(:uid).to_i + 1
+        alias :contexts_attributes= :process_context_attributes=        
       end
       
       def process_context_attributes=(hash)
@@ -33,9 +27,14 @@ module Transit
         end
       end
       
-      def timestamp
-        return "" if self.post_date.nil?
-        self.post_date.strftime("%B %d, %Y")
+      module ClassMethods
+        
+        def configure_transit_package!
+          if add_assets = self.transit_config[:assets]
+            has_and_belongs_to_many :package_assets, as: :package if add_assets
+          end
+        end
+        
       end
       
     end

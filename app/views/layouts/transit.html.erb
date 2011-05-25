@@ -5,6 +5,7 @@
 	<title><%= page_title %></title>
 	<meta name="keywords" content=""/>
 	<meta name="description" content=""/>
+	<link rel="stylesheet" href="https://s3.amazonaws.com/cdn.kurbmedia.com/assets/fonts.css" type="text/css" media="screen" charset="utf-8" />
 	<%= stylesheet_link_tag 'transit' %>
 	<!--[if lte IE 8]> 
 	<![endif]-->
@@ -14,7 +15,17 @@
 <body>
 	<div id="wrapper">
 		<%= link_to 'Return home', root_path, :id => 'homelink' %>
+		<span id="headline">transit v<%= Transit::VERSION %></span>
 		<%= yield %>
+	</div>
+	<div id="footer">
+		<div>
+			<p class='current_date'>
+				<span><%= Date.today.strftime('%b') %></span>
+				<%= Date.today.strftime('%d') %>
+				<strong><%= Date.today.strftime('%A') %></strong>
+			</p>
+		</div>
 	</div>
 </body>
 </html>

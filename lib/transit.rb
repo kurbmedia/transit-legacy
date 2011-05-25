@@ -9,6 +9,7 @@ module Transit
   
   module Helpers
     autoload :ControllerHelpers,  'transit/helpers/controller_helpers'
+    autoload :ModelHelpers,       'transit/helpers/model_helpers'
   end
   
   module Errors

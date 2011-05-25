@@ -1,2 +1,2 @@
-class Text
+class Text < Transit::Context
 end

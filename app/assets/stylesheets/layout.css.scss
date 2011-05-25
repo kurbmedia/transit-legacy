@@ -7,12 +7,23 @@ $grid-background-baseline-height:18px;
 	#wrapper{ @include grid-background; }
 }@else{ #maincontent{ background:white; } }
 
-$base-font-size:12px;
+$base-font-size:$blueprint-font-size;
 $base-line-height:18px;
 
 @include establish-baseline;
-body{ border-top:5px solid #333; background:url('#{$cdn}/top.png') 0px -173px repeat-x; }
-#wrapper{ @include container; @include min-height(400px); }
+html{ background:#333 url("#{$cdn}/footer.png"); }
+body{ border-top:5px solid #333; background:white url('#{$cdn}/top.png') 0px -173px repeat-x; }
+#wrapper{ @include container; @include min-height(400px); position:relative; }
 #homelink{ display:block; width:200px; height:35px; text-indent:-9999em; background:url("#{$cdn}/logo_white.png") no-repeat; 
 	position:relative; top:rhythm(1);
+}
+#headline{ position:absolute; top:1.75em; right:0; color:white; @include heading_font(true); font-size:1.25em; @include single-text-shadow($darkblue); }
+
+#footer{ background:#333 url("#{$cdn}/footer.png"); padding:2em 0; border-top:5px solid #212121;
+	div{ @include container; color:white; }
+	p.current_date{ font-size:3.5em; text-align:center; width:75px; height:70px; color:#ccc; @include single-text-shadow(black); text-transform:uppercase;
+					line-height:1; font-weight:bold; position:relative; padding:.25em 0; background:transparentize(#444, 0.5);
+		span{ display:block; font-size:.4em; } 
+		strong{ font-size:.2em; display:block; width:100%; padding-top:.25em; }
+	}
 }

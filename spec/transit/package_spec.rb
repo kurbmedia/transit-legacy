@@ -19,7 +19,8 @@ describe 'a Transit::Package' do
   
   describe 'an instance' do
     
-    subject{ Post.new }
+    let!(:post){ Fabricate.build(:post) }
+    subject{ post }
     after{ Post.delete_all }
     it { subject.respond_to?(:contexts).should be_true }
     it { subject.respond_to?(:contexts=).should be_true }

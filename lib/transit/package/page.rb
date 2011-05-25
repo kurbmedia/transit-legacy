@@ -9,6 +9,8 @@ module Transit
         field :url,         :type => String
         field :keywords,    :type => Array
         field :description, :type => String
+        
+        scope :published, where(:published => true)
       end
     end
     

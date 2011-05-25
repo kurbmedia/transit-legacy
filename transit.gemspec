@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("bson_ext", ["~> 1.3"])
 
   s.add_dependency("nokogiri", ["~> 1.4"])
-  s.add_dependency("motr", [">= 0.0.8"])
+  s.add_dependency("motr", [">= 0.0.9"])
   
   
 end

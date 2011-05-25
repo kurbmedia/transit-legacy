@@ -6,8 +6,13 @@ module Transit
     
     module Hook
       def transit(template, options = {})
+        
         include Transit::Package::Base
-        include Transit::Package.const_get(template.to_s.classify)        
+        self.transit_config.merge!(options)
+        configure_transit_package!
+                
+        include Transit::Package.const_get(template.to_s.classify)
+        
       end
     end
   end
