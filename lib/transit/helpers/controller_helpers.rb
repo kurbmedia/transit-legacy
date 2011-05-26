@@ -5,11 +5,7 @@ module Transit
       extend ActiveSupport::Concern
       
       included do
-        helper_method :scope_name, :scope_class
-      end
-      
-      def ensure_authenticated!
-        redirect_to main_app.root_path and return unless current_user && current_user.admin?    
+        helper_method :scope_name, :scope_class, :resource, :collection
       end
 
       def scope_name
@@ -17,7 +13,16 @@ module Transit
       end
 
       def scope_class
-        (params[:scope_name] || self.class.to_s.split("::").first.gsub(/controller/i, '').singularize).constantize
+        return @_scope_class unless @_scope_class.nil?        
+        @_scope_class = self.class.to_s.split("::").last.gsub(/controller/i, '').singularize.constantize
+      end
+      
+      def collection
+        [get_instance_var].flatten
+      end
+      
+      def resource
+        get_instance_var
       end
 
       private

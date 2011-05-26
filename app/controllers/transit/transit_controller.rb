@@ -1,4 +1,4 @@
-class Transit::TransitController < ActionController::Base
+class Transit::TransitController < ApplicationController
   unloadable
   layout 'transit'
 end

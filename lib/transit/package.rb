@@ -12,6 +12,7 @@ module Transit
         configure_transit_package!
                 
         include Transit::Package.const_get(template.to_s.classify)
+        Transit.track(self, template.to_sym)
         
       end
     end

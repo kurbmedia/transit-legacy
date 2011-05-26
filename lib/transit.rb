@@ -16,6 +16,26 @@ module Transit
     autoload :InvalidContext, 'transit/errors/invalid_context'
   end
   
+  DESCRIPTIONS = {}
+  CONTROLLERS  = []
+  
+  def self.add_controller(klass)
+    CONTROLLERS << klass.to_s.classify.pluralize
+  end
+  
+  def self.contexts
+    Transit::Context.subclasses.map(&:to_s).uniq
+  end
+  
+  def self.track(klass, template)
+    DESCRIPTIONS[template] ||= []
+    DESCRIPTIONS[template] |= [klass.to_s]
+  end
+  
+  def self.lookup(template)
+    DESCRIPTIONS[template] ||= []
+  end
+  
 end
 
 require 'transit/package'

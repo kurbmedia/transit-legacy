@@ -1,13 +1,11 @@
 class Transit::PackagesController < Transit::TransitController
-  include Transit::Helpers::ControllerHelpers
-  
+  include Transit::Helpers::ControllerHelpers  
   unloadable
-  before_filter :ensure_authenticated!
   
   respond_to :html, :js
   
   def index
-    @packages = scope_class.descending(:created_at).all.paginate :per_page => 20, :page => (params[:page] || 1)
+    @packages = scope_class.all
     set_instance_var(@packages)
     respond_with(get_instance_var) do |format|
       format.js{ render :partial => 'table' }

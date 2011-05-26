@@ -30,9 +30,15 @@ module Transit
       module ClassMethods
         
         def configure_transit_package!
-          if add_assets = self.transit_config[:assets]
+          conf = self.transit_config
+          
+          if add_assets = conf[:assets]
             has_and_belongs_to_many :package_assets, as: :package if add_assets
           end
+          unless conf.key?(:controller) && conf[:controller] === false
+            Transit.add_controller(self)
+          end
+          
         end
         
       end
