@@ -33,7 +33,7 @@ class Transit::PackagesController < Transit::TransitController
     end
     set_instance_var(@package)
     flash[:success] = "'#{package.title}' has been created."
-    respond_with(get_instance_var, :location => edit_polymorphic_path([:transit, @package]))    
+    respond_with(get_instance_var, :location => edit_polymorphic_path(@package))    
   end
   
   def edit
@@ -50,7 +50,7 @@ class Transit::PackagesController < Transit::TransitController
     end    
     flash[:success] = "'#{@package.title}' has been updated."
     set_instance_var(@package)
-    respond_with(get_instance_var, :location => edit_polymorphic_path([:transit, @package]))    
+    respond_with(get_instance_var, :location => edit_polymorphic_path(@package))    
   end
   
   def destroy
@@ -58,7 +58,7 @@ class Transit::PackagesController < Transit::TransitController
     @package.destroy
     set_instance_var(@package)
     flash[:success] = "'#{@package.title}' has been deleted."
-    respond_with(get_instance_var, :location => polymorphic_path([:transit, @package]))
+    respond_with(get_instance_var, :location => polymorphic_path(@package))
   end
   
 end

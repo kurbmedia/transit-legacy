@@ -7,9 +7,9 @@ module Transit
     
     ActiveSupport.on_load(:after_initialize) do
       Transit::CONTROLLERS.dup.uniq.each do |klass|
-        klass = "#{klass.classify.pluralize}Controller"
-        unless Transit.const_defined?(klass)
-          Transit.const_set(klass, Class.new(Transit::PackagesController))
+        controller_klass = "#{klass.classify.pluralize}Controller"
+        unless Transit.const_defined?(controller_klass)
+          Transit.const_set(controller_klass, Class.new(Transit::PackagesController))
         end
       end
     end
