@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Transit do
   
   before(:all){ Transit.track('Post', :post) }
-  after(:all){ Transit::DESCRIPTIONS = {} }
   
   describe '#add_description' do
     
