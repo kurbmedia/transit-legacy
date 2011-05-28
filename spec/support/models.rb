@@ -20,14 +20,30 @@ Fabricator(:context, :class_name => :context_field) do
   body Faker::Lorem.words(3).join(" ")
 end
 
+Fabricator(:post_text, :class_name => :text) do
+  name ""
+  meta {}
+end
+
 Fabricator(:post) do
   title { Fabricate.sequence(:title) { |i| "This is post number #{i}" } }
 end
 
 module ModelHelpers
   
-  def generate_post(ct = 1, set_subject)
-    before do
+  def change_and_reset_attribute(obj, atr, newval)
+    before do 
+      subj = instance_variable_get("@#{obj}")
+      @old_value = subj.attributes[atr]; subj.attributes[atr] = nil
+    end    
+    after do
+      subj = instance_variable_get("@#{obj}")
+      subj.attributes[atr] = @old_value
+    end
+  end
+  
+  def generate_post(ct = 1, set_subject = true, scope = :each, remove_after = true)
+    before(scope) do
       ct.times do |i|
         instance_variable_set("@post#{i+1}", Fabricate(:post))                
       end      
@@ -38,6 +54,19 @@ module ModelHelpers
     if set_subject
       subject{ @post1 }
     end
+    if remove_after
+      after(scope){ Post.delete_all }
+    end
+  end
+  
+  def generate_full_post(attrs = {}, scope = :all)
+    before(scope) do
+      sentences = Faker::Lorem.sentences(3)
+      @post = Fabricate.build(:post, attrs.merge(:teaser => sentences.first))      
+      @post.contexts.build(Fabricate.attributes_for(:context, :body => sentences.map{ |sent| "<p>#{sent}</p>" }), Text)
+      @post.save
+    end
+    subject{ @post }
   end
   
   def create_contexts(parent, scope = :each, *klasses)
