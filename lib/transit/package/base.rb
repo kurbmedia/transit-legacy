@@ -19,6 +19,10 @@ module Transit
         alias :contexts_attributes= :process_context_attributes=        
       end
       
+      def context_named(n)
+        self.contexts.detect{ |c| c.name == n }
+      end
+      
       def process_context_attributes=(hash)
         hash.each_pair do |pos, attrs|
           attrs.stringify_keys!
