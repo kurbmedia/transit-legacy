@@ -22,9 +22,6 @@ module Transit
     ActiveSupport.on_load(:action_controller) do
       helper Transit::Engine.helpers
     end
-    ActiveSupport.on_load(:action_view) do
-      puts Transit::Engine.helpers.inspect
-    end
       
   end
 end
