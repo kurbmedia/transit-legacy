@@ -1,4 +1,4 @@
-class Transit::PackagesController < ApplicationController
+class Transit::PagesController < ApplicationController
 
   include Transit::Controller::Actions
   unloadable

@@ -3,8 +3,7 @@ require 'spec_helper'
 describe 'a Transit::Context' do
   extend ModelHelpers
   
-  subject{ ContextField }
-  
+  subject{ ContextField }  
   its(:ancestors){ should include(Transit::Context) }
   
   before(:all){ @post = Fabricate(:post) }
@@ -22,8 +21,7 @@ describe 'a Transit::Context' do
       create_contexts('post', :all, ContextField)
       it { should be_a(ContextField) }      
     end
-  end
-  
+  end  
   context 'when a secondary subclass' do
     
     subject{ BodyCopy }

@@ -8,12 +8,13 @@ module Transit
       def transit(template, options = {})
         
         include Transit::Package::Base
-        self.transit_config.merge!(options)
+        self.transit_config.merge!(options.merge( :template => template ))
         configure_transit_package!
-                
-        include Transit::Package.const_get(template.to_s.classify)
-        Transit.track(self, template.to_sym)
         
+        # Apply a particular package template to the model
+        # and track its existance
+        include Transit::Package.const_get(template.to_s.classify)
+        Transit.track(self, template.to_sym)        
       end
     end
   end

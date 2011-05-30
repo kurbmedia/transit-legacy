@@ -1,5 +1,6 @@
-class Transit::ContextsController < Transit::TransitController
-  include Transit::Helpers::ControllerHelpers
+class Transit::ContextsController < ApplicationController
+
+  include Transit::Controller::Helpers
   unloadable
   respond_to :js
   

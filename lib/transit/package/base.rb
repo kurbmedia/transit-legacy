@@ -1,6 +1,9 @@
 module Transit
   module Package
-    
+    ##
+    # Base package functionality. Sets up context embedding, building, and
+    # configuration.
+    # 
     module Base
       extend ActiveSupport::Concern
       
@@ -10,7 +13,7 @@ module Transit
         
         include Mongoid::Timestamps
         include Mongoid::MultiParameterAttributes
-        include Transit::Helpers::ModelHelpers
+        include Transit::Model::Helpers
         
         field :published, :type => Boolean, :default => false
       
@@ -20,7 +23,7 @@ module Transit
       end
       
       def context_named(n)
-        self.contexts.detect{ |c| c.name == n }
+        self.contexts.by_name(n).first
       end
       
       def process_context_attributes=(hash)
@@ -34,15 +37,10 @@ module Transit
       module ClassMethods
         
         def configure_transit_package!
-          conf = self.transit_config
-          
+          conf = self.transit_config          
           if add_assets = conf[:assets]
             has_and_belongs_to_many :package_assets, as: :package if add_assets
           end
-          unless conf.key?(:controller) && conf[:controller] === false
-            Transit.add_controller(self)
-          end
-          
         end
         
       end

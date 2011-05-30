@@ -7,9 +7,13 @@ module Transit
   autoload :Package, 'transit/package'
   autoload :Context, 'transit/context'
   
-  module Helpers
-    autoload :ControllerHelpers,  'transit/helpers/controller_helpers'
-    autoload :ModelHelpers,       'transit/helpers/model_helpers'
+  module Model
+    autoload :Helpers,  'transit/model/helpers'
+  end
+  
+  module Controller
+    autoload :Actions,  'transit/controller/actions'
+    autoload :Helpers,  'transit/controller/helpers'
   end
   
   module Errors
@@ -17,12 +21,15 @@ module Transit
   end
   
   DESCRIPTIONS = {}
-  CONTROLLERS  = []
   
-  def self.add_controller(klass)
-    CONTROLLERS << klass.to_s.classify.pluralize
+  # Store an array of controller mappings
+  mattr_accessor :mappings
+  @@mappings = []
+
+  def self.add_mapping(obj)
+    @@mappings << obj
   end
-  
+
   def self.contexts
     Transit::Context.subclasses.map(&:to_s).uniq
   end
@@ -39,5 +46,6 @@ module Transit
 end
 
 require 'transit/package'
+require 'transit/mapping'
 require 'transit/rails/engine'
 require 'transit/rails/routing'

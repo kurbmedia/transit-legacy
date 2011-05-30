@@ -9,6 +9,8 @@ module Transit
     before_save :ensure_context_position_value
     embedded_in :package, polymorphic: true
     
+    scope :by_name, lambda{ |n| where(:name => n) }
+    
     def ensure_context_position_value
       return true unless self.position.nil?
       self.position = _parent.send(:contexts).count + 1

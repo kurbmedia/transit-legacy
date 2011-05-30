@@ -19,20 +19,11 @@ describe 'Package::Hook' do
   
   describe 'configuration' do
     
-    it { subject.respond_to?(:transit_config).should be_true }
-    
-    context 'when controller is set to false' do
+    it { subject.respond_to?(:transit_config).should be_true }    
+    describe 'its template' do
       
-      it 'does not generate a controller' do
-        Transit::CONTROLLERS.should_not include('TestNoControllers')
-      end
-      specify{ Transit.const_defined?('TestNoControllersController').should be_false }
-    end
-    context 'when controller is not set' do
-      
-      it 'generates a controller' do
-        Transit::CONTROLLERS.should include('TestPosts')
-      end
+      subject{ TestPost.transit_config }
+      it { subject[:template].should == :post }
     end
   end
   

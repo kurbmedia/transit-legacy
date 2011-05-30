@@ -1,7 +1,4 @@
-class Transit::PostsController < Transit::PackagesController
-end
-
-class Transit::ArticlesController < Transit::PackagesController
+class Transit::ArticlesController < Transit::PostsController
 end
 
 module ControllerHelpers
@@ -21,9 +18,4 @@ module ControllerHelpers
     let(:resource){ instance_variable_get("@#{klass.to_s.underscore}") }
     let(:resources){ instance_variable_get("@#{klass.to_s.pluralize.underscore}") }
   end
-end
-
-Transit::Engine.routes.draw do
-  resources :posts
-  resources :articles
 end

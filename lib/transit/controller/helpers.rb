@@ -1,7 +1,6 @@
 module Transit
-  module Helpers
-    
-    module ControllerHelpers
+  module Controller
+    module Helpers
       extend ActiveSupport::Concern
       
       included do

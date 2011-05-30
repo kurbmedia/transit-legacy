@@ -1,7 +1,11 @@
 module Transit
-  module Helpers
-    
-    module ModelHelpers
+  module Model
+    ##
+    # Global methods for all package based models.
+    # Extracted from Transit::Package::Base so they may be used in any model regardless of 
+    # whether it has been templated as a specific package.
+    # 
+    module Helpers
       extend ActiveSupport::Concern
       
       included do

@@ -10,8 +10,7 @@ describe Transit do
     
     context 'when adding a description' do
       
-      subject{ Transit::DESCRIPTIONS }
-      
+      subject{ Transit::DESCRIPTIONS }      
       its(:keys) { should include(:post) }
       it 'ensures an array for the package key' do
         subject[:post].should be_a(Array)

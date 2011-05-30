@@ -1,10 +1,3 @@
-class Post
-  include Mongoid::Document
-  transit :post
-end
-class Article < Post
-end
-
 class ContextField < Transit::Context
 end
 
