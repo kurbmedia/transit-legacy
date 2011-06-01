@@ -1,5 +1,4 @@
 //= require_tree ./transit
-//= require "jwysiwyg/jquery.wysiwyg"
 
 var editor_options = {
 	rmUnusedControls: true,
