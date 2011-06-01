@@ -39,7 +39,7 @@ module Transit
           render :action => :new and return
         end
         set_instance_var(@resource)
-        flash[:success] = "'#{package.title}' has been created."
+        flash[:success] = "Your #{scope_name.to_s.singularize} has been created."
         respond_with(get_instance_var, :location => edit_polymorphic_path(@resource))    
       end
 
@@ -55,7 +55,7 @@ module Transit
           flash.now[:error] = "Looks like you were missing a few fields!"
           render :action => :edit and return
         end    
-        flash[:success] = "'#{@resource.title}' has been updated."
+        flash[:success] = "Your #{scope_name.to_s.singularize} has been updated."
         set_instance_var(@resource)
         respond_with(get_instance_var, :location => edit_polymorphic_path(@resource))    
       end
@@ -64,8 +64,8 @@ module Transit
         @resource = scope_class.find(params[:id])
         @resource.destroy
         set_instance_var(@resource)
-        flash[:success] = "'#{@resource.title}' has been deleted."
-        respond_with(get_instance_var, :location => polymorphic_path(@resource))
+        flash[:success] = "Your #{scope_name.to_s.singularize} has been deleted."
+        respond_with(get_instance_var)
       end
     end
   end
