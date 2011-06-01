@@ -1,6 +1,6 @@
 <%= page_id('transit_index') %>
 <%= page_title('Transit: Manage Posts') %>
-<h1 class="ribbon">Manage Posts</h1>
+<h1>Manage Posts</h1>
 <% items = Kaminari.paginate_array(@resources).page(params[:page]).per(10) %>
 <%= paginate(items, :remote => true) %>
 <table border="0" id="listing">

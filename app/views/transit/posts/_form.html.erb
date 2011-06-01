@@ -33,7 +33,7 @@
 				<%= f.label :image, "Default Image" %>
 				<% if @resource.image.file? %>
 				<span class="existing">
-					<%= image_tag(@resource.image.url(:small), :width => 85) %>
+					<%= image_tag(@resource.default_image, :width => 85) %>
 				</span>				
 				<% end %>
 				<span class="upload">

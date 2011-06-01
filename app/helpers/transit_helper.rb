@@ -1,7 +1,9 @@
 module TransitHelper
   
   def transit_assets
-    return stylesheet_link_tag 'transit' if controller.class.name.match(/Transit/)
+    return '' unless controller.class.name.match(/Transit/)
+    stylesheet_link_tag('transit') <<
+    javascript_include_tag('transit')
   end
   
 end
