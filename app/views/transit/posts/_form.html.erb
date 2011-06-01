@@ -1,4 +1,4 @@
-<%= form_for @resource.class.to_s.underscore, :object => @resource , :validate => true do |f| %>
+<%= form_for @post, :validate => true do |f| %>
 	<fieldset id="post_info">
 		<legend>Post Information</legend>
 		<ol class="split">
@@ -10,16 +10,16 @@
 				<%= f.label :post_date %>
 				<%= f.date_select :post_date, :order => [:month, :day, :year], :use_short_month => true %>
 			</li>
-			<% unless @resource.new_record? %>
+			<% unless @post.new_record? %>
 			<li class='inline' style='padding:2.5em 0 0 1em'>
 				<%= f.check_box :published %>
 				<%= f.label :published %>				
 			</li>
 			<% end %>
-			<% if @resource.new_record? %>
+			<% if @post.new_record? %>
 			<li class="clear" style="width:200px">
 				<%= f.label "Category" %>
-				<%= select_tag(:type, options_for_select(@resource.class.types), :style => 'width:95%;') %>
+				<%= select_tag(:type, options_for_select(@post.class.types), :style => 'width:95%;') %>
 			</li>
 			<li style="padding-top:1em">
 				<%= f.button 'Create Post!', :class => 'green' %>
@@ -29,11 +29,11 @@
 				<%= f.label :teaser %>
 				<%= f.text_area :teaser, :style => 'width:100%; height:100px;' %>
 			</li>
-			<li id="default_image" class="<%= @resource.image.file? ? 'has_image' : 'no_image' %>">
+			<li id="default_image" class="<%= @post.image.file? ? 'has_image' : 'no_image' %>">
 				<%= f.label :image, "Default Image" %>
-				<% if @resource.image.file? %>
+				<% if @post.image.file? %>
 				<span class="existing">
-					<%= image_tag(@resource.default_image, :width => 85) %>
+					<%= image_tag(@post.default_image, :width => 85) %>
 				</span>				
 				<% end %>
 				<span class="upload">
@@ -51,20 +51,20 @@
 			<% end %>
 		</ol>
 	</fieldset>
-	<% unless @resource.new_record %>
+	<% unless @post.new_record %>
 	<fieldset id="post_assets">
 		<legend>Files &amp; Images</legend>
 		<div id="post_asset_wrapper">
 			<div id="post_images">
 				<h3>Images</h3>
 				<ul id="post_image_list">
-					<%#= render(:partial => 'admin/assets/image', :collection => @resource.images) unless @resource.images.empty? %>
+					<%#= render(:partial => 'admin/assets/image', :collection => @post.images) unless @post.images.empty? %>
 				</ul>
 			</div>
 			<div id="post_files">
 				<h3>Files</h3>
 				<ul id="post_file_list">
-					<%#= render(:partial => 'admin/assets/file', :collection => @resource.files) unless @resource.images.empty? %>
+					<%#= render(:partial => 'admin/assets/file', :collection => @post.files) unless @post.images.empty? %>
 				</ul>
 			</div>
 			<div id="upload_files">			
@@ -79,14 +79,12 @@
 	<fieldset id="post_body">
 		<legend>Post Body</legend>
 		<ul id="post_fields" class='contents'>
-			<% @resource.contexts.each_with_index do |context, i| %>
-			<%= f.fields_for :context_attributes, context, :index => i do |cf| %>
+			<%= f.fields_for :contexts do |cf| %>
 			<li class='field field_<%= cf.object.class.to_s.underscore %>' id="field_<%= cf.object.id.to_s %>">
 				<h4 class="icon_<%= cf.object.shortname %>"><%= cf.text_field :title, :value => cf.object.field_name %></h4>
 				<%= render :partial => "transit/contexts/#{cf.object.class.to_s.underscore}", :locals => { :form => cf, :field => cf.object } %>
 				<%= render :partial => 'transit/contexts/field_attrs', :locals => { :form => cf, :field => cf.object } %>
 			</li>			
-			<% end %>
 			<% end %>
 		</ul>
 		<div id="add_field">
@@ -96,7 +94,7 @@
 			<ul>
 				<% Transit.contexts.each do |type| %>
 				<li class="icon_<%= type.underscore %>">
-					<%= link_to type, new_package_context_path(@resource.class, @resource.id.to_s), :remote => true %>
+					<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
 				</li>
 				<% end %>
 			</ul>
@@ -105,7 +103,8 @@
 	<p><%= f.button 'Save Post', :class => 'green' %></p>
 	<% end %>
 <% end %>
-<% unless @resource.new_record %>
+<% unless @post
+.new_record %>
 
 
 <script type="text/javascript" charset="utf-8">
@@ -129,7 +128,8 @@
 	upload_field.uploadify({
 	    swf  : "/assets/uploadify.swf",
 		auto : false,
-		uploader		: '<%= transit.package_assets_path(@resource) %>',
+		uploader		: '<%= transit.package_assets_path(@post
+) %>',
 		buttonClass     : 'button',
 		buttonCursor    : 'hand',
 		buttonImage     : '',

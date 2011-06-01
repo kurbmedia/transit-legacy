@@ -1,5 +1,5 @@
 class TransitController < ApplicationController
-  include Transit::Controller::Actions
+  include Transit::Controller::Helpers
   unloadable
   respond_to :html, :js
 end

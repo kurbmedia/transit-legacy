@@ -1,6 +1,7 @@
 module Transit
   class Context
     include Mongoid::Document
+    
     field :name,      :type => String
     field :meta,      :type => Hash, :default => {}
     field :body,      :type => String

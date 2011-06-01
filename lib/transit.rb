@@ -3,10 +3,7 @@ require 'active_support'
 require 'mongoid'
 
 module Transit
-  
-  autoload :Package, 'transit/package'
-  autoload :Context, 'transit/context'
-  
+    
   module Model
     autoload :Helpers,  'transit/model/helpers'
   end
@@ -45,8 +42,7 @@ module Transit
   end
   
 end
-
-require 'transit/package'
-require 'transit/mapping'
+require 'transit/posts'
+require 'transit/pages'
 require 'transit/rails/engine'
 require 'transit/rails/routing'
