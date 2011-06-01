@@ -11,23 +11,23 @@ module Transit
     # that have been defined in application routes.
     # 
     ActiveSupport.on_load(:after_initialize) do
-      TransitController.send(:include, Transit::Controller::Routing)
-            
-      Transit::Post.subclasses.each do |sub|
-        controller_name = "#{sub.to_s.pluralize}Controller"
-        unless Transit.const_defined?(controller_name)
-          Transit.const_set(controller_name, Class.new( Transit::PostsController) )
-          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
-        end
-      end
-      
-      Transit::Page.subclasses.each do |sub|
-        controller_name = "#{sub.to_s.pluralize}Controller"
-        unless Transit.const_defined?(controller_name)
-          Transit.const_set(controller_name, Class.new( Transit::PagesController) )
-          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
-        end
-      end
+      # TransitController.send(:include, Transit::Controller::Routing)
+      #             
+      #       Transit::Post.subclasses.each do |sub|
+      #         controller_name = "#{sub.to_s.pluralize}Controller"
+      #         unless Transit.const_defined?(controller_name)
+      #           Transit.const_set(controller_name, Class.new( Transit::PostsController) )
+      #           ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+      #         end
+      #       end
+      #       
+      #       Transit::Page.subclasses.each do |sub|
+      #         controller_name = "#{sub.to_s.pluralize}Controller"
+      #         unless Transit.const_defined?(controller_name)
+      #           Transit.const_set(controller_name, Class.new( Transit::PagesController) )
+      #           ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+      #         end
+      #       end
     end
     
     initializer 'paperclip' do
