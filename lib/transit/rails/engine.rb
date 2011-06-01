@@ -3,24 +3,18 @@ require 'transit'
 
 module Transit
   class Engine < Rails::Engine
-    isolate_namespace Transit
+    isolate_namespace Transit 
     
     ##
     # After initialization, dynamically create controllers for models 
     # that have been defined in application routes.
     # 
     ActiveSupport.on_load(:after_initialize) do
-      Transit.mappings.each do |mapping|
-        mapping.build
-        unless Transit.const_defined?(mapping.resource_controller)
-          Transit.const_set(mapping.resource_controller, Class.new( Transit.const_get(mapping.controller_name) ))
-        end
-        
-      end
+      TransitController.send(:include, Transit::Controller::Routing)
     end
         
     ActiveSupport.on_load(:action_controller) do
-      helper Transit::Engine.helpers
+      helper Transit::Engine.helpers      
     end
       
   end

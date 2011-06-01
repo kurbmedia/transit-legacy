@@ -8,11 +8,12 @@ module Transit
       
       included do
         include Transit::Controller::Helpers
+        unloadable
       end
       
       def index
-        @packages = scope_class.all
-        set_instance_var(@packages)
+        @resources = scope_class.all
+        set_instance_var(@resources)
         respond_with(get_instance_var) do |format|
           format.js{ render :partial => 'table' }
           format.any
@@ -20,51 +21,51 @@ module Transit
       end
 
       def show
-        @package = scope_class.find(params[:id])
-        set_instance_var(@package)
+        @resource = scope_class.find(params[:id])
+        set_instance_var(@resource)
         respond_with(get_instance_var)
       end
 
       def new
-        @package = scope_class.new
-        set_instance_var(@package)
+        @resource = scope_class.new
+        set_instance_var(@resource)
         respond_with(get_instance_var)
       end
 
       def create
-        @package = scope_class.new(params["#{scope_name}"])
-        unless @package.save
+        @resource = scope_class.new(params["#{scope_name}"])
+        unless @resource.save
           flash.now[:error] = "Oops! Looks like you missed a couple fields."
           render :action => :new and return
         end
-        set_instance_var(@package)
+        set_instance_var(@resource)
         flash[:success] = "'#{package.title}' has been created."
-        respond_with(get_instance_var, :location => edit_polymorphic_path(@package))    
+        respond_with(get_instance_var, :location => edit_polymorphic_path(@resource))    
       end
 
       def edit
-        @package = scope_class.find(params[:id])
-        set_instance_var(@package)
-        respond_with(@package)
+        @resource = scope_class.find(params[:id])
+        set_instance_var(@resource)
+        respond_with(@resource)
       end
 
       def update
-        @package = scope_class.find(params[:id])
-        unless @package.update_attributes(params["#{scope_name}"])
+        @resource = scope_class.find(params[:id])
+        unless @resource.update_attributes(params["#{scope_name}"])
           flash.now[:error] = "Looks like you were missing a few fields!"
           render :action => :edit and return
         end    
-        flash[:success] = "'#{@package.title}' has been updated."
-        set_instance_var(@package)
-        respond_with(get_instance_var, :location => edit_polymorphic_path(@package))    
+        flash[:success] = "'#{@resource.title}' has been updated."
+        set_instance_var(@resource)
+        respond_with(get_instance_var, :location => edit_polymorphic_path(@resource))    
       end
 
       def destroy
-        @package = scope_class.find(params[:id])
-        @package.destroy
-        set_instance_var(@package)
-        flash[:success] = "'#{@package.title}' has been deleted."
-        respond_with(get_instance_var, :location => polymorphic_path(@package))
+        @resource = scope_class.find(params[:id])
+        @resource.destroy
+        set_instance_var(@resource)
+        flash[:success] = "'#{@resource.title}' has been deleted."
+        respond_with(get_instance_var, :location => polymorphic_path(@resource))
       end
     end
   end

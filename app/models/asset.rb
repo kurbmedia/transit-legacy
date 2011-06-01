@@ -1,4 +1,4 @@
-class PackageAsset
+class Asset
   
   include Mongoid::Document
   include Mongoid::Timestamps

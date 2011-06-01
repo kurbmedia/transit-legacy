@@ -1,0 +1,17 @@
+<div id="asset_overlay" class="overlay_window <%= asset.image ? "image" : "file" %>">
+	<h3>Asset Detail</h3>
+	<div>
+		<% if asset.image %>
+		<h4>Image Links</h4>
+		<img src="" />
+		<ul class="asset_link">
+			<li style="background:none">Click a link to insert the image into your content.</li>
+			<% end %>
+		</ul>
+		<% else %>
+		<h4>Link To This File</h4>
+		<p class="asset_link"><strong>URL:</strong> <%= asst %></p>
+		<% end %>
+	</div>
+	<a href="#" class="close">Close</a>
+</div>

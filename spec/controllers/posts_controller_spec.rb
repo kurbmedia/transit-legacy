@@ -39,6 +39,8 @@ describe Transit::PostsController do
   end
   
 end
+class Transit::ArticlesController < Transit::PostsController
+end
 
 describe Transit::ArticlesController do
   subject{ controller }

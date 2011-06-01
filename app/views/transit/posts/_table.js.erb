@@ -1,0 +1,5 @@
+$("#listing tbody").slideUp('fast',
+	function(){
+		$(this).empty().html("<%= escape_javascript(render(:partial => "table.html.erb", :locals => { :resources => @resources })) %>").slideDown('fast');
+		$('p.pagination').replaceWith("<%= escape_javascript(pagination(@posts, { :links => { :remote => true } })) %>");
+	});

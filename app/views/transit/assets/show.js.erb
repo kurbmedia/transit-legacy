@@ -1,0 +1,29 @@
+<% content = capture do %>
+	<div id="asset_overlay" class="overlay_window <%= @asset.image? ? "image" : "file" %>">
+		<h3>Asset Detail</h3>
+		<div>
+			<% if @asset.image? %>
+			<h4>Image Links</h4>
+			<%= image_tag(@asset.file.url(:small)) %>
+			<ul class="asset_link">
+				<li style="background:none">Click a link to insert the image into your content.</li>
+				<% @asset.file.styles.keys.each do |style| %>
+				<li><%= link_to style.to_s.titleize, @asset.file.url(style), :class => "insert_image_link" %></li>
+				<% end %>
+			</ul>
+			<% else %>
+			<h4>Link To This File</h4>
+			<p class="asset_link"><strong>URL:</strong> <%= @asset.file.url(:original) %></p>
+			<% end %>
+		</div>
+		<a href="#" class="close">Close</a>
+	</div>
+<% end %>
+$.event.trigger("overlay:show", [$("<%= escape_javascript(content).gsub(/\n|\t/, "").html_safe %>"), function(){
+	$('a.insert_image_link').bind('click', function(event){
+		var href = $(this).attr("href");
+		event.preventDefault();
+		if(active_editor == undefined) return false;
+		active_editor.wysiwyg('insertImage', href);
+	});
+}]);

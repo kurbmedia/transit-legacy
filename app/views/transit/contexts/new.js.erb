@@ -1,0 +1,4 @@
+<% with_format(:html) do %>
+$('#post_fields').append("<%= escape_javascript(render(:partial => 'field_wrapper')) %>");
+create_editors();
+<% end %>

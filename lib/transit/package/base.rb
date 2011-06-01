@@ -16,8 +16,7 @@ module Transit
         include Transit::Model::Helpers
         
         field :published, :type => Boolean, :default => false
-      
-        embeds_many :contexts, as: :package, class_name: 'Transit::Context'
+        embeds_many :contexts, as: :package, class_name: 'Transit::Context', :autosave => true
         accepts_nested_attributes_for :contexts, :allow_destroy => true
         alias :contexts_attributes= :process_context_attributes=        
       end
@@ -39,7 +38,7 @@ module Transit
         def configure_transit_package!
           conf = self.transit_config          
           if add_assets = conf[:assets]
-            has_and_belongs_to_many :package_assets, as: :package if add_assets
+            has_and_belongs_to_many :assets, as: :package if add_assets
           end
         end
         

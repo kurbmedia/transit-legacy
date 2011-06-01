@@ -14,6 +14,7 @@ module Transit
   module Controller
     autoload :Actions,  'transit/controller/actions'
     autoload :Helpers,  'transit/controller/helpers'
+    autoload :Routing,  'transit/controller/routing'
   end
   
   module Errors

@@ -1,0 +1,7 @@
+<li class='field field_<%= @field.class.to_s.underscore %>'>
+<%= fields_for "#{@post.class.to_s.underscore}[content_fields_attributes][#{Time.now.to_i}]", @field do |child| %>
+	<h4><%= child.text_field :title, :value => @field.field_name %></h4>
+	<%= render :partial => @field.class.to_s.underscore, :locals => { :form => child, :field => child.object } %>
+	<%= render :partial => 'field_attrs', :locals => { :form => child, :field => child.object } %>
+<% end %>
+</li>

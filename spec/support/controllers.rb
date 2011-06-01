@@ -1,6 +1,3 @@
-class Transit::ArticlesController < Transit::PostsController
-end
-
 module ControllerHelpers
   def stub_resource(klass)
     before do

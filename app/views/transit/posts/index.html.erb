@@ -1,0 +1,22 @@
+<%= page_id('transit_index') %>
+<%= page_title('Transit: Manage Posts') %>
+<h1 class="ribbon">Manage Posts</h1>
+<% items = Kaminari.paginate_array(@resources).page(params[:page]).per(10) %>
+<%= paginate(items, :remote => true) %>
+<table border="0" id="listing">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Post Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'table', :locals => { :resources => items } %>
+	</tbody>
+</table>
+<%= paginate(items, :remote => true) %>
+<div class='buttons'>
+	<%= button_link 'Add a New Post', new_post_path, :class => 'green' %>
+</div>

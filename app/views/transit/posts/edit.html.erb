@@ -1,0 +1,9 @@
+<%= page_id('transit_edit') %>
+<%= page_title("Edit: #{@resource.title}") %>
+<h1>Edit: <%= @resource.title %></h1>
+<div id="post_form">
+	<%= render :partial => 'form' %>
+</div>
+<div class='buttons'>
+	<%= button_link "Delete this Post", send(:"#{@resource.class.to_s.underscore}_path", @resource.id), :class => 'red', :method => :delete, :confirm => 'Are you sure?' %>
+</div>
