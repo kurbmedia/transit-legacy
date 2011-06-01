@@ -17,6 +17,7 @@ module Transit
         controller_name = "#{sub.to_s.pluralize}Controller"
         unless Transit.const_defined?(controller_name)
           Transit.const_set(controller_name, Class.new( Transit::PostsController) )
+          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
         end
       end
       
@@ -24,6 +25,7 @@ module Transit
         controller_name = "#{sub.to_s.pluralize}Controller"
         unless Transit.const_defined?(controller_name)
           Transit.const_set(controller_name, Class.new( Transit::PagesController) )
+          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
         end
       end
     end
