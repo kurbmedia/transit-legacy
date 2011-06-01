@@ -18,13 +18,27 @@ module Transit
         alias :contexts_attributes= :process_context_attributes=
       end
       
+      #Convenience method for only finding the assets that are images
+      def images
+        self.assets.find_all{ |asset| asset.image? }
+      end
+
+      def image?
+        image.file?
+      end
+
+      # Convenience method for only finding the assets that are files
+      def files
+        self.assets.reject{ |asset| asset.image? }
+      end
+      
       def context_named(n)
         self.contexts.by_name(n).first
       end
       
       def generate_uid
         return true unless self.uid.nil?        
-        ref = self.class.collection.name.singularize.classify.constantize
+        ref = (self.class.superclass.name.include?("Transit") ? self.class.superclass.name.singularize.classify.constantize : self.class)
         self.uid = ref.max(:uid).to_i + 1
       end
       
@@ -40,6 +54,7 @@ module Transit
         return "" if self.created_at.nil?
         self.created_at.strftime("%B %d, %Y")
       end
+      
       
     end
   end

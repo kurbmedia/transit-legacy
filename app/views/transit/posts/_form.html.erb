@@ -19,10 +19,10 @@
 			<% if @post.new_record? %>
 			<li class="clear" style="width:200px">
 				<%= f.label "Category" %>
-				<%= select_tag(:type, options_for_select(@post.class.types), :style => 'width:95%;') %>
+				<%= select_tag(:type, options_for_select(@post.class.subclasses.map(&:to_s)), :style => 'width:95%;') %>
 			</li>
-			<li style="padding-top:1em">
-				<%= f.button 'Create Post!', :class => 'green' %>
+			<li style="padding-top:2em">
+				<%= f.button 'Create Post!' %>
 			</li>
 			<% else %>
 			<li class='clear' style='width:300px'>
@@ -58,13 +58,13 @@
 			<div id="post_images">
 				<h3>Images</h3>
 				<ul id="post_image_list">
-					<%#= render(:partial => 'admin/assets/image', :collection => @post.images) unless @post.images.empty? %>
+					<%= render(:partial => 'transit/assets/image', :collection => @post.images) unless @post.images.empty? %>
 				</ul>
 			</div>
 			<div id="post_files">
 				<h3>Files</h3>
 				<ul id="post_file_list">
-					<%#= render(:partial => 'admin/assets/file', :collection => @post.files) unless @post.images.empty? %>
+					<%= render(:partial => 'transit/assets/file', :collection => @post.files) unless @post.images.empty? %>
 				</ul>
 			</div>
 			<div id="upload_files">			
@@ -92,7 +92,7 @@
 			<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
 			in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
 			<ul>
-				<% Transit.contexts.each do |type| %>
+				<% Transit::Context.subclasses.map(&:to_s).each do |type| %>
 				<li class="icon_<%= type.underscore %>">
 					<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
 				</li>
@@ -122,14 +122,14 @@
 			csrf_token    : encodeURI($('meta[name=csrf-token]').attr('content')),
 			"authenticity_token" : '<%= form_authenticity_token %>',
 			'<%= session_key %>' : '<%= cookies[:session_key] %>',
-			"format" : "js"
+			"format" : "js",
+			"post_ids": "[<%= @post.id.to_s %>]"
 		};
 		
 	upload_field.uploadify({
 	    swf  : "/assets/uploadify.swf",
 		auto : false,
-		uploader		: '<%= transit.package_assets_path(@post
-) %>',
+		uploader		: '<%= package_assets_path %>',
 		buttonClass     : 'button',
 		buttonCursor    : 'hand',
 		buttonImage     : '',

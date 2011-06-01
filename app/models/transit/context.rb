@@ -29,3 +29,7 @@ module Transit
     
   end
 end
+
+%w(audio comment text topic video).each do |c|
+  require File.expand_path("../../", __FILE__) << "/#{c}"
+end

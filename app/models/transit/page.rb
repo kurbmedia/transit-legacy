@@ -6,6 +6,7 @@ module Transit
     include Transit::Pages
     
     store_in :pages
+    has_and_belongs_to_many :assets, :class_name => 'Transit::Asset'
     
     
   end

@@ -11,11 +11,11 @@ class Transit::PostsController < TransitController
   end
   
   def new
-    @post = scope_class.new
+    @post = Transit::Post.new
   end
   
   def create
-    @post = scope_class.new(params[:post])    
+    @post = params[:type].to_s.classify.constantize.new(params[:post])    
     unless @post.save
       flash.now[:error] = "Oops! Looks like you missed a couple fields."
       render :action => :new and return

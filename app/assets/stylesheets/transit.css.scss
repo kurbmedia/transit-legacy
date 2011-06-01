@@ -3,6 +3,8 @@
 */
 
 @import './includes/global';
+$red:#B44223;
+
 td, th{ padding:.5em; }
 th{ color:white; }
 tr:hover td{ background:lighten(#ccc, 10%) !important; }

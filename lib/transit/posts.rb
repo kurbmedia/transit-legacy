@@ -11,7 +11,7 @@ module Transit
       include Transit::Model::Helpers
       include Transit::Posts::Fields
       include Transit::Posts::Lookups
-      include Transit::Posts::Validations        
+      include Transit::Posts::Validations      
       scope :published, where(:published => true, :post_date.lte => Date.today)
     end
     
