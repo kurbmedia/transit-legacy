@@ -12,6 +12,7 @@ module Transit
       include Transit::Posts::Fields
       include Transit::Posts::Lookups
       include Transit::Posts::Validations      
+      embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'
       scope :published, where(:published => true, :post_date.lte => Date.today)
     end
     

@@ -7,6 +7,7 @@ module Transit
     
     included do
       include Transit::Pages::Fields
+      embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'
     end
     
     def timestamp
