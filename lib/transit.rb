@@ -9,9 +9,10 @@ module Transit
   end
   
   module Controller
-    autoload :Actions,  'transit/controller/actions'
-    autoload :Helpers,  'transit/controller/helpers'
-    autoload :Routing,  'transit/controller/routing'
+    autoload :Actions,    'transit/controller/actions'
+    autoload :Helpers,    'transit/controller/helpers'
+    autoload :Routing,    'transit/controller/routing'
+    autoload :Generator,  'transit/controller/generator'
   end
   
   module Errors

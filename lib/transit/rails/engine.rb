@@ -12,22 +12,9 @@ module Transit
     # After initialization, dynamically create controllers for models 
     # that have been defined in application routes.
     # 
-    initializer 'transit.generate_controllers', :after => :build_middleware_stack do
-      Transit::Post.subclasses.each do |sub|
-        controller_name = "#{sub.to_s.pluralize}Controller"
-        unless Transit.const_defined?(controller_name)
-          Transit.const_set(controller_name, Class.new( Transit::PostsController) )
-          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
-        end
-      end
-      
-      Transit::Page.subclasses.each do |sub|
-        controller_name = "#{sub.to_s.pluralize}Controller"
-        unless Transit.const_defined?(controller_name)
-          Transit.const_set(controller_name, Class.new( Transit::PagesController) )
-          ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
-        end
-      end
+    initializer 'transit.generate_controllers', :after => :eager_load! do
+      gen = Transit::Controller::Generator.new(:page, :post)
+      gen.generate!
     end
 
     initializer 'transit.controller_hooks' do
@@ -36,11 +23,9 @@ module Transit
       end
     end
     
-    initializer 'paperclip' do
-      class << Paperclip
-        def logger
-          Rails.logger 
-        end 
+    initializer 'transit.paperclip' do
+      def Paperclip.logger
+        Rails.logger 
       end      
       ::Paperclip.interpolates(:uid) do |attachment, style|
         "#{attachment.instance.uid}" 
