@@ -1,4 +1,4 @@
-<%= form_for @post, :validate => true do |f| %>
+<%= form_for @post, :as => :post, :validate => true do |f| %>
 	<fieldset id="post_info">
 		<legend>Post Information</legend>
 		<ol class="split">
@@ -29,6 +29,10 @@
 				<%= f.label :teaser %>
 				<%= f.text_area :teaser, :style => 'width:100%; height:100px;' %>
 			</li>
+			<li style="padding:0 1.5em;">
+				<%= f.label :topics %>
+				<%= f.collection_select :topics, Topic.all, :id, :title, {}, :multiple => true, :size => 8, :style => 'width:250px' %>
+			</li>
 			<li id="default_image" class="<%= @post.image.file? ? 'has_image' : 'no_image' %>">
 				<%= f.label :image, "Default Image" %>
 				<% if @post.image.file? %>
@@ -47,32 +51,34 @@
 			</li>
 			<li class="clear">
 				<%= f.button 'Save Post', :class => 'green' %>
-			</li>
-			<% end %>
+			</li>			
 		</ol>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<% end %>
 	</fieldset>
 	<% unless @post.new_record %>
 	<fieldset id="post_assets">
 		<legend>Files &amp; Images</legend>
 		<div id="post_asset_wrapper">
-			<div id="post_images">
-				<h3>Images</h3>
-				<ul id="post_image_list">
-					<%= render(:partial => 'transit/assets/image', :collection => @post.images) unless @post.images.empty? %>
-				</ul>
-			</div>
-			<div id="post_files">
-				<h3>Files</h3>
-				<ul id="post_file_list">
-					<%= render(:partial => 'transit/assets/file', :collection => @post.files) unless @post.images.empty? %>
-				</ul>
-			</div>
-			<div id="upload_files">			
-				<h3>Upload</h3>
-				<div id="upload_list"></div>
-				<%= file_field_tag :asset_upload, :class => 'uploadify' %>
-				<%= button_link 'Start Upload', '#', :id => 'start_upload', :class => 'green' %>				
-			</div>
+			<p>Additional images need a quick fix... to post the "main image" use the above area.</p>
+			<!-- <div id="post_images">
+							<h3>Images</h3>
+							<ul id="post_image_list">
+								<%= render(:partial => 'transit/assets/image', :collection => @post.images) unless @post.images.empty? %>
+							</ul>
+						</div>
+						<div id="post_files">
+							<h3>Files</h3>
+							<ul id="post_file_list">
+								<%= render(:partial => 'transit/assets/file', :collection => @post.files) unless @post.images.empty? %>
+							</ul>
+						</div>
+						<div id="upload_files">			
+							<h3>Upload</h3>
+							<div id="upload_list"></div>
+							<%= file_field_tag :asset_upload, :class => 'uploadify' %>
+							<%= button_link 'Start Upload', '#', :id => 'start_upload', :class => 'green' %>				
+						</div> -->
 		</div>
 		<%= link_to 'Hide/Show', '#', :id => 'post_asset_toggle' %>
 	</fieldset>
@@ -88,16 +94,16 @@
 			<% end %>
 		</ul>
 		<div id="add_field">
-			<h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
-			<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
-			in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
-			<ul>
-				<% Transit::Context.subclasses.map(&:to_s).each do |type| %>
-				<li class="icon_<%= type.underscore %>">
-					<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
-				</li>
-				<% end %>
-			</ul>
+			<!-- <h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
+						<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
+						in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
+						<ul>
+							<% Transit::Context.subclasses.map(&:to_s).each do |type| %>
+							<li class="icon_<%= type.underscore %>">
+								<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
+							</li>
+							<% end %>
+						</ul> -->
 		</div>
 	</fieldset>
 	<p><%= f.button 'Save Post', :class => 'green' %></p>
@@ -106,6 +112,7 @@
 <% unless @post.new_record %>
 
 <script src="/assets/jwysiwyg/jquery.wysiwyg.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/jwysiwyg/controls/wysiwyg.link.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
 	

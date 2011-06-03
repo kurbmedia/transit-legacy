@@ -15,7 +15,8 @@ class Transit::PostsController < TransitController
   end
   
   def create
-    @post = params[:type].to_s.classify.constantize.new(params[:post])    
+    @post = params[:type].to_s.classify.constantize.new(params[:post])
+    @post.user = current_user
     unless @post.save
       flash.now[:error] = "Oops! Looks like you missed a couple fields."
       render :action => :new and return

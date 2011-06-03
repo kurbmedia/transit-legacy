@@ -18,6 +18,7 @@ module Transit
     field :image_file_size,     :type => Integer
     field :image_updated_at,    :type => Time
     field :display_image,       :type => Boolean, :default => true
+    field :comment_count,       :type => Integer
 
     field :published, :type => Boolean, :default => false
     modded_with :sluggable, :fields => :title, :as => :slug
