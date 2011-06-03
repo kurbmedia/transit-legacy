@@ -3,8 +3,7 @@ require 'spec_helper'
 describe Transit::PostsController do
   extend ControllerHelpers
   
-  stub_resource(Post)
-  
+  stub_resource(Post)  
   subject{ controller }
   its(:scope_class){ should == Post }
   
@@ -18,12 +17,7 @@ describe Transit::PostsController do
     it 'assigns a collection variable' do
       assigns[:posts].should == controller.collection      
     end
-    it 'assigns a collection with the proper class' do
-      Post.expects(:all).once
-      Article.expects(:all).never
-      get :index, :use_route => :transit
-    end
-    specify{ assigns[:posts].should be_a(Array) }
+    specify{ assigns[:posts].to_a.should be_a(Array) }
   end
   
   describe 'GET #show' do

@@ -1,4 +1,4 @@
 class Page
   include Mongoid::Document
-  include Transit::Page
+  deliver_as :page
 end

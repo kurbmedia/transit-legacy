@@ -25,6 +25,7 @@ Capybara.default_driver   = :rack_test
 Capybara.default_selector = :css
 
 # Load support files
+Dir["#{File.dirname(__FILE__)}/fabricators/**/*.rb"].each { |f| require f }
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|

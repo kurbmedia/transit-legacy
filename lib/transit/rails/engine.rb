@@ -17,12 +17,6 @@ module Transit
       gen.generate!
     end
 
-    initializer 'transit.controller_hooks' do
-      ActiveSupport.on_load(:after_initialize) do
-        TransitController.send(:include, Transit::Controller::Routing)
-      end
-    end
-    
     initializer 'transit.paperclip' do
       def Paperclip.logger
         Rails.logger 

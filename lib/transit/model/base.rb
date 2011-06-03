@@ -52,27 +52,6 @@ module Transit
         self.created_at.strftime("%B %d, %Y")
       end 
       
-      module ClassMethods
-        ##
-        # Convenience method for Paperclip's has_attached_file to ensure fields also exist.
-        # 
-        def attach(name, options)
-          include Transit::Model::Attachments          
-          has_attached_file name, options
-          field :"#{name.to_s}_file_name",     :type => String
-          field :"#{name.to_s}_content_type",  :type => String
-          field :"#{name.to_s}_file_size",     :type => Integer
-          field :"#{name.to_s}_updated_at",    :type => Time
-          field :"#{name.to_s}_fingerprint",   :type => String
-        end        
-        def add_assets
-          has_and_belongs_to_many :assets, as: :assetable, class_name: 'Transit::Asset', dependent: :destroy
-        end        
-        def add_comments
-          has_many :comments, as: :commentable, dependent: :destroy
-        end        
-      end     
-      
     end
     
   end

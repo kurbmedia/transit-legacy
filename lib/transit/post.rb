@@ -11,12 +11,22 @@ module Transit
       include Transit::Model::Base      
       include Transit::Post::Fields
       include Transit::Post::Lookups
-      include Transit::Post::Validations
-      
-      Transit.track(self, :post)
-      
-      # Slugify the title field... always
-      modded_with :sluggable, fields: :title, as: :slug      
+      include Transit::Post::Validations      
+      Transit.track(self, :post)    
+    end
+    
+    def timestamp
+      return "" if self.post_date.nil?
+      self.post_date.strftime("%B %d, %Y")
+    end
+    
+    def teaser
+      return self.attributes['teaser'] unless self.attributes['teaser'].to_s.blank?
+      textfield = self.contexts.ascending(:position).detect{ |c| c._type.to_s == 'Text' }
+      return "" unless textfield
+      return @teaser_text if @teaser_text 
+      doc = ::Nokogiri::HTML::DocumentFragment.parse(textfield.body)
+      @teaser_text = doc.xpath('.//p').first.try(:text).to_s
     end
     
   end

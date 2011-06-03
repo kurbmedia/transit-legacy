@@ -1,3 +1,5 @@
+require 'paperclip'
+
 module Transit
   module Model
     module Attachments
@@ -19,6 +21,21 @@ module Transit
       # Convenience method for only finding the assets that are files
       def files
         self.assets.reject{ |asset| asset.image? }
+      end
+      
+      module ClassMethods
+        ##
+        # Convenience method for Paperclip's has_attached_file to ensure fields also exist.
+        # 
+        def attach(name, options = {})     
+          has_attached_file name, options
+          field :"#{name.to_s}_file_name",     :type => String
+          field :"#{name.to_s}_content_type",  :type => String
+          field :"#{name.to_s}_file_size",     :type => Integer
+          field :"#{name.to_s}_updated_at",    :type => Time
+          field :"#{name.to_s}_fingerprint",   :type => String
+        end        
+             
       end
       
     end

@@ -11,6 +11,8 @@ gem "paperclip", "~> 2.3"
 gem 'rack-raw-upload', '0.1.1'
 gem 'will_paginate', '3.0.pre2'
 gem "motr", '0.0.9'
+gem "kaminari", '= 0.12.4'
+gem "paperclip", "~> 2.3"
 
 group :test do
   gem "mocha","0.9.12"

@@ -6,7 +6,9 @@ module Transit
     
   module Model
     autoload :Attachments,  'transit/model/attachments'
+    autoload :Comments,     'transit/model/comments'
     autoload :Base,         'transit/model/base'
+    autoload :Hooks,        'transit/model/hooks'
   end
   
   module Controller
@@ -43,8 +45,13 @@ module Transit
     DESCRIPTIONS[template] ||= []
   end
   
+  def self.superclass_for(template)
+    DESCRIPTIONS[template].detect do |klass|
+      klass.constantize.superclass === Object
+    end
+  end
+  
 end
-require 'transit/post'
-require 'transit/page'
+require 'transit/model/hooks'
 require 'transit/rails/engine'
 require 'transit/rails/routing'

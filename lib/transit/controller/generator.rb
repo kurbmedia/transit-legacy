@@ -13,14 +13,18 @@ module Transit
       
       def generate!
         @types.map(&:to_sym).each do |type|
-          typed_classes = Transit.lookup(type)
-          typed_classes.subclasses.each do |klass|
-            controller_name = to_controller(klass) 
-            next if Transit.const_defined?( controller_name, false )            
-            new_klass = Class.new( parent_controller(sup) )
-            Transit.const_set( controller_name, new_klass)
-            ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+          typed_classes = Transit.lookup(type).dup.map!(&:constantize)
+          
+          typed_classes.each do |sup|          
+            sup.subclasses.each do |klass|
+              controller_name = to_controller(klass) 
+              next if Transit.const_defined?( controller_name, false )            
+              new_klass = Class.new( parent_controller(sup) )
+              Transit.const_set( controller_name, new_klass)
+              ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+            end
           end
+          
         end
       end
       
