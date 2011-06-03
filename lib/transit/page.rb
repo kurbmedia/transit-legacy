@@ -1,12 +1,15 @@
 module Transit
-  module Pages
+  module Page
     
-    autoload :Fields,       'transit/pages/fields'
+    autoload :Fields, 'transit/page/fields'
     
     extend ActiveSupport::Concern
     
     included do
-      include Transit::Pages::Fields
+      include Transit::Model::Base      
+      include Transit::Page::Fields
+      
+      Transit.track(self, :page)      
       embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'
     end
     

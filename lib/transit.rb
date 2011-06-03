@@ -5,7 +5,8 @@ require 'mongoid'
 module Transit
     
   module Model
-    autoload :Helpers,  'transit/model/helpers'
+    autoload :Attachments,  'transit/model/attachments'
+    autoload :Base,         'transit/model/base'
   end
   
   module Controller
@@ -43,7 +44,7 @@ module Transit
   end
   
 end
-require 'transit/posts'
-require 'transit/pages'
+require 'transit/post'
+require 'transit/page'
 require 'transit/rails/engine'
 require 'transit/rails/routing'

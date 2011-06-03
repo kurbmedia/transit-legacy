@@ -10,8 +10,7 @@ module ActionDispatch::Routing
             resources :contexts
           end
         end
-      end
-      
+      end      
       mount Transit::Engine => (options[:mount_on] || "/transit")
     end
     

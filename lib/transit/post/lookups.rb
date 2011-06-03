@@ -1,5 +1,5 @@
 module Transit
-  module Posts
+  module Post
     
     module Lookups
       

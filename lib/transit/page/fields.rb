@@ -1,5 +1,5 @@
 module Transit
-  module Pages
+  module Page
     module Fields
       extend ActiveSupport::Concern
       
@@ -8,7 +8,7 @@ module Transit
         field :url,         :type => String
         field :keywords,    :type => Array
         field :description, :type => String
-      end      
+      end
       
     end
   end

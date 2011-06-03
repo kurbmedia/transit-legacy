@@ -8,17 +8,15 @@ module Transit
   
     field :name,                :type => String
     field :meta,                :type => Hash
-    field :uid,              :type => Integer
-    field :file_file_name,     :type => String
-    field :file_content_type,  :type => String
-    field :file_file_size,     :type => Integer
-    field :file_updated_at,    :type => DateTime
+    field :uid,                 :type => Integer
+    field :file_file_name,      :type => String
+    field :file_content_type,   :type => String
+    field :file_file_size,      :type => Integer
+    field :file_updated_at,     :type => DateTime
   
-    has_and_belongs_to_many :posts, :class_name => "Transit::Post"
-    has_and_belongs_to_many :pages, :class_name => "Transit::Page"
-    
+    belongs_to    :assetable, :polymorphic => true    
     before_create :generate_uid
-    before_save :set_default_name
+    before_save   :set_default_name
   
     has_attached_file :file,
       :styles => {
