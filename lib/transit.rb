@@ -5,6 +5,7 @@ require 'mongoid'
 module Transit
     
   module Model
+    autoload :Assets,        'transit/model/assets'
     autoload :Attachments,   'transit/model/attachments'
     autoload :AutoIncrement, 'transit/model/auto_increment'
     autoload :Comments,      'transit/model/comments'

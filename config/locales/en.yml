@@ -1,0 +1,5 @@
+en:
+  transit:
+    post_collection: 'Posts'
+    blog_collection: 'Blog Posts'
+    article_collection: 'Articles'
