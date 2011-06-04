@@ -1,6 +1,6 @@
 <%= page_id('transit_new') %>
 <%= page_title("Create a New Post") %>
-<h1 class="ribbon">Create a New Post</h1>
+<h1 class="ribbon">Create a New <%= t(scope_name, :scope => :transit) %></h1>
 <div id="post_form">
 	<%= render :partial => 'form' %>
 </div>

@@ -8,6 +8,10 @@ module Transit
   class Engine < Rails::Engine
     isolate_namespace Transit 
     
+    config.paths['app/models'] << 'app/models/contexts'
+    config.paths['app/models'] << 'app/models/transit'
+    config.eager_load_paths << 'app/models/contexts'    
+    
     ##
     # After initialization, dynamically create controllers for models 
     # that have been defined in application routes.

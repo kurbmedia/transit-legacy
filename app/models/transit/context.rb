@@ -29,7 +29,3 @@ module Transit
     
   end
 end
-
-Dir.glob(File.expand_path("../../contexts", __FILE__) << "/*.rb").each do |f|
-  require f
-end

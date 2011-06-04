@@ -36,7 +36,7 @@ module Transit
       # Each model should pre-build at least one context for its main body content
       # 
       def ensure_text_context
-        return true unless self.contexts.count == 0
+        return true unless self.contexts.size == 0
         self.contexts.build({ :name => 'Body Copy' }, Text)
       end
       

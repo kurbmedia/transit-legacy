@@ -3,3 +3,6 @@ en:
     post_collection: 'Posts'
     blog_collection: 'Blog Posts'
     article_collection: 'Articles'
+    post: 'Post'
+    blog: 'Blog Post'
+    article: 'Article'

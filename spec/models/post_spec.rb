@@ -22,6 +22,12 @@ describe Post do
     after{ Post.delete_all }
     subject{ @post }
     
+    describe 'uid' do
+      before{ @post.save }
+      specify{ @post.uid.should_not be_nil }
+      specify{ @post.uid.should == 1}
+    end
+    
     context 'when un-published' do
       
       before{ @post.published = false; @post.save }

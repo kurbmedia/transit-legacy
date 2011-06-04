@@ -49,7 +49,7 @@ class Transit::PostsController < TransitController
     @post = scope_class.find(params[:id])
     @post.destroy
     flash[:success] = "The selected post was deleted."
-    respond_with(@post, :location => posts_path)
+    respond_with(@post, :location => polymorphic_path(scope_class))
   end
   
 end

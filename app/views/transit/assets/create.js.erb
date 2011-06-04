@@ -1,8 +1,0 @@
-<%= { :image      => (@asset.image? ? true : false), 
-	  :content 	  => render(:partial => (@asset.image? ? "image" : "file"), :object => @asset), 
-	  :created_at => @asset.timestamp, 
-	  :name 	  => @asset.name,
-	  :urls       => @asset.file_urls,
-	  :icon  	  => file_icon_class(@asset),
-	  :id		  => @asset.id.to_s
-	}.to_json.html_safe %>

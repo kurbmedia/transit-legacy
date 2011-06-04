@@ -37,7 +37,7 @@ module Transit
   end
 
   def self.contexts
-    Transit::Context.subclasses.map(&:to_s).uniq
+    ["Text","Video", "Audio"]
   end
   
   def self.track(klass, template)

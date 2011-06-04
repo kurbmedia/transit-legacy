@@ -9,6 +9,8 @@ module Transit
         field :slug,        :type => String,  :default => nil
         field :teaser,      :type => String
         field :published,   :type => Boolean, :default => false
+
+        field :display_image, :type => Boolean, :default => true
         
         scope :published, where(:published => true, :post_date.lte => Date.today)
         before_validation :make_slugged_title, :if => lambda{ |p| p.published? }

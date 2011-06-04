@@ -13,7 +13,7 @@ module Transit
       
       def generate_uid
         return true unless self.uid.nil?        
-        ref = (self.class.superclass == Object ? self.class : self.superclass)
+        ref = (self.class.superclass == Object ? self.class : self.class.superclass)
         self.uid = ref.max(:uid).to_i + 1
       end
       
