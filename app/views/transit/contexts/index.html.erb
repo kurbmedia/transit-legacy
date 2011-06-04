@@ -10,16 +10,16 @@
 		</li>
 	<% end %>
 	</ul>
-	<div id="add_field">
-		<h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
-		<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
-		in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
-		<ul>
-			<% Transit.contexts.map(&:to_s).each do |type| %>
-			<li class="icon_<%= type.underscore %>">
-				<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
+	<!-- <div id="add_field">
+			<h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
+			<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
+			in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
+			<ul>
+				<% Transit.contexts.map(&:to_s).each do |type| %>
+				<li class="icon_<%= type.underscore %>">
+					<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
+				</li>
+				<% end %>
+			</ul>
+		</div> -->
 </fieldset>

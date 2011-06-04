@@ -46,7 +46,7 @@
 	</fieldset>
 	
 	<% unless @post.new_record %>	
-	<%= render_fields_for(@post, :assets, f) %>
+	<%#= render_fields_for(@post, :assets, f) %>
 	<%= render template: 'transit/contexts/index', locals: { form: f, parent: @post } %>
 	<%= render partial: 'transit/shared/editor' %>	
 	<p><%= f.button %></p>	
