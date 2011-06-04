@@ -27,13 +27,19 @@ module Transit
         ##
         # Convenience method for Paperclip's has_attached_file to ensure fields also exist.
         # 
-        def attach(name, options = {})     
+        def attach(name, options = {})
+          
+          if options[:styles].present?
+            options.reverse_merge!(original: '1500x1500>')
+          end
+          
           has_attached_file name, options
           field :"#{name.to_s}_file_name",     :type => String
           field :"#{name.to_s}_content_type",  :type => String
           field :"#{name.to_s}_file_size",     :type => Integer
           field :"#{name.to_s}_updated_at",    :type => Time
           field :"#{name.to_s}_fingerprint",   :type => String
+          
         end        
              
       end

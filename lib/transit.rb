@@ -5,10 +5,12 @@ require 'mongoid'
 module Transit
     
   module Model
-    autoload :Attachments,  'transit/model/attachments'
-    autoload :Comments,     'transit/model/comments'
-    autoload :Base,         'transit/model/base'
-    autoload :Hooks,        'transit/model/hooks'
+    autoload :Attachments,   'transit/model/attachments'
+    autoload :AutoIncrement, 'transit/model/auto_increment'
+    autoload :Comments,      'transit/model/comments'
+    autoload :Topics,        'transit/model/topics'
+    autoload :Base,          'transit/model/base'
+    autoload :Hooks,         'transit/model/hooks'
   end
   
   module Controller
@@ -19,7 +21,8 @@ module Transit
   end
   
   module Errors
-    autoload :InvalidContext, 'transit/errors/invalid_context'
+    autoload :InvalidContext,   'transit/errors/invalid_context'
+    autoload :ResourceNotFound, 'transit/errors/resource_not_found'
   end
   
   DESCRIPTIONS = {}

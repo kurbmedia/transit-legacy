@@ -7,9 +7,7 @@ module Transit
     
     included do
       include Transit::Model::Base      
-      include Transit::Page::Fields
-      
-      Transit.track(self, :page)      
+      include Transit::Page::Fields   
       embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'
     end
     

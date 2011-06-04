@@ -12,7 +12,6 @@ module Transit
       include Transit::Post::Fields
       include Transit::Post::Lookups
       include Transit::Post::Validations      
-      Transit.track(self, :post)    
     end
     
     def timestamp
