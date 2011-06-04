@@ -11,6 +11,10 @@ gem "paperclip", "~> 2.3"
 gem 'rack-raw-upload', '0.1.1'
 gem 'will_paginate', '3.0.pre2'
 gem "motr", '0.0.9'
+gem "kaminari", '= 0.12.4'
+gem "paperclip", "~> 2.3"
+# gem "sass-rails", :git => "git://github.com/rails/sass-rails.git"
+# gem "compass", '0.11.1'
 
 group :test do
   gem "mocha","0.9.12"

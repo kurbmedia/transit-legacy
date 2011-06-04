@@ -5,21 +5,26 @@ module Transit
     
     class Generator
       
-      attr_accessor :scopes
+      attr_accessor :types
       
       def initialize(*klasses)
-        @scopes = klasses.map(&:to_s)
+        @types = klasses.map(&:to_s)
       end
       
       def generate!
-        @scopes.map(&:classify).each do |sup|
-          Transit.const_get(sup).subclasses.each do |klass|            
-            controller_name = to_controller(klass) 
-            next if Transit.const_defined?( controller_name, false )            
-            new_klass = Class.new( parent_controller(sup) )
-            Transit.const_set( controller_name, new_klass)
-            ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+        @types.map(&:to_sym).each do |type|
+          typed_classes = Transit.lookup(type).dup.map!(&:constantize)
+          
+          typed_classes.each do |sup|          
+            sup.subclasses.each do |klass|
+              controller_name = to_controller(klass) 
+              next if Transit.const_defined?( controller_name, false )            
+              new_klass = Class.new( parent_controller(sup) )
+              Transit.const_set( controller_name, new_klass)
+              ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+            end
           end
+          
         end
       end
       

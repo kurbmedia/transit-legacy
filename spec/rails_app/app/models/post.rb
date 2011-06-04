@@ -1,4 +1,4 @@
 class Post
   include Mongoid::Document
-  transit :post
+  deliver_as :post
 end

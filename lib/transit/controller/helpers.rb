@@ -13,7 +13,8 @@ module Transit
 
       def scope_class
         return @_scope_class unless @_scope_class.nil?        
-        @_scope_class = self.class.to_s.split("::").last.gsub(/controller/i, '').singularize.constantize
+        default_scope_class = self.class.to_s.split("::").last.gsub(/controller/i, '').singularize
+        @_scope_class = Object.const_defined?(default_scope_class) ? default_scope_class.constantize : Transit.superclass_for(default_scope_class.underscore.to_sym)
       end
       
       def collection

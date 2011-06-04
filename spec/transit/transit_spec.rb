@@ -33,7 +33,12 @@ describe Transit do
     it 'returns an array of all available contexts' do
       Transit.contexts.should be_a(Array)
     end
-    specify{ Transit.contexts.should include('BodyCopy', 'Heading') }
+    specify{ Transit.contexts.should include('Text', 'Video') }
+  end
+  
+  describe '#superclass_for' do
+    specify{ Transit.superclass_for(:post).should == 'Post' }
+    specify{ Transit.superclass_for(:page).should == 'Page' }
   end
   
 end

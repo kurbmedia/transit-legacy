@@ -16,22 +16,9 @@
 				<%= f.label :published %>				
 			</li>
 			<% end %>
-			<% if @post.new_record? %>
-			<li class="clear" style="width:200px">
-				<%= f.label "Category" %>
-				<%= select_tag(:type, options_for_select(@post.class.subclasses.map(&:to_s)), :style => 'width:95%;') %>
-			</li>
-			<li style="padding-top:2em">
-				<%= f.button 'Create Post!' %>
-			</li>
-			<% else %>
 			<li class='clear' style='width:300px'>
 				<%= f.label :teaser %>
 				<%= f.text_area :teaser, :style => 'width:100%; height:100px;' %>
-			</li>
-			<li style="padding:0 1.5em;">
-				<%= f.label :topics %>
-				<%= f.collection_select :topics, Topic.all, :id, :title, {}, :multiple => true, :size => 8, :style => 'width:250px' %>
 			</li>
 			<li id="default_image" class="<%= @post.image.file? ? 'has_image' : 'no_image' %>">
 				<%= f.label :image, "Default Image" %>
@@ -50,160 +37,19 @@
 				</span>
 			</li>
 			<li class="clear">
-				<%= f.button 'Save Post', :class => 'green' %>
-			</li>			
+				<%= f.button %>
+			</li>
 		</ol>
+		<% if @post.user_id.nil? %>
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 		<% end %>
 	</fieldset>
-	<% unless @post.new_record %>
-	<fieldset id="post_assets">
-		<legend>Files &amp; Images</legend>
-		<div id="post_asset_wrapper">
-			<p>Additional images need a quick fix... to post the "main image" use the above area.</p>
-			<!-- <div id="post_images">
-							<h3>Images</h3>
-							<ul id="post_image_list">
-								<%= render(:partial => 'transit/assets/image', :collection => @post.images) unless @post.images.empty? %>
-							</ul>
-						</div>
-						<div id="post_files">
-							<h3>Files</h3>
-							<ul id="post_file_list">
-								<%= render(:partial => 'transit/assets/file', :collection => @post.files) unless @post.images.empty? %>
-							</ul>
-						</div>
-						<div id="upload_files">			
-							<h3>Upload</h3>
-							<div id="upload_list"></div>
-							<%= file_field_tag :asset_upload, :class => 'uploadify' %>
-							<%= button_link 'Start Upload', '#', :id => 'start_upload', :class => 'green' %>				
-						</div> -->
-		</div>
-		<%= link_to 'Hide/Show', '#', :id => 'post_asset_toggle' %>
-	</fieldset>
-	<fieldset id="post_body">
-		<legend>Post Body</legend>
-		<ul id="post_fields" class='contents'>
-			<%= f.fields_for :contexts do |cf| %>
-			<li class='field field_<%= cf.object.class.to_s.underscore %>' id="field_<%= cf.object.id.to_s %>">
-				<h4 class="icon_<%= cf.object.shortname %>"><%= cf.text_field :title, :value => cf.object.field_name %></h4>
-				<%= render :partial => "transit/contexts/#{cf.object.class.to_s.underscore}", :locals => { :form => cf, :field => cf.object } %>
-				<%= render :partial => 'transit/contexts/field_attrs', :locals => { :form => cf, :field => cf.object } %>
-			</li>			
-			<% end %>
-		</ul>
-		<div id="add_field">
-			<!-- <h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
-						<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
-						in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
-						<ul>
-							<% Transit::Context.subclasses.map(&:to_s).each do |type| %>
-							<li class="icon_<%= type.underscore %>">
-								<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
-							</li>
-							<% end %>
-						</ul> -->
-		</div>
-	</fieldset>
-	<p><%= f.button 'Save Post', :class => 'green' %></p>
+	
+	<% unless @post.new_record %>	
+	<%= render_fields_for(@post, :assets, f) %>
+	<%= render template: 'transit/contexts/index', locals: { form: f, parent: @post } %>
+	<%= render partial: 'transit/shared/editor' %>	
+	<p><%= f.button %></p>	
 	<% end %>
-<% end %>
-<% unless @post.new_record %>
-
-<script src="/assets/jwysiwyg/jquery.wysiwyg.js" type="text/javascript" charset="utf-8"></script>
-<script src="/assets/jwysiwyg/controls/wysiwyg.link.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-//<![CDATA[
 	
-	<% session_key = Rails.application.config.session_options[:key] %>
-	
-	var active_editor,
-		updated_opts,
-		upload_field = $('input.uploadify'),
-		upload_start = $('#start_upload'),
-		upload_data  = {
-			"_http_accept": "application/javascript",
-			"_method"     : "post",
-			csrf_token    : encodeURI($('meta[name=csrf-token]').attr('content')),
-			"authenticity_token" : '<%= form_authenticity_token %>',
-			'<%= session_key %>' : '<%= cookies[:session_key] %>',
-			"format" : "js",
-			"post_ids": "[<%= @post.id.to_s %>]"
-		};
-		
-	upload_field.uploadify({
-	    swf  : "/assets/uploadify.swf",
-		auto : false,
-		uploader		: '<%= package_assets_path %>',
-		buttonClass     : 'button',
-		buttonCursor    : 'hand',
-		buttonImage     : '',
-		buttonText      : 'Choose Files',
-		cancelImage     : '',
-		checkExisting   : false,
-		debug           : false,
-		fileObjName     : 'asset[file]',
-		fileSizeLimit   : 104857600,
-		fileTypeDesc    : 'Choose an Image or Video',
-		fileTypeExts    : '*.mov;*.mp4;*.png;*.jpg;*.jpeg;*.gif;',
-		height          : 35,
-		method          : 'post',
-		multi           : true,
-		queueID         : 'upload_list',
-		queueSizeLimit  : 999,
-		removeCompleted : false,
-		requeueErrors   : true,
-		postData        : upload_data,
-		preventCaching  : true,
-		progressData    : 'percentage',
-		successTimeout  : 30,
-		scriptAccess    : 'always',
-		transparent     : true,
-		uploadLimit     : 999,
-		uploaderType    : 'html5', // the other option is 'flash'
-		width           : 120,
-		onUploadSuccess : process_upload,
-		onUploadProgress: update_progress,
-	});
-		
-	updated_opts = $.extend({}, editor_options, 
-		{ 
-			events:{ 
-				focusin:function(event, api){ console.log(api); active_editor = $(api.original); } 
-			} 
-		});	
-		
-	upload_start.bind('click', function(event){
-		event.preventDefault();
-		$('#asset_upload').uploadifyUpload();
-	});
-
-	function create_editors(){
-		$('#post_fields textarea').wysiwyg(updated_opts);
-	}	
-	create_editors();
-	
-	function process_upload(file, data, success){
-		var resp = $.parseJSON(data),
-			item = $(resp.content);
-		if(resp.image) item.hide().appendTo($('#post_image_list'));
-		else item.hide().appendTo($('#post_file_list'));
-		item.fadeIn('fast');
-		$('#' + file.id).find('span.fileName').css("background-position", "-225px 50%");
-		$('#asset_upload').uploadifyCancel(file.id);
-	}
-	
-	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
-		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100),
-			imagew 	   = 225, 
-			bgx 	   = (imagew * (percentage * 0.1));
-		$('#' + file.id).find('span.fileName').css("background-position", bgx+"% 50%");
-		return false;		
-	}
-	
-	
-	
-//]]>
-</script>
 <% end %>

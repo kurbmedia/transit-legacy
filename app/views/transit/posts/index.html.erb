@@ -1,6 +1,6 @@
 <%= page_id('transit_index') %>
-<%= page_title("Transit: Manage Posts") %>
-<h1>Manage Posts</h1>
+<%= page_title("Transit: Manage #{t("#{scope_name.singularize}_collection", :scope => :transit)}") %>
+<h1>Manage <%= t("#{scope_name.singularize}_collection", :scope => :transit) %></h1>
 <%= paginate(@posts, :remote => true) %>
 <table border="0" id="listing">
 	<thead>
@@ -17,5 +17,5 @@
 </table>
 <%= paginate(@posts, :remote => true) %>
 <div class='buttons'>
-	<%= button_link 'Add a New Post', new_post_path, :class => 'green' %>
+	<%= button_link "Add a New #{t(scope_name.singularize, :scope => :transit)}" , new_polymorphic_path(scope_class.new), :class => 'green' %>
 </div>

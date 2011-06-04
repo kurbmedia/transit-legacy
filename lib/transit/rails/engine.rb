@@ -8,6 +8,10 @@ module Transit
   class Engine < Rails::Engine
     isolate_namespace Transit 
     
+    config.paths['app/models'] << 'app/models/contexts'
+    config.paths['app/models'] << 'app/models/transit'
+    config.eager_load_paths << 'app/models/contexts'    
+    
     ##
     # After initialization, dynamically create controllers for models 
     # that have been defined in application routes.
@@ -17,12 +21,6 @@ module Transit
       gen.generate!
     end
 
-    initializer 'transit.controller_hooks' do
-      ActiveSupport.on_load(:after_initialize) do
-        TransitController.send(:include, Transit::Controller::Routing)
-      end
-    end
-    
     initializer 'transit.paperclip' do
       def Paperclip.logger
         Rails.logger 

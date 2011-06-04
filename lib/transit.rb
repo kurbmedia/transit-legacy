@@ -5,7 +5,13 @@ require 'mongoid'
 module Transit
     
   module Model
-    autoload :Helpers,  'transit/model/helpers'
+    autoload :Assets,        'transit/model/assets'
+    autoload :Attachments,   'transit/model/attachments'
+    autoload :AutoIncrement, 'transit/model/auto_increment'
+    autoload :Comments,      'transit/model/comments'
+    autoload :Topics,        'transit/model/topics'
+    autoload :Base,          'transit/model/base'
+    autoload :Hooks,         'transit/model/hooks'
   end
   
   module Controller
@@ -16,7 +22,8 @@ module Transit
   end
   
   module Errors
-    autoload :InvalidContext, 'transit/errors/invalid_context'
+    autoload :InvalidContext,   'transit/errors/invalid_context'
+    autoload :ResourceNotFound, 'transit/errors/resource_not_found'
   end
   
   DESCRIPTIONS = {}
@@ -30,7 +37,7 @@ module Transit
   end
 
   def self.contexts
-    Transit::Context.subclasses.map(&:to_s).uniq
+    ["Text","Video", "Audio"]
   end
   
   def self.track(klass, template)
@@ -42,8 +49,13 @@ module Transit
     DESCRIPTIONS[template] ||= []
   end
   
+  def self.superclass_for(template)
+    DESCRIPTIONS[template].detect do |klass|
+      klass.constantize.superclass === Object
+    end
+  end
+  
 end
-require 'transit/posts'
-require 'transit/pages'
+require 'transit/model/hooks'
 require 'transit/rails/engine'
 require 'transit/rails/routing'

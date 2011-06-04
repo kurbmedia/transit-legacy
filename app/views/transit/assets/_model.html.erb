@@ -1,0 +1,24 @@
+<fieldset id="post_assets">
+	<legend>Files &amp; Images</legend>
+	<div id="post_asset_wrapper">
+		<div id="post_images">
+			<h3>Images</h3>
+			<ul id="post_image_list">
+				<%= render partial: 'transit/assets/image', collection: parent.images %>
+			</ul>
+		</div>
+		<div id="post_files">
+			<h3>Files</h3>
+			<ul id="post_file_list">
+				<%= render partial: 'transit/assets/file', collection: parent.files %>
+			</ul>
+		</div>
+		<div id="upload_files">			
+			<h3>Upload</h3>
+			<div id="upload_list"></div>
+			<%= file_field_tag :asset_upload, :class => 'uploadify' %>
+			<%= button_link 'Start Upload', '#', :id => 'start_upload', :class => 'green' %>				
+		</div>
+	</div>
+	<%= link_to 'Hide/Show', '#', :id => 'post_asset_toggle' %>
+</fieldset>

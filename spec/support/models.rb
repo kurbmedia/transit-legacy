@@ -1,27 +1,3 @@
-class ContextField < Transit::Context
-end
-
-class BodyCopy < Transit::Context
-end
-
-class Heading < Transit::Context
-end
-
-Fabricator(:context, :class_name => :context_field) do
-  name ""
-  meta {}
-  body Faker::Lorem.words(3).join(" ")
-end
-
-Fabricator(:post_text, :class_name => :text) do
-  name ""
-  meta {}
-end
-
-Fabricator(:post) do
-  title { Fabricate.sequence(:title) { |i| "This is post number #{i}" } }
-end
-
 module ModelHelpers
   
   def change_and_reset_attribute(obj, atr, newval)

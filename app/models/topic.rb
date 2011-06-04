@@ -7,9 +7,6 @@ class Topic
   
   validates :title, :presence => true
   modded_with :sluggable, :fields => :title, :as => :slug 
-  
-  references_and_referenced_in_many :posts
   scope :for_type, lambda{ |type| where(:post_types => type) }
-  
   
 end

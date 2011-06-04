@@ -1,7 +1,7 @@
-<li class='field field_<%= @field.class.to_s.underscore %>'>
-<%= fields_for "#{@post.class.to_s.underscore}[content_fields_attributes][#{Time.now.to_i}]", @field do |child| %>
-	<h4><%= child.text_field :title, :value => @field.field_name %></h4>
-	<%= render :partial => @field.class.to_s.underscore, :locals => { :form => child, :field => child.object } %>
-	<%= render :partial => 'field_attrs', :locals => { :form => child, :field => child.object } %>
+<li class='field field_<%= @context.class.to_s.underscore %>'>
+<%= fields_for "#{@package.class.to_s.underscore}[context_attributes][#{Time.now.to_i}]", context do |child| %>
+	<h4 class="icon_<%= context.shortname %>"><%= child.text_field :title, :value => context.field_name %></h4>
+	<%= render partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: child, context: context } %>
+	<%= render partial: 'field_attrs', locals: { form: child, context: context } %>
 <% end %>
 </li>
