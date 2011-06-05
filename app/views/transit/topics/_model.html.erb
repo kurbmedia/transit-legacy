@@ -1,4 +1,4 @@
 <li style="padding:0 1.5em;">
 	<%= form.label :topics %>
-	<%= form.select :topics, options_for_select(Topic.ascending(:title).all.map{ |t| [t.title, t.id.to_s]}, form.object.topic_ids.map(&:to_s)), {}, :multiple => true, :size => 8, :style => 'width:250px' %>
+	<%= form.select :topic_ids, options_for_select(Topic.ascending(:title).all.map{ |t| [t.title, t.id.to_s]}, form.object.topic_ids.map(&:to_s)), {}, :multiple => true, :size => 8, :style => 'width:250px' %>
 </li>

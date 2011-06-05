@@ -20,6 +20,7 @@
 				<%= f.label :teaser %>
 				<%= f.text_area :teaser, :style => 'width:100%; height:100px;' %>
 			</li>
+			<%= render_fields_for(@post, :topics, f) %>
 			<li id="default_image" class="<%= @post.image.file? ? 'has_image' : 'no_image' %>">
 				<%= f.label :image, "Default Image" %>
 				<% if @post.image.file? %>
