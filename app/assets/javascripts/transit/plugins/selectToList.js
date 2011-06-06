@@ -28,12 +28,12 @@
 		rem_link   = opts.rem  || $('<a href="#" class="icon_delete remove_from_list">Remove</a>');
 		field_name = opts.name || this.attr('name');
 		
-		$('a.remove_from_list').bind('click', remove_from_list);
+		$('a.remove_from_list').bind('click.selectToList', remove_from_list);
 		
-		add_link.bind('click', function(event, id, name){
+		add_link.bind('click.selectToList', function(event, id, name){
 			event.preventDefault();
 			var to_add = id || all_list.val().toString(), 
-				newli, newel;			
+				newli, newel, new_rem_link;			
 			if ( $.inArray(to_add, existing) != -1 ) return true;
 			
 			newli = $("<li></li>");		
@@ -43,10 +43,12 @@
 			newli.text(name || all_list.find("option:selected").text())
 				.append(newel);
 			
+			new_rem_link = rem_link.clone(true);
+			
 			newli.attr('rel', to_add);
 			newel.attr({ name:field_name, value: to_add });
-			newli.append(rem_link);
-			rem_link.bind("click", remove_from_list);
+			newli.append(new_rem_link);
+			new_rem_link.bind("click.selectToList", remove_from_list);
 			existing.push(to_add);
 		});
 		
