@@ -1,4 +1,25 @@
-<li style="padding:0 1.5em;">
-	<%= form.label :topics %>
-	<%= form.select :topic_ids, options_for_select(Topic.ascending(:title).all.map{ |t| [t.title, t.id.to_s]}, form.object.topic_ids.map(&:to_s)), {}, :multiple => true, :size => 8, :style => 'width:250px' %>
-</li>
+<fieldset id="topic_list">
+	<legend><%= t(:topics, :scope => [:transit, :legends]) %></legend>
+	<ol>
+		<li>
+			<%= select_tag :topic_ids, options_for_select(Topic.all.collect{ |t| [t.title, t.id.to_s] }), id: 'all_topics_list' %>
+			<%= link_to 'Add', '#', class: 'add_to_list icon_add', id:'add_topic_link' %>			
+		</li>
+		<li id="topic_selections" rel="<%= "#{form.object_name}[topic_ids][]" %>">
+			<ul>
+				<% form.object.topics.each do |topic| %>
+				<li rel="<%= topic.id.to_s %>">
+					<%= topic.title %>
+					<%= hidden_field_tag "#{form.object_name}[topic_ids][]", topic.id.to_s %>
+					<%= link_to 'Remove', '#', class: 'icon_delete remove_from_list' %>
+				</li>
+				<% end %>
+			</ul>
+		</li>
+	</ol>
+</fieldset>
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+	$('#all_topics_list').selectToList({ target:'#topic_selections ul', name:$('#topic_selections').attr('rel'), add:$('#add_topic_link')});
+//]]>
+</script>

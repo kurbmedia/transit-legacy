@@ -10,3 +10,8 @@
 		<%= form.select :video_type, options_for_select(Video.sources, context.video_type) %>
 	</li>
 </ol>
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+	$('div.video_player').trigger('transit:loadVideo');
+//]]>
+</script>

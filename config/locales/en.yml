@@ -6,3 +6,6 @@ en:
     post: 'Post'
     blog: 'Blog Post'
     article: 'Article'
+    
+    legends:
+      topics: "Topics"

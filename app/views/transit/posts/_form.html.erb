@@ -1,53 +1,54 @@
 <%= form_for @post, :as => :post, :validate => true do |f| %>
+	<% unless @post.new_record? %>
+	<div id="published_option" class='fieldset'>
+		<%= f.check_box :published %>
+		<%= f.label :published %>
+	</div>
+	<% end %>
 	<fieldset id="post_info">
-		<legend>Post Information</legend>
-		<ol class="split">
+		<legend>Post Detail</legend>
+		<ol>
 			<li>
 				<%= f.label :title %>
-				<%= f.text_field :title, :style => 'width:400px' %>
+				<%= f.text_field :title, :style => 'width:100%' %>
 			</li>
-			<li class='multifield'>
-				<%= f.label :post_date %>
-				<%= f.date_select :post_date, :order => [:month, :day, :year], :use_short_month => true %>
-			</li>
-			<% unless @post.new_record? %>
-			<li class='inline' style='padding:2.5em 0 0 1em'>
-				<%= f.check_box :published %>
-				<%= f.label :published %>				
-			</li>
-			<% end %>
-			<li class='clear' style='width:300px'>
+			<li>
 				<%= f.label :teaser %>
-				<%= f.text_area :teaser, :style => 'width:100%; height:100px;' %>
+				<%= f.text_area :teaser, :style => 'width:100%; height:125px;' %>
 			</li>
-			<%= render_fields_for(@post, :topics, f) %>
-			<li id="default_image" class="<%= @post.image.file? ? 'has_image' : 'no_image' %>">
-				<%= f.label :image, "Default Image" %>
-				<% if @post.image.file? %>
-				<span class="existing">
-					<%= image_tag(@post.default_image, :width => 85) %>
-				</span>				
-				<% end %>
-				<span class="upload">
-					<strong>Replace</strong>
-					<%= f.file_field :image, :style => 'width:100%; margin-bottom:1.5em' %>
-				</span>
+		</ol>
+	</fieldset>
+	<fieldset id="post_publishing">
+		<legend>Post Date</legend>
+		<ol>
+			<li class='multifield datepicker' style="white-space:nowrap">
+				<%= f.label :post_date %>
+				<%= f.date_select :post_date, { :order => [:month, :day, :year], :use_short_month => true } %>
+			</li>			
+		</ol>
+	</fieldset>
+	<%= render_fields_for(@post, :topics, f) %>
+	<% unless @post.new_record? %>
+	<fieldset id="post_assets">
+		<legend>Files and Images</legend>
+		<div class="toggle_area">
+			<div id='default_image'>
+				<h3>Primary Image</h3>
+				<ol>
+					<li>
+						<%= f.label "#{@post.image.file? ? 'Replace' : 'Upload'}" %>
+						<%= f.file_field :image %>
+					</li>
+				</ol>
 				<span class="options">
 					<%= f.check_box :display_image %> <strong>Display With Post? <span data-help-for="image_display">Whats this?</span></strong>
 					<small data-help-info="image_display">Un-check this option if you would like to exclude the default image from your actual post page. Useful if you would like to use something else at the top of your post. This does not effect "listing" pages.</small>
-				</span>
-			</li>
-			<li class="clear">
-				<%= f.button %>
-			</li>
-		</ol>
-		<% if @post.user_id.nil? %>
-		<%= f.hidden_field :user_id, :value => current_user.id %>
-		<% end %>
+				</span>			
+			</div>
+			<%= render_fields_for(@post, :assets, f) %>
+		</div>
+		<%= link_to 'Hide/Show', '#', :class => 'toggle_fieldset' %>
 	</fieldset>
-	
-	<% unless @post.new_record %>	
-	<%#= render_fields_for(@post, :assets, f) %>
 	<%= render template: 'transit/contexts/index', locals: { form: f, parent: @post } %>
 	<%= render partial: 'transit/shared/editor' %>	
 	<p><%= f.button %></p>	
