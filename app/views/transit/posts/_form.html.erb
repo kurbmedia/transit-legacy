@@ -26,11 +26,11 @@
 				<%= f.date_select :post_date, { :order => [:month, :day, :year], :use_short_month => true } %>
 			</li>			
 		</ol>
-	</fieldset>
-	<% if @post.new_record? %>
-	<p><%= f.button %></p>
-	<% end %>
+	</fieldset>	
 	<%= render_fields_for(@post, :topics, f) %>
+	<% if @post.new_record? %>
+	<p style='clear:both'><%= f.button %></p>
+	<% end %>
 	<% unless @post.new_record? %>
 	<fieldset id="post_assets">
 		<legend>Files and Images</legend>
