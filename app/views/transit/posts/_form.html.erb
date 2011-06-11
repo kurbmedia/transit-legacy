@@ -27,6 +27,9 @@
 			</li>			
 		</ol>
 	</fieldset>
+	<% if @post.new_record? %>
+	<p><%= f.button %></p>
+	<% end %>
 	<%= render_fields_for(@post, :topics, f) %>
 	<% unless @post.new_record? %>
 	<fieldset id="post_assets">
