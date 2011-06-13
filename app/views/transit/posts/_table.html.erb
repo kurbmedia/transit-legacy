@@ -2,7 +2,7 @@
 <tr<%= cycle(""," class='even'") %>>
 	<td><%= post.title %></td>
 	<td><%= post.timestamp %></td>
-	<td><%= link_to 'Edit', edit_polymorphic_path(post) %></td>
-	<td><%= link_to 'Delete', edit_polymorphic_path(post), :method => :delete, :confirm => 'Are you sure?' %></td>
+	<td><%= link_to 'Edit', transit.edit_polymorphic_path(post) %></td>
+	<td><%= link_to 'Delete', transit.edit_polymorphic_path(post), :method => :delete, :confirm => 'Are you sure?' %></td>
 </tr>
 <% end %>

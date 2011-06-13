@@ -1,3 +1,5 @@
+//= require jqtools/flashembed
+
 $(function(){
 
 	var flashvars = {
@@ -19,7 +21,8 @@ $(function(){
 		src: '/assets/video_player.swf',
 		allowfullscreen: 'true',
 		allowscriptaccess: 'always',
-		bgcolor: '#000000'
+		bgcolor: '#000000',
+		wmode: 'opaque'
 	};
 	
 	$('div.video_player')
