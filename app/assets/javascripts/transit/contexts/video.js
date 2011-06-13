@@ -31,9 +31,9 @@ $(function(){
 		.trigger('transit:loadVideo');
 	
 	function load_video(){
-		var self = $(this), nvars, src = self.attr('data-video-source');
-		if(self.hasClass('youtube_player')){
-			src = ((/youtube/).test(src)) ? src : "http://www.youtube.com/watch?v=" + src;
+		var self = $(this), nvars, src = self.attr('data-video-source'), type = self.data('video-type');
+		if( type && type == 'youtube' ){
+			src = ((/youtube/).test(src)) ? src : "http://www.youtube.com/v/" + src;
 		}
 		nvars = $.extend({}, flashvars, { movie:src })
 		self.flashembed(fparams, nvars);
