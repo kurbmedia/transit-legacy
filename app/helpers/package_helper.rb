@@ -15,6 +15,10 @@ module PackageHelper
     end.join("\n").html_safe
   end
   
+  def deliver_rss(post)
+    send(:"#{post.class.name.to_s.underscore}_path", post.slug)
+  end
+  
   private
   
   def deliver_media_context(type, context, attrs = {})

@@ -10,7 +10,7 @@ module Transit
       end
       
       def has_comments?
-        self.comment_count > 1
+        self.comment_count >= 1
       end
       
     end
