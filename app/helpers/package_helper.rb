@@ -22,7 +22,7 @@ module PackageHelper
   private
   
   def deliver_media_context(type, context, attrs = {})
-    content_tag(:div, "", data: { id: "#{type}_player_#{context.id}" }.merge(attrs), class: "#{type}_player")
+    content_tag(:div, "", { id: "#{type}_player_#{context.id}", data: attrs }, class: "#{type}_player")
   end
   
 end
