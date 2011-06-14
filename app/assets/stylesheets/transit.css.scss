@@ -3,5 +3,45 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree ./transit 
 */
+
+$transit-fieldset-background-color:#ccc !default;
+$transit-heading-font-color:#333 !default;
+$transit-link-color:#1a7bad !default;
+$transit-button-color:lighten(#1a7bad, 20%) !default;
+$transit-button-active-color:lighten(#1a7bad, 10%) !default;
+$transit-secondary-color:#ad361a !default;
+
+@import "includes/transit";
+
+@mixin icon24($row:1, $bgx:0px, $offset:0px){
+	background-image:url('transit/icon24x24.png'); background-repeat:no-repeat;
+	$y: ($row - 1) * -24px;
+	background-position:$bgx $y;
+}
+
+@mixin fileIcon($row:1, $bgx:0px, $offset:0px){
+	background-image:url('transit/icon24x24_files.png'); background-repeat:no-repeat;
+	$y: ($row - 1) * -24px;
+	background-position:$bgx $y;
+}
+
+a[href$='.zip'], a[href$='.rar'], a[href$='.gzip']{
+	@include fileIcon(6);
+}
+
+a[href$='.wav'], a[href$='.mp3'], a.file_icon_audio{ @include fileIcon(7); }
+a[href$='.mp4'], a[href$='.wmv'], a[href$='.mov'], a[href$='.mpeg'], a.file_icon_video{ @include fileIcon(8); }
+a[href$='.swf'], a[href$='.flv'], a[href$='.fla'], a.file_icon_flash{ @include fileIcon(9); }
+a[href$='.pdf'], a.file_icon_pdf{ @include fileIcon(1); }
+a[href$='.doc'], a[href$='.docx'], a.file_icon_word{ @include fileIcon(2); }
+a[href$='.csv'], a[href$='.xls'], a[href$='.xlsx'], a.file_icon_excel{ @include fileIcon(3); }
+a[href$='.ppt'], a[href$='.pptx'], a[href$='.key'], a.file_icon_powerpoint{ @include fileIcon(4); }
+a[href$='.tif'], a[href$='.tiff'], a[href$='.bmp'], a.file_icon_image{ @include fileIcon(5); }
+a[href$='.eps'], a[href$='.ai'], a.file_icon_vector{ @include fileIcon(10); }
+
+@mixin iconSquare($size:32){
+	display:block; width:#{$size}px; height:#{$size}px; text-indent:-9999em;
+}
+
+@import "./transit/*";

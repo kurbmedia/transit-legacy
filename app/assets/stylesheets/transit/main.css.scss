@@ -1,8 +1,3 @@
-@import "transit/defaults";
-@import "includes/transit";
-@mixin iconSquare($x){}
-@mixin icon24($x){}
-
 td, th{ padding:.5em; }
 th{ color:white; }
 tr:hover td{ background:lighten(#ccc, 10%) !important; }
@@ -14,7 +9,6 @@ div.buttons{ position:absolute; top:0; right:10px; }
 legend{ font-size:1em !important; padding:.5em; margin:0; }
 fieldset{ background:#f1f7f8; border-color:darken(#f1f7f8, 1%); }
 span[data-help-for]{ cursor:pointer; cursor:hand; @include iconSquare(24); @include icon24(1); }
-h1{ padding:0; @include adjust-leading-to(1.5); }
 
 #post_body{ clear:both;
 	
