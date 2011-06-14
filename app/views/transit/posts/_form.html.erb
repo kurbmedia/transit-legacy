@@ -39,6 +39,9 @@
 				<h3>Primary Image</h3>
 				<ol>
 					<li>
+						<% unless @post.preview_image_url.nil? %>
+						<span class="image"><%= image_tag(@post.preview_image_url) %></span>
+						<% end %>
 						<%= f.label "#{@post.image.file? ? 'Replace' : 'Upload'}" %>
 						<%= f.file_field :image %>
 					</li>

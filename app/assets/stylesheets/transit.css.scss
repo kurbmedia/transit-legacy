@@ -15,13 +15,13 @@ $transit-secondary-color:#ad361a !default;
 @import "includes/transit";
 
 @mixin icon24($row:1, $bgx:0px, $offset:0px){
-	background-image:url('transit/icon24x24.png'); background-repeat:no-repeat;
+	background-image:url('/assets/transit/icon24x24.png'); background-repeat:no-repeat;
 	$y: ($row - 1) * -24px;
 	background-position:$bgx $y;
 }
 
 @mixin fileIcon($row:1, $bgx:0px, $offset:0px){
-	background-image:url('transit/icon24x24_files.png'); background-repeat:no-repeat;
+	background-image:url('/assets/transit/icon24x24_files.png'); background-repeat:no-repeat;
 	$y: ($row - 1) * -24px;
 	background-position:$bgx $y;
 }
