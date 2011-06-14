@@ -23,6 +23,11 @@ module Transit
         self.assets.reject{ |asset| asset.image? }
       end
       
+      # Override to show a "default image" in the admin.
+      def preview_image_url
+        nil
+      end
+      
       module ClassMethods
         ##
         # Convenience method for Paperclip's has_attached_file to ensure fields also exist.
