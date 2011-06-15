@@ -2,8 +2,7 @@
 //= depend_on transit/core
 
 $(function(){
-	var flashvars = transit.config["context.video"],
-		params = {
+	var params = {
 			src: '/assets/video_player.swf',
 			allowfullscreen: 'true',
 			allowscriptaccess: 'always',
@@ -13,7 +12,6 @@ $(function(){
 
 	$('div.video_player')
 		.bind('transit:loadVideo', load_video)
-		.live('transit:loadVideo', load_video)
 		.trigger('transit:loadVideo');
 	
 	function load_video(){
@@ -30,7 +28,8 @@ $(function(){
 		}
 		
 		if( image != "" ) nvars.image = image;
-		self.flashembed(params, $.extend({}, flashvars, nvars));
+		nvars = $.extend({}, transit.config["context.video"], nvars);
+		self.flashembed(params, nvars);
 	}
 	
 });
