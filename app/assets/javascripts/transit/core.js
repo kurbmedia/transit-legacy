@@ -1,4 +1,6 @@
 // Default transit core file.
+//= require_self
+//= require transit/config
 
 (function($){
 	
