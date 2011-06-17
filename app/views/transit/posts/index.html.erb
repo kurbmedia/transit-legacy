@@ -17,5 +17,5 @@
 </table>
 <%= paginate(@posts, :remote => true) %>
 <div class='buttons'>
-	<%= button_link "Add a New #{t(scope_name.singularize, :scope => :transit)}" , new_polymorphic_path(scope_class.new), :class => 'green' %>
+	<%= button_link "Add a New #{t(scope_name.singularize, :scope => :transit)}" , new_polymorphic_path(scope_class.new) %>
 </div>
