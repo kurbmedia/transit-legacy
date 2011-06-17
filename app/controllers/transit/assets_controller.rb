@@ -2,21 +2,19 @@ require 'mime/types'
 class Transit::AssetsController < TransitController
   
   before_filter :update_params, :only => [:create, :update]
-  respond_to :js, :json
-  respond_to :html, :only => :index
+  respond_to :js, :json, :html
+  skip_before_filter :verify_authenticity_token
+  skip_before_filter :authenticate_for_transit!
+  skip_before_filter :authenticate_admin!
    
   def create
-    
-    post_ids = params.delete(:post_ids)
-    page_ids = params.delete(:page_ids)
-    
-    @asset = Transit::Asset.new(params[:asset])
-    [post_ids].flatten.compact.each{ |p| @asset.posts << Transit::Post.find(params[:id]) }
-    [page_ids].flatten.compact.each{ |p| @asset.pages << Transit::Page.find(params[:id]) }
+    @asset  = Transit::Asset.new(params[:asset])
+    @parent = params[:resource_type].constantize.find(params[:resource_id])
+    @asset.assetable = @parent
     @asset.save
+    Rails.logger.info("adlsakjdlaskjdklasdjklsajsakldjlkadajslkdaj")
     flash[:success] = "Upload successful!"
-    respond_with(@asset)
-    
+    respond_with(@asset)    
   end
   
   def show

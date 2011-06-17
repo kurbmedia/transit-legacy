@@ -21,7 +21,7 @@ $(function(){
 			image = self.data('video-image'),
 			type  = self.data('video-type');
 
-		nvars.movie = src;
+		nvars.movie = src || "";
 			
 		if( (type && type == 'youtube') && !(/youtube/).test(src) ) {
 			nvars.movie = "http://www.youtube.com/v/" + nvars.src;

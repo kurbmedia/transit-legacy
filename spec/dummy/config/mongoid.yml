@@ -1,0 +1,8 @@
+
+development:
+  host: localhost
+  database: transit_dev
+  
+test:
+  host: localhost
+  database: transit_dev_text

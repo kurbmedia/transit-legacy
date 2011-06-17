@@ -14,5 +14,79 @@
 	<h3>Upload</h3>
 	<div id="upload_list"></div>
 	<%= file_field_tag :asset_upload, :class => 'uploadify' %>
-	<%= button_link 'Start Upload', '#', :id => 'start_upload', :class => 'green' %>				
+	<%= link_to 'Upload!', '#', id: 'start_upload' %>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+	
+	<% session_key = Rails.application.config.session_options[:key] %>
+	
+	var upload_field = $('input.uploadify'),
+		upload_start = $('#start_upload'),
+		upload_data  = {
+			"_method"     : "post",
+			"format" : "js",
+			"resource_id": "<%= @post.id %>",
+			"resource_type": "<%= @post.class.name %>"
+		};
+		
+	upload_field.uploadify({
+	    swf  : "/assets/uploadify.swf",
+		auto : false,
+		uploader		: '<%= transit.package_assets_path %>',
+		buttonCursor    : 'hand',
+		buttonImage     : '',
+		buttonText      : 'Choose',
+		cancelImage     : '',
+		checkExisting   : false,
+		debug           : false,
+		fileObjName     : 'asset[file]',
+		fileSizeLimit   : 104857600,
+		fileTypeDesc    : 'Choose an Image or Video',
+		fileTypeExts    : '*.*;',
+		height          : 35,
+		method          : 'post',
+		multi           : true,
+		queueID         : 'upload_list',
+		queueSizeLimit  : 999,
+		removeCompleted : false,
+		requeueErrors   : true,
+		postData        : upload_data,
+		preventCaching  : true,
+		progressData    : 'percentage',
+		successTimeout  : 30,
+		scriptAccess    : 'always',
+		transparent     : true,
+		uploadLimit     : 999,
+		uploaderType    : 'html5', // the other option is 'flash'
+		width           : 75,
+		onUploadSuccess : process_upload,
+		onUploadProgress: update_progress,
+	});
+		
+	upload_start.bind('click', function(event){
+		event.preventDefault();
+		$('#asset_upload').uploadifyUpload();
+	});
+
+	function process_upload(file, data, success){
+		var resp = $.parseJSON(data),
+			item = $(resp.content);
+		if(resp.image) item.hide().appendTo($('#post_image_list'));
+		else item.hide().appendTo($('#post_file_list'));
+		item.fadeIn('fast');
+		$('#' + file.id).find('span.fileName').css("background-position", "-225px 50%");
+		$('#asset_upload').uploadifyCancel(file.id);
+	}
+	
+	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
+		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100),
+			imagew 	   = 225, 
+			bgx 	   = (imagew * (percentage * 0.1));
+		$('#' + file.id).find('span.fileName').css("background-position", bgx+"% 50%");
+		return false;		
+	}
+	
+//]]>
+</script>

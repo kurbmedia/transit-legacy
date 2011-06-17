@@ -36,6 +36,10 @@ module Transit
     @@mappings << obj
   end
 
+  def self.configure(&block)
+    yield Transit::Config
+  end
+
   def self.contexts
     ["Text","Video", "Audio"]
   end
@@ -59,3 +63,4 @@ end
 require 'transit/model/hooks'
 require 'transit/rails/engine'
 require 'transit/rails/routing'
+require 'transit/config'

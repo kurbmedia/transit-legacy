@@ -1,0 +1,5 @@
+<li id="<%= image.id %>">
+	<span class='image_asset_holder'><%= image_tag(image.file.url(:small)) %></span>
+	<%= link_to 'Delete', transit.package_asset_path(image), :method => :delete, :remote => true, :confirm => "Are you sure you want to delete this image?\n\nNOTE: Make sure you remove this image from your copy if you've used it.\n\n", :class => 'icon_delete', :title => 'Delete Image' %>
+	<%= link_to 'Detail', transit.package_asset_path(image), :remote => true, :class => 'icon_zoom', :title => 'View detail / links' %>
+</li>

@@ -1,0 +1,61 @@
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 168ms (Views: 166.8ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.2ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.2ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 3ms (Views: 1.6ms)
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 65ms
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 1ms
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 1ms
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 172ms (Views: 170.5ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.2ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.2ms)
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.1ms)
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 200 OK in 4ms (Views: 3.6ms)
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 200 OK in 2ms (Views: 1.2ms)
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.

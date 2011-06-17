@@ -1,0 +1,3002 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-16 22:36:29 -0400
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/transit" for 127.0.0.1 at 2011-06-16 22:36:34 -0400
+
+ActionController::RoutingError (No route matches [GET] "/transit"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:37:01 -0400
+  Processing by Transit::PostsController#index as HTML
+Completed 500 Internal Server Error in 54ms
+
+NoMethodError (undefined method `authenticate_for_transit!' for #<Transit::PostsController:0x00000103363310>):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:37:40 -0400
+  Processing by Transit::PostsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `descending' for nil:NilClass):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:37:41 -0400
+  Processing by Transit::PostsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `descending' for nil:NilClass):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:38:23 -0400
+  Processing by Transit::PostsController#index as HTML
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/index.html.erb within layouts/application (50.0ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (Database should be a Mongo::DB, not NilClass.):
+    1: <%= page_id('transit_index') %>
+    2: <%= page_title("Transit: Manage #{t("#{scope_name.singularize}_collection", :scope => :transit)}") %>
+    3: <h1>Manage <%= t("#{scope_name.singularize}_collection", :scope => :transit) %></h1>
+    4: <%= paginate(@posts, :remote => true) %>
+    5: <table border="0" id="listing">
+    6: 	<thead>
+    7: 		<tr>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.4ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:39:36 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(25).sort([[:post_date, :desc]])
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_table.html.erb (1.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/index.html.erb within layouts/application (86.7ms)
+Completed 200 OK in 149ms (Views: 147.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:39:36 -0400
+Compiled app/assets/stylesheets/application.css  (10ms)  (pid 67239)
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67239)
+Served asset /application.css - 200 OK  (11ms)  (pid 67239)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:39:36 -0400
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'jquery'
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/javascripts/application.js:7)
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/transit/posts" for 127.0.0.1 at 2011-06-16 22:40:42 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(25).sort([[:post_date, :desc]])
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_table.html.erb (0.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 14ms (Views: 12.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:40:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 67239)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:40:42 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67239)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67239)
+Served asset /application.js - 200 OK  (2ms)  (pid 67239)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:40:55 -0400
+  Processing by Transit::PostsController#new as HTML
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (81.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (84.0ms)
+Completed 200 OK in 134ms (Views: 133.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:40:55 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67239)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:40:56 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 67239)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:41:22 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (81.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (82.7ms)
+Completed 200 OK in 89ms (Views: 87.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:41:23 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67239)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:41:23 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 67239)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:44:31 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (3.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (96.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (144.8ms)
+Completed 200 OK in 263ms (Views: 262.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:44:32 -0400
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67530)
+Served asset /application.css - 304 Not Modified  (2ms)  (pid 67530)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:44:32 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67530)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 67530)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:45:33 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (40.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (85.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (86.3ms)
+Completed 200 OK in 93ms (Views: 92.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:45:33 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 67530)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:45:34 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67530)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 22:45:34 -0400
+Error compiling asset transit.css:
+Sprockets::FileNotFound: couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)
+
+Sprockets::FileNotFound (couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 22:45:34 -0400
+Served asset /transit.js - 404 Not Found  (46ms)  (pid 67530)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:48:57 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (87.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 96ms (Views: 94.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:48:58 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 67530)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:48:58 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67530)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 22:48:58 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67530)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 22:48:58 -0400
+Error compiling asset transit.css:
+Sprockets::FileNotFound: couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)
+
+Sprockets::FileNotFound (couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:51:47 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (4.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (108.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (157.1ms)
+Completed 200 OK in 238ms (Views: 237.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:51:48 -0400
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67676)
+Served asset /application.css - 304 Not Modified  (2ms)  (pid 67676)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 22:51:48 -0400
+Error compiling asset transit.css:
+Errno::ENOTDIR: Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/_compass.scss/blueprint
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)
+
+Errno::ENOTDIR (Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/_compass.scss/blueprint
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:51:49 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67676)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 67676)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 22:51:49 -0400
+Error compiling asset transit.js:
+Errno::ENOTDIR: Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/_compass.scss
+Served asset /transit.js - 500 Internal Server Error
+
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:54:08 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (93.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (141.6ms)
+Completed 200 OK in 222ms (Views: 220.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:54:08 -0400
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67720)
+Served asset /application.css - 304 Not Modified  (2ms)  (pid 67720)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:54:08 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67720)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 67720)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 22:54:09 -0400
+Error compiling asset transit.css:
+Errno::ENOTDIR: Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/compass/_css3.scss/blueprint
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)
+
+Errno::ENOTDIR (Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/compass/_css3.scss/blueprint
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 22:54:09 -0400
+Error compiling asset transit.js:
+Errno::ENOTDIR: Not a directory - /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/bundler/gems/compass-696d84562d63/frameworks/compass/stylesheets/compass/_css3.scss
+Served asset /transit.js - 500 Internal Server Error
+
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 22:57:29 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (3.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (94.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (175.7ms)
+Completed 200 OK in 254ms (Views: 252.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 22:57:29 -0400
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67789)
+Served asset /application.css - 304 Not Modified  (2ms)  (pid 67789)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 22:57:30 -0400
+Error compiling asset transit.css:
+Sprockets::FileNotFound: couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)
+
+Sprockets::FileNotFound (couldn't find file 'blueprint/grid'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss:3)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 22:57:30 -0400
+Served asset /transit.js - 404 Not Found  (5ms)  (pid 67789)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 22:57:30 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67789)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 67789)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:02:51 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (94.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 257ms (Views: 255.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:02:52 -0400
+Compiled app/assets/stylesheets/application.css  (0ms)  (pid 67891)
+Served asset /application.css - 304 Not Modified  (2ms)  (pid 67891)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:02:52 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 67891)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:02:52 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (179ms)  (pid 67891)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (0ms)  (pid 67891)
+Served asset /transit.css - 200 OK  (181ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:02:52 -0400
+Served asset /transit.js - 404 Not Found  (41ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:07:01 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (86.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 94ms (Views: 92.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:07:01 -0400
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+Sass::SyntaxError (Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  app/assets/stylesheets/includes/_setup.css.scss:61
+  app/assets/stylesheets/application.css.scss:8
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:07:01 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:07:02 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (77ms)  (pid 67891)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (0ms)  (pid 67891)
+Served asset /transit.css - 304 Not Modified  (79ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:07:02 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:07:35 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (43.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (87.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (88.4ms)
+Completed 200 OK in 95ms (Views: 93.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:07:35 -0400
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+Sass::SyntaxError (Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  app/assets/stylesheets/includes/_setup.css.scss:61
+  app/assets/stylesheets/application.css.scss:8
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:07:36 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:07:36 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:07:36 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:07:48 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (84.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (85.8ms)
+Completed 200 OK in 93ms (Views: 91.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:07:48 -0400
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+Sass::SyntaxError (Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  app/assets/stylesheets/includes/_setup.css.scss:61
+  app/assets/stylesheets/application.css.scss:8
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (43.3ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:07:48 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:07:49 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:07:49 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:08:36 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (92.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (94.1ms)
+Completed 200 OK in 102ms (Views: 99.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:08:36 -0400
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined mixin 'container'.
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+Sass::SyntaxError (Undefined mixin 'container'.
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  app/assets/stylesheets/application.css.scss:16:in `container'
+  app/assets/stylesheets/application.css.scss:16
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:08:37 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:08:37 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:08:37 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:08:50 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (112.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 119ms (Views: 118.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:08:50 -0400
+Compiled app/assets/stylesheets/application.css.scss  (429ms)  (pid 67891)
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/includes/_setup.css.scss)
+
+Sass::SyntaxError (Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/includes/_setup.css.scss)):
+  app/assets/stylesheets/includes/_setup.css.scss:61
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (61.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:08:51 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:08:52 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:08:52 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:09:46 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (92.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 100ms (Views: 99.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:09:46 -0400
+Compiled app/assets/stylesheets/application.css.scss  (248ms)  (pid 67891)
+Error compiling asset application.css:
+Sass::SyntaxError: Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/includes/_setup.css.scss)
+
+Sass::SyntaxError (Undefined variable: "$blueprint-font-family".
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/includes/_setup.css.scss)):
+  app/assets/stylesheets/includes/_setup.css.scss:61
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:09:47 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 67891)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:09:47 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (98ms)  (pid 67891)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (0ms)  (pid 67891)
+Served asset /transit.css - 304 Not Modified  (101ms)  (pid 67891)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:09:47 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 67891)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:10:09 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (48.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 57ms (Views: 56.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:10:09 -0400
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:10:51 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (3.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (93.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (141.7ms)
+Completed 200 OK in 263ms (Views: 261.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:10:52 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 68041)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:10:52 -0400
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:12:05 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (92.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (139.2ms)
+Completed 200 OK in 255ms (Views: 253.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:12:06 -0400
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:15:06 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (94.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (141.4ms)
+Completed 200 OK in 258ms (Views: 256.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:15:06 -0400
+Compiled app/assets/stylesheets/application.css.scss  (368ms)  (pid 68085)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (228ms)  (pid 68085)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 68085)
+Served asset /application.css - 200 OK  (599ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:15:07 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 68085)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 68085)
+Served asset /application.js - 200 OK  (2ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:15:07 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (106ms)  (pid 68085)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (0ms)  (pid 68085)
+Served asset /transit.css - 200 OK  (108ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:15:08 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68085)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68085)
+Served asset /transit.js - 200 OK  (2ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:15:24 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (86.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (87.6ms)
+Completed 200 OK in 94ms (Views: 92.8ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:15:42 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (87.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (89.2ms)
+Completed 200 OK in 96ms (Views: 95.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:15:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:15:42 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:15:43 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:15:43 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:15:44 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (89.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 97ms (Views: 95.3ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:16:07 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (45.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 53ms (Views: 51.8ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:16:29 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (88.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 97ms (Views: 96.0ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:17:33 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (84.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 92ms (Views: 91.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:17:34 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:17:34 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:17:34 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Invalid CSS after "...ound-image:url(": expected expression (e.g. fr, 2n+1), was "<%= asset_path ..."
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+Sass::SyntaxError (Invalid CSS after "...ound-image:url(": expected expression (e.g. fr, 2n+1), was "<%= asset_path ..."
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:17:35 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:17:54 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (86.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (87.4ms)
+Completed 200 OK in 94ms (Views: 92.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:17:54 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:17:54 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:17:55 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (62ms)  (pid 68085)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit/sprites.css.scss.erb  (67ms)  (pid 68085)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss  (0ms)  (pid 68085)
+Served asset /transit.css - 200 OK  (133ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:17:55 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:22:29 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (103.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 113ms (Views: 111.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:22:30 -0400
+Compiled app/assets/stylesheets/application.css.scss  (434ms)  (pid 68085)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (3ms)  (pid 68085)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 68085)
+Served asset /application.css - 304 Not Modified  (442ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:22:31 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:22:31 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:22:31 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:23:25 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (86.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (87.6ms)
+Completed 200 OK in 94ms (Views: 92.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:23:26 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:23:26 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:23:26 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:23:27 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:24:32 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (103.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 115ms (Views: 112.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:24:33 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:24:33 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:24:33 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:24:34 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:24:51 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (87.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (88.9ms)
+Completed 200 OK in 96ms (Views: 94.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:24:51 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:24:52 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:24:52 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:24:52 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:25:54 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (101.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (102.6ms)
+Completed 200 OK in 111ms (Views: 109.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:25:55 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:25:55 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:25:55 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:25:56 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:27:00 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (89.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 97ms (Views: 95.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:27:01 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:27:01 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:27:01 -0400
+Error compiling asset transit.css:
+Sprockets::FileNotFound: couldn't find file 'transit/sprites'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb:2)
+
+Sprockets::FileNotFound (couldn't find file 'transit/sprites'
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb:2)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.1ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:27:02 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:27:09 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (99.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 108ms (Views: 106.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:27:09 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:27:09 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:27:09 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:27:10 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:29:00 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (95.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 106ms (Views: 104.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:29:01 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:29:01 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:29:01 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.1ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:29:02 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:29:10 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (93.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (94.6ms)
+Completed 200 OK in 102ms (Views: 99.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:29:11 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:29:11 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:29:11 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.1ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:29:12 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:30:12 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (88.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (89.7ms)
+Completed 200 OK in 97ms (Views: 96.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:30:12 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:30:12 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:30:13 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.1ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:30:13 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:30:28 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (89.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 98ms (Views: 96.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:30:28 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:30:28 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:30:29 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.2ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:30:29 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:31:25 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (93.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 101ms (Views: 99.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:31:25 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:31:25 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:31:26 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Undefined mixin 'inline-block'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+Sass::SyntaxError (Undefined mixin 'inline-block'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:31:26 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:31:34 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (4.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (95.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 106ms (Views: 104.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:31:35 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:31:35 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:31:35 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:31:36 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:33:01 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (94.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 102ms (Views: 100.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:33:01 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:33:01 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:33:02 -0400
+Error compiling asset transit.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:33:02 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:33:15 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (93.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 101ms (Views: 99.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:33:15 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:33:15 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:33:15 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (340ms)  (pid 68085)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (0ms)  (pid 68085)
+Served asset /transit.css - 200 OK  (342ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:33:16 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:33:51 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (92.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (93.9ms)
+Completed 200 OK in 100ms (Views: 99.1ms)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:33:53 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:34:26 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (89.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 98ms (Views: 96.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:34:26 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:34:27 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:34:27 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:34:27 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:34:46 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (90.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 99ms (Views: 97.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:34:46 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:34:47 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:34:47 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:34:47 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:35:24 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (98.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (99.8ms)
+Completed 200 OK in 107ms (Views: 105.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:35:24 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:35:25 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:35:25 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:35:25 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:35:41 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (3.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (96.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 105ms (Views: 104.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:35:42 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:35:42 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:35:43 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:35:43 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:36:24 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (90.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 98ms (Views: 97.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:36:25 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:36:25 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:36:25 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:36:26 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:36:30 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (90.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 99ms (Views: 97.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:36:30 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:36:30 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:36:31 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:36:31 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:37:16 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (53.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 61ms (Views: 59.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:37:16 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:37:17 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:37:17 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:37:17 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:38:17 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (6.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (105.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 113ms (Views: 111.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:38:18 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:38:18 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:38:18 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:38:19 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:38:57 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (100.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (101.9ms)
+Completed 200 OK in 108ms (Views: 107.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:38:58 -0400
+Error compiling asset application.css:
+NoMethodError: undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)
+
+NoMethodError (undefined method `Error' for Compass:Module
+  (in /_Work/gems/temp/transit/spec/dummy/app/assets/stylesheets/application.css.scss)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:38:58 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:38:59 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:38:59 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:39:28 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (91.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 100ms (Views: 98.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:39:28 -0400
+Compiled app/assets/stylesheets/application.css.scss  (1451ms)  (pid 68085)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (705ms)  (pid 68085)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 68085)
+Served asset /application.css - 200 OK  (2160ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:39:30 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:39:31 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:39:31 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-06-16 23:39:54 -0400
+  Processing by Transit::PostsController#new as HTML
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (101.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/new.html.erb within layouts/application (102.4ms)
+Completed 200 OK in 109ms (Views: 107.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:39:54 -0400
+Compiled app/assets/stylesheets/application.css.scss  (1011ms)  (pid 68085)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 68085)
+Served asset /application.css - 200 OK  (1014ms)  (pid 68085)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:39:55 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:39:56 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:39:56 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68085)
+
+
+Started POST "/transit/posts" for 127.0.0.1 at 2011-06-16 23:40:11 -0400
+  Processing by Transit::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZkTw22dqiwVnBwhcXed+e2DJiLb9tKigSQcDA//Og0k=", "post"=>{"title"=>"Test Post", "teaser"=>"", "post_date(2i)"=>"6", "post_date(3i)"=>"17", "post_date(1i)"=>"2011"}, "commit"=>""}
+MONGODB transit_dev['$cmd'].find({"group"=>{"ns"=>"posts", "$reduce"=><BSON::Code:2188059140 @data="function(obj, prev) { if (prev.max == 'start') { prev.max = obj.uid; } if (prev.max < obj.uid) { prev.max = obj.uid; } }" @scope="{}">, "cond"=>{}, "initial"=>{:max=>"start"}}})
+MONGODB transit_dev['posts'].insert([{"published"=>false, "display_image"=>true, "topic_ids"=>[], "comment_count"=>0, "asset_ids"=>[], "title"=>"Test Post", "teaser"=>"", "post_date"=>2011-06-17 00:00:00 UTC, "_id"=>BSON::ObjectId('4dfacc9c4dd96209f5000024'), "_type"=>"Post", "updated_at"=>2011-06-17 03:40:12 UTC, "created_at"=>2011-06-17 03:40:12 UTC, "uid"=>1, "contexts"=>[{"meta"=>{}, "_id"=>BSON::ObjectId('4dfacc9c4dd96209f5000025'), "_type"=>"Text", "name"=>"Body Copy"}]}])
+Redirected to http://localhost:3000/transit/posts/4dfacc9c4dd96209f5000024/edit
+Completed 302 Found in 207ms
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:40:12 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (151.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (153.8ms)
+Completed 500 Internal Server Error in 927ms
+
+ActionView::Template::Error (uninitialized constant Nokogiri):
+    14: 			</li>
+    15: 			<li>
+    16: 				<%= f.label :teaser %>
+    17: 				<%= f.text_area :teaser, :style => 'width:100%; height:125px;' %>
+    18: 			</li>
+    19: 		</ol>
+    20: 	</fieldset>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.7ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:42:10 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (150.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (196.5ms)
+Completed 500 Internal Server Error in 321ms
+
+ActionView::Template::Error (undefined method `image' for #<Post:0x0000010368e828>):
+    42: 						<% unless @post.preview_image_url.nil? %>
+    43: 						<span class="image"><%= image_tag(@post.preview_image_url) %></span>
+    44: 						<% end %>
+    45: 						<%= f.label "#{@post.image.file? ? 'Replace' : 'Upload'}" %>
+    46: 						<%= f.file_field :image %>
+    47: 					</li>
+    48: 				</ol>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:42:53 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (141.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (20.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (25.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (300.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (302.0ms)
+Completed 500 Internal Server Error in 309ms
+
+ActionView::Template::Error (undefined method `hash_for_post_context_path' for #<Module:0x000001030e7dc0>):
+    4: 	<%= link_to('Delete', '#', :class => 'delete_field icon_delete', :confirm => 'Are you sure you want to delete this field?') %>
+    5: <% else %>
+    6: 	<%= form.hidden_field :id %>
+    7: 	<%= link_to('Delete', polymorphic_path([parent, context.becomes(Transit::Context)]), :method => :delete, :class => 'icon_delete', :remote => true, :confirm => 'Are you sure you want to delete this field?') %>
+    8: <% end %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:43:07 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (97.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (208.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (210.7ms)
+Completed 200 OK in 219ms (Views: 216.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:43:08 -0400
+Compiled app/assets/stylesheets/application.css.scss  (945ms)  (pid 68624)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (686ms)  (pid 68624)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (2ms)  (pid 68624)
+Served asset /application.css - 304 Not Modified  (1638ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:43:10 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 68624)
+Served asset /application.js - 304 Not Modified  (2ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:43:10 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (272ms)  (pid 68624)
+Served asset /transit.css - 304 Not Modified  (274ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:43:11 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68624)
+Served asset /transit.js - 304 Not Modified  (2ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:46:47 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (142.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (3.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (255.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (257.6ms)
+Completed 200 OK in 265ms (Views: 262.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:46:48 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:46:48 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:46:49 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:46:49 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/underscore.js  (126ms)  (pid 68624)
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/config'
+  (in /_Work/gems/temp/transit/app/assets/javascripts/transit/core.js:3)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:47:44 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (102.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (215.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (259.8ms)
+Completed 200 OK in 268ms (Views: 265.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:47:45 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:47:45 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:47:46 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:47:46 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/core.js  (1ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js  (8ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/core.js  (100ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/widget.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/mouse.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/position.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/sortable.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/draggable.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/jqueryui/droppable.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/help.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68624)
+Served asset /transit.js - 200 OK  (132ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:48:28 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (108.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (53.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (273.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (275.1ms)
+Completed 200 OK in 284ms (Views: 281.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:48:29 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:48:29 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:48:29 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:48:30 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:51:02 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (107.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (10.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (232.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (234.7ms)
+Completed 200 OK in 242ms (Views: 240.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:51:02 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:51:03 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:51:03 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Undefined mixin 'border-radius'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+Sass::SyntaxError (Undefined mixin 'border-radius'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:51:04 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:51:23 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (104.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (217.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (219.8ms)
+Completed 200 OK in 228ms (Views: 225.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:51:24 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:51:24 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:51:24 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:51:24 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Undefined mixin 'heading_font'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+Sass::SyntaxError (Undefined mixin 'heading_font'.
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:52:11 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (101.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (212.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (214.3ms)
+Completed 200 OK in 222ms (Views: 219.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:52:11 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:52:12 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:52:12 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Undefined variable: "$transit-heading-font-color".
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+Sass::SyntaxError (Undefined variable: "$transit-heading-font-color".
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:52:13 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:52:19 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (156.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (225.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (227.3ms)
+Completed 200 OK in 236ms (Views: 234.4ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:52:36 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (102.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (216.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (218.5ms)
+Completed 200 OK in 226ms (Views: 223.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:52:37 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:52:37 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:52:38 -0400
+Error compiling asset transit.css:
+Sass::SyntaxError: Undefined variable: "$transit-heading-font-color".
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)
+
+Sass::SyntaxError (Undefined variable: "$transit-heading-font-color".
+  (in /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:52:38 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:52:43 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (109.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (48.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (54.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (267.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (269.6ms)
+Completed 200 OK in 277ms (Views: 274.8ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:53:20 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (110.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (9.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (232.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (234.4ms)
+Completed 200 OK in 249ms (Views: 241.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:53:20 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:53:20 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:53:21 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:53:21 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (352ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (0ms)  (pid 68624)
+Served asset /transit.css - 200 OK  (355ms)  (pid 68624)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:53:22 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (2ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:55:38 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (105.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (217.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (219.6ms)
+Completed 200 OK in 227ms (Views: 224.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:55:38 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:55:38 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:55:39 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:55:39 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js  (8ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/plugins/datepicker.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/plugins/select_to_list.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68624)
+Served asset /transit.js - 200 OK  (20ms)  (pid 68624)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:55:39 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:56:39 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (102.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (50.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (258.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (260.0ms)
+Completed 200 OK in 268ms (Views: 265.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:56:39 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:56:40 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:56:40 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (408ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (0ms)  (pid 68624)
+Served asset /transit.css - 200 OK  (410ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:56:40 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:56:41 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:57:07 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (109.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (230.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (231.9ms)
+Completed 200 OK in 240ms (Views: 237.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:57:08 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:57:08 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:57:08 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (332ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (0ms)  (pid 68624)
+Served asset /transit.css - 200 OK  (335ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:57:09 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:57:09 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:59:10 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (108.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (228.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (231.3ms)
+Completed 200 OK in 239ms (Views: 237.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:59:11 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:59:11 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:59:11 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:59:12 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js  (9ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/context_fields.js  (0ms)  (pid 68624)
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/cms/wysiwyg'
+  (in /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/editor/wysiwyg.image.js:1)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:59:12 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-16 23:59:56 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (112.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (3.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (55.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (285.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (287.7ms)
+Completed 200 OK in 296ms (Views: 293.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-16 23:59:57 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-16 23:59:58 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-16 23:59:58 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (5ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js  (9ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/editor/wysiwyg.image.js  (1ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/editor/wysiwyg.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/editor/wysiwyg.link.js  (1ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/uploads.js  (15ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68624)
+Served asset /transit.js - 200 OK  (79ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-16 23:59:58 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?6709633" for 127.0.0.1 at 2011-06-16 23:59:59 -0400
+Served asset /transit-editor.css - 404 Not Found  (3ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-16 23:59:59 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:00:55 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (105.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (219.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (220.9ms)
+Completed 200 OK in 228ms (Views: 226.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:00:56 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:00:56 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:00:56 -0400
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (364ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/stylesheets/transit.css.scss.erb  (0ms)  (pid 68624)
+Served asset /transit.css - 200 OK  (367ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:00:57 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?79541574" for 127.0.0.1 at 2011-06-17 00:00:57 -0400
+Served asset /transit-editor.css - 404 Not Found  (3ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:00:58 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/contexts/new?type=Text" for 127.0.0.1 at 2011-06-17 00:01:09 -0400
+  Processing by Transit::ContextsController#new as HTML
+  Parameters: {"type"=>"Text", "post_id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Completed 406 Not Acceptable in 10ms
+
+
+Started GET "/assets/transit-editor.css?65960643" for 127.0.0.1 at 2011-06-17 00:01:11 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:01:56 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (3.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (124.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (256.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (257.9ms)
+Completed 200 OK in 267ms (Views: 264.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:01:57 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:01:57 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 68624)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 68624)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 68624)
+Served asset /application.js - 200 OK  (3ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:01:57 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:01:57 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?93922044" for 127.0.0.1 at 2011-06-17 00:01:58 -0400
+Served asset /transit-editor.css - 404 Not Found  (3ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:01:58 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/contexts/new?type=Video" for 127.0.0.1 at 2011-06-17 00:02:02 -0400
+  Processing by Transit::ContextsController#new as HTML
+  Parameters: {"type"=>"Video", "post_id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Completed 406 Not Acceptable in 51ms
+
+
+Started GET "/assets/transit-editor.css?96278979" for 127.0.0.1 at 2011-06-17 00:02:04 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:02:04 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (104.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (222.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (223.9ms)
+Completed 200 OK in 231ms (Views: 229.4ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:02:05 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:02:05 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:02:05 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:02:06 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?56312663" for 127.0.0.1 at 2011-06-17 00:02:06 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:02:06 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:02:14 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (109.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (226.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (228.4ms)
+Completed 200 OK in 236ms (Views: 233.9ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:02:29 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (108.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (229.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (231.4ms)
+Completed 200 OK in 239ms (Views: 237.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:02:30 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:02:30 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:02:31 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:02:31 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?95063684" for 127.0.0.1 at 2011-06-17 00:02:31 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:02:32 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/contexts/new?type=Text" for 127.0.0.1 at 2011-06-17 00:02:33 -0400
+  Processing by Transit::ContextsController#new as JS
+  Parameters: {"type"=>"Text", "post_id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (0.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_wrapper.html.erb (4.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/new.js.erb (7.0ms)
+Completed 200 OK in 58ms (Views: 48.4ms)
+
+
+Started GET "/assets/transit-editor.css?95063684" for 127.0.0.1 at 2011-06-17 00:02:34 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:03:41 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (159.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (3.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (9.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (229.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (231.8ms)
+Completed 200 OK in 240ms (Views: 237.7ms)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:03:41 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:03:42 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:03:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:03:42 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?8130131" for 127.0.0.1 at 2011-06-17 00:03:42 -0400
+Served asset /transit-editor.css - 404 Not Found  (3ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:03:43 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/contexts/new?type=Text" for 127.0.0.1 at 2011-06-17 00:03:45 -0400
+  Processing by Transit::ContextsController#new as JS
+  Parameters: {"type"=>"Text", "post_id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (0.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_wrapper.html.erb (3.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/new.js.erb (4.7ms)
+Completed 200 OK in 21ms (Views: 11.4ms)
+
+
+Started GET "/assets/transit-editor.css?8130131" for 127.0.0.1 at 2011-06-17 00:03:45 -0400
+Served asset /transit-editor.css - 404 Not Found  (3ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:03:47 -0400
+  Processing by Transit::PostsController#edit as JS
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (107.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (3.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (10.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (226.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb (229.7ms)
+Completed 200 OK in 240ms (Views: 237.8ms)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:08:54 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (106.8ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (3.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (220.2ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (222.1ms)
+Completed 200 OK in 229ms (Views: 227.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:08:55 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:08:55 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:08:55 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'tranist/ui'
+  (in /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js:9)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:08:56 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:08:56 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:10:15 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (1.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (115.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.7ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (8.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (236.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (238.8ms)
+Completed 200 OK in 246ms (Views: 244.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:10:15 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:10:16 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:10:16 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:10:16 -0400
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (3ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin.js  (11ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/context_fields.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/admin/uploadify.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit/ui.js  (0ms)  (pid 68624)
+Compiled /_Work/gems/temp/transit/app/assets/javascripts/transit.js  (0ms)  (pid 68624)
+Served asset /transit.js - 200 OK  (26ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?35453538" for 127.0.0.1 at 2011-06-17 00:10:17 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:10:17 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-06-17 00:10:41 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+MONGODB transit_dev['topics'].find({})
+Rendered /_Work/gems/temp/transit/app/views/transit/topics/_model.html.erb (2.5ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_image.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_file.html.erb (0.0ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/assets/_model.html.erb (117.4ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_text.html.erb (0.3ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/_field_attrs.html.erb (2.6ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/contexts/index.html.erb (7.9ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/shared/_editor.html.erb (0.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/_form.html.erb (247.1ms)
+Rendered /_Work/gems/temp/transit/app/views/transit/posts/edit.html.erb within layouts/application (249.5ms)
+Completed 200 OK in 258ms (Views: 255.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-06-17 00:10:41 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-06-17 00:10:42 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.css" for 127.0.0.1 at 2011-06-17 00:10:42 -0400
+Served asset /transit.css - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-06-17 00:10:42 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 68624)
+
+
+Started GET "/assets/transit-editor.css?49310322" for 127.0.0.1 at 2011-06-17 00:10:43 -0400
+Served asset /transit-editor.css - 404 Not Found  (2ms)  (pid 68624)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit-editor.css"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/transit/icon24x24.png" for 127.0.0.1 at 2011-06-17 00:10:43 -0400
+Served asset /transit/icon24x24.png - 304 Not Modified  (0ms)  (pid 68624)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})

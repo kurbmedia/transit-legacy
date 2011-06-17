@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy</title>
+  <%= include_javascripts :jquery => '1.6.0', :source => :google %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>  
+  <%= transit_assets %>
+</head>
+<body id="<%= page_id %>">
+	<div id="wrapper">
+		<%= yield %>
+	</div>
+</body>
+</html>

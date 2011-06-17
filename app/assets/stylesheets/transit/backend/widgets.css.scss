@@ -1,0 +1,36 @@
+div.jcalendar{
+	td, th{ padding:0px; font-size:11px; text-align:center; 
+		a{ display:block; padding:5px; }
+	}
+	th{ background:black; color:white; padding:5px;}
+	td{ border-right:1px solid #ccc; border-bottom:1px solid #ccc; }	
+	table{ width:100%; margin:0; }
+	table tr td:first-child{ border-left:1px solid #ccc; }
+	a.selected{ background:$transit-secondary-color; color:white; font-weight:bold; }
+	tbody tr td{ padding:0px !important; line-height:1;}
+}
+div.jcalendar-links{ background:#555; padding:0px 5px !important;
+	a{ @include inline-block; width:32%; font-size:11px; padding:0; height:15px !important; vertical-align:middle; line-height:15px; color:white; text-decoration:none;
+		&.link-today{ text-align:center; }
+		&.link-next{ text-align:right; }
+	}
+}
+
+#upload_files{ 
+	div.uploadify{ float:left; }
+	#upload_list{ border:1px dotted darken($transit-fieldset-background-color, 10%); background:white; padding:5px; margin-bottom:.5em; }
+	#asset_upload_button, #start_upload{ display:block; float:left; height:30px; line-height:30px; text-align:center; 
+		color:white; text-decoration:underline; padding:0 10px 0 30px; background:darken($transit-fieldset-background-color, 30%);
+	}
+	#asset_upload_button{ width:75px; @include transit_icon24(21, 0px, 2px); }
+	#start_upload{ @include transit_icon24(22); float:right; }	
+	div.uploadifyQueueItem{ padding-right:30px; position:relative;
+		div.uploadifyProgress{ display:none; }
+		span.fileName{ position:relative; display:block; text-indent:5px; height:24px; line-height:24px; z-index:1000; background-image:url(/images/progress_animation.gif); background-repeat:no-repeat; background-position:-225px 50%; font-size:11px; overflow:hidden; white-space:nowrap; }
+		span.data{ display:none; }
+		div.cancel{ position:absolute; top:0px; right:0px; 
+			@include icon24(2); @include iconSquare(24);
+			img{ display:none; }
+		}
+	}
+}

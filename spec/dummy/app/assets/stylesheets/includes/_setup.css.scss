@@ -1,0 +1,95 @@
+////////////////////////////////////////////////
+// Import Blueprint defaults
+////////////////////////////////////////////////
+@import "blueprint/grid";
+@import "blueprint/typography";
+@import "blueprint/form";
+@import "blueprint/interaction";
+@import "blueprint/debug";
+
+/////////////////////////////////////////////////
+// Import CSS3 Goodness
+/////////////////////////////////////////////////
+@import "compass/utilities/sprites";
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/gradient";
+@import "compass/css3/font-face";
+@import "compass/css3/pie";
+@import "compass/css3/opacity";
+@import "compass/utilities/general/min";
+@import "compass/typography/lists";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/transform";
+
+////////////////////////////////////////////////
+// Blueprint grid setup.
+////////////////////////////////////////////////
+
+$blueprint-grid-columns: 24;
+$blueprint-container-size: 960px;
+$blueprint-grid-margin: 10px;
+$blueprint-grid-width: 30px;
+
+// Grid image generation
+@import 'compass/layout/grid-background';
+$grid-background-column-color:#eef2f9;
+$grid-background-baseline-color:rgba(0,0,0,0.15);
+$grid-background-gutter-color:#fff;
+$grid-background-offset:0px;
+
+////////////////////////////////////////////////
+// IE Support (enable in IE.scss)
+////////////////////////////////////////////////
+$experimental-support-for-pie: false;
+$legacy-support-for-ie6: false;
+
+////////////////////////////////////////////////
+// CSS3 Text Shadow
+////////////////////////////////////////////////
+$default-text-shadow-color: black;
+$default-text-shadow-h-offset: 1px;
+$default-text-shadow-v-offset: 1px;
+$default-text-shadow-blur: 1px;
+$default-border-radius: 10px;
+
+////////////////////////////////////////////////
+// Blueprint typography setup.
+////////////////////////////////////////////////
+$font-color: #333333;
+
+// Notifications
+$feedback-border-color: #dddddd;
+$success-color: #3e5a3d;
+$success-bg-color: #ddf5c4;
+$success-border-color: #a7da74;
+$notice-color: #514721;
+$notice-bg-color: #fff6bf;
+$notice-border-color: #ffd324;
+$info-color: #be9109;
+$info-bg-color: #fbf1d2;
+$info-border-color: #ffcc33;
+$error-color: #bd132a;
+$error-bg-color: #fde0e4;
+$error-border-color: #E41D38;
+
+////////////////////////////////////////////////
+// Blueprint table setup.
+////////////////////////////////////////////////
+$blueprint-table-header-color: #333;
+$blueprint-table-stripe-color: #ccc;
+
+////////////////////////////////////////////////
+// Blueprint button setup.
+////////////////////////////////////////////////
+$blueprint-button-font-family:$blueprint-font-family;
+$blueprint-button-background-color:#333;
+$blueprint-button-border-color:darken($blueprint-button-background-color, 10%);
+$blueprint-button-font-color:#fff;
+$blueprint-button-hover-background-color:#555;
+$blueprint-button-hover-border-color:darken($blueprint-button-hover-background-color, 10%);
+$blueprint-button-hover-font-color:$blueprint-button-font-color;
+$blueprint-button-active-background-color:#444;
+$blueprint-button-active-border-color:darken($blueprint-button-active-background-color, 10%);
+$blueprint-button-active-font-color:white;

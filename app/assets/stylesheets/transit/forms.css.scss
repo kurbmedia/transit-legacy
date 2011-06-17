@@ -1,0 +1,101 @@
+@import 'blueprint/form';
+@import "blueprint/utilities";
+@import 'compass/css3/border-radius';
+
+
+// Notifications
+$feedback-border-color: #dddddd !default;
+$success-color: #3e5a3d !default;
+$success-bg-color: #ddf5c4 !default;
+$success-border-color: #a7da74 !default;
+$notice-color: #514721 !default;
+$notice-bg-color: #fff6bf !default;
+$notice-border-color: #ffd324 !default;
+$info-color: #be9109 !default;
+$info-bg-color: #fbf1d2 !default;
+$info-border-color: #ffcc33 !default;
+$error-color: #bd132a !default;
+$error-bg-color: #fde0e4 !default;
+$error-border-color: #E41D38 !default;
+
+///////////////////////////////////////////////
+// Setup forms
+///////////////////////////////////////////////
+
+form{ 	@include blueprint-form-borders; 
+		@include blueprint-form-layout; 
+	
+	ol.split{ display:block; clear:both; margin:-.5em 0px; @include pie-clearfix;		
+		li{ 
+			float:left; 
+			margin:0px 1em 0px 0px; 
+			vertical-align:middle;
+			
+			label, 
+			input[type=text], 
+			input[type=password], 
+			input[type=email]{ display:block; }			
+			select{ margin:.75em 0px; }			
+		}
+	}	
+	ol{ list-style-type:none !important; margin:0px; padding:0px; padding-right:10px;		
+		li{ padding:.5em 0px;			
+			&.clear{ clear:both; }
+			&.buttons{ clear:both; padding:.25em 0px 0px 0px; }
+			&.inline label{ display:inline !important; }
+			&.multifield{
+				input, select{ display:inline !important; }
+			}
+			
+			ol{ @extend ol.split; }
+		}
+		
+		label{ display:block; }
+	}
+	
+	ol.inline li.label{ display:inline !important; }
+	label abbr{ outline:none; border:none; color:red; }
+	input[type=text], 
+	input[type=password], 
+	input[type=email], 
+	textarea{ 
+		@include border-radius(2px); padding:.65em;
+		&:focus{ outline:none; border-color:#333; }
+	}
+	select{ border-style:solid !important;
+		&:focus{ outline:none; }
+	}
+	select[multiple=multiple]{ 
+		@include border-radius(2px); border-color:#ccc; 
+	}
+	input[type=checkbox], 
+	input[type=radio]{ 
+		display:inline; margin-right:1em; vertical-align:baseline; width:auto; }
+
+	span.field_with_errors{ padding:0px; line-height:1; margin:0px; position:relative;		
+		input[type=text],
+		input[type=password], 
+		input[type=email], 
+		textarea{ 
+			border:1px solid $error-border-color; background:$error-bg-color; margin-bottom:0px;
+		}		
+		span.errors_for_field{ 
+			line-height:.75em; font-size:.9em; font-style:italic; color:$error-color; display:block; 
+		}
+	}
+	label{ font-size:12px !important; }
+}
+
+
+////////////////////////////////////
+// Notifications
+////////////////////////////////////
+div.error, div.notice, div.success, div.alert{ padding: .8em; margin-bottom: 1em; border-width:.17em; border-style:solid; position:relative; }
+.error, .alert { background-color:$error-bg-color; border-color:$error-border-color; color:$error-color; }
+.notice        { background-color:$info-bg-color; border-color:$info-border-color; color:$info-color; }
+.success       { background-color:$success-bg-color; border-color:$success-border-color; color:$success-color; }
+
+div.flash_message{ position:fixed; top:0; left:0; height:40px; line-height:45px; font-size:1.3em; border-left:none; border-right:none; border-top:none;
+	width:100%; z-index:8000; padding:0 !important; text-align:center; border-bottom-width:2px; cursor:pointer; cursor:hand;
+	span{ font-size:.8em; font-style:italic; padding-left:1em; }
+}

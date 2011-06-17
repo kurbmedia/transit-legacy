@@ -51,5 +51,5 @@ class Transit::PostsController < TransitController
     flash[:success] = "The selected post was deleted."
     respond_with(@post, :location => polymorphic_path(scope_class))
   end
-  
+
 end

@@ -41,4 +41,10 @@ describe Transit do
     specify{ Transit.superclass_for(:page).should == 'Page' }
   end
   
+  describe '#configure' do
+    it 'yields Transit::Config' do
+      Transit.configure.should_yield Transit::Config
+    end
+  end
+  
 end

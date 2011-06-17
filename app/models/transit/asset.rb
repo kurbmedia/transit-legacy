@@ -5,30 +5,19 @@ module Transit
     include Mongoid::Timestamps
     include Paperclip::Glue
     store_in :assets
+    auto_increment
   
     field :name,                :type => String
     field :meta,                :type => Hash
-    field :uid,                 :type => Integer
     field :file_file_name,      :type => String
     field :file_content_type,   :type => String
     field :file_file_size,      :type => Integer
     field :file_updated_at,     :type => DateTime
   
-    belongs_to    :assetable, :polymorphic => true    
-    before_create :generate_uid
+    belongs_to    :assetable, :polymorphic => true
     before_save   :set_default_name
   
-    has_attached_file :file,
-      :styles => {
-        :full     => "475x>",
-        :thumb    => "50x50#",
-        :small    => "100x100#",
-        :medium   => "300x>",
-        :original => "1500x1500>" # Resize the original to avoid storing huge images on S3
-      },    
-      :path => ":rails_root/public/system/assets/:uid/:style.:extension",
-      :url  => "/system/assets/:uid/:style.:extension",
-      :default_style => :full
+    has_attached_file :file, Transit::Config.assets      
   
     # Determine if this asset is an image
     def image?
@@ -46,11 +35,6 @@ module Transit
     end
 
     private
-
-    def generate_uid
-      return true unless self.uid.nil?
-      self.uid = Asset.max(:uid).to_i + 1
-    end
 
     def set_default_name
       return true unless self.name.to_s.blank?

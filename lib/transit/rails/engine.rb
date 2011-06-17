@@ -8,6 +8,8 @@ module Transit
   class Engine < Rails::Engine
     isolate_namespace Transit 
     
+    config.transit = Transit
+    
     config.paths['app/models'] << 'app/models/contexts'
     config.paths['app/models'] << 'app/models/transit'
     config.eager_load_paths << 'app/models/contexts'    
