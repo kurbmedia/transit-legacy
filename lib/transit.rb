@@ -12,6 +12,7 @@ module Transit
     autoload :Topics,        'transit/model/topics'
     autoload :Base,          'transit/model/base'
     autoload :Hooks,         'transit/model/hooks'
+    autoload :Owners,        'transit/model/owners'
   end
   
   module Controller

@@ -5,7 +5,7 @@
 		<%= f.label :published %>
 	</div>
 	<% end %>
-	<% if @post.respond_to?(:user=) %>
+	<% if @post.delivers?(:owner) %>
 	<%= f.hidden_field(:user, :value => current_user.id) if @post.user.nil? %>
 	<% end %>
 	
