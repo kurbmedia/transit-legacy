@@ -5,6 +5,10 @@
 		<%= f.label :published %>
 	</div>
 	<% end %>
+	<% if @post.respond_to?(:user=) %>
+	<%= f.hidden_field(:user, :value => current_user.id) if @post.user.nil? %>
+	<% end %>
+	
 	<fieldset id="post_info">
 		<legend>Post Detail</legend>
 		<ol>
@@ -26,7 +30,7 @@
 				<%= f.date_select :post_date, { :order => [:month, :day, :year], :use_short_month => true } %>
 			</li>			
 		</ol>
-	</fieldset>	
+	</fieldset>		
 	<%= render_fields_for(@post, :topics, f) %>
 	<% if @post.new_record? %>
 	<p style='clear:both'><%= f.button %></p>
@@ -59,5 +63,4 @@
 	<%= render partial: 'transit/shared/editor' %>	
 	<p><%= f.button %></p>	
 	<% end %>
-	
 <% end %>
