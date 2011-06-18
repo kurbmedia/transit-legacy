@@ -1,3 +1,8 @@
-<ul id="post_file_list">
-	<%= render partial: 'transit/assets/file', collection: form.object.files %>
-</ul>
+<div class='panel'>
+	<h4 class='ui-dialog-titlebar ui-widget-header ui-state-default'>
+		Uploaded Files
+	</h4>
+	<ul id="post_file_list">
+		<%= render partial: 'transit/assets/file', collection: parent.files %>
+	</ul>
+</div>

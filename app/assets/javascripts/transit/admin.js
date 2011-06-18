@@ -5,6 +5,7 @@
 //= require_self
 //= require transit/ui
 //= require_tree ./admin
+//= require_tree ./upload
 
 $(function(){
 	

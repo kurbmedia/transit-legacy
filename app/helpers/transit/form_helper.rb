@@ -9,16 +9,8 @@ module Transit::FormHelper
   render partial: "transit/#{type.to_s}/fields/#{method.to_s}", locals: { form: form }
  end
  
- def render_widget(title, name, form, html_opts = {})
-  content   = capture{ render partial: "transit/widgets/#{name}", locals: { title: title, form: form } }
-  html_opts.reverse_merge!({ id: "#{title.to_s.gsub(" ", "").underscore}" })
-  klasses = html_opts[:class].to_s.split(" ")
-  html_opts.merge!({ class: klasses.push('panel').compact.join(" ") })
-  
-  tagnames = action_name.to_s.match(/new/i) ? [:fieldset, :legend] : [:div, :h4]
-  content_tag(tagnames.first, html_opts) do 
-    content_tag(tagnames.last, "#{title}") << content
-  end
+ def render_widget(name, form, html_opts = {})
+   render partial: "transit/widgets/#{name}", locals: { form: form }
  end
  
  def render_fields_for(model, pack, form)

@@ -41,11 +41,14 @@
 			</li>
 		</ol>
 	</div>
-	<%= render_widget('Upload', 'uploading', f) %>
-	<%= render_widget('Uploaded Images', 'image_list', f) %>
-	<%= render_widget('Uploaded Files', 'file_list', f) %>
 </div>
 <% end %>
+<div id="post_assets">
+	<%= render partial: 'transit/widgets/uploading', locals: { parent: @post } %>
+	<%= render partial: 'transit/widgets/image_list', locals: { parent: @post } %>
+	<%= render partial: 'transit/widgets/file_list', locals: { parent: @post } %>	
+</div>
+
 
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
