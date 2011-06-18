@@ -9,7 +9,7 @@
 
 #transit_edit_post{	
 	#post_options{ @include column(8, true); float:right;
-		div.panel{ padding:45px 1em 1em 1em; background:$transit-fieldset-background-color; border:2px solid darken($transit-fieldset-background-color, 5%); position:relative; margin-bottom:2px; overflow:hidden;
+		div.panel{ padding:30px 1em 1em 1em; background:$transit-fieldset-background-color; border:2px solid darken($transit-fieldset-background-color, 5%); position:relative; margin-bottom:2px; overflow:hidden;
 			h4{ position:absolute; top:0px; left:0px; height:25px; line-height:25px; width:100%; text-indent:1em; font-size:12px;
 				@include transit_icon24(23, 98%);
 			} 
@@ -17,6 +17,26 @@
 				h4{ @include transit_icon24(24, 98%); }
 			}
 		}
+	}
+	#post_file_list, #post_image_list{ list-style-type:none; margin:0; padding:0; 
+		li{ display:block; padding:5px 0; border-bottom:1px dotted darken($transit-fieldset-background-color, 5%); position:relative; }
+	}
+	#post_image_list{
+		a.icon_zoom{ @include iconSquare(24); @include transit_icon24(19); position:absolute; top:30px; left:50px; }
+		a.icon_delete{ position:absolute; top:5px; left:50px; }
+		span.image_asset_holder{ display:block; width:50px; height:50px; overflow:hidden;
+			img{ width:100%; }
+		}
+	}
+	#uploaded_images, #uploaded_files{
+		h4{ margin-bottom:0; }
+	}
+	
+	#default_image{
+		input{ width:150px; }
+		ol, li{ margin:0; padding:0; }
+		#post_display_image{ display:inline; margin:0; width:40px; }
+		span.image{ width:85px; height:85px; margin:0 10px 1em 0; overflow:hidden; display:block; float:left; border:1px solid #777; }
 	}
 	
 }

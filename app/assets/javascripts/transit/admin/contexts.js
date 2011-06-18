@@ -1,11 +1,8 @@
+//= require jqueryui/mouse
+//= require jqueryui/widget
+//= require jqueryui/sortable
 $(function(){
-
-	$('#context_fields li.field')
-		.live('mouseenter.transit', function(event){
-			$(this).addClass('active_field');
-		})
-		.live('mouseleave.transit', function(event){
-			$(this).removeClass('active_field');
-		});
 	
+	$('#context_fields').sortable({ handle: 'ul.option_bar' });
+
 });

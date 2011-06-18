@@ -2,7 +2,7 @@
 <%= form_for @post, :as => :post, :validate => true do |f| %>
 <div id="transit_edit_toolbar">
 	<ul>
-		<li id="add_field">
+		<li id="add_field" class='menu'>
 			Add a Field
 			<ol>
 				<% Transit.contexts.map(&:to_s).each do |type| %>
@@ -12,9 +12,9 @@
 				<% end %>
 			</ol>
 		</li>
-		<li id="post_date">
+		<li id="post_date" class='menu'>
 			<%= f.label :post_date %>
-			<div class='multifield datepicker'>				
+			<div id="post_date_menu" class='multifield datepicker'>				
 				<%= f.date_select :post_date, { order: [:month, :day, :year], use_short_month: true } %>
 			</div>
 		</li>
@@ -28,7 +28,22 @@
 	<%= render partial: 'form', locals: { form: f } %>
 </div>
 <div id="post_options">
-
+	<div id='default_image' class='panel'>
+		<h4>Primary Image</h4>
+		<ol>
+			<li class='inline'>
+				<% unless resource.preview_image_url.nil? %>
+				<span class="image"><%= image_tag(resource.preview_image_url) %></span>
+				<% end %>
+				<%= f.label "#{resource.image.file? ? 'Replace' : 'Upload'}" %>
+				<%= f.file_field :image %>
+				<%= f.check_box :display_image %> <%= f.label 'Display with post?' %>
+			</li>
+		</ol>
+	</div>
+	<%= render_widget('Upload', 'uploading', f) %>
+	<%= render_widget('Uploaded Images', 'image_list', f) %>
+	<%= render_widget('Uploaded Files', 'file_list', f) %>
 </div>
 <% end %>
 

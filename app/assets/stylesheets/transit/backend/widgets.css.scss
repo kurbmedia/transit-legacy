@@ -9,6 +9,7 @@ div.jcalendar{
 	a.selected{ background:$transit-secondary-color; color:white; font-weight:bold; }
 	tbody tr td{ padding:0px !important; line-height:1;}
 }
+div.jcalendar-selects{ background:#333; text-align:center; }
 div.jcalendar-links{ background:#555; padding:0px 5px !important;
 	a{ @include inline-block; width:32%; font-size:11px; padding:0; height:15px !important; vertical-align:middle; line-height:15px; color:white; text-decoration:none;
 		&.link-today{ text-align:center; }

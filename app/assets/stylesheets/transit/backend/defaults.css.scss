@@ -1,65 +1,16 @@
-#transit_edit_toolbar{ width:100%; height:40px; background:#333; margin-bottom:2em; overflow:visible !important;
-	ul{ @include inline-block-list; color:white; margin:0; padding:3px 1em 0px 1em; font-size:11px; text-align:right; overflow:visible !important;
-		li{ text-align:left; margin-right:1em; font-weight:bold; }
-		a.toolbar_button{ display:block; height:30px; line-height:30px; padding:0px 1em 0px 25px; white-space:nowrap;
-			color:white; text-decoration:none;
-		}
-		#toggle_status{ white-space:nowrap; }
-		a.delete_post_button{ @include transit_icon24(2, 0px, 2px); }
-		span.widget-switchbutton{ height:25px; line-height:25px; position:relative; overflow:hidden;
-			@include border-radius(10px); border:1px solid #777; width:90px; vertical-align:middle; margin-left:5px;
-			input[type='checkbox']{ position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:500; }
-			span.widget-switch-button-off, span.widget-switch-button-on{ display:inline-block; height:100%; padding:0 5px; color:white; 
-				padding-left:25px; position:absolute; top:0px; left:0px; width:100%; height:100%; background:transparent;
-			}
-			span.widget-switch-button-off{ @include transit_icon24(25, 0px, 2px); display:block; }
-			span.widget-switch-button-on{ @include transit_icon24(26, 0px, 2px); display:none; }
-		}
-		#add_field{ @include transit_icon24(27, 0px, 3px); display:block; float:left; position:relative; padding:3px 1em 0px 30px; height:40px;
-			ol{ display:none; margin:0; padding:0 5px 5px 5px; position:absolute; top:30px; left:-5px; width:200px; z-index:2000;
-				li{ display:block; float:none; background:#555; width:100%; padding:0; height:30px; line-height:30px; margin-bottom:1px;
-					a{ display:block; height:100%; padding-left:30px; text-decoration:none; color:white;
-						&:hover{ background:#333; }
-					}
-				}
-				li.icon_text a{ @include transit_icon24(17); }
-				li.icon_video a{ @include transit_icon24(18); }
-				li.icon_audio a{ @include transit_icon24(20, 0px, 3px); }
-			}
-			&:hover{ background-color:#555;
-				ol{ display:block; background:#333; }
-			}
-		}
-		span.switchbutton-active{	
-			background:#666;		
-			span.widget-switch-button-on{ display:block; }
-			span.widget-switch-button-off{ display:none; }
-		}
-		#post_date{
-			div{ display:none; position:absolute; bottom:35px; left:-5px; border:5px solid #666; background:white; width:300px; }
-			&:hover{  background:#666;
-				div{ display:block; }
-			}
-		}
-	}
-}
 fieldset{ position:relative; }
 ul#context_fields{ padding:0; width:100%; list-style-type:none; margin:0 40px 0 0;
 	li.field{ padding:.5em; position:relative; border:1px solid #ccc; margin-bottom:1em; overflow:visible; border:1px dashed #ccc;
-		h4{ height:30px; line-height:30px; text-indent:30px; color:$font-color; margin:0; width:100%;
-			input{ background:none; padding:0px; border:none; margin:0px; @include border-radius(0px); height:22px; line-height:22px; font-size:14px; color:$font-color; position:relative; top:-1px;
-				&:focus{ border:1px dotted #aaa; }
+		ul.option_bar{ @include inline-block-list; margin:0; padding:0; overflow:hidden; z-index:2000;
+			position:absolute; top:-1px; right:0px; background-color:#eee; outline:1px solid #ccc; cursor:move; text-align:right;
+			li{ text-align:left; padding:0; }
+			li.hint{ display:none; float:left; padding-left:1em; font-style:italic; color:#777; font-size:11px; }
+			&:hover{ width:100%; 
+				li.hint{ display:block; }
 			}
 		}
-		div.option_bar{ width:100%; position:absolute; top:-30px; left:0px; display:none;
-			background-color:#eee; border:1px solid #ccc; cursor:move; height:30px; overflow:hidden;
-		}
-		a.icon_delete{ position:absolute; top:.25em; right:.5em; @include iconSquare(24); }
+		a.icon_delete{ @include iconSquare(24); }
 	}
-	li.active_field{
-		div.option_bar{ display:block; }
-	}
-	
 	li.field_video{ text-align:center;
 		*{ text-align:left; }
 		div.video_player{ margin:0px auto 2em auto; height:320px; }

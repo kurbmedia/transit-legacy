@@ -1,8 +1,15 @@
 <%= form.hidden_field :_type, :value => context.class.to_s %>
 <%= form.hidden_field :position, :rel => 'field_position' %>
+<li class='hint'>
+	Drag and drop to re-order fields
+</li>
 <% if context.new_record? %>
+<li>
 	<%= link_to('Delete', '#', class: 'transit_delete_field icon_delete', confirm: 'Are you sure you want to delete this field?') %>
+</li>
 <% else %>
+<li>
 	<%= form.hidden_field :id %>
 	<%= link_to('Delete', polymorphic_path([parent, context.becomes(Transit::Context)]), method: :delete, class: 'icon_delete', remote: true, confirm: 'Are you sure you want to delete this field?') %>
+</li>
 <% end %>
