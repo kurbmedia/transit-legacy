@@ -1,31 +1,40 @@
 <%= page_id('transit_edit_post') %>
 <%= form_for @post, :as => :post, :validate => true do |f| %>
+<div id="transit_edit_toolbar">
+	<ul>
+		<li id="add_field">
+			Add a Field
+			<ol>
+				<% Transit.contexts.map(&:to_s).each do |type| %>
+				<li class="icon_<%= type.underscore %>">
+					<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
+				</li>
+				<% end %>
+			</ol>
+		</li>
+		<li id="post_date">
+			<%= f.label :post_date %>
+			<div class='multifield datepicker'>				
+				<%= f.date_select :post_date, { order: [:month, :day, :year], use_short_month: true } %>
+			</div>
+		</li>
+		<li class='inline' id="toggle_status">
+			<%= f.check_box :published %>				
+		</li>
+		<li><%= link_to 'Delete Post', polymorphic_path(resource), method: :delete, confirm: 'Are you sure?', class: 'toolbar_button delete_post_button' %></li>
+	</ul>
+</div>
 <div id="post">	
 	<%= render partial: 'form', locals: { form: f } %>
 </div>
 <div id="post_options">
-	<div id="option_boxes">
-		<ol class='split'>
-			<li class='inline'>
-				Status:
-				<%= f.check_box :published %>				
-			</li>
-			<li>
-				<%= link_to 'Preview', polymorphic_path(resource) %>
-			</li>
-		</ol>
-	</div>
-	<%= render_widget('Add a Field', 'field_list', f) %>
-	<%= render_widget('Post Date', 'publishing', f, { class: 'closed' }) %>
+
 </div>
 <% end %>
-<div class='buttons'>
-	<%= button_link "Delete this Post", polymorphic_path(resource), method: :delete, confirm: 'Are you sure?' %>
-</div>
 
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
-	$('#option_boxes #post_published').switchbutton({states:['Published', 'Pending']});
+	$('#transit_edit_toolbar #post_published').switchbutton({states:['Published', 'Pending']});
 	$('#post_detail h4, #post_date h4').triggerHandler("click");
 //]]>
 </script>

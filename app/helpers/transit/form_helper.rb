@@ -1,6 +1,8 @@
 module Transit::FormHelper
  unloadable
  
+ 
+ 
  def render_inline_post_field(method, form)
    render_inline_field(:posts, method, form)
  end

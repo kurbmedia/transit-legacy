@@ -1,3 +1,5 @@
+//= require jqueryui/widget
+
 (function($){
 	
  	$.widget('ui.switchbutton', {
@@ -27,7 +29,7 @@
 			self.element.css({ opacity:0 })
 				.bind('click.switchbutton', function(event){
 					self._wrapper.toggleClass('switchbutton-active', self.element.get(0).checked);
-				});
+				}).trigger('click.switchbutton');
 		},
 		value: function() {
 			return this.element.val();

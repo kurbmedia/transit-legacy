@@ -22,12 +22,6 @@
 }
 #post{ @include column(16); min-height:500px; }
 div.buttons{ position:absolute; top:0px; right:0px; }
-#add_field_list{ list-style-type:none; margin:0; padding:0;
-	li{ display:block; background:darken($transit-fieldset-background-color, 4%); margin-bottom:.5em; padding:0; border:1px solid darken($transit-fieldset-background-color, 10%);}
-	a{ display:block; text-indent:30px; color:#333; font-weight:bold; text-decoration:none; height:30px; line-height:30px;
-		&:hover{ background-color:darken($transit-fieldset-background-color, 20%); }
-	}			
-}
 
 //
 //#post_form{
