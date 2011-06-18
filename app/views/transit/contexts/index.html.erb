@@ -1,25 +1,10 @@
-<fieldset id="post_body">
-	<legend>Body</legend>
-	<ul id="context_fields" class='contents'>
-	<%= form.fields_for :contexts do |cform| %>
-		<% context = cform.object %>
-		<li class='field field_<%= context.class.to_s.underscore %>' id="field_<%= context.id.to_s %>">
-			<h4 class="icon_<%= context.shortname %>"><%= cform.text_field :title, :value => context.field_name %></h4>
-			<%= render partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: cform, context: context } %>
-			<%= render partial: 'transit/contexts/field_attrs', locals: { parent: form.object, form: cform, context: context } %>
-		</li>
-	<% end %>
-	</ul>
-	<div id="add_field">
-		<h3>Add A Field. <span data-help-for="add_field">Help!</span></h3>
-		<p data-help-info="add_field">You can add fields to the body of this post using the the options below. Drag and drop each field on the left to set the order 
-		in which it will be output in the page. You can use the title bar to drag.<br /><br />Click on the title (in the grey bar) of a field to re-name it.</p>
-		<ul>
-			<% Transit.contexts.map(&:to_s).each do |type| %>
-			<li class="icon_<%= type.underscore %>">
-				<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-</fieldset>
+<ul id="context_fields" class='contents'>
+<%= form.fields_for :contexts do |cform| %>
+	<% context = cform.object %>
+	<li class='field field_<%= context.class.to_s.underscore %>' id="field_<%= context.id.to_s %>">
+		<h4 class="icon_<%= context.shortname %>"><%= cform.text_field :title, :value => context.field_name %></h4>
+		<%= render partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: cform, context: context } %>
+		<%= render partial: 'transit/contexts/field_attrs', locals: { parent: form.object, form: cform, context: context } %>
+	</li>
+<% end %>
+</ul>

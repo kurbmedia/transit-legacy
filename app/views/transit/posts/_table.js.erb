@@ -2,7 +2,7 @@ $("#listing tbody").slideUp('fast',
 	function(){
 		$(this)
 			.empty()
-			.html("<%= escape_javascript(render(:partial => "table.html.erb", :locals => { :resources => @posts })) %>")
+			.html("<%= escape_javascript(render(:partial => "table.html.erb", :locals => { :resources => collection })) %>")
 			.slideDown('fast');
-			$('p.pagination').replaceWith("<%= escape_javascript(paginate(@posts, :remote => true)) %>");	
+			$('p.pagination').replaceWith("<%= escape_javascript(paginate(collection, :remote => true)) %>");	
 	});

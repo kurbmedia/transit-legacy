@@ -29,6 +29,6 @@ Gem::Specification.new do |s|
   s.add_dependency("nokogiri", ["~> 1.4"])
   s.add_dependency("motr", [">= 0.1.0"])
   s.add_dependency("kaminari", ['= 0.12.4'])
-  s.add_dependency("paperclip", ["~> 2.3"])  
+  s.add_dependency("paperclip", ["~> 2.3"])
   
 end

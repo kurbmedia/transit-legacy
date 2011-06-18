@@ -1,5 +1,6 @@
 module TransitHelper
   unloadable
+  include Transit::FormHelper
   
   def transit_assets
     return '' unless controller.class.name.match(/Transit/)

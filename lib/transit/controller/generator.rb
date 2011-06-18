@@ -16,12 +16,10 @@ module Transit
           typed_classes = Transit.lookup(type).dup.map!(&:constantize)
           
           typed_classes.each do |sup|          
-            sup.subclasses.each do |klass|
+            sup.subclasses.each do |klass|              
               controller_name = to_controller(klass) 
-              next if Transit.const_defined?( controller_name, false )            
-              new_klass = Class.new( parent_controller(sup) )
-              Transit.const_set( controller_name, new_klass)
-              ActiveSupport::Dependencies::reference(Transit.const_get(controller_name))
+              next if Transit.const_defined?( controller_name, false )
+              eval "class Transit::#{controller_name} < Transit::#{parent_controller(sup)}; end"
             end
           end
           
@@ -30,7 +28,7 @@ module Transit
       
       def parent_controller(str)
         p = ActiveSupport::Inflector.pluralize(str.to_s.classify)
-        p = Transit.const_get("#{p}Controller")
+        "#{p}Controller"
       end
       
       def to_controller(str)

@@ -1,10 +1,31 @@
-<%= page_id('transit_edit') %>
-<%= page_title("Edit: #{@post.title}") %>
-<h1>Edit: <%= @post.title %></h1>
-<div id="post_form">
-	<%= render :partial => 'form' %>
+<%= page_id('transit_edit_post') %>
+<%= form_for @post, :as => :post, :validate => true do |f| %>
+<div id="post">	
+	<%= render partial: 'form', locals: { form: f } %>
 </div>
+<div id="post_options">
+	<div id="option_boxes">
+		<ol class='split'>
+			<li class='inline'>
+				Status:
+				<%= f.check_box :published %>				
+			</li>
+			<li>
+				<%= link_to 'Preview', polymorphic_path(resource) %>
+			</li>
+		</ol>
+	</div>
+	<%= render_widget('Add a Field', 'field_list', f) %>
+	<%= render_widget('Post Date', 'publishing', f, { class: 'closed' }) %>
+</div>
+<% end %>
 <div class='buttons'>
-	<%= button_link "Preview", polymorphic_path(@post) %>
-	<%= button_link "Delete this Post", polymorphic_path(@post), :class => 'red', :method => :delete, :confirm => 'Are you sure?' %>
+	<%= button_link "Delete this Post", polymorphic_path(resource), method: :delete, confirm: 'Are you sure?' %>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+	$('#option_boxes #post_published').switchbutton({states:['Published', 'Pending']});
+	$('#post_detail h4, #post_date h4').triggerHandler("click");
+//]]>
+</script>

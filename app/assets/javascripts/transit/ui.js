@@ -1,7 +1,7 @@
 $(function(){
     
 	var indicator = $("<div id='ajax_indicator'>Loading...</div>"),
-		hideshow  = $('a.toggle_fieldset');		
+		hideshow  = $('div.panel h4');		
 
 	indicator
 		.hide()
@@ -16,12 +16,13 @@ $(function(){
 			self.animate({ top:-h+"px" }, 500, function(){ self.css({ display:'none' }); } ); 
 		});
 	
-	hideshow
-		.toggle(function(){
-			$(this).parent('fieldset').find('div.toggle_area').slideUp('fast');
-		}, 
-		function(){
-			$(this).parent('fieldset').find('div.toggle_area').slideDown('fast');
-		});
-
+	hideshow.bind('click', function(event){
+		event.preventDefault();
+		var mover = $(this).parent('div.panel');
+		if( mover.hasClass("closed") ){
+			mover.removeClass('closed', 'fast');
+		} else {
+			mover.addClass("closed", 'fast');
+		}
+	});
 });

@@ -1,60 +1,88 @@
 ///////////////////////////////////
 // Post management
 ///////////////////////////////////
-
-#post_form{
-	#published_option{ padding:1em; margin-bottom:1em; text-align:right !important;
-		border:2px solid $transit-fieldset-border-color; background:$transit-fieldset-background-color;
-		label{ font-size:1.5em; }
-	}
-	#post_info, #post_publishing, #post_image{
-		ol{ margin-bottom:0; }
-	}
-	#post_info, #post_publishing, #topic_list{ height:300px; }
-	#post_info{ @include column(10); }
-	#post_publishing{ @include column(5); 
-		div.jcalendar table{
-			background-color:white;
-		}
-	}
-	#topic_list{ @include column(6.5, true);
-		a.icon_add{ display:inline-block; }
-		ol{ margin:0; padding:0; }
-		#topic_selections ul{ margin:0; padding:0; list-style-type:none; 
-			li{ width:90%; padding:0 30px 0 5px; background:darken($transit-fieldset-background-color, 3%); margin:0 2px 2px 0; font-size:11px; position:relative; height:25px; line-height:25px;
-				a.icon_delete{ position:absolute; top:0; right:5px; }
-			}
-		}	
-	}
-
-	#default_image{ @include column(5); 
-		span.options{ position:relative; font-size:12px; 
-			span{ font-weight:normal; }
-			strong{ position:relative; padding-right:30px; display:inline-block; }
-			span[data-help-for]{ position:absolute; top:0px; right:0px; }
-		}
-		span.image{ width:85px; height:85px; overflow:hidden; display:block; border:1px solid #777; }
-	}
-
-	#post_file_list, #post_image_list{ list-style-type:none; margin:0; padding:0; 
-		li{ float:left; padding:2px; border:1px solid #aaa; margin-right:2px; }
-	}
-	#upload_files, #post_images, #post_files, #default_image{ @include column(5); 
-		padding:1em; border:1px solid darken($transit-fieldset-background-color, 5%); 
-	}
-	#post_images{
-		a.icon_zoom{ @include iconSquare(24); @include transit_icon24(19); float:left; }
-		a.icon_delete{ float:left; }
-		span.image_asset_holder{ display:block; width:50px; height:50px; overflow:hidden;
-			img{ width:100%; }
-		}
-	}
-	#upload_files{ @include column(5.5, true); }
-	#post_assets{ position:relative; clear:both;
-		h3{ font-size:1.25em; }
-		a.toggle_fieldset{
-			position:absolute; top:5px; right:2em; display:block; background:white; color:$font-color; padding:.25em 1em; border:1px solid #ccc;
-			font-size:.9em; font-style:italic;
-		}
-	}
+#transit_new_post{
+	#post_detail{ @include column(17); }
+	#post_publishing{ @include column(5, true); }
+	button{ clear:both; }	
 }
+
+#transit_edit_post{	
+	#post_options{ @include column(8, true); float:right;
+		div.panel{ padding:45px 1em 1em 1em; background:$transit-fieldset-background-color; border:2px solid darken($transit-fieldset-background-color, 5%); position:relative; margin-bottom:2px; overflow:hidden;
+			h4{ position:absolute; top:0px; left:0px; height:25px; line-height:25px; width:100%; text-indent:1em; font-size:12px;
+				@include transit_icon24(23, 98%);
+			} 
+			&.closed{ height:25px; padding-top:0; padding-bottom:0; 
+				h4{ @include transit_icon24(24, 98%); }
+			}
+		}
+	}
+	
+}
+#post{ @include column(16); min-height:500px; }
+div.buttons{ position:absolute; top:0px; right:0px; }
+#add_field_list{ list-style-type:none; margin:0; padding:0;
+	li{ display:block; background:darken($transit-fieldset-background-color, 4%); margin-bottom:.5em; padding:0; border:1px solid darken($transit-fieldset-background-color, 10%);}
+	a{ display:block; text-indent:30px; color:#333; font-weight:bold; text-decoration:none; height:30px; line-height:30px;
+		&:hover{ background-color:darken($transit-fieldset-background-color, 20%); }
+	}			
+}
+
+//
+//#post_form{
+//	#published_option{ padding:1em; margin-bottom:1em; text-align:right !important;
+//		border:2px solid $transit-fieldset-border-color; background:$transit-fieldset-background-color;
+//		label{ font-size:1.5em; }
+//	}
+//	#post_info, #post_publishing, #post_image{
+//		ol{ margin-bottom:0; }
+//	}
+//	#post_info, #post_publishing, #topic_list{ height:300px; }
+//	#post_info{ @include column(10); }
+//	#post_publishing{ @include column(5); 
+//		div.jcalendar table{
+//			background-color:white;
+//		}
+//	}
+//	#topic_list{ @include column(6.5, true);
+//		a.icon_add{ display:inline-block; }
+//		ol{ margin:0; padding:0; }
+//		#topic_selections ul{ margin:0; padding:0; list-style-type:none; 
+//			li{ width:90%; padding:0 30px 0 5px; background:darken($transit-fieldset-background-color, 3%); margin:0 2px 2px 0; font-size:11px; position:relative; height:25px; line-height:25px;
+//				a.icon_delete{ position:absolute; top:0; right:5px; }
+//			}
+//		}	
+//	}
+//
+//	#default_image{ @include column(5); 
+//		span.options{ position:relative; font-size:12px; 
+//			span{ font-weight:normal; }
+//			strong{ position:relative; padding-right:30px; display:inline-block; }
+//			span[data-help-for]{ position:absolute; top:0px; right:0px; }
+//		}
+//		span.image{ width:85px; height:85px; overflow:hidden; display:block; border:1px solid #777; }
+//	}
+//
+//	#post_file_list, #post_image_list{ list-style-type:none; margin:0; padding:0; 
+//		li{ float:left; padding:2px; border:1px solid #aaa; margin-right:2px; }
+//	}
+//	#upload_files, #post_images, #post_files, #default_image{ @include column(5); 
+//		padding:1em; border:1px solid darken($transit-fieldset-background-color, 5%); 
+//	}
+//	#post_images{
+//		a.icon_zoom{ @include iconSquare(24); @include transit_icon24(19); float:left; }
+//		a.icon_delete{ float:left; }
+//		span.image_asset_holder{ display:block; width:50px; height:50px; overflow:hidden;
+//			img{ width:100%; }
+//		}
+//	}
+//	#upload_files{ @include column(5.5, true); }
+//	#post_assets{ position:relative; clear:both;
+//		h3{ font-size:1.25em; }
+//		a.toggle_fieldset{
+//			position:absolute; top:5px; right:2em; display:block; background:white; color:$font-color; padding:.25em 1em; border:1px solid #ccc;
+//			font-size:.9em; font-style:italic;
+//		}
+//	}
+//}

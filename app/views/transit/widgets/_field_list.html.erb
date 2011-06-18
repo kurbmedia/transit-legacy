@@ -1,0 +1,7 @@
+<ul id="add_field_list">
+	<% Transit.contexts.map(&:to_s).each do |type| %>
+	<li class="icon_<%= type.underscore %>">
+		<%= link_to type, new_polymorphic_path([@post, Transit::Context], :type => type), :remote => true %>
+	</li>
+	<% end %>
+</ul>

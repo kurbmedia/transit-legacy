@@ -34,3 +34,15 @@ div.jcalendar-links{ background:#555; padding:0px 5px !important;
 		}
 	}
 }
+
+span.widget-holder{ display:inline-block; }
+span.widget-switchbutton{ height:30px; line-height:30px; position:relative;
+	@include border-radius(10px);
+	input[type='checkbox']{ position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:500; }
+	span.widget-switch-button-off, span.widget-switch-button-on{ display:inline-block; height:100%; padding:0 1em; }	
+	span.widget-switch-button-off{ background:#333; color:white; }
+}
+span.switchbutton-active{
+	span.widget-switch-button-on{ background:#333; color:white; }
+	span.widget-switch-button-off{ background:none; color:$font-color; }
+}

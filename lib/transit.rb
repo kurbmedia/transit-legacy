@@ -1,9 +1,12 @@
 require 'rails'
 require 'active_support'
 require 'mongoid'
+require 'active_support/dependencies'
+ActiveSupport::Dependencies.autoload_paths += [File.expand_path("../../app", __FILE__)]
 
 module Transit
-    
+  include ActiveSupport::Dependencies 
+  
   module Model
     autoload :Assets,        'transit/model/assets'
     autoload :Attachments,   'transit/model/attachments'

@@ -10,6 +10,10 @@ class Transit::PostsController < TransitController
     end
   end
   
+  def resource
+    @post
+  end
+ 
   def show
     @post = scope_class.find(params[:id])
     respond_with(@post)
@@ -51,5 +55,5 @@ class Transit::PostsController < TransitController
     flash[:success] = "The selected post was deleted."
     respond_with(@post, :location => polymorphic_path(scope_class))
   end
-
+ 
 end

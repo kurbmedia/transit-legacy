@@ -1,12 +1,14 @@
 //= require jqueryui/core
+//= require jqueryui/effects/core
 //= require jqueryui/widget
 //= require jqueryui/mouse
 //= require jqueryui/position
 //= require jqueryui/sortable
 //= require jqueryui/draggable
 //= require jqueryui/droppable
-//= require_tree ./admin
 //= require transit/ui
+//= require transit/ui/widgets/switchbutton
+//= require_tree ./admin
 //= require_tree ./contexts
 
 $(function(){

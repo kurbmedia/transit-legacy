@@ -1,5 +1,5 @@
-<fieldset id="topic_list">
-	<legend><%= t(:topics, :scope => [:transit, :legends]) %></legend>
+<div id="topic_list" class="panel">
+	<h4><%= t(:topics, :scope => [:transit, :legends]) %></h4>
 	<ol>
 		<li>
 			<%= select_tag :topic_ids, options_for_select(Topic.all.collect{ |t| [t.title, t.id.to_s] }), id: 'all_topics_list' %>
@@ -17,7 +17,7 @@
 			</ul>
 		</li>
 	</ol>
-</fieldset>
+</div>
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
 	$('#all_topics_list').selectToList({ target:'#topic_selections ul', name:$('#topic_selections').attr('rel'), add:$('#add_topic_link')});

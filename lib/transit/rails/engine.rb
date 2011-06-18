@@ -6,13 +6,12 @@ require 'motr/orm/mongoid'
 
 module Transit
   class Engine < Rails::Engine
-    isolate_namespace Transit 
     
-    config.transit = Transit
+    isolate_namespace Transit
     
     config.paths['app/models'] << 'app/models/contexts'
     config.paths['app/models'] << 'app/models/transit'
-    config.eager_load_paths << 'app/models/contexts'    
+    config.eager_load_paths << 'app/models/contexts'
     
     ##
     # After initialization, dynamically create controllers for models 
@@ -20,7 +19,7 @@ module Transit
     # 
     initializer 'transit.generate_controllers', :after => :eager_load! do
       gen = Transit::Controller::Generator.new(:page, :post)
-      gen.generate!
+      gen.generate!      
     end
 
     initializer 'transit.paperclip' do
@@ -36,7 +35,7 @@ module Transit
     end
     
     ActiveSupport.on_load(:action_controller) do
-      helper Transit::Engine.helpers      
+      helper Transit::Engine.helpers
     end
       
   end
