@@ -6,6 +6,8 @@
 //= require transit/ui
 //= require_tree ./admin
 //= require_tree ./upload
+//= require jqueryui/progressbar
+//= require jqueryui/datepicker
 
 $(function(){
 	
@@ -91,30 +93,31 @@ $(function(){
 		return new_css;
 	}
 	
-	$('div.datepicker').each(function(i, li){
-		var self  = $(li),
-			sels  = self.find('select'),
-			mon, day, year, wrap;
-					
-		sels.each(function(i, el){
-			var r = $(el).attr('id');
-			if( /1i/.test(r) ){
-				year = $(el);
-				$(el).addClass('jcalendar-select-year');
-			}else if ( /2i/.test(r) ){
-				mon = $(el);
-				$(el).addClass('jcalendar-select-month');
-			}else{
-				day = $(el);
-				$(el).addClass('jcalendar-select-day');
-			}
-		});
-		
-		wrap = $('<div class="jcalendar-selects"></div>');
-		self.wrapInner(wrap);
-		self.jcalendar();
-		
-	});
+	$('div.datepicker').datepicker();
+	// $('div.datepicker').each(function(i, li){
+	// 		var self  = $(li),
+	// 			sels  = self.find('select'),
+	// 			mon, day, year, wrap;
+	// 					
+	// 		sels.each(function(i, el){
+	// 			var r = $(el).attr('id');
+	// 			if( /1i/.test(r) ){
+	// 				year = $(el);
+	// 				$(el).addClass('jcalendar-select-year');
+	// 			}else if ( /2i/.test(r) ){
+	// 				mon = $(el);
+	// 				$(el).addClass('jcalendar-select-month');
+	// 			}else{
+	// 				day = $(el);
+	// 				$(el).addClass('jcalendar-select-day');
+	// 			}
+	// 		});
+	// 		
+	// 		wrap = $('<div class="jcalendar-selects"></div>');
+	// 		self.wrapInner(wrap);
+	// 		self.jcalendar();
+	// 		
+	// 	});
 		
 	
 });

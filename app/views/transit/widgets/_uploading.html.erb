@@ -9,8 +9,68 @@
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
 	 
+	var upload_field = $('#asset_upload'),
+		upload_start = $('#start_upload');
 	
+	upload_field.uploadify({
+	    swf  : "/assets/uploadify.swf",
+		auto : false,
+		uploader		: '<%= transit.package_assets_path(:auth_token => current_user.authentication_token, :format => :js) %>',
+		buttonCursor    : 'hand',
+		buttonImage     : '',
+		buttonText      : 'Choose',
+		cancelImage     : '',
+		checkExisting   : false,
+		debug           : false,
+		fileObjName     : 'asset[file]',
+		fileSizeLimit   : 104857600,
+		fileTypeDesc    : 'Choose an Image or Video',
+		fileTypeExts    : '*.*;',
+		height          : 35,
+		method          : 'post',
+		multi           : true,
+		queueID         : 'upload_list',
+		queueSizeLimit  : 999,
+		removeCompleted : false,
+		requeueErrors   : true,
+		postData        : { resource_type: '<%= parent.class.name %>', resource_id: '<%= parent.id.to_s %>' },
+		preventCaching  : true,
+		progressData    : 'percentage',
+		successTimeout  : 30,
+		scriptAccess    : 'always',
+		transparent     : true,
+		uploadLimit     : 999,
+		uploaderType    : 'html5', // the other option is 'flash'
+		width           : 75,
+		onSelect        : add_to_queue,
+		onUploadSuccess : process_upload,
+		onUploadProgress: update_progress,
+	});
+		
+	upload_start.bind('click', function(event){
+		event.preventDefault();
+		$('#asset_upload').uploadifyUpload();
+	});
 	
+	function add_to_queue(file){
+		$( "div.uploadifyProgressBar" ).progressbar();
+	}
+
+	function process_upload(file, data, success){
+		var resp = $.parseJSON(data),
+			item = $(resp.content);
+		if(resp.image) item.hide().appendTo($('#post_image_list'));
+		else item.hide().appendTo($('#post_file_list'));
+		item.fadeIn('fast');
+		$('#' + file.id).find('span.fileName').css("background-position", "-225px 50%");
+		$('#asset_upload').uploadifyCancel(file.id);
+	}
+	
+	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
+		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
+		$('#' + file.id).find('div.uploadifyProgressBar').progressbar('option', 'value', percentage);
+		return false;		
+	}
 	
 //]]>
 </script>
