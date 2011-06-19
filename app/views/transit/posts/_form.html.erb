@@ -8,7 +8,7 @@
 			<ol class="ui-state-hover">
 				<% Transit.contexts.map(&:to_s).each do |type| %>
 				<li class="icon_<%= type.underscore %>">
-					<%= link_to type, new_polymorphic_path([resource, Transit::Context], type: type), :remote => true %>
+					<%= link_to type, new_polymorphic_path([resource, Transit::Context], type: type, form_name: 'post'), :remote => true %>
 				</li>
 				<% end %>
 			</ol>

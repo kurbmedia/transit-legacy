@@ -1,8 +1,7 @@
-<% content = capture do %>
-	<%= fields_for "#{@package.class.to_s.underscore}[context_attributes][#{Time.now.to_i}]", @context do |child| %>
-		<%= context_field_item(child.object, child) %>
-	<% end %>
-<% end %>
-</li>
-$('#context_fields').append("<%= j(content.html_safe)) %>");
+<% content = capture do
+	fields_for("#{params[:form_name]}[context_attributes][#{Time.now.to_i}]", @context) do |child|
+		context_field_item(child.object, child)
+	end
+end %>
+$('#context_fields').append("<%= escape_javascript(content.html_safe) %>");
 
