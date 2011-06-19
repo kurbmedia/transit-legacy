@@ -1,1 +1,4 @@
-<h1 class='inheritable'><%= form.text_field :title, value: (form.object.title || 'Your Post Title') %></h1>
+<h1 class='inherits_styles'>
+	<%= form.text_field :title, value: (form.object.title || 'Your Post Title') %>
+</h1>
+<p class="post_detail">Posted by <%= current_user.full_name %> on <%= resource.timestamp %></p>

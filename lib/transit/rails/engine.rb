@@ -19,7 +19,11 @@ module Transit
     # 
     initializer 'transit.generate_controllers', :after => :eager_load! do
       gen = Transit::Controller::Generator.new(:page, :post)
-      gen.generate!      
+      gen.generate!
+      ActionController::Base.class_eval do
+        helper Transit::Engine.helpers
+        helper 'transit'
+      end
     end
 
     initializer 'transit.paperclip' do
@@ -32,10 +36,6 @@ module Transit
       ::Paperclip.interpolates(:normalize_name) do |attachment, style|
         "#{attachment.instance.normalize_name(attachment, style)}" 
       end
-    end
-    
-    ActiveSupport.on_load(:action_controller) do
-      helper Transit::Engine.helpers
     end
       
   end

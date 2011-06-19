@@ -1,0 +1,33 @@
+#transit_editor_toolbar{ padding:0; text-align:left; display:block !important;
+	ul{ list-style-type:none; margin:0; padding:0; background:#ccc; white-space:nowrap; @include pie-clearfix; overflow:visible;
+		li{ margin:2px 2px 5px 2px; padding:0px; display:block; float:left;
+			a{ @include iconSquare(24); border:1px solid #ccc; background-color:white; 
+				&:focus, &:active{ outline:none; }
+			}
+			a:hover{ background-color:#DCF5F9; border:1px solid darken(#DCF5F9, 10%); }
+			a:active { background-color:#aaa; border: 1px solid darken(#aaa, 5%); }
+			a.bold { @include transit_icon24(8); }
+			a.italic { @include transit_icon24(7); }
+			a.underline { @include transit_icon24(9); }
+			a.undo { @include transit_icon24(15); }
+			a.redo { @include transit_icon24(16); }
+			a.ordered_list { @include transit_icon24(11); }
+			a.unordered_list { @include transit_icon24(10); }
+			a.cut { @include transit_icon24(12); }
+			a.copy { @include transit_icon24(13); }
+			a.paste { @include transit_icon24(14); }
+			a.insert_link { @include transit_icon24(5); }
+			a.insert_image { @include transit_icon24(6); }		
+		}
+		li.separator { width:1px; height:24px; background: #555; border:none !important; }
+	}
+}
+
+div.transit_editor_button_dialog{ text-align:left;
+	div.ui-dialog-titlebar{ padding:0 1em; height:20px; line-height:20px; font-size:11px; 
+		span.ui-dialog-title{ display:inline; margin:0; padding:0; }
+	}
+}
+div.wym_iframe{
+	iframe{ width:100%; }
+}

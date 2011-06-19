@@ -1,0 +1,27 @@
+<%= page_id('transit_index') %>
+<%= page_title("Transit: Manage #{t("#{resource_class.to_s.underscore.singularize}_collection", :scope => :transit)}") %>
+<h1>Manage <%= t("#{resource_class.to_s.underscore.singularize}_collection", :scope => :transit) %></h1>
+<%= paginate(@posts, :remote => true) %>
+<table border="0" id="listing">
+	<%  columns = Transit::Admin.options_for(resource_name).column_hash %>
+	<thead>
+		<tr>
+		<% columns.each do |name, value| %>
+			<% if value.is_a?(Array) %>
+			<th><%= value.first %></th>
+			<% else %>
+			<th><%= value %></th>
+			<% end %>
+		<% end %>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render template: 'transit/table' %>
+	</tbody>
+</table>
+<%= paginate(@posts, :remote => true) %>
+<div class='buttons'>
+	<%= button_link "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , new_polymorphic_path(resource_class.new) %>
+</div>

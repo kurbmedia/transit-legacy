@@ -1,6 +1,39 @@
-<%= render_inline_post_field(:title, form) %>
-<%= render_inline_post_field(:post_date, form) %>
-<% if @post.new_record? %>
-<%= render_inline_post_field(:teaser, form) %>
+<%= form_for resource, as: :post, validate: true do |f| %>
+<%= transit_toolbar(resource) do %>
+	<ol>
+		<% unless resource.new_record %>
+		<li class="menu">
+			<span class='ui-icon ui-icon-circle-plus'></span>
+			Add a New Field
+			<ol class="ui-state-hover">
+				<% Transit.contexts.map(&:to_s).each do |type| %>
+				<li class="icon_<%= type.underscore %>">
+					<%= link_to type, new_polymorphic_path([resource, Transit::Context], type: type), :remote => true %>
+				</li>
+				<% end %>
+			</ol>
+		</li>
+		<% end %>
+		<li class="multifield post_date menu" id="datepicker_target">
+			<span class='ui-icon ui-icon-calendar'></span>
+			Post Date
+			<span id="post_date_selects"><%= f.date_select :post_date, { order: [:month, :day, :year], use_short_month: true } %></span>
+		</li>
+		<% unless resource.new_record? %>
+		<li>
+			<%= f.check_box :published, class: 'toggle_button', data: { 'ui-icon' => 'ui-icon-star' } %>
+			<%= f.label :published %>
+		</li>		
+		<li>
+			<%= toolbar_button('Delete This Post', polymorphic_path(resource), method: :delete, class: 'ui-icon-red', icon: 'closethick') %>
+		</li>
+		<% end %>
+	</ol>
 <% end %>
-<%= render template: 'transit/contexts/index', locals: { form: form } %>
+
+<div id="post">
+	<%= render partial: 'transit/posts/fields/title', locals: { form: f } %>
+	<%= render template: 'transit/contexts/index', locals: { form: f } %>
+</div>
+<% end %>
+<%= text_field_tag :datepicker_holder, "", rel: 'post_post_date', data: { 'calendar-link' => "#post_date_menu" } %>

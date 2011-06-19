@@ -1,4 +1,5 @@
 // Default transit core file.
+//= require underscore
 //= require_self
 //= require transit/config
 
@@ -15,15 +16,13 @@
 	
 	transit = window.transit = function(){
 		
-		this.config   = {};
-		this.contexts = {};
-		
-		this.addContext = function( name, plugin ){
-			this.contexts[name] = plugin;
-			if( $.isFunction( plugin.ready ) ){
-				$(plugin.ready);
-			}
-			return this;
+		this.config    = {};
+		this.contexts  = {};
+		this.templates = {
+			parse: function( name, data ){
+				return this.cache[name](data);
+			},
+			cache: {}
 		};
 		
 		this.configure = function( namespace, conf ){			
@@ -31,30 +30,12 @@
 			this.config[namespace] = $.extend( old_conf, conf );
 		};
 		
-		/**
-         * Plugin extension functionality
-         *
-         * @param namespace String - Namespace of the plugin
-         * @param obj Object - Plugin definition
-         *
-         * @return void
-         */
-        this.extend = function(namespace, plugin){
-			
-            if (typeof this[namespace] != "undefined"){
-				$.error(["Plugin namespace '",namespace,"' is already taken..."].join);
-				return this;
-			}
-		
-			this[namespace] = plugin;
-			return this;
-			
-        };		
-
-		this.load = function( namespace ){
-			return this[namespace];
+		this.addTemplate = function( path, content){
+			this.templates.cache[path] = _.template(content);
 		};
 		
+		
+				
 	};
 	
 	window.transit = new transit();

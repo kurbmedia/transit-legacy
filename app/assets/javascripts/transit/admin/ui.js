@@ -1,22 +1,25 @@
+//= require jqueryui/button
+
 $(function(){
-    
-	var pstyle_obj = $("<p>inherited content paragraph</p>"),
-		pstyles; 
-		
-	$('h1.inheritable, div.inheritable').each(
+	
+	$('#transit_toolbar .transit_toolbar_button, input.toggle_button').each(
+		function(i, el){
+			var self = $(el),
+				icon = self.data('ui-icon');
+				opts = {};
+			if( icon ) opts.icons = { primary:icon };
+			$(el).button(opts);
+		});
+	
+	
+	$('*.inherits_styles').each(
 		function( ind, ele ){
 			var self   = $(ele),
 				fields = self.find('input[type="text"]');
 			fields.css(inherit_default_styles(self, ['color', 'font-family', 'font-size']));
-		});
-		
-	$('textarea.inheritable').each(function(i, el){
-		var self = $(el);
-		pstyle_obj.insertAfter(self);
-		self.css(inherit_default_styles(pstyle_obj));
-		pstyle_obj.remove();
-	});
-		
+			fields.css({ margin:'0px', padding:'0px', width:'100%' });
+		});	
+	
 	function inherit_default_styles(parent, styles){
 		var new_css = {},
 			options = styles || ['color', 'font-family', 'font-size', 'line-height'];
@@ -26,6 +29,5 @@ $(function(){
 		
 		return new_css;
 	}
-		
 	
 });

@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency("mongoid", ["~> 2.0"])
   s.add_development_dependency("mongo", ["~> 1.3"])
   s.add_development_dependency("bson_ext", ["~> 1.3"])
+  s.add_development_dependency("inherited_resources", ["= 1.2.2"])
+  s.add_development_dependency("has_scope", ["= 0.5.0"])
 
   s.add_dependency("nokogiri", ["~> 1.4"])
   s.add_dependency("motr", [">= 0.1.0"])

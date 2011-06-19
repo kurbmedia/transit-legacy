@@ -1,21 +1,26 @@
 module Transit::FormHelper
  unloadable
  
- def render_inline_post_field(method, form)
-   render_inline_field(:posts, method, form)
+ def context_field_item(field, form)
+   idfield = field.new_record? ? "" : form.hidden_field(:id)
+   content_tag(:li, { class: "field field_#{field.class.to_s.underscore}" }) do
+     form.hidden_field(:_type, value: field.class.to_s) <<
+     form.hidden_field(:position, rel: 'field_position') <<
+     idfield <<
+     render(partial: "transit/contexts/#{field.class.to_s.underscore}", locals: { form: form, context: field })
+   end.html_safe
  end
  
- def render_inline_field(type, method, form)
-  render partial: "transit/#{type.to_s}/fields/#{method.to_s}", locals: { form: form }
+ def transit_toolbar(model, &block)
+   content_tag(:div, capture(&block), { class: 'ui-widget-header ui-state-default', id: 'transit_toolbar' })
  end
  
- def render_widget(name, form, html_opts = {})
-   render partial: "transit/widgets/#{name}", locals: { form: form }
- end
- 
- def render_fields_for(model, pack, form)
-   return '' unless model.delivers?(pack)
-   render partial: "transit/#{pack.to_s}/model", locals: { form: form, parent: model }
+ def toolbar_button(text, url, attrs)
+   klasses = attrs[:class].to_s.split(" ").push('transit_toolbar_button')
+   if attrs[:icon].present?
+     (attrs[:data] ||= {}).merge!("ui-icon" => "ui-icon-#{attrs.delete(:icon)}")
+   end
+   link_to text.html_safe, url, attrs.merge(class: klasses.join(" ")) 
  end
  
  def file_icon_class(asset)

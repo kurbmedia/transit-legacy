@@ -1,11 +1,5 @@
 <ul id="context_fields" class='contents'>
-<%= form.fields_for :contexts do |cform| %>
-	<% context = cform.object %>
-	<li class='field field_<%= context.class.to_s.underscore %>' id="field_<%= context.id.to_s %>">
-		<ul class="option_bar">			
-			<%= render partial: 'transit/contexts/field_attrs', locals: { parent: form.object, form: cform, context: context } %>
-		</ul>
-		<%= render partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: cform, context: context } %>		
-	</li>
-<% end %>
+	<%= form.fields_for :contexts do |cform| %>
+	<%= context_field_item(cform.object, cform) %>
+	<% end %>
 </ul>
