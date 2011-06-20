@@ -25,7 +25,7 @@ module Transit
         helper 'transit'
       end
     end
-
+ 
     initializer 'transit.paperclip' do
       def Paperclip.logger
         Rails.logger 
@@ -40,3 +40,5 @@ module Transit
       
   end
 end
+
+require 'transit/rails/railtie'

@@ -4,7 +4,7 @@
 		<% unless resource.new_record %>
 		<li class="menu">
 			<span class='ui-icon ui-icon-circle-plus'></span>
-			Add a New Field
+			Add a New Item
 			<ol class="ui-state-hover">
 				<% Transit.contexts.map(&:to_s).each do |type| %>
 				<li class="icon_<%= type.underscore %>">
@@ -29,6 +29,7 @@
 		</li>
 		<% end %>
 	</ol>
+	<%= f.hidden_field(:user, value: current_user.id) if resource.delivers?(:owner) %>
 <% end %>
 
 <div id="post">

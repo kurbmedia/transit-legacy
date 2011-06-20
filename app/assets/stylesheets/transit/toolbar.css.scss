@@ -20,7 +20,7 @@
 			}
 			&:hover{ @extend .ui-state-hover; height:35px; 
 				ol{ display:block; 
-					a:hover{ background-color:#333; }
+					a:hover{ background-color:$ui-active-bg-color; }
 				}
 				li.icon_text a{ @include transit_icon24(17); }
 				li.icon_video a{ @include transit_icon24(18); }

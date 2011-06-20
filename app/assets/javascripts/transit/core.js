@@ -2,6 +2,7 @@
 //= require underscore
 //= require_self
 //= require transit/config
+//= require_tree ./core
 
 (function($){
 	
@@ -18,6 +19,8 @@
 		
 		this.config    = {};
 		this.contexts  = {};
+		this.callbacks = {};
+		
 		this.templates = {
 			parse: function( name, data ){
 				return this.cache[name](data);
@@ -30,11 +33,13 @@
 			this.config[namespace] = $.extend( old_conf, conf );
 		};
 		
-		this.addTemplate = function( path, content){
-			this.templates.cache[path] = _.template(content);
+		this.addTemplate = function( pathOrName, content){
+			this.templates.cache[pathOrName] = _.template(content);
 		};
 		
-		
+		this.addCallback = function( eventName, func ){
+			
+		};
 				
 	};
 	

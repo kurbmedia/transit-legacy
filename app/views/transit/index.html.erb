@@ -1,12 +1,11 @@
 <%= page_id('transit_index') %>
-<%= page_title("Transit: Manage #{t("#{resource_class.to_s.underscore.singularize}_collection", :scope => :transit)}") %>
-<h1>Manage <%= t("#{resource_class.to_s.underscore.singularize}_collection", :scope => :transit) %></h1>
-<%= paginate(@posts, :remote => true) %>
+<%= page_title("Transit: Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
+<h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
+<%= paginate(collection, :remote => true) %>
 <table border="0" id="listing">
-	<%  columns = Transit::Admin.options_for(resource_name).column_hash %>
 	<thead>
 		<tr>
-		<% columns.each do |name, value| %>
+		<% Transit::Admin.options_for(resource_instance_name).column_hash.each do |name, value| %>
 			<% if value.is_a?(Array) %>
 			<th><%= value.first %></th>
 			<% else %>
@@ -21,7 +20,7 @@
 		<%= render template: 'transit/table' %>
 	</tbody>
 </table>
-<%= paginate(@posts, :remote => true) %>
+<%= paginate(collection, :remote => true) %>
 <div class='buttons'>
 	<%= button_link "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , new_polymorphic_path(resource_class.new) %>
 </div>

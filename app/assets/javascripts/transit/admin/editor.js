@@ -69,7 +69,6 @@ $(function(){
 		var self = $(this);
 		
 		if( self.attr('rel') === "") return true;
-		console.log("exec");
 		active_editor.exec(self.attr('rel'));
 		return true;
 	}

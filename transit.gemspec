@@ -24,13 +24,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency("ffaker", ["~> 1.7"])
   s.add_development_dependency("mongoid", ["~> 2.0"])
   s.add_development_dependency("mongo", ["~> 1.3"])
-  s.add_development_dependency("bson_ext", ["~> 1.3"])
-  s.add_development_dependency("inherited_resources", ["= 1.2.2"])
-  s.add_development_dependency("has_scope", ["= 0.5.0"])
+  s.add_development_dependency("bson_ext", ["~> 1.3"])  
 
   s.add_dependency("nokogiri", ["~> 1.4"])
   s.add_dependency("motr", [">= 0.1.0"])
   s.add_dependency("kaminari", ['= 0.12.4'])
   s.add_dependency("paperclip", ["~> 2.3"])
+  s.add_dependency("inherited_resources", ["= 1.2.2"])
+  s.add_dependency("has_scope", ["= 0.5.0"])
+  s.add_dependency("responders", ["= 0.6.4"])
   
 end

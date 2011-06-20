@@ -1,7 +1,6 @@
-<% columns = Transit::Admin.options_for(resource_name).column_hash %>
 <% collection.each do |item| %>
 <tr<%= cycle(""," class='even'") %>>
-<% columns.each do |name, value| %>
+<% Transit::Admin.options_for(resource_instance_name).column_hash.each do |name, value| %>
 	<% if value.is_a?(Array) %>
 	<td><%= value.last.call(item) %></td>
 	<% else %>
