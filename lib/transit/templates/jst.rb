@@ -36,7 +36,3 @@ module Transit
     
   end
 end
-
-
-Sprockets::Engines
-Sprockets.register_engine '.jst', Transit::Templates::Jst

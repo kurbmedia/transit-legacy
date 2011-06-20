@@ -1,5 +1,3 @@
-require 'rails'
-require 'transit'
 require 'paperclip'
 require 'motr'
 require 'motr/orm/mongoid'
@@ -42,3 +40,5 @@ module Transit
 end
 
 require 'transit/rails/railtie'
+Sprockets::Engines
+Sprockets.register_engine '.jst', Transit::Templates::Jst
