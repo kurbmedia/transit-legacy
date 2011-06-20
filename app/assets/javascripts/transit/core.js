@@ -40,6 +40,8 @@
 		this.addCallback = function( eventName, func ){
 			
 		};
+		
+		this.onReadyCallbacks = [];
 				
 	};
 	

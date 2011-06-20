@@ -1,5 +1,7 @@
-$('form[data-js-validatable]').validator({lang:'en', errorInputEvent:'blur', inputEvent:'blur', effect:'rails'});
-(function(transit){
+//= require_self
+//= require_tree ./ui
+
+(function(jQuery){
 	
 	var UI = function(){
 		
@@ -10,66 +12,47 @@ $('form[data-js-validatable]').validator({lang:'en', errorInputEvent:'blur', inp
 			},
 			options:{}
 		},
-		modules,
+		modules = {},
 		enabledItems = [];
 		
-		this.enable = function( name, options ){			
-			if( typeof this[name] == 'undefined') return false;
-			this[name].configure( options );
-			if( !$.inArray(name, enabledItems) ){
-				enabledItems.push(name);
-			}
+		this.enable = function( name, options ){
+						
+			if( $.type(name) == "array" ){				
+				$.each( name, function( ind, n ){
+					if( $.inArray(n, enabledItems) == -1 ){
+						enabledItems.push(n);
+					}
+				});
+				
+			}else{
+				if( options ){
+					modules[name].configure( options );
+				}				
+				if( !$.inArray(name, enabledItems) ){
+					enabledItems.push(name);
+				}
+			}			
 			return true;
 		};
 		
 		this.register = function( name, plugin ){
-			modules[name] = $.extend({}, options, api);
+			modules[name] = $.extend({}, api, plugin);
 		};
 		
 		this.activate = function(){
 			$.each( enabledItems, function( ind, name ){
-				this[name].init();
+				modules[name].init.apply(modules[name]);
 			});
+			return enabledItems;
 		};
+		
+		this.list = function(){
+			return modules;
+		}
 		
 	};
 	
 	transit.ui = new UI();
+	transit.onReadyCallbacks.push( transit.ui.activate );
 	
-	var ajax_indication = {
-		options: {
-			template: "<div id='ajax_indicator'>Loading...</div>",
-			location: 'top'	
-		},
-		
-		init: function(){
-			this.indicator = $(this.options.template);
-			this.indicator.hide()
-				.appendTo($('body'))
-				.ajaxSend(function(event, XMLHttpRequest, settings){
-					var self = $(this), h = self.outerHeight(true);
-					self.css({ top:-h+"px", display:'block' })
-					.animate({ top:"0px" }, 500);
-				})
-				.ajaxComplete(function(event){ 
-					var self = $(this), h = self.outerHeight(true);
-					self.animate({ top:-h+"px" }, 500, function(){ self.css({ display:'none' }); } ); 
-				});
-		}
-	};
-	
-	var form_validation = {
-		options: {
-			selectors: 'form.validate, form[data-js-validatable]'
-		},
-		
-		init: function(){
-			
-		}
-	};
-	
-})(transit);
-
-$(function(){
-	transit.ui.activate();	
-});
+})(jQuery);
