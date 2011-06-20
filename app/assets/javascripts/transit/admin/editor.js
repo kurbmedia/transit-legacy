@@ -23,7 +23,9 @@ $(function(){
 		toolbar = $(transit.templates.parse('transit/views/editor_toolbar', { buttons: button_list })),
 		toolbar_dialog;
 		
-	toolbar.appendTo($('body')).hide();
+	if( $('textarea.richtext_editor').length >= 1){
+		toolbar.appendTo($('body')).hide();
+	}
 	
 	$('textarea.richtext_editor')
 		.bind('transit:track_editor', function(event, editor){
