@@ -1,8 +1,10 @@
 require 'rails'
 require 'active_support'
-require 'mongoid'
 
 module Transit
+  
+  autoload :Admin, 'transit/admin'
+  autoload :Config, 'transit/config'
   
   module Model
     autoload :Assets,        'transit/model/assets'
@@ -25,6 +27,10 @@ module Transit
   module Errors
     autoload :InvalidContext,   'transit/errors/invalid_context'
     autoload :ResourceNotFound, 'transit/errors/resource_not_found'
+  end
+  
+  module Templates
+    autoload :Jst,  'transit/templates/jst'
   end
   
   DESCRIPTIONS = {}
@@ -64,6 +70,3 @@ end
 require 'transit/model/hooks'
 require 'transit/rails/engine'
 require 'transit/rails/routing'
-require 'transit/config'
-require 'transit/admin'
-require 'transit/templates/templates'

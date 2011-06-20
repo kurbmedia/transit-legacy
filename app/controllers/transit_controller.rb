@@ -1,7 +1,4 @@
-require 'kaminari'
-require 'inherited_resources'
-class TransitController < ApplicationController 
-  unloadable  
+class TransitController < ApplicationController   
   inherit_resources
   
   respond_to :html, :js  

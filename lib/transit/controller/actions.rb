@@ -8,7 +8,6 @@ module Transit
       
       included do
         include Transit::Controller::Helpers
-        unloadable
       end
       
       def index

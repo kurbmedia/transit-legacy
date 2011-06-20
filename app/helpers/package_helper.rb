@@ -1,5 +1,4 @@
 module PackageHelper
-  unloadable
 
   def deliver(obj)
     if obj.respond_to?(:deliver)

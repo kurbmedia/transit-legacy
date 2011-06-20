@@ -1,5 +1,4 @@
 class Transit::ContextsController < ApplicationController
-  unloadable
   respond_to :js
   helper_method :parent
   

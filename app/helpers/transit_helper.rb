@@ -1,5 +1,4 @@
-module TransitHelper
-  unloadable
+module TransitHelper  
   include Transit::FormHelper
   
   def transit_assets

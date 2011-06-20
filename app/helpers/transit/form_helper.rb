@@ -1,6 +1,4 @@
 module Transit::FormHelper
- unloadable
- 
  def context_field_item(field, form)
    idfield = field.new_record? ? "" : form.hidden_field(:id)
    content_tag(:li, { class: "field field_#{field.class.to_s.underscore}" }) do

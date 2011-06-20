@@ -1,7 +1,5 @@
 class Transit::PostsController < TransitController
-  unloadable
-  inherit_resources
-  
+  inherit_resources  
   defaults collection_name: 'posts', instance_name: 'post'
   
   helper_method :resource_name, :collection
