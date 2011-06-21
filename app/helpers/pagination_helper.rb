@@ -1,0 +1,3 @@
+module PaginationHelper
+  
+end

@@ -28,10 +28,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency("nokogiri", ["~> 1.4"])
   s.add_dependency("motr", [">= 0.1.0"])
-  s.add_dependency("kaminari", ['= 0.12.4'])
   s.add_dependency("paperclip", ["~> 2.3"])
   s.add_dependency("inherited_resources", ["= 1.2.2"])
-  s.add_dependency("has_scope", ["= 0.5.0"])
   s.add_dependency("responders", ["= 0.6.4"])
+  s.add_dependency("will_paginate", ["= 3.0.pre2"])
   
 end

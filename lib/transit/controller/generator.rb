@@ -20,6 +20,7 @@ module Transit
               controller_name = to_controller(klass) 
               next if Transit.const_defined?( controller_name, false )
               eval "class Transit::#{controller_name} < Transit::#{parent_controller(sup)}; end"
+              ActiveSupport::Dependencies::Reference.store(Transit.const_get("#{controller_name}"))
             end
           end
           
