@@ -1,5 +1,4 @@
 class Transit::PagesController < TransitController
-  include Transit::Controller::Actions
   respond_to :html, :js, :json
   
   def index
