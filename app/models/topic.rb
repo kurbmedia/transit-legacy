@@ -6,7 +6,13 @@ class Topic
   field :post_types,  :type => Array
   
   validates :title, :presence => true
-  modded_with :sluggable, :fields => :title, :as => :slug 
+  before_create :generate_slug
+   
   scope :for_type, lambda{ |type| where(:post_types => type) }
+  
+  def generate_slug
+    return true unless self.slug.to_s.blank?
+    self.slug = self.title.to_slug
+  end
   
 end

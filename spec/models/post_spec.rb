@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Post do
   
+  after{ Post.delete_all }
+  
   it { Post.respond_to?(:deliver_as).should be_true }
   it { Post.respond_to?(:deliver_with).should be_true }
   
@@ -12,14 +14,13 @@ describe Post do
     its(:fields){ should include('published') }
     its(:fields){ should include('slug') }
     its(:fields){ should include('teaser') }
-    
+    its(:fields){ should include('default_teaser') }    
     it { should embed_many(:contexts) }
   end
   
-  context 'when creating' do
+  describe 'creating posts' do
     
-    before{ @post = Fabricate.build(:post, :title => 'Test Post') }
-    after{ Post.delete_all }
+    before{ @post = Fabricate.build(:post, :title => 'Test Post') }    
     subject{ @post }
     
     describe 'uid' do
@@ -38,6 +39,19 @@ describe Post do
       before{ @post.published = true; @post.save }
       its(:slug){ should == 'test-post' }
       specify{ @post.reload.slug.should == 'test-post' }
+    end    
+  end
+  
+  describe 'creating or saving posts' do
+    before do 
+      @post = Fabricate.build(:post, :title => 'Test Post')
+      @post.contexts.build({ body: '<p>paragraph1</p><p>paragraph2</p>' }, Text)
+    end
+    
+    it 'creates a default teaser from the body copy' do
+      expect{
+        @post.save
+      }.to change(@post, :default_teaser).from('').to("paragraph1")
     end
     
   end

@@ -1,0 +1,3 @@
+module Transit::PaginationHelper
+  
+end

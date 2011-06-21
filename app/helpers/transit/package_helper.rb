@@ -1,4 +1,4 @@
-module PackageHelper
+module Transit::PackageHelper
 
   def deliver(obj)
     if obj.respond_to?(:deliver)

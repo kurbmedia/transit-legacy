@@ -1,5 +1,5 @@
 module Transit
-  module Templates
+  module Builders
     class Jst < Tilt::Template
       
       self.default_mime_type = 'application/javascript'

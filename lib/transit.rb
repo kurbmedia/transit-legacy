@@ -1,4 +1,3 @@
-require 'rails'
 require 'active_support'
 
 module Transit
@@ -18,10 +17,8 @@ module Transit
   end
   
   module Controller
-    autoload :Actions,    'transit/controller/actions'
-    autoload :Helpers,    'transit/controller/helpers'
-    autoload :Routing,    'transit/controller/routing'
     autoload :Generator,  'transit/controller/generator'
+    autoload :Responder,  'transit/controller/responder'
   end
   
   module Errors
@@ -29,8 +26,9 @@ module Transit
     autoload :ResourceNotFound, 'transit/errors/resource_not_found'
   end
   
-  module Templates
-    autoload :Jst,  'transit/templates/jst'
+  module Builders
+    autoload :Jst,  'transit/builders/jst'
+    autoload :Forms,  'transit/builders/forms'
   end
   
   DESCRIPTIONS = {}
@@ -69,4 +67,3 @@ module Transit
 end
 require 'transit/model/hooks'
 require 'transit/rails/engine'
-require 'transit/rails/routing'

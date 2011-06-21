@@ -1,15 +1,14 @@
+require 'rails'
 require 'paperclip'
-require 'motr'
-require 'motr/orm/mongoid'
 
 module Transit
   class Engine < Rails::Engine
     
-    isolate_namespace Transit
+    config.autoload_paths << File.expand_path("../../lib/transit", __FILE__)
     
-    config.paths['app/models'] << 'app/models/contexts'
-    config.paths['app/models'] << 'app/models/transit'
-    config.eager_load_paths << 'app/models/contexts'
+    isolate_namespace Transit
+    paths['app/models'] << 'app/models/contexts'
+    paths['app/helpers'] << 'app/helpers'
     
     ##
     # After initialization, dynamically create controllers for models 
@@ -17,11 +16,7 @@ module Transit
     # 
     initializer 'transit.generate_controllers', :after => :eager_load! do
       gen = Transit::Controller::Generator.new(:page, :post)
-      gen.generate!
-      ActionController::Base.class_eval do
-        helper Transit::Engine.helpers
-        helper 'transit'
-      end
+      gen.generate!     
     end
  
     initializer 'transit.paperclip' do
@@ -35,10 +30,15 @@ module Transit
         "#{attachment.instance.normalize_name(attachment, style)}" 
       end
     end
-      
+    
+    ActiveSupport.on_load(:action_view) do
+      include TransitHelper
+      field_error_proc = lambda{ |html_tag, instance_tag| html_tag }
+    end    
+          
   end
 end
 
 require 'transit/rails/railtie'
 Sprockets::Engines
-Sprockets.register_engine '.jst', Transit::Templates::Jst
+Sprockets.register_engine '.jst', Transit::Builders::Jst

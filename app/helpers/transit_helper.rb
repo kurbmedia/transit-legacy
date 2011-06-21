@@ -1,4 +1,7 @@
 module TransitHelper  
+  
+  include Transit::PackageHelper
+  include Transit::PaginationHelper
   include Transit::FormHelper
   
   def transit_assets
