@@ -5,7 +5,7 @@ class Transit::PostsController < TransitController
   respond_to :html, :js, :json
   
   def collection
-    @posts ||= end_of_association_chain.paginate(page: (params[:page] || 1))
+    @posts ||= end_of_association_chain.page((params[:page] || 1), per: 20)
   end
   
   def resource_name; :post; end

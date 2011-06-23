@@ -3,13 +3,14 @@ require 'paperclip'
 
 module Transit
   class Engine < Rails::Engine
+
+    isolate_namespace Transit
+    paths['app/models'] << 'app/models/contexts'
+    paths['app/helpers'] << 'app/helpers/transit'
+    paths['app/helpers'] << 'app/helpers'
     
     config.autoload_paths << File.expand_path("../../lib/transit", __FILE__)
     config.autoload_paths << File.expand_path("../../app", __FILE__)
-    
-    isolate_namespace Transit
-    paths['app/models'] << 'app/models/contexts'
-    paths['app/helpers'] << 'app/helpers'
     
     ##
     # After initialization, dynamically create controllers for models 

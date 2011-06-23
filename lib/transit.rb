@@ -1,8 +1,5 @@
 require 'active_support'
 require 'transit/core_ext'
-require 'active_support/dependencies'
-
-ActiveSupport::Dependencies.autoload_paths += [File.expand_path("../../app", __FILE__)]
 
 module Transit
   
