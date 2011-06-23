@@ -1,14 +1,17 @@
 module Transit
   module Page
     
-    autoload :Fields, 'transit/page/fields'
-    
     extend ActiveSupport::Concern
     
     included do
       include Transit::Model::Base      
-      include Transit::Page::Fields   
-      embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'
+      
+      field :name,        :type => String
+      field :url,         :type => String
+      field :keywords,    :type => Array
+      field :description, :type => String
+      
+      embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'      
     end
     
     def timestamp

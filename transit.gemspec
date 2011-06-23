@@ -30,6 +30,5 @@ Gem::Specification.new do |s|
   s.add_dependency("paperclip", ["~> 2.3"])
   s.add_dependency("inherited_resources", ["= 1.2.2"])
   s.add_dependency("responders", ["= 0.6.4"])
-  s.add_dependency("will_paginate", ["= 3.0.pre2"])
   
 end

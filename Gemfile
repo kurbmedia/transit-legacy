@@ -9,7 +9,6 @@ gem 'mongoid', '~> 2.0'
 gem "devise", "~> 1.3"
 gem "paperclip", "~> 2.3"
 gem 'rack-raw-upload', '0.1.1'
-gem 'will_paginate', '3.0.pre2'
 gem "motr", "0.1.1"
 gem "paperclip", "~> 2.3"
 gem 'sass-rails'

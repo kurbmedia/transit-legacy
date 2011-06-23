@@ -1,4 +1,5 @@
 require 'active_support'
+require 'transit/core_ext'
 
 module Transit
   
@@ -14,6 +15,7 @@ module Transit
     autoload :Base,          'transit/model/base'
     autoload :Hooks,         'transit/model/hooks'
     autoload :Owners,        'transit/model/owners'
+    autoload :Paginator,     'transit/model/paginator'
   end
   
   module Controller

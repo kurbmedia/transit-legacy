@@ -35,4 +35,7 @@ end
 
 Mongoid::Document::ClassMethods.class_eval do
   include Transit::Model::Hooks
+  include Transit::Model::Paginator::ClassMethods
 end
+Mongoid::Criteria.send :include, Transit::Model::Paginator::Criteria
+Mongoid::Document.send :include, Transit::Model::Paginator::Document
