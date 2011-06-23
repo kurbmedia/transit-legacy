@@ -7,7 +7,7 @@ module Transit
       app.config.responders.flash_keys = [ :success, :error ]
       app.config.assets.precompile << 'transit.css'
       app.config.assets.precompile << 'transit.js'
-      app.config.action_view.default_form_builder = Transit::Builders::Forms
+      app.config.action_view.default_form_builder = Transit::Builders::FormBuilder
     end
     
     ActiveSupport.on_load(:action_controller) do

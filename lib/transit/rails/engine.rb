@@ -5,6 +5,7 @@ module Transit
   class Engine < Rails::Engine
     
     config.autoload_paths << File.expand_path("../../lib/transit", __FILE__)
+    config.autoload_paths << File.expand_path("../../app", __FILE__)
     
     isolate_namespace Transit
     paths['app/models'] << 'app/models/contexts'
@@ -18,7 +19,7 @@ module Transit
       gen = Transit::Controller::Generator.new(:page, :post)
       gen.generate!     
     end
- 
+    
     initializer 'transit.paperclip' do
       def Paperclip.logger
         Rails.logger 
@@ -41,4 +42,4 @@ end
 
 require 'transit/rails/railtie'
 Sprockets::Engines
-Sprockets.register_engine '.jst', Transit::Builders::Jst
+Sprockets.register_engine '.jst', Transit::Builders::JstBuilder

@@ -4,7 +4,7 @@ module Transit
     ##
     # Base class for creating form builders
     # 
-    class Forms < ActionView::Helpers::FormBuilder #:nodoc:
+    class FormBuilder < ActionView::Helpers::FormBuilder #:nodoc:
       
       # Access the template object
       attr_accessor :template
@@ -71,6 +71,7 @@ module Transit
       # 
       def fields_for(record_or_name_or_array, *args, &block) #:nodoc:
         opts = args.extract_options!
+        opts.merge!(:builder => Transit::Builders::FormBuilder)
         args.push(opts)
         super(record_or_name_or_array, *args, &block)
       end

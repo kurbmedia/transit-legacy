@@ -1,5 +1,8 @@
 require 'active_support'
 require 'transit/core_ext'
+require 'active_support/dependencies'
+
+ActiveSupport::Dependencies.autoload_paths += [File.expand_path("../../app", __FILE__)]
 
 module Transit
   
@@ -29,8 +32,8 @@ module Transit
   end
   
   module Builders
-    autoload :Jst,  'transit/builders/jst'
-    autoload :Forms,  'transit/builders/forms'
+    autoload :JstBuilder,   'transit/builders/jst_builder'
+    autoload :FormBuilder,  'transit/builders/form_builder'
   end
   
   DESCRIPTIONS = {}
