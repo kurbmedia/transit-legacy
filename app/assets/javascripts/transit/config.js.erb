@@ -4,7 +4,12 @@
 
 (function(transit){
 	
-	transit.configure('context.video', { 
+	transit.paths.video_player = "<%= asset_path 'transit/video_player.swf' %>";
+	transit.paths.audio_player = "<%= asset_path 'transit/audio_player.swf' %>";
+	transit.paths.jplayer 	   = "<%= asset_path 'transit/jplayer.swf' %>";
+	
+	
+	transit.configure('video', { 
 		image:    '',
 		movie:    '',
 		autoplay:  'false',
@@ -20,8 +25,8 @@
 		color_button_highlight: "0xffffff" 
 	});
 	
-	transit.configure('context.text', {
-		basePath:'/assets/', 
+	transit.configure('richtext', {
+		basePath:'<%= asset_path '' %>', 
 		skin:'compact',
 		toolsItems: [
 		    // {'name': 'Bold', 'title': 'Strong', 'css': 'wym_tools_strong'}, 

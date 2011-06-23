@@ -13,4 +13,8 @@ class Video < Transit::Context
     self.meta['video_type']
   end
   
+  def data
+    { source: source, type: video_type, ext: file_ext }
+  end
+  
 end

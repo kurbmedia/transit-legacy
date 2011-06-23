@@ -8,8 +8,7 @@ module Transit
       end
       obj.contexts.ascending(:position).map do |field|
         case field
-        when Video then deliver_media_context('video', field, { video_source: field.body, video_type: field.video_type })
-        when Audio then deliver_media_context('audio', field, { audio_source: field.body })
+        when Video || Audio then deliver_media_context(field, CGI::escape(field.data.to_json))
         else
           render(:partial => "contexts/#{field.class.to_s.underscore}", :format => :html, :locals => { :context => field }).html_safe
         end
@@ -22,8 +21,10 @@ module Transit
   
     private
   
-    def deliver_media_context(type, context, attrs = {})
-      content_tag(:div, "", { id: "#{type}_player_#{context.id}", data: attrs, class: "#{type}_player" })
+    def deliver_media_context(context, attrs = {})
+      type = context.class.name.underscore
+      attrs = { transit_context: type, context_options: attrs }
+      content_tag(:div, "", { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" })
     end
     
   end

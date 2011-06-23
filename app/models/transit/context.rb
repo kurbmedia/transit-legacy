@@ -25,6 +25,10 @@ module Transit
     # Sets up a default name field to be used in form helpers
     def field_name
       (self.name.to_s.blank? ? self.class.to_s : self.name)
+    end    
+    
+    def file_ext
+      File.extname(self.body.to_s).sub('.', '')
     end
     
   end

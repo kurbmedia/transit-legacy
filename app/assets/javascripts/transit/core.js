@@ -20,6 +20,7 @@
 		this.config    = {};
 		this.contexts  = {};
 		this.callbacks = {};
+		this.paths	   = {};
 		
 		this.templates = {
 			parse: function( name, data ){
@@ -39,6 +40,16 @@
 		
 		this.addCallback = function( eventName, func ){
 			
+		};
+		
+		this.mergeConfigs = function( oldconf, newconf ){
+			return $.extend({}, oldconf, newconf);
+		};
+		
+		this.parseContextData = function( object ){
+			var element  = jQuery(object), 
+				json_str = unescape(element.data('context-options'));
+			return (new Function("return " + json_str))();
 		};
 		
 		this.onReadyCallbacks = [];
