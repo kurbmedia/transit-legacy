@@ -9,7 +9,7 @@ $(function(){
 	month_select = $('#'+name+'_2i');
 	day_select   = $('#'+name+'_3i');
 	year_select  = $('#'+name+'_1i');
-	
+
 	dp.datepicker({
 		dateFormat: 'yy-m-d',
 		defaultDate: [year_select.val(), month_select.val(), day_select.val()].join("-").toString(),

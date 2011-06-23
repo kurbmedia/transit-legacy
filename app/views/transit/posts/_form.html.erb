@@ -29,12 +29,16 @@
 		</li>
 		<% end %>
 	</ol>
-	<%= f.hidden_field(:user, value: current_user.id) if resource.delivers?(:owner) %>
+	<%= f.hidden_field(:user, value: current_user.id) if resource.delivers?(:owner) %>	
 <% end %>
 
 <div id="post">
 	<%= render partial: 'transit/posts/fields/title', locals: { form: f } %>
 	<%= render template: 'transit/contexts/index', locals: { form: f } %>
 </div>
+<div id='edit_post_sidebar'>
+	
+</div>
+<%= f.button %>
 <% end %>
-<%= text_field_tag :datepicker_holder, "", rel: 'post_post_date', data: { 'calendar-link' => "#post_date_menu" } %>
+<%= text_field_tag :datepicker_holder, resource.post_date.strftime('%Y-%m-%d'), rel: 'post_post_date', data: { 'calendar-link' => "#post_date_menu" } %>
