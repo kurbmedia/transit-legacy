@@ -14,5 +14,15 @@ module Transit
       self.responder = Transit::Controller::Responder
     end
     
+    initializer 'transit.action_view' do
+      ActionView::Base.default_form_builder = Transit::Builders::FormBuilder
+      ActionView::Base.field_error_proc = lambda{ |html_tag, instance_tag| html_tag }
+    end
+    
+    ActiveSupport.on_load(:action_view) do
+      include TransitHelper
+      include Transit::FormHelper
+    end
+    
   end
 end

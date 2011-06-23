@@ -31,11 +31,6 @@ module Transit
         "#{attachment.instance.normalize_name(attachment, style)}" 
       end
     end
-    
-    ActiveSupport.on_load(:action_view) do
-      include TransitHelper
-      field_error_proc = lambda{ |html_tag, instance_tag| html_tag }
-    end    
           
   end
 end
