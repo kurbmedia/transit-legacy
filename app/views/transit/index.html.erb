@@ -5,7 +5,7 @@
 <table border="0" id="listing">
 	<thead>
 		<tr>
-		<% Transit::Admin.options_for(resource_instance_name).column_hash.each do |name, value| %>
+		<% resource_class.admin_options.column_hash.each do |name, value| %>
 			<% if value.is_a?(Array) %>
 			<th><%= value.first %></th>
 			<% else %>

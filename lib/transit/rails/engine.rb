@@ -7,10 +7,7 @@ module Transit
     isolate_namespace Transit
     paths['app/models'] << 'app/models/contexts'
     paths['app/helpers'] << 'app/helpers/transit'
-    paths['app/helpers'] << 'app/helpers'
     
-    config.autoload_paths << File.expand_path("../../lib/transit", __FILE__)
-    config.autoload_paths << File.expand_path("../../app", __FILE__)
     
     ##
     # After initialization, dynamically create controllers for models 

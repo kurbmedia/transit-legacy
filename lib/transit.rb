@@ -29,8 +29,9 @@ module Transit
   end
   
   module Builders
-    autoload :JstBuilder,   'transit/builders/jst_builder'
-    autoload :FormBuilder,  'transit/builders/form_builder'
+    autoload :JstBuilder,      'transit/builders/jst_builder'
+    autoload :FormBuilder,     'transit/builders/form_builder'
+    autoload :PackageBuilder,  'transit/builders/package_builder'
   end
   
   DESCRIPTIONS = {}

@@ -5,8 +5,10 @@ module Transit
       extend ActiveSupport::Concern
       
       included do
-        class_attribute :delivery_options, :instance_writer => false
+        class_attribute :delivery_options, instance_writer: false
         self.delivery_options ||= []
+        
+        class_attribute :admin_options, instance_writer: false
         
         include Mongoid::Timestamps
         include Mongoid::MultiParameterAttributes

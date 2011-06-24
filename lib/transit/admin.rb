@@ -11,17 +11,14 @@ module Transit
   # 
   module Admin
     
-    mattr_accessor :_configurations
-    @@_configurations ||= {}
-    
     def self.register(klass, &block)
-      dsl = DSL.new
+      klass = klass.to_s.classify.constantize
+      unless klass.respond_to?(:admin_options)
+        klass.send(:class_attribute, :admin_options, instance_writer: false)
+      end
+      dsl = klass.admin_options ||= DSL.new
       block.call(dsl)
-      @@_configurations.merge!(klass => dsl)
-    end
-    
-    def self.options_for(name)      
-      @@_configurations[name]
+      klass.admin_options = dsl
     end
     
     class DSL

@@ -6,6 +6,8 @@ module Transit
     extend ActiveSupport::Concern
     
     included do      
+      class_attribute :delivery_template, instance_writer: false
+      self.delivery_template = :post
       
       include Transit::Model::Base
       
