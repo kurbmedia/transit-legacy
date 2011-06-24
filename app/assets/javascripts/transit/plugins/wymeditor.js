@@ -118,8 +118,7 @@ jQuery.extend(WYMeditor, {
     KEY                 - Standard key codes.
     NODE                - Node types.
 
-*/
-
+*/	
     VERSION             : "0.5-rc1",
     INSTANCES           : [],
     STRINGS             : [],

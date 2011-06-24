@@ -1,9 +1,9 @@
-<div id="topic_list" class="panel">
-	<h4><%= t(:topics, :scope => [:transit, :legends]) %></h4>
+<h4><a href="#"><%= t('transit.legends.topics') %></a></h4>
+<div id="topic_list">	
 	<ol>
-		<li>
+		<li class='select_list'>
 			<%= select_tag :topic_ids, options_for_select(Topic.all.collect{ |t| [t.title, t.id.to_s] }), id: 'all_topics_list' %>
-			<%= link_to 'Add', '#', class: 'add_to_list icon_add', id:'add_topic_link' %>			
+			<%= link_to 'Add', '#', class: 'add_to_list icon_add ui-button', id:'add_topic_link', data: { ui_icon: 'plus' } %>
 		</li>
 		<li id="topic_selections" rel="<%= "#{form.object_name}[topic_ids][]" %>">
 			<ul>
@@ -17,9 +17,9 @@
 			</ul>
 		</li>
 	</ol>
+	<script type="text/javascript" charset="utf-8">
+	//<![CDATA[
+		$('#all_topics_list').selectToList({ target:'#topic_selections ul', name:$('#topic_selections').attr('rel'), add:$('#add_topic_link')});
+	//]]>
+	</script>
 </div>
-<script type="text/javascript" charset="utf-8">
-//<![CDATA[
-	$('#all_topics_list').selectToList({ target:'#topic_selections ul', name:$('#topic_selections').attr('rel'), add:$('#add_topic_link')});
-//]]>
-</script>

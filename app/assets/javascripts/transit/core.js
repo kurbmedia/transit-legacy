@@ -42,6 +42,10 @@
 			
 		};
 		
+		this.addContext = function( name, api ){
+			this.contexts[name] = api;
+		};
+		
 		this.mergeConfigs = function( oldconf, newconf ){
 			return $.extend({}, oldconf, newconf);
 		};
@@ -56,8 +60,29 @@
 				
 	};
 	
-	window.transit = new transit();
+	window.transit = new transit();	
 	return window.transit;
 
 
+})(jQuery);
+
+(function(jQuery, undefined){
+	
+	jQuery.fn.transit = function( method, options ){
+
+		if( jQuery.isFunction(transit.contexts[method]) ) {
+			
+			var tdata = jQuery(this).data("transit_"+ method);
+			if( tdata ) return tdata;
+			this.each( function(i, element) {	
+				var item     = transit.contexts[method],
+					instance = new item( jQuery(element), options );				
+				jQuery(this).data("transit_" + method, instance);
+			});
+						
+			return this;
+		} 
+	};
+	
+	
 })(jQuery);

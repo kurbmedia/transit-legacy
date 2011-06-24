@@ -1,4 +1,8 @@
+//= require transit/plugins/select_to_list
+
 $(function(){
+	
+	if( $('#datepicker_holder').length = 0 ) return true;
 	
 	var dp   	 = $('#datepicker_holder'),
 		dptarget = $('#datepicker_target'),

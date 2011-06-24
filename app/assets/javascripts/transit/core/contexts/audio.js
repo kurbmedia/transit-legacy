@@ -3,78 +3,49 @@
 
 (function(transit){
 	
-	var audio = function(){
-		
+	var Audio = function( element, instance_opts ){
+				
 		var audio_params = {
-				swfPath: transit.paths.jplayer,
-				ready: load_audio,
-				solution: "html,flash",
-				supplied: 'mp3,m4a',
-				idPrefix: 'transit'
-			};
-			
-		this.load = function( element, instance_conf, instance_opts){
-			var opts  = self.config,
-				inst  = jQuery(inst);
-			
-			if( jQuery.type(inst) == 'array' ){
-				jQuery(inst).each(function(ind, el){
-					self._load(el, instance_opts);
-				});
-			}else{
-				self._load( inst, instance_opts );
-			}
-		};
+			swfPath: transit.paths.jplayer,
+			ready: load_audio,
+			solution: "html,flash",
+			supplied: 'mp3,m4a',
+			idPrefix: 'transit',
+			ready: audio_ready
+		},
+		self    = this,
+		config  = transit.config['video'],
+		options = transit.parseContextData(element);
 		
-		this._load = function( element, instance_conf, instance_opts ){
-			var opts = self.config,
-				inst = $(element),
-				conf = transit.parseContextData(inst);
-
-			if( inst.data('transitAudio') ) return true;		
-			if( instance_opts ){
-				opts = transit.mergeConfigs(self.config, instance_opts);
-			}
-			if( instance_conf ){
-				conf = transit.mergeConfigs(conf, instance_conf);
-			}
-
-			inst.data('transitAudio', conf);		
-			inst.jPlayer({ ready: audio_ready });
-			return true;
-		};
-
-		this.configure = function( opts ){
-			this.config = transit.mergeConfigs(this.config, opts);
-		};
+		if( instance_opts ){
+			config = transit.mergeConfigs(config, instance_opts );
+		}
+						
+		element.jPlayer(audio_params);
+					
+		function audio_ready(event){
+			var media_opts = {};
+			media_opts[options.ext] = options.source;
+			self.jPlayer("setMedia", media_opts);
+		}
 		
-		this.autoload = function( selectors ){
-			if( selectors ) jQuery(selectors).trigger('transit:audio');			
-			jQuery('*[data-transit-context="audio"]').trigger('transit:audio');
-		};
+		return self;
+			
 	};
 	
-	transit.audio = new audio();
-	
+	transit.addContext("audio", Audio);
+
 	jQuery(function(){
 		jQuery('*[data-transit-context="audio"]')
 			.bind('transit:audio', load_audio)
-			.live('transit:audio', load_audio);
+			.live('transit:audio', load_audio)
+			.trigger('transit:audio');
 	});
 	
 	// jQuery handler func
 	
 	function load_audio(event){
-		transit.audio.load(this);
-	}
-	
-	function audio_ready(event){
-		var self = $(this), 
-			conf = self.data('transitAudio'),
-			opts = {};
-			
-		opts[conf.ext] = conf.source;
-		self.jPlayer("setMedia", opts);
+		jQuery(this).transit('audio');
 	}
 	
 })(transit);

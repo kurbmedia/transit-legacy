@@ -3,76 +3,46 @@
 
 (function(transit){
 	
-	var video = function(){
+	var Video = function( element, instance_opts ){
 		var video_params = {
 			src: transit.paths.video_player,
 			allowfullscreen: 'true',
 			allowscriptaccess: 'always',
 			bgcolor: '#000000',
 			wmode: 'opaque'
-		}, 
-		self = this;
+		},
+		self	= this,
+		config  = transit.config['video'],
+		options = transit.parseContextData(element);
 		
-		this.config = transit.config['video'];
-		this.load   = function( element, instance_opts){
-			var opts  = self.config,
-				inst  = jQuery(element);
-			
-			if( jQuery.type(inst) == 'array' ){
-				jQuery(inst).each(function(ind, el){
-					self._load(el, instance_opts);
-				});
-			}else{
-				self._load( inst, instance_opts );
-			}
-			
-		};
+		if( instance_opts ){
+			config = transit.mergeConfigs(config, instance_opts );
+		}
 		
-		this._load = function( element, instance_opts ){
-			var opts = self.config,
-				inst = jQuery(element),
-				conf = transit.parseContextData(inst);
-
-			if( inst.data('transitVideo') ) return true;		
-			if( instance_opts ){
-				opts = transit.mergeConfigs(self.config, instance_opts);
-			}
-
-			if( conf.type == 'youtube' && !(/youtube/).test( conf.source )){
-				conf.source = "http://www.youtube.com/v/" + conf.source;
-			}
-
-			conf.movie = conf.source;		
-			inst.flashembed(video_params, $.extend({}, opts, conf));
-			inst.data('transitVideo', true);
-			return true;
-		};
-
-		this.configure = function( opts ){
-			this.config = transit.mergeConfigs(this.config, opts);
-		};
+		if( options.type == 'youtube' && !(/youtube/).test( options.source )){
+			options.source = "http://www.youtube.com/v/" + options.source;
+		}
 		
-		this.autoload = function( selectors ){
-			if( selectors ) jQuery(selectors).trigger('transit:video');			
-			jQuery('*[data-transit-context="video"]').trigger('transit:video');
-		};
+		options.movie = options.source;		
+		element.flashembed(video_params, $.extend({}, config, options));
+		
+		return self;
 		
 	};	
-	
-	transit.video = new video();
+
+	transit.addContext('video', Video);
 	
 	jQuery(function(){
 		jQuery('*[data-transit-context="video"]')
 			.bind('transit:video', load_video)
-			.live('transit:video', load_video);
+			.live('transit:video', load_video)
+			.trigger('transit:video');
 	});
 	
 	// jQuery handler func
 	
 	function load_video(event){
-		jQuery(this).each(function(ind, element){
-			transit.video.load(element);
-		});
+		jQuery(this).transit('video');
 	}
 	
 })(transit);

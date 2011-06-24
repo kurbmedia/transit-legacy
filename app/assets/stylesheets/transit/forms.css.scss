@@ -27,3 +27,12 @@ ul#context_fields{ padding:0; width:100%; list-style-type:none; margin:0;
 		label, input, select{ display:inline !important; }
 	}
 }
+
+#transit_edit_post #topic_list{ padding:0px; 
+	ol{ list-style-type:none; padding:0; margin:0; 
+		li.select_list{ text-align:center; 
+			select{ border-style:solid; }
+		}
+	}
+	a.icon_add{ @extend .ui-icon-plus; }
+}

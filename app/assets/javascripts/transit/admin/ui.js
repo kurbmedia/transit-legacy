@@ -1,13 +1,19 @@
 //= require jqueryui/button
+//= require jqueryui/accordion
 
 $(function(){
 	
-	$('#transit_toolbar .transit_toolbar_button, input.toggle_button').each(
+	var post_sidebar = $('#edit_post_sidebar');
+	
+	$('#transit_toolbar .transit_toolbar_button, input.toggle_button, a.ui-button').each(
 		function(i, el){
 			var self = $(el),
 				icon = self.data('ui-icon');
 				opts = {};
-			if( icon ) opts.icons = { primary:icon };
+			if( icon ){
+				if( !(/ui-icon/i).test(icon) ) icon = "ui-icon-"+icon;
+				opts.icons = { primary:icon };
+			}
 			$(el).button(opts);
 		});
 	
@@ -29,5 +35,11 @@ $(function(){
 		
 		return new_css;
 	}
+	
+	post_sidebar.accordion({header:'h4', autoHeight:false })
+		.find('div')
+		.bind('resize', function(event){
+			post_sidebar.accordion("resize");
+		});
 	
 });

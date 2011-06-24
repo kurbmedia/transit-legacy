@@ -37,8 +37,13 @@
 	<%= render template: 'transit/contexts/index', locals: { form: f } %>
 </div>
 <div id='edit_post_sidebar'>
-	
-</div>
+	<% if resource.delivers?(:topics) %>
+	<%= render(partial: 'transit/topics/model', locals: { form: f }) %>
+	<% end %>
+	<% if resource.delivers?(:assets) %>
+	<%= render(partial: 'transit/assets/model', locals: { form: f }) %>
+	<% end %>
+
 <%= f.button %>
 <% end %>
 <%= text_field_tag :datepicker_holder, resource.post_date.strftime('%Y-%m-%d'), rel: 'post_post_date', data: { 'calendar-link' => "#post_date_menu" } %>
