@@ -2,7 +2,15 @@ module Transit
   module PackageHelper
     unloadable
     
-    
+    def deliver_content(resource, force_edit = false, &block)
+      return capture(resource, &block).html_safe unless force_edit || edit_mode_enabled?
+      tpl  = resource.delivery_template
+      with_output_buffer do
+        concat(form_for([transit, resource], as: tpl, html: { remote: true, id: "transit_edit_#{tpl.to_s}" }) do |dform|
+          concat(capture(Transit::Builders::PackageBuilder.new(resource, dform, nil), &block))
+        end)
+      end
+    end
     
     def deliver(obj)
       if obj.respond_to?(:deliver)
