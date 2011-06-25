@@ -56,4 +56,18 @@ describe Post do
     
   end
   
+  describe '#published scope' do
+    
+    let!(:published){ Fabricate(:post, published: true, post_date: Date.today) }
+    let!(:unpublished){ Fabricate(:post, published: true, post_date: 2.days.from_now) }
+    let!(:unpublished2){ Fabricate(:post, published: false, post_date: 2.days.ago) }
+    
+    subject{ Post.published.to_a }
+    it { should_not include(unpublished, unpublished2) }
+    it { should_not include(unpublished) }
+    it { should_not include(unpublished2) }
+    it { should include(published) }
+    
+  end
+  
 end

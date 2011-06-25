@@ -23,7 +23,7 @@ module Transit
     
     class DSL
       
-      attr_accessor :columns, :column_hash
+      attr_accessor :columns, :column_hash, :fields
       
       ##
       # Specify the columns to be displayed in the admin. At minimum the name of a 
@@ -55,6 +55,28 @@ module Transit
             (value[:proc].present? ? [colname, value[:proc]] : colname)
           end
         end
+      end
+      
+      ##
+      # Specify the form fields used for each attribute. When inheriting posts or pages 
+      # defaults are already pre-defined and normally only need to be overridden.
+      # 
+      # @example Specify a text_area for the title and teaser of a post
+      #   config.fields title: :text_area, teaser: :text_area
+      #
+      def fields(field_hash = {})
+        @fields.merge!(field_hash) unless field_hash.empty?
+        @fields
+      end
+      
+      def initialize
+        @fields = ActiveSupport::HashWithIndifferentAccess.new({
+          title:      :text_field,
+          teaser:     :text_area,
+          post_date:  { date_select: { order: [:month, :day, :year], use_short_month: true } },
+          image:      :file_field,
+          photo:      :file_field
+        })
       end
       
     end
