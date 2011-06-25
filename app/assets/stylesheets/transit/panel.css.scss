@@ -1,0 +1,25 @@
+#transit_admin_panel{ @include column(9, true); float:right; clear:none !important; padding:10px;
+	#transit_admin_panel_wrapper{ border:none; padding:0px; 
+		h4{ margin:0; }
+		#post_teaser{ width:95%; height:125px; }
+	}	
+	#datepicker_target{ height:1px; overflow:hidden; }
+	div.datepicker{ width:100%; margin-bottom:1em;
+		div.ui-datepicker-inline, table{ width:100%; }
+	}
+	#post_topics{
+		ol, ul{ list-style-type:none; margin-right:0px; padding:0px; }
+	}
+	#topic_selections{
+		li{ display:block; height:25px; line-height:25px; position:relative; @extend .ui-state-hover; padding:0px;
+			text-indent:1em;
+			a.remove_from_list{ position:absolute; right:0px; top:0px; 
+				display:block; @include transit_icon24(2); @include iconSquare(24);
+			}
+		}
+	}
+}
+
+#transit_admin_panel_buttons{ @include inline-block-list; text-align:right; padding:5px; position:absolute; top:0px; right:1em;
+	a, button{ font-size:1.15em; font-weight:bold; text-align:left; }
+}

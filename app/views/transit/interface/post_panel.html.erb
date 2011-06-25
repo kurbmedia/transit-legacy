@@ -1,0 +1,44 @@
+<div id="transit_admin_panel">	
+	<div id="transit_admin_panel_wrapper">
+		<ul>
+			<li><a href="#post_meta">Post Detail</a></li>
+			<% if form.object.delivers?(:topics) %>
+			<li><a href="#post_topics">Topics</a></li>
+			<% end %>
+			<li><a href="#post_assets">Files/Images</a></li>			
+			<li><a href="#post_social">Social</a></li>
+		</ul>
+		<div id="post_meta" class='panel'>
+			<h4>Post Date</h4>
+			<div class='datepicker' rel='post_post_date'></div>
+			<div id="datepicker_target">
+				<%= form.date_select :post_date, { order: [:month, :day, :year], use_short_month: true } %>
+			</div>
+			<h4>Teaser</h4>
+			<%= form.text_area :teaser %>
+		</div>
+		<% if form.object.delivers?(:topics) %>
+		<%= render(template: 'transit/topics/manage', locals: { form: form }) %>
+		<% end %>
+		<div id="post_assets">
+			<h4>Files and Images</h4>
+			<% if form.object.persisted? %>
+			<ul id="image_list">
+			
+			</ul>
+			<ul id="file_list">
+			
+			</ul>
+			<% else %>
+			<p>Please save the post before uploading files/images.</p>
+			<% end %>
+		</div>		
+		<div id="post_social">
+			<h4>Social Sharing</h4>
+		</div>
+	</div>
+</div>
+<ul id="transit_admin_panel_buttons">
+	<li><button data-ui-button="check" type='commit'>Save</button></li>
+	<li><%= link_to 'Delete', transit.polymorphic_path(form.object), method: :delete, data: { ui_button: 'closethick' } %></li>
+</ul>

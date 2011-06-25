@@ -11,7 +11,7 @@ module Transit
         <<-JST
         (function() {
           try{
-              transit.addTemplate(#{scope.logical_path.inspect}, "#{sanitize_js(data)}");
+              transit.template.add(#{scope.logical_path.inspect}, "#{sanitize_js(data)}");
             }catch(e){};
           }).call();
         JST

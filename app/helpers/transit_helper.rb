@@ -8,7 +8,7 @@ module TransitHelper
   def transit_assets
     return '' unless controller.class.name.match(/Transit/)
     stylesheet_link_tag('transit') <<
-    javascript_include_tag('transit')
+    javascript_include_tag('transit/admin')
   end
   
   def video_player(source, html_attrs = {})

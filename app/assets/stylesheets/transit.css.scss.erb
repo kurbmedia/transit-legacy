@@ -2,14 +2,6 @@
  *= require_self
 */
 
-$transit-fieldset-background-color:#eee !default;
-$transit-fieldset-border-color:darken(#eee, 5%) !default;
-$transit-link-color:#1a7bad !default;
-$transit-heading-font-color:#333 !default;
-$transit-button-color:lighten(#1a7bad, 20%) !default;
-$transit-button-active-color:lighten(#1a7bad, 10%) !default;
-$transit-secondary-color:#ad361a !default;
-
 @mixin transit_icon24($row:1, $bgx:0px, $offset:0px){
 	background-image:url(<%= asset_path 'transit/icon24x24.png' %>); background-repeat:no-repeat;
 	$y: (($row - 1) * -24px) + $offset;
@@ -44,9 +36,7 @@ a[href$='.eps'], a[href$='.ai'], a.file_icon_vector{ @include transit_fileIcon(1
 @import 'blueprint/typography';
 @import "compass/typography/lists";
 @import "compass/css3/border-radius";
-
-@import 'includes/transit';
-@import './transit/toolbar';
-@import './transit/ui';
-@import './transit/forms';
-@import './transit/editor';
+@import "transit/forms";
+@import "transit/panel";
+@import "includes/transit";
+@import "transit/ui";
