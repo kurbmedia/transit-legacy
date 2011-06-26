@@ -24,12 +24,22 @@
 		ul{ list-style-type:none; margin:0px; padding:0px; 
 			li:first-child{ border-top:1px dashed #ccc; padding:.5em 0px; }
 		}
-		#image_list{ margin-bottom:1em; }
+		#asset_image_list{ margin-bottom:1em; }
 	}
 }
 
 #file_uploader{ 
-	#file_upload_queue{ padding-top:50px; }
+	#file_upload_queue{ padding:50px 0px 0px 0px; margin-right:0px; 
+		div.uploadifyQueueItem{ padding-right:30px; position:relative;
+			div.uploadifyProgress{ height:5px; width:100%;  }
+			span.fileName{ position:relative; display:block; text-indent:5px; height:24px; line-height:24px; z-index:1000; }
+			span.data{ display:none; }
+			div.cancel{ position:absolute; top:0px; right:0px; 
+				a{ @include iconSquare(24); @include transit_icon24(2); }
+				img{ display:none; }
+			}
+		}
+	}
 }
 
 #transit_admin_panel_buttons{ @include inline-block-list; text-align:right; padding:5px; position:absolute; top:0px; right:1em;

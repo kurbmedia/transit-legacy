@@ -1,10 +1,13 @@
 (function(transit){
 	
 	var media_defaults = {
-		swfPath:  			"<%= asset_path 'transit/jplayer.swf' %>",
-		solution: 			"html,flash",
+		swfPath:  			"<%= asset_path 'transit/' %>",
+		solution: 			"flash,html",
 		idPrefix: 			"transit_media",
 		preload: 			"auto",
+		backgroundColor:    "",
+		errorAlerts: true,
+		warningAlerts:true,
 		cssSelector: {
 			play: 				".media-play",
 			pause: 				".media-pause",
@@ -22,8 +25,26 @@
 	};
 
 	
-	transit.configure('video', jQuery.extend({}, media_defaults, { supplied: 'm4v' }));
+	// HTML5 player... ignore for now.
+	//transit.configure('video', jQuery.extend({}, media_defaults, { supplied: 'm4v' }));
+	
 	transit.configure('audio', jQuery.extend({}, media_defaults, { supplied: 'mp3,m4a,wav' }));
+	transit.configure('video', {
+		src:      "<%= asset_path 'transit/video_player.swf' %>",
+		image:    '',
+		movie:    '',
+		autoplay:  'false',
+		loop:      'false',
+		autohide:  'false',
+		fullscreen: 'true',
+		color_text: "0xffffff",
+		color_seekbar: "0x108194",
+		color_loadingbar: "0xe4f2f6",
+		color_seekbarbg: "0x108194",            
+		color_button_out: "0x108194",
+		color_button_over: "0xd15245",
+		color_button_highlight: "0xffffff"
+	});
 	
 	transit.configure('richtext', {
 		basePath:'assets/', 

@@ -17,8 +17,10 @@ jQuery(function(){
 			height          : 25,
 			width           : 135,
 			onUploadSuccess : process_upload,
-			onUploadProgress: update_progress
-		});
+			onUploadProgress: update_progress,
+			onSelect: add_to_queue
+		}),
+		queue_list;
 	
 	if( upload_button.length == 0 ) return true;
 	
@@ -52,6 +54,7 @@ jQuery(function(){
 		});
 		
 	upload_field = jQuery("#"+field_id);
+	queue_list = jQuery('#file_upload_queue');
 	
 	upload_button.bind('click', function( event ){
 		event.preventDefault();
@@ -68,21 +71,35 @@ jQuery(function(){
 			left: '1em'
 		});
 	}
+	
+	function add_to_queue(){
+		jQuery('#file_upload_queue div.uploadifyProgress').progressbar();
+	}
 		
 	function start_queue( event ){
-		
+		upload_field.uploadifyUpload();	
 	}
 	
 	function cancel_queue( event ){
 		upload_dialog.dialog('close');
 	}
 	
-	function process_upload(){
+	function process_upload(file, data, success){
+		var resp = jQuery.parseJSON(data),
+			item = jQuery(resp.content);
+			
+		if( resp.image ) item.hide().appendTo( jQuery('#asset_image_list') );
+		else item.hide().appendTo( jQuery('#asset_image_list') );
 		
+		item.fadeIn('fast');
+		jQuery('#' + file.id).next('div.uploadifyProgress').progressbar('value', 0);
+		jQuery('#asset_upload').uploadifyCancel(file.id);
 	}
 	
-	function update_progress(){
-		
+	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
+		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
+		jQuery('#' + file.id).next('div.uploadifyProgress').progressbar('value', percentage);
+		return false;		
 	}
 	
 	

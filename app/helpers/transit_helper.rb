@@ -18,7 +18,7 @@ module TransitHelper
       class: 'video_player' 
     }
     wrapper    = html_attrs.delete(:wrapper) || :div
-    data_attrs = { source: source };
+    data_attrs = { source: source, ext: File.extname(source).sub('.','') };
     
     if img = html_attrs.delete(:image)
       data_attrs.merge!(image: img)      

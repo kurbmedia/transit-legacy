@@ -1,5 +1,4 @@
-<div class="audio_player" data-audio-source="<%= context.source %>" id="mediaplayer_<%= context.id %>">
-</div>
+<%= deliver_media_context(context, CGI::escape(context.data.to_json)) %>
 <ol class="split">
 	<li style='width:350px; padding-left:.5em'>
 		<%= form.label :source %>
