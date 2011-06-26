@@ -1,7 +1,7 @@
-module Transit
+module Transit::Package
   module Post
     
-    autoload :Validations,  'transit/post/validations'
+    autoload :Validations,  'transit/package/post/validations'
     
     extend ActiveSupport::Concern
     

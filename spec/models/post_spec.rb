@@ -70,4 +70,29 @@ describe Post do
     
   end
   
+  describe '.topic_ids' do
+    
+    before(:all) do
+      Topic.delete_all
+      @topics = (0..2).to_a.collect{ |i| Topic.create(title: "Topic #{i}") }
+    end
+    before do
+      @post = Fabricate(:post)
+      @post.topics = topic_ids
+      @post.save
+    end
+    let!(:topic_ids){ @topics.collect{ |t| t.id.to_s } }
+    
+    let(:post){ @post }
+
+    it { post.topics.should_not be_empty }
+    it { post.topic_ids.should_not be_empty }
+    it { post.topics.should include(@topics.first) }
+    
+    specify 'the topic also sets the post_id' do
+      @topics.first.posts.should include(@post)
+    end
+    
+  end
+  
 end

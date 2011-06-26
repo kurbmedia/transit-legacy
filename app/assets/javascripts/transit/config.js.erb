@@ -1,0 +1,67 @@
+(function(transit){
+	
+	var media_defaults = {
+		swfPath:  			"<%= asset_path 'transit/jplayer.swf' %>",
+		solution: 			"html,flash",
+		idPrefix: 			"transit_media",
+		preload: 			"auto",
+		cssSelector: {
+			play: 				".media-play",
+			pause: 				".media-pause",
+			stop: 				".media-stop",
+			videoPlay: 			".media-video-play",
+			seekBar: 			".media-seek-bar",
+			playBar: 			".media-play-bar",
+			mute: 				".media-mute",
+			unmute: 			".media-unmute",
+			volumeBar: 			".media-volume-bar",
+			volumeBarValue: 	".media-volume-bar-value",
+			currentTime: 		".media-current-time",
+			duration: 			".media-duration"
+		}
+	};
+
+	
+	transit.configure('video', jQuery.extend({}, media_defaults, { supplied: 'm4v' }));
+	transit.configure('audio', jQuery.extend({}, media_defaults, { supplied: 'mp3,m4a,wav' }));
+	
+	transit.configure('richtext', {
+		basePath:'assets/', 
+		skin:'compact',
+		toolsItems: [],
+		containersItems: [],
+		classesItems: []
+	});
+	
+	transit.configure('uploadify', {
+		    swf  : "<%= asset_path 'transit/uploadify.swf' %>",
+			auto : false,
+			buttonClass     : 'button',
+			buttonCursor    : 'hand',
+			buttonImage     : '',
+			buttonText      : 'Choose Files',
+			cancelImage     : '',
+			checkExisting   : false,
+			debug           : false,
+			fileSizeLimit   : 104857600,
+			fileTypeDesc    : 'Choose an Image or Video',
+			fileTypeExts    : '*.*',
+			height          : 30,
+			method          : 'post',
+			multi           : true,
+			queueID         : 'file_upload_queue',
+			queueSizeLimit  : 10,
+			removeCompleted : false,
+			requeueErrors   : true,
+			preventCaching  : true,
+			progressData    : 'percentage',
+			successTimeout  : 30,
+			scriptAccess    : 'always',
+			transparent     : true,
+			uploadLimit     : 999,
+			uploaderType    : 'html5',
+			width           : 120,
+			checkExisting   : false
+	});
+	
+})(transit);

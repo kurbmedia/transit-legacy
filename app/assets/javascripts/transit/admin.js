@@ -6,12 +6,8 @@
 //= require libs/cookie
 //= require_tree ./lib
 //= require_tree ./admin
-//= require jqueryui/core
-//= require jqueryui/widget
-//= require jqueryui/button
-//= require jqueryui/datepicker
-//= require jqueryui/tabs
 //= require_self
+
 
 jQuery(function(){
 	

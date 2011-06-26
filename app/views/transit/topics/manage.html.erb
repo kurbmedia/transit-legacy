@@ -2,15 +2,15 @@
 	<h4>Topics</h4>
 	<ol>
 		<li class='select_list'>
-			<%= select_tag :topics, options_for_select(Topic.all.collect{ |t| [t.title, t.id.to_s] }), id: 'all_topics_list' %>
+			<%= select_tag :topics, options_for_select(Topic.for_editing(resource_class, resource).collect{ |t| [t.title, t.id.to_s] }), id: 'all_topics_list' %>
 			<%= link_to 'Add', '#', class: 'add_to_list icon_add ui-button', id:'add_topic_link', data: { ui_icon: 'plus' } %>
 		</li>
-		<li id="topic_selections" rel="<%= "post[topic_ids][]" %>">
+		<li id="topic_selections" rel="<%= "post[topics][]" %>">
 			<ul>
 				<% form.object.topics.each do |topic| %>
 				<li rel="<%= topic.id.to_s %>">
 					<%= topic.title %>
-					<%= hidden_field_tag "post[topic_ids][]", topic.id.to_s %>
+					<%= hidden_field_tag "post[topics][]", topic.id.to_s %>
 					<%= link_to 'Remove', '#', class: 'icon_delete remove_from_list' %>
 				</li>
 				<% end %>

@@ -1,6 +1,3 @@
-require 'transit/post'
-require 'transit/page'
-
 module Transit
   module Model
     
@@ -8,7 +5,7 @@ module Transit
       
       def deliver_as(type)
         scope = type.to_s.classify
-        include Transit.const_get(scope)
+        include Transit::Package.const_get(scope)
         Transit.track(self, type.to_sym)
       end
       

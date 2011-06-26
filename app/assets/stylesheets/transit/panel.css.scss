@@ -12,12 +12,24 @@
 	}
 	#topic_selections{
 		li{ display:block; height:25px; line-height:25px; position:relative; @extend .ui-state-hover; padding:0px;
-			text-indent:1em;
+			text-indent:1em; margin-bottom:5px;
 			a.remove_from_list{ position:absolute; right:0px; top:0px; 
 				display:block; @include transit_icon24(2); @include iconSquare(24);
 			}
 		}
 	}
+	#post_assets{ position:relative; padding-top:1.5em;
+		#upload_file_link{ position:absolute; top:1em; right:1em; }
+		h4.primary{ margin-bottom:1em; }
+		ul{ list-style-type:none; margin:0px; padding:0px; 
+			li:first-child{ border-top:1px dashed #ccc; padding:.5em 0px; }
+		}
+		#image_list{ margin-bottom:1em; }
+	}
+}
+
+#file_uploader{ 
+	#file_upload_queue{ padding-top:50px; }
 }
 
 #transit_admin_panel_buttons{ @include inline-block-list; text-align:right; padding:5px; position:absolute; top:0px; right:1em;

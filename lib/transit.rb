@@ -6,6 +6,11 @@ module Transit
   autoload :Admin, 'transit/admin'
   autoload :Config, 'transit/config'
   
+  module Package
+    autoload :Post, 'transit/package/post'
+    autoload :Page, 'transit/package/page'
+  end
+  
   module Model
     autoload :Assets,        'transit/model/assets'
     autoload :Attachments,   'transit/model/attachments'

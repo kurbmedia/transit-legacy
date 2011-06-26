@@ -8,6 +8,7 @@ module Transit
       app.config.assets.precompile << 'transit.css'
       app.config.assets.precompile << 'transit.js'
       app.config.action_view.default_form_builder = Transit::Builders::FormBuilder
+      app.config.action_controller.responder = Transit::Controller::Responder
     end
     
     ActiveSupport.on_load(:action_controller) do

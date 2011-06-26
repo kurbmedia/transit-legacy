@@ -1,0 +1,2 @@
+Fabricator(:topic) do
+end

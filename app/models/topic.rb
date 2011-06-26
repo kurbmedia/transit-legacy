@@ -9,6 +9,7 @@ class Topic
   before_create :generate_slug
    
   scope :for_type, lambda{ |type| where(:post_types => type) }
+  scope :for_editing, lambda{ |klass, inst| ascending(:title) }
   
   def generate_slug
     return true unless self.slug.to_s.blank?

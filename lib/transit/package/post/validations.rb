@@ -1,6 +1,6 @@
 module Transit
-  module Post
-    module Validations
+  module Package
+    module Post::Validations
       extend ActiveSupport::Concern
       
       included do

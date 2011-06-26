@@ -26,7 +26,7 @@ module Transit
     
     # Determine if this asset is an image
     def image?
-      (self.file.content_type =~ %r{^(image|(x-)?application)/(x-png|pjpeg|jpeg|jpg|png|gif)$})
+      (self.file_content_type =~ %r{^(image|(x-)?application)/(x-png|pjpeg|jpeg|jpg|png|gif)$})
     end
 
     # Provide a way to get a list of all urls for the attachment
@@ -37,6 +37,10 @@ module Transit
 
     def timestamp
       self.created_at.strftime("%B %d, %Y")
+    end
+    
+    def before_post_process
+      image?
     end
 
     private

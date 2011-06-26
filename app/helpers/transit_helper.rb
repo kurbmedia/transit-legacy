@@ -8,7 +8,8 @@ module TransitHelper
   def transit_assets
     return '' unless controller.class.name.match(/Transit/)
     stylesheet_link_tag('transit') <<
-    javascript_include_tag('transit/admin')
+    javascript_include_tag('transit/admin') <<
+    javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js')
   end
   
   def video_player(source, html_attrs = {})

@@ -1,4 +1,4 @@
-module Transit
+module Transit::Package
   module Page
     
     extend ActiveSupport::Concern

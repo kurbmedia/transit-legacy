@@ -1,0 +1,18 @@
+<div id="post_assets">
+	<h4 class='primary'>Files and Images</h4>
+	<% if resource.persisted? %>
+	<%= link_to 'Upload a File', '', id:'upload_file_link', rel: "asset[file]", 
+				data: { 
+					ui_button: 'plusthick',
+					upload_path: "#{transit.package_assets_path(resource_type: resource_class.name, resource_id: resource.id.to_s, auth_token: current_user.authentication_token)}"
+				} %>
+	<ul id="image_list">
+		<li><h4>Images</h4></li>
+	</ul>
+	<ul id="file_list">
+		<li><h4>Files</h4></li>
+	</ul>
+	<% else %>
+	<p>Please save the post before uploading files/images.</p>
+	<% end %>
+</div>
