@@ -2,7 +2,6 @@
 <%= page_title("Create a New Post") %>
 <h2 class='main_heading'>New Post</h2>	
 <%= form_for(resource, as: :post, html: { remote: true }) do |f| %>
-<%= resource.errors.full_messages %>
 <div id='edit_post_form'>
 	<div class="post">
 		<h1 class='transit-editable' rel="post_title">Add your title here</h1>
