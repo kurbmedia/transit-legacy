@@ -8,4 +8,9 @@ class TransitController < InheritedResources::Base
     true
   end
   
+  def render(*args)
+    args.first[:layout] = false if request.xhr? and args.first[:layout].nil?
+    super
+  end
+  
 end

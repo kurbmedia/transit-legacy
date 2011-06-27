@@ -49,12 +49,7 @@ module Transit
           field.attributes = attrs
         end
       end
-      
-      def timestamp
-        return "" if self.created_at.nil?
-        self.created_at.strftime("%B %d, %Y")
-      end 
-      
+    
     end
     
   end

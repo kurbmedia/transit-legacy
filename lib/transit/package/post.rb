@@ -50,7 +50,7 @@ module Transit::Package
     # 
     def timestamp
       return "" if self.post_date.nil?
-      self.post_date.strftime("%B %d, %Y")
+      self.post_date.to_time.midnight.strftime("%B %d, %Y")
     end
     
     # The "teaser" is a shortened version of a post used to display on "index" pages.
