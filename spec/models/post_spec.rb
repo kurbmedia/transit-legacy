@@ -70,6 +70,15 @@ describe Post do
     
   end
   
+  describe '.post_date' do
+    let!(:post) do
+      Fabricate(:post, published: true, post_date: Date.today)
+    end
+    subject{ post }
+    
+    it{ post.post_date.to_time.should == Time.now.midnight }
+  end
+  
   describe '.topic_ids' do
     
     before(:all) do
@@ -90,7 +99,7 @@ describe Post do
     it { post.topics.should include(@topics.first) }
     
     specify 'the topic also sets the post_id' do
-      @topics.first.posts.should include(@post)
+      @topics.first.reload.posts.should include(@post)
     end
     
   end
