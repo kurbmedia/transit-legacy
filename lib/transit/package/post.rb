@@ -20,9 +20,10 @@ module Transit::Package
 
       field :display_image, :type => Boolean, :default => true
       
-      scope :published, where(:published => true, :post_date.lte => Date.today)
+      scope :published, where(:published => true, :post_date.lte => Date.today.to_time.midnight)
       before_validation :make_slugged_title, :if => lambda{ |p| p.published? }
       before_save :make_slugged_title, :if => lambda{ |p| p.published? }
+      before_save :force_post_date_to_midnight
       after_save :set_default_teaser
       
       include Validations
@@ -82,6 +83,14 @@ module Transit::Package
       self.update_attribute(:default_teaser, doc.xpath('.//p').first.try(:text).to_s)
       doc = nil
       true
+    end
+    
+    # Since mongo uses Time objects, make sure date is set to midnight so that it 
+    # always shows up on that date.
+    # 
+    def force_post_date_to_midnight
+      return true if self.post_date.nil?
+      self.post_date = self.post_date.to_time.midnight
     end
     
   end

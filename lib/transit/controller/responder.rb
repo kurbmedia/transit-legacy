@@ -4,7 +4,9 @@ require 'responders/flash_responder'
 module Transit
   module Controller
     class Responder < ActionController::Responder
+      
       include Responders::FlashResponder
+      Responders::FlashResponder.flash_keys = [:success, :error]
       
       @@flash_keys = [ :success, :error ]
       
@@ -25,6 +27,24 @@ module Transit
           controller.response['X-Flash-Messages'] = header_hash.to_json
         end      
         defined?(super) ? super : to_format
+      end
+      
+      protected
+      
+      def set_flash_message!
+        if has_errors?
+          set_flash(:error, @alert)
+          status = Transit::Controller::Responder.flash_keys.last
+        else
+          set_flash(:success, @notice)
+          status = Transit::Controller::Responder.flash_keys.first
+        end
+
+        return if controller.flash[status].present?
+
+        options = mount_i18n_options(status)
+        message = ::I18n.t options[:default].shift, options
+        set_flash(status, message)
       end
       
     end
