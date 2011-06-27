@@ -77,7 +77,7 @@
 	</div>
 </div>
 <% if resource.delivers?(:owner) %>
-<%= form.hidden_field :user, current_user.id %>
+<%= form.hidden_field :user, value: current_user.id %>
 <% end %>
 <% if resource.persisted? %>
 <ul id="transit_admin_panel_buttons">

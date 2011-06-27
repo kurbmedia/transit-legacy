@@ -21,7 +21,7 @@ module Transit
     belongs_to    :assetable, :polymorphic => true
     before_save   :set_default_name
     before_create :set_file_type
-  
+    
     def self.asset_config_with_default
       styles = Transit::Config.assets
       return styles unless styles[:styles].present?
@@ -30,6 +30,7 @@ module Transit
     end
     
     has_attached_file :file, Transit::Asset.asset_config_with_default
+    before_post_process :skip_processing_unless_image
     
     # Determine if this asset is an image
     def image?
@@ -46,8 +47,10 @@ module Transit
       self.created_at.strftime("%B %d, %Y")
     end
     
-    def before_post_process
-      image?
+    def skip_processing_unless_image
+      if !(file.content_type =~ %r{^(image|(x-)?application)/(x-png|pjpeg|jpeg|jpg|png|gif)$})
+        return false 
+      end
     end
 
     private

@@ -100,8 +100,8 @@ jQuery(function(){
 	
 	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
 		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
-		console.log(percentage);
-		jQuery('#' + file.id).next('div.uploadifyProgress').progressbar('value', percentage);
+		console.log(jQuery('#' + file.id).find('div.uploadifyProgress'));
+		jQuery('#' + file.id).find('div.uploadifyProgress').progressbar('value', percentage);
 		return false;		
 	}
 	

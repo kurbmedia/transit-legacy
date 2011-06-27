@@ -45,8 +45,8 @@
 	#post_assets{ position:relative; padding-top:1.5em;
 		#upload_file_link{ position:absolute; top:1em; right:1em; }
 		h4.primary{ margin-bottom:1em; }
-		ul{ list-style-type:none; margin:0px; padding:0px; @include pie-clearfix;
-			li.header{ border-top:1px dashed #ccc; padding:.5em 0px; border-bottom:1px dashed #ccc; margin-bottom:.5em; }
+		ul{ list-style-type:none; margin:0 0 1em 0; padding:0px; @include pie-clearfix;
+			li.header{ border-top:1px dashed #ccc; padding:.75em 0px .5em 0px; border-bottom:1px dashed #ccc; margin-bottom:.5em; }
 			li{ display:block; position:relative; 
 				span.add_heading{ font-weight:bold !important; display:block; }
 				ul{ list-style-type:none; @include inline-block-list;
@@ -55,11 +55,16 @@
 				}
 			}
 		}
-		#asset_image_list{ margin-bottom:1em; 
+		#asset_image_list{ 
 			span.image_asset_holder{ position:relative; display:block; float:left; margin-right:1em; 
 				border:1px solid #ccc; width:50px; height:50px;
 			}
 			a.icon_delete{ position:absolute; bottom:-1px; left:-1px; background-color:white; border:1px solid #ccc; }
+		}
+		#asset_file_list{
+			li.file{ position:relative; padding:2px 0px; border-bottom:1px dotted #dedede; }
+			a{ display:block; height:25px; line-height:25px; text-indent:25px; }
+			a.icon_delete{ position:absolute; top:0px; right:0px; @include iconSquare(24); }
 		}
 	}
 	#post_contexts{
@@ -77,7 +82,9 @@
 #file_uploader{ 
 	#file_upload_queue{ padding:50px 0px 0px 0px; margin-right:0px; 
 		div.uploadifyQueueItem{ padding-right:30px; position:relative;
-			div.uploadifyProgress{ height:5px; width:100%;  }
+			div.uploadifyProgress{ height:5px; width:100%;  
+				div.ui-progressbar-value{ height:100%; }
+			}
 			span.fileName{ position:relative; display:block; text-indent:5px; height:24px; line-height:24px; z-index:1000; }
 			span.data{ display:none; }
 			div.cancel{ position:absolute; top:0px; right:0px; 
