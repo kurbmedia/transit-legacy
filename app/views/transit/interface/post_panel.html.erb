@@ -82,7 +82,7 @@
 <% if resource.persisted? %>
 <ul id="transit_admin_panel_buttons">
 	<li><button data-ui-button="check" type='commit'>Save</button></li>
-	<li><%= link_to 'Delete', transit.polymorphic_path(form.object), method: :delete, data: { ui_button: 'closethick' } %></li>
+	<li><%= link_to 'Delete', transit.polymorphic_path(form.object), method: :delete, confirm: 'Are you sure you want to delete this post?', data: { ui_button: 'closethick' } %></li>
 </ul>
 <% end %>
 <div id="transit_admin_help">
