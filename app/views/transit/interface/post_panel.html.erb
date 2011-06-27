@@ -65,10 +65,12 @@
 <% if resource.delivers?(:owner) %>
 <%= form.hidden_field :user, current_user.id %>
 <% end %>
+<% if resource.persisted? %>
 <ul id="transit_admin_panel_buttons">
 	<li><button data-ui-button="check" type='commit'>Save</button></li>
 	<li><%= link_to 'Delete', transit.polymorphic_path(form.object), method: :delete, data: { ui_button: 'closethick' } %></li>
 </ul>
+<% end %>
 <div id="transit_admin_help">
 	<h4>Help</h4>
 	<p><strong>Editing Content:</strong>

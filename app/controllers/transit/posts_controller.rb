@@ -8,15 +8,24 @@ class Transit::PostsController < TransitController
   end
   
   def create
-    create!(success: 'Your post was created!'){ edit_polymorphic_path(resource) }
+    @post = resource_class.new(params[:post])
+    set_resource_ivar(@post)
+    unless @post.save
+      render action: 'new', error: 'Oops, looks like you forgot something!' and return
+    end
+    redirect_to transit.edit_polymorphic_path(resource), success: 'Your post was created!'
   end
-  
+ 
   def update
     @post = Post.find(params[:id])
     unless @post.update_attributes(params[:post])
       render action: :edit, error: 'Looks like you forgot a couple fields' and return
     end
     redirect_to transit.edit_polymorphic_path(@post), success: 'Your post was updated.'
+  end
+  
+  def destroy
+    destroy!(success: 'The selected post has been deleted.')
   end
   
 end

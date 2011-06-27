@@ -13,6 +13,7 @@ module Transit
     
     ActiveSupport.on_load(:action_controller) do
       self.responder = Transit::Controller::Responder
+      InheritedResources.flash_keys = [ :success, :error ]
     end
     
     initializer 'transit.action_view' do

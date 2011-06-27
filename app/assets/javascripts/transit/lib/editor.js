@@ -164,6 +164,8 @@
 				if( target.length > 0 ) target.val( proper.content() );
 			});
 			
+			if( target.val() == "" ) target.val( element.text() );
+			
 	};
 	
 	transit.context.add('editor', editor);
