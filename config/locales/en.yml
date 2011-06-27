@@ -1,4 +1,15 @@
 en:
+  flash:
+    actions:
+      create:
+        success: '%{resource_name} was successfully created.'
+        error: 'Looks like there was a problem with your submission!'
+      update:
+        success: '%{resource_name} was successfully updated.'
+        error: 'Looks like there was a problem with your submission!'
+      destroy:
+        success: '%{resource_name} was successfully destroyed.'
+        error: '%{resource_name} could not be destroyed.'
   transit:
     post_collection: 'Posts'
     blog_collection: 'Blog Posts'
