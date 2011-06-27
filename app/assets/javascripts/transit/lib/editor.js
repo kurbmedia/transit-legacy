@@ -127,6 +127,9 @@
 				.bind('focus', function(e){
 					e.stopPropagation();
 					active_editor = self;
+				})
+				.bind('blur', function(e){
+					editor.update();
 				});
 							
 			if( wym._index == 0 ) active_editor = self;

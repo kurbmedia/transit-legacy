@@ -23,4 +23,12 @@ jQuery(function(){
 		});
 	}
 	
+	jQuery('#post_edit').bind('submit', function( event ){
+		var i, inst;		
+		for( i = 0; i < jQuery.wymeditors.length, i++; ){
+			jQuery.wymeditors(i).update();
+		}
+		return true;
+	});
+	
 });
