@@ -1,21 +1,29 @@
-ul#context_fields{ padding:0; width:100%; list-style-type:none; margin:0;
+ul#context_list{ padding:0; width:100%; list-style-type:none; margin:0;
 	li.field{ padding:.5em; position:relative; border:1px dashed #ccc; margin-bottom:1em; overflow:visible;
 		textarea{ background:transparent; border:none; }
 		a.icon_delete{ @include iconSquare(24); }
 	}
 	li.field_video{ text-align:center;
 		*{ text-align:left; }
-		div.video_player{ margin:0px auto 2em auto; height:320px; }
-		ol{ @include pie-clearfix; background:#eee; padding:.25em; margin-bottom:1em;
-			li{ padding:0; margin:0; }
+		div.video_player{ margin:0px auto 2em auto; height:320px; }		
+	}
+	li.field_audio{ text-align:center;
+		*{ text-align:left; }
+		div.audio_player{ width:360px; margin:1em auto; }
+	}
+	li.field_video, li.field_audio{
+		div.toolbar{ height:200px; width:400px; 
+			ol{ list-style-type:none; @include pie-clearfix; padding:.25em; margin-bottom:1em;
+				li{ padding:0; margin:0; }
+				label, input, select{ display:inline !important; }
+			}
 		}
-		label, input, select{ display:inline !important; }
 	}
 }
 
-#transit_editor_toolbar{ padding:0; text-align:left; display:block !important;
-	ul{ list-style-type:none; margin:0; padding:0; background:#ccc; white-space:nowrap; @include pie-clearfix; overflow:visible;
-		li{ margin:2px 2px 5px 2px; padding:0px; display:block; float:left;
+div.transit_editor_toolbar{ padding:0; text-align:left; display:block !important; margin-bottom:10px;
+	ul{ list-style-type:none; margin:0; padding:3px; border:1px solid #eee; white-space:nowrap; @include pie-clearfix; overflow:visible;
+		li{ margin:0px 2px; padding:0px; display:block; float:left;
 			a{ @include iconSquare(24); border:1px solid #ccc; background-color:white; 
 				&:focus, &:active{ outline:none; }
 			}
@@ -31,6 +39,7 @@ ul#context_fields{ padding:0; width:100%; list-style-type:none; margin:0;
 			a.cut { @include transit_icon24(12); }
 			a.copy { @include transit_icon24(13); }
 			a.paste { @include transit_icon24(14); }
+			a.unlink { @include transit_icon24(28); }
 			a.insert_link { @include transit_icon24(5); }
 			a.insert_image { @include transit_icon24(6); }		
 		}
@@ -38,7 +47,7 @@ ul#context_fields{ padding:0; width:100%; list-style-type:none; margin:0;
 	}
 }
 
-div.transit_editor_button_dialog{ text-align:left;
+div.transit_context_dialog{ text-align:left;
 	div.ui-dialog-titlebar{ padding:0 1em; height:20px; line-height:20px; font-size:11px; 
 		span.ui-dialog-title{ display:inline; margin:0; padding:0; }
 	}
@@ -52,3 +61,4 @@ div.wym_iframe{
 }
 
 #edit_post_form{ @include column(14); }
+#transit_admin_help{ display:none; }

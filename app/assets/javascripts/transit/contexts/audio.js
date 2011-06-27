@@ -5,7 +5,7 @@
 	
 	var audio = function( element, options ){
 		var self   = this;	
-		var data   = transit.context.data( element ) || {},
+		var data   = transit.context.data( element, true ) || {},
 			config = transit.merge( options, data ),
 			conf   = transit.config['audio'],
 			uid    = _.uniqueId(),

@@ -38,7 +38,7 @@ module Transit
     autoload :FormBuilder,     'transit/builders/form_builder'
     autoload :PackageBuilder,  'transit/builders/package_builder'
   end
-  
+    
   DESCRIPTIONS = {}
   
   # Store an array of controller mappings

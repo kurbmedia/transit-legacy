@@ -6,13 +6,12 @@ class Transit::AssetsController < TransitController
   skip_before_filter :verify_authenticity_token
    
   def create
-    # @asset  = Transit::Asset.new(params[:asset])
-    #    @parent = params[:resource_type].constantize.find(params[:resource_id])
-    #    @asset.assetable = @parent
-    #    @asset.save
-    #    Rails.logger.info("adlsakjdlaskjdklasdjklsajsakldjlkadajslkdaj")
-    #    flash[:success] = "Upload successful!"
-    #    respond_with(@asset)    
+    @asset  = Transit::Asset.new(params[:asset])
+    @parent = params[:resource_type].constantize.find(params[:resource_id])
+    @asset.assetable = @parent
+    @asset.save
+    flash[:success] = "Upload successful!"
+    respond_with(@asset)    
   end
   
   def show

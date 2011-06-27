@@ -1,0 +1,12 @@
+<div class="transit_editor_toolbar">
+	<ul>
+		<% _.each(buttons, function( value, key, list ){ %>
+			<li>
+				<a href="#" class="<%= key %> transit_editor_button" rel="<%= key %>" title="<%= value.title %>">
+					<%= value.title %>
+				</a>
+			</li>
+		<% }); %>
+	</ul>
+	<div id='transit_editor_toolbar_action'></div>
+</div>

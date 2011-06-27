@@ -5,7 +5,7 @@
 	
 	var video = function( element, options ){
 		var self = this;	
-		var data = transit.context.data( element ) || {},
+		var data = transit.context.data( element, true ) || {},
 			inst, config = transit.merge( options, data ),
 			player, player_element, 
 			pid = _.uniqueId();

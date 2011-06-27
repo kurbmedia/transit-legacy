@@ -31,5 +31,23 @@ module Transit
       File.extname(self.body.to_s).sub('.', '')
     end
     
+    def package_type
+      (self.package.nil? ? "post" : self.package.class.name.to_s.underscore)
+    end
+    
+    def to_js( attrs = {} )
+      { 
+        id: self.id.to_s,
+        position: self.position.to_i, 
+        package_id:   (self.package.nil? ? "" : self.package.id.to_s ),
+        package_type: package_type,
+        resource_url: package_type.pluralize,
+      }.merge!( attrs )
+    end
+    
+    def to_backbone( attrs = {} )
+      ::Base64.encode64s(to_js(attrs).to_json)
+    end
+    
   end
 end

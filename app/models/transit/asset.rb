@@ -22,7 +22,14 @@ module Transit
     before_save   :set_default_name
     before_create :set_file_type
   
-    has_attached_file :file, Transit::Config.assets  
+    def self.asset_config_with_default
+      styles = Transit::Config.assets
+      return styles unless styles[:styles].present?
+      styles[:styles].reverse_merge!(preview: '50x50#')
+      styles
+    end
+    
+    has_attached_file :file, Transit::Asset.asset_config_with_default
     
     # Determine if this asset is an image
     def image?

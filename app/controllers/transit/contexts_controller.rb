@@ -1,31 +1,23 @@
-class Transit::ContextsController < ApplicationController
+class Transit::ContextsController < TransitController
+
   respond_to :js
-  helper_method :parent
+  belongs_to :post, :page, polymorphic: true
+  actions :new, :destroy
   
   def new
-    @package = scope_class.find(params["#{scope_name}_id"])
-    @context = params[:type].classify.constantize.new
+    ptype = symbols_for_association_chain.first.to_s
+    parent_obj = ptype.classify.constantize.find(params["#{ptype}_id"])
+    set_resource_ivar(parent_obj)
+    @context = parent_obj.contexts.build({}, params[:type].classify.constantize)
     respond_with(@context)
   end
   
+    
   def destroy
-    @package  = scope_class.find(params["#{scope_name}_id"])
-    @context =  @package.contexts.find(params[:id])
+    parent.contexts.find(params[:id])
     @context.destroy
     flash[:success] = "The selected field has been removed."
     respond_with(@context)
-  end
-  
-  def parent
-    @package
-  end
-  
-  def scope_class
-    params.keys.detect{ |k| k.to_s.match(/_id/) }.split("_").first.classify.constantize
-  end
-  
-  def scope_name
-    scope_class.to_s.underscore
   end
   
 end

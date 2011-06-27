@@ -1,14 +1,18 @@
 <div id="transit_admin_panel">	
 	<div id="transit_admin_panel_wrapper">
 		<ul>
-			<li><a href="#post_meta">Post Detail</a></li>
+			<li><a href="#post_meta">Detail</a></li>
+			<li><a href="#post_contexts">Content</a></li>
 			<% if form.object.delivers?(:topics) %>
 			<li><a href="#post_topics">Topics</a></li>
 			<% end %>
-			<li><a href="#post_assets">Files/Images</a></li>			
+			<% if resource.delivers?(:assets) %>
+			<li><a href="#post_assets">Uploads</a></li>			
+			<% end %>
 			<li><a href="#post_social">Social</a></li>
 		</ul>
 		<div id="post_meta" class='panel'>
+			<h4 class='published'>Published? <%= form.check_box :published, class: 'toggle' %> </h4>
 			<h4>Post Date</h4>
 			<div class='datepicker' rel='post_post_date'></div>
 			<div id="datepicker_target">
@@ -16,6 +20,17 @@
 			</div>
 			<h4>Teaser</h4>
 			<%= form.text_area :teaser %>
+			<h4>Content</h4>
+		</div>
+		<div id="post_contexts" class='panel'>
+			<h4>Content Sections</h4>
+			<ul>
+				<% Transit.contexts.map(&:to_s).each do |type| %>
+				<li class="icon_<%= type.underscore %>">
+					<%= link_to type, transit.send(:"new_#{form.object_name}_context_path", resource.id, :type => type), remote: true %>
+				</li>
+				<% end %>
+			</ul>
 		</div>
 		<% if form.object.delivers?(:topics) %>
 		<%= render(template: 'transit/topics/manage', locals: { form: form }) %>
@@ -26,7 +41,7 @@
 		<div id="post_social">
 			<h4>Social Sharing</h4>
 			<p>Soon....</p>
-		</div>
+		</div>		
 	</div>
 </div>
 <% if resource.delivers?(:owner) %>
@@ -36,3 +51,12 @@
 	<li><button data-ui-button="check" type='commit'>Save</button></li>
 	<li><%= link_to 'Delete', transit.polymorphic_path(form.object), method: :delete, data: { ui_button: 'closethick' } %></li>
 </ul>
+<div id="transit_admin_help">
+	<h4>Help</h4>
+	<p><strong>Editing Content:</strong>
+	To edit content, click on the copy block to the left, or on the title above. Once selected that particular area of 
+	content will become 'active' allowing you to edit it. When finished, click "save" above.</p>
+	<p>Posts will not display on the site until two criteria are met. First, the post date must be set to a date on or before 
+	today. Second, the "published" box must be checked. If the published box is checked, and the post date is set to a date 
+	later than today, the post will not display until that date.</p>
+</div>

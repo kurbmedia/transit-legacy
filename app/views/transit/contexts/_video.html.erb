@@ -1,17 +1,13 @@
-<div class="video_player" data-video-source="<%= context.source %>" id="mediaplayer_<%= context.id %>">
+<%= deliver_media_context(context, context.to_backbone) %>
+<div class='toolbar'>
+	<ol class="split">
+		<li style='width:350px; padding-left:.5em'>
+			<%= form.label :source %>
+			<%= form.text_field :source, :value => context.body, :style => 'width:225px' %>
+		</li>
+		<li>
+			<%= form.label :video_type %>
+			<%= form.select :video_type, options_for_select(Video.sources, context.video_type) %>
+		</li>
+	</ol>
 </div>
-<ol class="split">
-	<li style='width:350px; padding-left:.5em'>
-		<%= form.label :source %>
-		<%= form.text_field :source, :value => context.body, :style => 'width:225px' %>
-	</li>
-	<li>
-		<%= form.label :video_type %>
-		<%= form.select :video_type, options_for_select(Video.sources, context.video_type) %>
-	</li>
-</ol>
-<script type="text/javascript" charset="utf-8">
-//<![CDATA[
-	$('div.video_player').trigger('transit:loadVideo');
-//]]>
-</script>

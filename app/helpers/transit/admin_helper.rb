@@ -3,7 +3,7 @@ module Transit::AdminHelper
   
   def context_field_item(field, form)
    idfield = field.new_record? ? "" : form.hidden_field(:id)
-   content_tag(:li, { class: "field field_#{field.class.to_s.underscore}" }) do
+   content_tag(:li, { id:"context_#{field.id.to_s}", class: "field field_#{field.class.to_s.underscore}" }) do
      form.hidden_field(:_type, value: field.class.to_s) <<
      form.hidden_field(:position, rel: 'field_position') <<
      idfield <<

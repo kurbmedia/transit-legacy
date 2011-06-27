@@ -1,8 +1,0 @@
-<li class='field field_<%= @context.class.to_s.underscore %>'>
-<%= fields_for "#{@package.class.to_s.underscore}[context_attributes][#{Time.now.to_i}]", context do |child| %>
-	<ul class="option_bar">
-		<%= render partial: 'field_attrs', locals: { form: child, context: context } %>
-	</ul>
-	<%= render partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: child, context: context } %>	
-<% end %>
-</li>

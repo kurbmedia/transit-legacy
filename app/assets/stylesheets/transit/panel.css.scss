@@ -1,4 +1,9 @@
 #transit_admin_panel{ @include column(9, true); float:right; clear:none !important; padding:10px;
+	#post_meta{
+		h4.published{ padding:.5em; margin-bottom:1em; border:1px solid #ddd; position:relative;
+			input{ position:absolute; top:.5em; right:1em; }
+		}
+	}
 	#transit_admin_panel_wrapper{ border:none; padding:0px; 
 		h4{ margin:0; }
 		#post_teaser{ width:95%; height:125px; }
@@ -21,11 +26,30 @@
 	#post_assets{ position:relative; padding-top:1.5em;
 		#upload_file_link{ position:absolute; top:1em; right:1em; }
 		h4.primary{ margin-bottom:1em; }
-		ul{ list-style-type:none; margin:0px; padding:0px; 
-			li:first-child{ border-top:1px dashed #ccc; padding:.5em 0px; }
+		ul{ list-style-type:none; margin:0px; padding:0px; @include pie-clearfix;
+			li.header{ border-top:1px dashed #ccc; padding:.5em 0px; border-bottom:1px dashed #ccc; margin-bottom:.5em; }
+			li{ display:block; position:relative; 
+				span.add_heading{ font-weight:bold !important; display:block; }
+				ul{ list-style-type:none; @include inline-block-list;
+					li{ padding-left:3px; border-left:1px solid #ccc; margin-right:2px; }
+					li:first-child{ padding-left:0; border-left:0; }
+				}
+			}
 		}
-		#asset_image_list{ margin-bottom:1em; }
+		#asset_image_list{ margin-bottom:1em; 
+			span.image_asset_holder{ position:relative; display:block; float:left; margin-right:1em; 
+				border:1px solid #ccc; width:50px; height:50px;
+			}
+			a.icon_delete{ position:absolute; bottom:-1px; left:-1px; background-color:white; border:1px solid #ccc; }
+		}
 	}
+	#post_contexts{
+		li.icon_text a{ @include transit_icon24(17); }
+		li.icon_video a{ @include transit_icon24(18); }
+		li{ display:block; margin:0 0 .5em 0; padding:0;  }
+		a{ display:block; text-indent:30px; height:25px; line-height:25px; @extend .ui-state-hover; font-weight:bold; }
+	}
+	a.icon_delete{ @include transit_icon24(2, -2px, -2px); @include iconSquare(20); }
 }
 
 #file_uploader{ 

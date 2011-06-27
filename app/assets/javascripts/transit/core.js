@@ -20,6 +20,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+//= require libs/underscore
+//= require libs/backbone
+//= require_self
+//= require ./lib/base64
+
 (function(){
 	
 	var root 	= this,
@@ -57,10 +63,12 @@
 			
 			// Parse the serialize json data within the 
 			// element's data-context-options attribute.
-			data: function( dom ){
-				var element  = jQuery(dom), 
-					json_str = unescape(element.data('context-options'));
-				return (new Function("return " + json_str))();
+			data: function( dom, enc ){
+				var element = jQuery(dom), 
+					cdata   = element.data('context-attributes');
+					
+				if( enc == true ) cdata = transit.util.base64.decode( cdata );
+				return (new Function("return " + cdata))();
 			}
 		});
 		
@@ -97,12 +105,15 @@
 			
 			// Load a previously parsed template
 			this.load = function( name ){
-				if( parsed[name] ){
-					return parsed[name];
-				} else {
-					return false; 
-				}
+				if( parsed[name] ) return parsed[name];
+				else return false; 
 			};
+			
+			// Load a cached, un-rendered template.
+			this.fetch = function( name ){
+				if( cache[name] ) return cache[name];
+				else return false;
+			}
 			
 			// Store a html template in the cache 
 			// to be parsed later.
@@ -129,6 +140,8 @@
 		return new tpl();
 		
 	})();
+	
+	transit.util = {};
 
 }).call(this);
 

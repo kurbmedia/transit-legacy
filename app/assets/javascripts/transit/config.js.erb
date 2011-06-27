@@ -6,8 +6,6 @@
 		idPrefix: 			"transit_media",
 		preload: 			"auto",
 		backgroundColor:    "",
-		errorAlerts: true,
-		warningAlerts:true,
 		cssSelector: {
 			play: 				".media-play",
 			pause: 				".media-pause",
@@ -84,5 +82,20 @@
 			width           : 120,
 			checkExisting   : false
 	});
+	
+	<% Transit.contexts.map(&:to_s).map(&:classify).each do |context| %>
+	transit.<%= context %>Context = Backbone.Model.extend({
+		defaults: {
+			type: "<%= context %>",
+			<%= context.constantize.new.to_js.collect{ |key, value| "#{key}: \"\" " }.join(",\n\t\t") %>			
+		},
+		url: function(){
+			"/transit/" + resource_url + "/" + package_id + "/" + "contexts/"
+		},
+		build: function( element ){
+			this.attributes = transit.context.data( element, true );
+		}
+	});
+	<% end %>
 	
 })(transit);

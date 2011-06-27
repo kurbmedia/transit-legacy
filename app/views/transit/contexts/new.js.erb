@@ -3,5 +3,5 @@
 		context_field_item(child.object, child)
 	end
 end %>
-$('#context_fields').append("<%= escape_javascript(content.html_safe) %>");
+jQuery('#context_list').trigger("context:added", ["<%= escape_javascript(content.html_safe) %>", "<%= @context.class.name.underscore %>"]);
 

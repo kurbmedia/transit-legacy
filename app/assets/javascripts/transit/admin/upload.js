@@ -1,4 +1,5 @@
 //= require libs/uploadify
+//= require libs/backbone
 //= require transit/views/file_upload
 
 jQuery(function(){
@@ -20,7 +21,8 @@ jQuery(function(){
 			onUploadProgress: update_progress,
 			onSelect: add_to_queue
 		}),
-		queue_list;
+		queue_list;	
+	
 	
 	if( upload_button.length == 0 ) return true;
 	
@@ -98,6 +100,7 @@ jQuery(function(){
 	
 	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
 		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
+		console.log(percentage);
 		jQuery('#' + file.id).next('div.uploadifyProgress').progressbar('value', percentage);
 		return false;		
 	}
