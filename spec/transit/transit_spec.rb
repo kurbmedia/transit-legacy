@@ -43,7 +43,7 @@ describe Transit do
   
   describe '#configure' do
     it 'yields Transit::Config' do
-      Transit.configure.should_yield Transit::Config
+      Transit.configure.should_yield Transit::Config{}
     end
   end
   

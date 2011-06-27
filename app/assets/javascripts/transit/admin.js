@@ -4,6 +4,7 @@
 //= require libs/wymeditor
 //= require libs/selecttolist
 //= require libs/cookie
+//= require libs/fileinput
 //= require_tree ./lib
 //= require_tree ./admin
 //= require_self

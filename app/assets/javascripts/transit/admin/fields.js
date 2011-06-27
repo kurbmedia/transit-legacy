@@ -31,4 +31,6 @@ jQuery(function(){
 		return true;
 	});
 	
+	jQuery('#post_default_image').fileinput({ buttonText:'', inputText: 'Choose an image' });
+	
 });

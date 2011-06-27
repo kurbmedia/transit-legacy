@@ -23,6 +23,20 @@
 			<h4 class='published'>Published? <%= form.check_box :published, class: 'toggle' %> </h4>
 			<% end %>
 			<!-- End -->
+
+			<% if resource.delivers?(:attachments) %>			
+			<div id="post_primary_image">				
+				<h4>Primary Image</h4>
+				<span class='primary_image_holder'>
+					<%= image_tag(resource.preview_image_url) unless resource.preview_image_url.nil?  %>
+				</span>				
+				<span class='image_options'>
+					<%= form.check_box :display_image %>
+					<%= form.label :display_image, "Display on actual post page?" %><br />
+					<%= form.file_field :default_image %>
+				</span>
+			</div>
+			<% end %>
 			
 			<h4>Post Date</h4>
 			<div class='datepicker' rel='post_post_date'></div>

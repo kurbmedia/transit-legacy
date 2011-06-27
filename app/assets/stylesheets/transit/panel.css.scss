@@ -3,6 +3,25 @@
 		h4.published{ padding:.5em; margin-bottom:1em; border:1px solid #ddd; position:relative;
 			input{ position:absolute; top:.5em; right:1em; }
 		}
+		#post_primary_image{ border-bottom:1px dashed #ddd; @include pie-clearfix; padding-bottom:1em; margin-bottom:1em;
+			h4{ margin-bottom:1em; }
+			span.primary_image_holder{ display:block; float:left; height:50px; width:50px; border:1px solid #ccc; background:#dedede; 
+				margin:0 1em .5em 0;
+			}
+			img{ width:50px; }
+			span.image_options{ width:70%; display:block; float:left; }
+			div.fileinput-wrapper { position:relative; @include inline-block; overflow:hidden; padding:0; 
+				span.fileinput-input, span.fileinput-button{ 
+					float:left; height:25px; padding:0px 5px; overflow:hidden; white-space:nowrap; line-height:25px;
+				}
+				span.fileinput-input{ width:150px; background:none !important; border:1px dashed #ccc !important; color:#333 !important; }
+				span.fileinput-button { overflow:hidden; white-space:nowrap; width:20px; @include border-radius(3px);
+					span.fileinput-button-text{ @extend .ui-icon; @extend .ui-icon-plusthick;  position:relative; top:4px; left:2px; }
+				}
+
+				input.fileinput-file { position:absolute; left:-9999px; -moz-opacity:0; filter:alpha(opacity=0); opacity:0;}
+			}
+		}
 	}
 	#transit_admin_panel_wrapper{ border:none; padding:0px; 
 		h4{ margin:0; }

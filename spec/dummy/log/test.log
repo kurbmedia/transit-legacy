@@ -1659,3 +1659,70 @@ MONGODB admin['$cmd'].find({:ismaster=>1})
 [paperclip] Saving attachments.
 [paperclip] Saving attachments.
 [paperclip] Saving attachments.
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 500 Internal Server Error in 75ms
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 500 Internal Server Error in 21ms
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 500 Internal Server Error in 42ms
+  Processing by Transit::PostsController#index as HTML
+  Parameters: {"use_route"=>:transit}
+Completed 500 Internal Server Error in 15ms
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 18ms
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 14ms
+  Processing by Transit::PostsController#show as HTML
+  Parameters: {"id"=>"1", "use_route"=>:transit}
+Completed 500 Internal Server Error in 101ms
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
