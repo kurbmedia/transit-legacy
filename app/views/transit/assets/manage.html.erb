@@ -1,6 +1,5 @@
 <div id="post_assets">
 	<h4 class='primary'>Files and Images</h4>
-	<% if resource.persisted? %>
 	<%= link_to 'Upload a File', '', id:'upload_file_link', rel: "asset[file]", 
 				data: { 
 					ui_button: 'plusthick',
@@ -18,7 +17,4 @@
 		<%= render(partial: 'transit/assets/file', object: file) %>
 		<% end %>
 	</ul>
-	<% else %>
-	<p>Please save the post before uploading files/images.</p>
-	<% end %>
 </div>

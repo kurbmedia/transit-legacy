@@ -61,4 +61,6 @@ div.wym_iframe{
 }
 
 #edit_post_form{ @include column(14); }
+#new_post_teaser{ width:98%; height:100px; border:1px dashed #ccc; font:1em $blueprint-font-family; background:transparent !important; }
+#new_post_help_note{ font-style:italic; font-size:.95em; }
 #transit_admin_help{ display:none; }

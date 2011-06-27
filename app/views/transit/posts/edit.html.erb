@@ -1,3 +1,14 @@
-<%= page_id('transit_edit_post') %>
+<%= page_id("#{resource_collection_name}_show") %>
 <%= page_title("Edit Post #{resource.title}") %>
-<%= render partial: 'form' %>
+<h2 class='main_heading'>Edit Post</h2>	
+<%= form_for(resource, as: :post, html: { remote: true }) do |f| %>
+<div id='edit_post_form'>
+	<div class="post">
+		<h1 class='transit-editable' rel="post_title"><%= resource.title %></h1>
+		<p class='timestamp'>Posted <%= resource.timestamp %></p>
+		<%= render(template: 'transit/contexts/index', locals: { form: f }) %>
+	</div>
+</div>
+<%= render(template: 'transit/interface/post_panel', locals: { form: f }) %>
+<%= f.hidden_field :title %>
+<% end %>

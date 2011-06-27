@@ -44,8 +44,11 @@
 		}
 	}
 	#post_contexts{
+		h4{ margin-bottom:.5em; }
+		ul{ padding:0px; margin:0px; }
 		li.icon_text a{ @include transit_icon24(17); }
 		li.icon_video a{ @include transit_icon24(18); }
+		li.icon_audio a{ @include transit_icon24(20); }
 		li{ display:block; margin:0 0 .5em 0; padding:0;  }
 		a{ display:block; text-indent:30px; height:25px; line-height:25px; @extend .ui-state-hover; font-weight:bold; }
 	}
