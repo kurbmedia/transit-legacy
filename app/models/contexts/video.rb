@@ -13,6 +13,10 @@ class Video < Transit::Context
     self.meta['video_type']
   end
   
+  def media_context?
+    true
+  end
+  
   def to_js( attrs = {} )
     super({ source: source, type: video_type, ext: file_ext }.reverse_merge!(attrs))
   end

@@ -17,10 +17,10 @@ module Transit
         return obj.deliver
       end
       obj.contexts.ascending(:position).map do |field|
-        case field
-        when Video || Audio then deliver_media_context(field, field.to_backbone)
-        else
+        unless field.media_context?
           render(:partial => "contexts/#{field.class.to_s.underscore}", :format => :html, :locals => { :context => field }).html_safe
+        else
+          deliver_media_context(field, field.to_backbone)          
         end
       end.join("\n").html_safe
     end

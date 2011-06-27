@@ -35,6 +35,10 @@ module Transit
       (self.package.nil? ? "post" : self.package.class.name.to_s.underscore)
     end
     
+    def media_context?
+      false
+    end
+    
     def to_js( attrs = {} )
       { 
         id: self.id.to_s,
