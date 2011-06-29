@@ -52,8 +52,8 @@
 			
 			button = richtext_buttons[ btn.attr('rel') ];
 
-			if( button.action ) instance.exec( button.action );
-			else instance[ btn.attr('rel') ].call();
+			if( button.action ) active_editor.exec( button.action );
+			else active_editor[ btn.attr('rel') ].call();
 			return true;
 			
 		};
