@@ -1,5 +1,6 @@
 require 'mime/types'
 class Transit::AssetsController < TransitController
+  defaults route_instance_name: 'package_asset' 
   
   before_filter :update_params, :only => [:create, :update]
   respond_to :js, :json, :html
@@ -11,7 +12,7 @@ class Transit::AssetsController < TransitController
     @asset.assetable = @parent
     @asset.save
     flash[:success] = "Upload successful!"
-    respond_with(@asset)    
+    render 'create.js.erb'
   end
   
   def show

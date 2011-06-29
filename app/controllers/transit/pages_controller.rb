@@ -1,26 +1,26 @@
 class Transit::PagesController < TransitController
   respond_to :html, :js, :json
   
-  def index
-    @pages = scope_class.descending(:post_date).page((params[:page] || 1))
-    respond_with(@pages) do |format|
-      format.js{ render :partial => 'table' }
-      format.any
-    end
+  defaults collection_name: 'pages', instance_name: 'page'
+
+  respond_to :html, :js, :json
+  
+  def collection
+    @pages ||= end_of_association_chain.page((params[:page] || 1), per: 20)
   end
   
   def edit
-    @page = scope_class.find(params[:id])
+    @page = Page.find(params[:id])
     respond_with(@page)
   end
   
   def update
-    @page = scope_class.find(params[:id])
+    @page = Page.find(params[:id])
     unless @page.update_attributes(params[:page])
       flash.now[:error] = "Looks like you were missing a few fields!"
       render :action => :edit and return
     end    
-    respond_with(@post, :location => edit_polymorphic_path(@page), :success => "The page '#{@page.name}' has been updated.")
+    respond_with(@page, :location => transit.edit_polymorphic_path(@page), :success => "The page '#{@page.name}' has been updated.")
   end
     
 end

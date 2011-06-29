@@ -118,9 +118,7 @@
 				'line-height': parentbody.css("line-height")
 			});
 			
-			if( docheight > 400 ) docheight = 400; 
-			
-			box.css({ height:docheight });
+			box.css({ height:350 });
 			iframe.css({ height:'100%' });
 			
 			editordoc.find('body')
