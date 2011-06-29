@@ -5,6 +5,12 @@ class Transit::AssetsController < TransitController
   before_filter :update_params, :only => [:create, :update]
   respond_to :js, :json, :html
   skip_before_filter :verify_authenticity_token
+  
+  def index
+    @parent = params[:resource_type].constantize.find(params[:resource_id])
+    @assets = @parent.assets.where(:file_type => 'image')
+    respond_with(@assets)
+  end
    
   def create
     @asset  = Transit::Asset.new(params[:asset])
