@@ -5,7 +5,6 @@ jQuery(function(){
 		month_select 	= jQuery('#'+name+"_2i"),
 		day_select 		= jQuery('#'+name+"_3i"),
 		year_select		= jQuery('#'+name+"_1i");
-	
 
 	jQuery('.transit-editable').transit('editor');
 	
