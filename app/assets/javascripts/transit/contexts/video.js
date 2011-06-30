@@ -15,8 +15,7 @@
 		player_element = jQuery("<div class='player_instance' id='transit_video_"+ pid +"'></div>");
 		element.prepend(player_element);
 		player_element.css({ width:'100%', height:'100%' });
-
-		if( typeof data.type == 'undefined' ){
+		if( typeof data.type == 'undefined' || data.type == 'you_tube' ){
 			inst = new video.basic( element, player_element, config );
 		}else inst = new video[data.type]( element, player_element, config );
 		
