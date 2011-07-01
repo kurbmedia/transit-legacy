@@ -3,8 +3,7 @@
 <head>
   <title>Dummy</title>
   <%= include_javascripts :jquery => '1.6.0', :source => :google %>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application", "transit" %>
   <%= csrf_meta_tags %>  
   <%= transit_assets %>
 </head>

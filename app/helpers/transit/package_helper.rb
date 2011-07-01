@@ -33,7 +33,7 @@ module Transit
   
     def deliver_media_context(context, attrs = {})
       type = context.class.name.underscore
-      attrs = { transit_context: type, context_attributes: attrs }
+      attrs = { transit_context: context.class.name.classify, context_attributes: attrs }
       content_tag(:div, "", { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" })
     end
     

@@ -1,0 +1,7 @@
+<% Transit.contexts.map(&:to_s).map(&:classify).each do |context| %>
+Transit.<%= context %> = Spine.Model.setup("<%= context %>",
+	[<%= context.constantize.new.to_js.collect do |key, value| 
+		key = "resource_id" if key == "id"
+		"'#{key}'" 
+	end.join(",\n\t\t") %>, 'options', 'element_id' ]);
+<% end %>

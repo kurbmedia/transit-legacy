@@ -41,7 +41,7 @@ module Transit
     
     def to_js( attrs = {} )
       { 
-        id: self.id.to_s,
+        resource_id: self.id.to_s,
         position: self.position.to_i, 
         package_id:   (self.package.nil? ? "" : self.package.id.to_s ),
         package_type: package_type,

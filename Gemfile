@@ -9,7 +9,7 @@ gem 'mongoid', '~> 2.0'
 gem "devise", "~> 1.3"
 gem "paperclip", "~> 2.3"
 gem 'rack-raw-upload', '0.1.1'
-gem "motr", "0.1.1"
+gem "motr", "0.1.1", :require => false
 gem "paperclip", "~> 2.3"
 gem 'sass-rails'
 gem 'inherited_resources', '1.2.2'
