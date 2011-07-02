@@ -10,6 +10,7 @@ var root 	= this,
 Transit.VERSION 	= '0.0.1';
 Transit.config  	= {};
 Transit.controllers = {};
+Transit.views       = {};
 
 //
 // Add configuration data
@@ -22,7 +23,7 @@ Transit.configure = function( name, conf ){
 // Automatically generate controllers for specified model types, with optional configuration.
 //
 Transit.autoload = function( name, options ){
-	jQuery('*[data-transit-context="'+ name +'"]')
+	jQuery('*[data-context-type="'+ name +'"]')
 		.each(function(i, element){
 			var self    = jQuery(element),
 				data    = self.data('transit.models'),

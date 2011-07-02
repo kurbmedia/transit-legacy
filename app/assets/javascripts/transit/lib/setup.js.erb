@@ -4,4 +4,10 @@ Transit.<%= context %> = Spine.Model.setup("<%= context %>",
 		key = "resource_id" if key == "id"
 		"'#{key}'" 
 	end.join(",\n\t\t") %>, 'options', 'element_id' ]);
+// Alias find to findByAttribute so models can be looked up by mongo id instead of memory id.
+Transit.<%= context %>.extend({
+	find: function( uid ){
+		return Transit.<%= context %>.findByAttribute('resource_id',  uid);
+	}
+});
 <% end %>

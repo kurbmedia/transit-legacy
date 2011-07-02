@@ -18,7 +18,7 @@ module Transit
       end
       obj.contexts.ascending(:position).map do |field|
         unless field.media_context?
-          render(:partial => "contexts/#{field.class.to_s.underscore}", :format => :html, :locals => { :context => field }).html_safe
+          render(partial: "contexts/#{field.class.to_s.underscore}", format: :html, locals: { context: field }).html_safe
         else
           deliver_media_context(field, field.to_backbone)          
         end
@@ -33,7 +33,7 @@ module Transit
   
     def deliver_media_context(context, attrs = {})
       type = context.class.name.underscore
-      attrs = { transit_context: context.class.name.classify, context_attributes: attrs }
+      attrs = { context_type: context.class.name.classify, context_id: context.id.to_s, context_attributes: attrs }
       content_tag(:div, "", { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" })
     end
     

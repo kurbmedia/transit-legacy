@@ -7,13 +7,12 @@ module Transit
       def prepare
       end
       
-      def evaluate(scope, locals, &block)
+      def evaluate(scope, locals, &block)        
+        pathname = scope.logical_path.inspect
+        pathname = pathname.sub("transit/views/", '')
+        puts "new builder"   
         <<-JST
-        (function() {
-          try{
-              transit.template.add(#{scope.logical_path.inspect}, "#{sanitize_js(data)}");
-            }catch(e){};
-          }).call();
+        Transit.views[pathname.inspect] = "#{sanitize_js(data)}";
         JST
       end
 

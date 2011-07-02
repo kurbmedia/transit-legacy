@@ -4656,3 +4656,266 @@ Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6238
 Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 62388)
 Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 62388)
 Served asset /transit.js - 200 OK  (13ms)  (pid 62388)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 14:13:02 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (117.5ms)
+Completed 200 OK in 199ms (Views: 198.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 14:13:02 -0400
+Compiled app/assets/javascripts/application.js  (16ms)  (pid 6591)
+Compiled app/assets/javascripts/rails.js  (1ms)  (pid 6591)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 6591)
+Served asset /application.js - 200 OK  (20ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 14:13:02 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (91ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/audio.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 304 Not Modified  (111ms)  (pid 6591)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:01:02 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (98.4ms)
+Completed 200 OK in 103ms (Views: 102.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:01:03 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:01:03 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 200 OK  (12ms)  (pid 6591)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:02:48 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.2ms)
+Completed 200 OK in 97ms (Views: 96.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:02:48 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:02:49 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.jst  (0ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 200 OK  (14ms)  (pid 6591)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:11:14 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (90.2ms)
+Completed 200 OK in 94ms (Views: 93.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:11:14 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:11:15 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (51ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 200 OK  (69ms)  (pid 6591)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:17:45 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 55ms (Views: 54.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:17:45 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:17:46 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (90ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 200 OK  (105ms)  (pid 6591)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:20:21 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 55ms (Views: 54.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:20:22 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 6591)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:20:22 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (91ms)  (pid 6591)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 6591)
+Served asset /transit.js - 200 OK  (106ms)  (pid 6591)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:37:40 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (116.9ms)
+Completed 200 OK in 200ms (Views: 199.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:37:40 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 8439)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 8439)
+Served asset /application.js - 304 Not Modified  (4ms)  (pid 8439)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:37:40 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (96ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/audio.js  (0ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (2ms)  (pid 8439)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (0ms)  (pid 8439)
+Served asset /transit.js - 304 Not Modified  (120ms)  (pid 8439)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:38:21 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (94.8ms)
+Completed 200 OK in 99ms (Views: 98.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:38:22 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 8439)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:38:22 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 8439)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:39:19 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 195ms (Views: 194.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:39:20 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 8468)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 8468)
+Served asset /application.js - 304 Not Modified  (3ms)  (pid 8468)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:39:20 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (95ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/audio.js  (0ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (1ms)  (pid 8468)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (0ms)  (pid 8468)
+Served asset /transit.js - 304 Not Modified  (120ms)  (pid 8468)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:40:27 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 201ms (Views: 201.0ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:40:28 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (90ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/audio.js  (0ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (2ms)  (pid 8486)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (0ms)  (pid 8486)
+Served asset /transit.js - 304 Not Modified  (115ms)  (pid 8486)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:40:28 -0400
+Compiled app/assets/javascripts/application.js  (1ms)  (pid 8486)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 8486)
+Served asset /application.js - 304 Not Modified  (4ms)  (pid 8486)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-02 15:41:50 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (117.4ms)
+Completed 200 OK in 195ms (Views: 194.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-02 15:41:50 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 8507)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 8507)
+Served asset /application.js - 304 Not Modified  (3ms)  (pid 8507)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-02 15:41:50 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (6ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (1ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (108ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/audio.js  (0ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/controllers/video.js  (2ms)  (pid 8507)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (1ms)  (pid 8507)
+Served asset /transit.js - 304 Not Modified  (164ms)  (pid 8507)

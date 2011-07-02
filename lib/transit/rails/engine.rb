@@ -35,4 +35,4 @@ end
 
 require 'transit/rails/railtie'
 Sprockets::Engines
-Sprockets.register_engine '.jst', Transit::Builders::JstBuilder
+Sprockets.register_engine '.tjst', Transit::Builders::JstBuilder
