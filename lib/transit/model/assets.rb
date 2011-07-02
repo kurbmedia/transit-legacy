@@ -5,7 +5,7 @@ module Transit
       extend ActiveSupport::Concern
       
       included do
-        has_many :assets, as: :assetable, class_name: "Transit::Asset"
+        has_many :assets, as: :assetable, class_name: "Transit::Asset", dependent: :destroy
       end
       
     end
