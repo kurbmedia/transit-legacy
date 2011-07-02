@@ -1,5 +1,5 @@
 <ul id="context_list" class='contents'>
 	<%= form.fields_for :contexts do |cform| %>
-	<%= context_field_item(cform.object, cform) %>
+	<%= render(template: 'transit/contexts/edit', locals: { context: cform.object, form: cform, parent: form } ) %>
 	<% end %>
 </ul>

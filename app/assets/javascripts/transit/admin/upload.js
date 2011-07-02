@@ -88,20 +88,16 @@ jQuery(function(){
 	
 	function process_upload(file, data, success){
 		var resp = jQuery.parseJSON(data),
-			item = jQuery(resp.content);
-			
-		if( resp.image ) item.hide().appendTo( jQuery('#asset_image_list') );
-		else item.hide().appendTo( jQuery('#asset_image_list') );
-		
-		item.fadeIn('fast');
-		jQuery('#' + file.id).next('div.uploadifyProgress').progressbar('value', 0);
-		jQuery('#asset_upload').uploadifyCancel(file.id);
+			item = jQuery(resp.content),
+			bar  = jQuery('#' + file.id).find('div.uploadifyProgress');
+		jQuery.event.trigger("asset:create", [resp, item]);
+		jQuery(bar).progressbar('value', 0);
 	}
 	
 	function update_progress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, queueSize){
-		var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
-		console.log(jQuery('#' + file.id).find('div.uploadifyProgress'));
-		jQuery('#' + file.id).find('div.uploadifyProgress').progressbar('value', percentage);
+		var percentage  = Math.round(fileBytesLoaded / fileTotalBytes * 100),
+			progressbar = jQuery('#' + file.id).find('div.uploadifyProgress');
+		jQuery(progressbar).progressbar('value', percentage);
 		return false;		
 	}
 	

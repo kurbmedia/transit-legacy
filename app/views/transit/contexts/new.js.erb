@@ -1,6 +1,6 @@
 <% content = capture do
 	fields_for("#{params[:form_name]}[contexts_attributes][#{Time.now.to_i}]", @context) do |child|
-		context_field_item(child.object, child)
+		render(template: 'transit/contexts/edit', locals: { context: child.object, form: child } )		
 	end
 end %>
 jQuery('#context_list').trigger("context:added", ["<%= escape_javascript(content.html_safe) %>", "<%= @context.class.name.underscore %>"]);

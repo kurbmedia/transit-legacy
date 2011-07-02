@@ -18,3 +18,16 @@
 		<% end %>
 	</ul>
 </div>
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+	
+	jQuery('#post_assets').bind('asset:create', 
+		function( event, response, item ){
+			item.hide();
+			if( response.image ) jQuery('#asset_image_list').append(item);
+			else jQuery('#asset_file_list').append(item);
+			item.fadeIn('fast');
+		});
+	
+//]]>
+</script>

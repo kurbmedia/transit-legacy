@@ -1,1 +1,1 @@
-jQuery('#context_list').trigger("context:destroyed", ["#context_<%= @context.id.to_s %>"]);
+jQuery('#context_list #context_<%= @context.id.to_s %>').remove();

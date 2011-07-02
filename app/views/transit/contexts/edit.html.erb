@@ -1,0 +1,11 @@
+<li id="context_<%= context.id.to_s %>" class="field field_<%= context.class.to_s.underscore %>">
+	<%= form.hidden_field(:_type, value: context.class.to_s) %>
+	<%= form.hidden_field(:position, rel: 'field_position') %>
+	<%= form.hidden_field(:id) unless context.new_record? %>
+	<% unless context.new_record? %>
+	<%= link_to('Delete', "/transit/#{parent.object_name.to_s.pluralize}/#{parent.object.id}/contexts/#{context.id}", method: :delete, remote: true, class: 'icon_delete') %>
+	<% else %>
+	<%= link_to("Delete", "javascript:jQuery('#context_#{context.id}').remove();", class: 'icon_delete') %>
+	<% end %>
+	<%= render(partial: "transit/contexts/#{context.class.to_s.underscore}", locals: { form: form, context: context }) %>
+</li>
