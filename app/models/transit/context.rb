@@ -40,17 +40,11 @@ module Transit
     end
     
     def to_js( attrs = {} )
-      { 
-        resource_id: self.id.to_s,
-        position: self.position.to_i, 
-        package_id:   (self.package.nil? ? "" : self.package.id.to_s ),
-        package_type: package_type,
-        resource_url: package_type.pluralize,
-      }.merge!( attrs )
+      { resource_url: "#{package_type.pluralize}/#{self.package.nil? ? '' : self.package.id.to_s}" }.merge!( attrs )
     end
     
-    def to_backbone( attrs = {} )
-      ::Base64.encode64s(to_js(attrs).to_json)
+    def to_html( attrs = {} )
+      { context_id: self.id.to_s, context_type: self.class.name, context_attributes: ::Base64.encode64s(to_js(attrs).to_json) }
     end
     
   end

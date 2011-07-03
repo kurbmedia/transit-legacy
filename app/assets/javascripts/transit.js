@@ -2,15 +2,14 @@
 //= require libs/spine
 //= require transit/lib/core
 //= require transit/config
-//= require_directory ./transit/controllers
 //= require_self
 
 jQuery(function(){
 	
-	jQuery('*[data-transit-context]')
+	jQuery('*[data-context-type]')
 		.each(function(i, element){
 			var self = jQuery(element),
-				type = self.data('transit-context');
+				type = self.data('context-type');
 			Transit.build(type, self);
 		});
 		
@@ -22,19 +21,19 @@ jQuery(function(){
 	
 	jQuery.fn.transit = function( name, options ){
 		
-		if( jQuery(this).data('transit.' + name )) 
-			return jQuery(this).data('transit.' + name);
+		var instance;
 		
-		if( typeof Transit.controllers[name] == 'undefined' ) 
-			return this;
-		
+		if( jQuery(this).data('transit.' + name.toLowerCase() ) ){
+			instance = jQuery(this).data('transit.' + name.toLowerCase() );
+			if( typeof options != 'undefined' ){
+				if( jQuery.type(options) == 'string' && jQuery.isFunction(instance[options]) ) instance[options]();
+				else instance.configure( options );
+			}
+			return instance;
+		}
+				
 		this.each(function(i, el){
-			var controller;
-			if( jQuery(el).data('transit.' + name)) return true;
-
-			controller = Transit.controllers[name].init(options);
-			jQuery(el).data('transit.' + name, controller);
-			
+			Transit.build( name, jQuery(el), options );			
 		});
 		
 		return this;

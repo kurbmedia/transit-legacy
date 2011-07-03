@@ -3,12 +3,13 @@
 //= require_directory ./util
 //= require ./setup.js.erb
 //= require ./suffix
+//= require_tree ../contexts
+//= require_tree ../views
 	
 var root 	= this,
 	Transit = root.Transit = {};
 
 Transit.VERSION 	= '0.0.1';
-Transit.config  	= {};
 Transit.controllers = {};
 Transit.views       = {};
 
@@ -16,8 +17,7 @@ Transit.views       = {};
 // Add configuration data
 //
 Transit.configure = function( name, conf ){
-	var old_conf = this.config[name] || {};
-	this.config[name] = jQuery.extend(this.config[name], conf);
+	this[name].configure(conf);
 };
 //
 // Automatically generate controllers for specified model types, with optional configuration.
@@ -26,36 +26,52 @@ Transit.autoload = function( name, options ){
 	jQuery('*[data-context-type="'+ name +'"]')
 		.each(function(i, element){
 			var self    = jQuery(element),
-				data    = self.data('transit.models'),
-				context = data[name],
-				controller,
-				attrs;
-				
-			attrs = jQuery.extend({}, { el:self, item:Transit[name].find(context) }, options );
-			
+				context = self.data('transit.' + name.toLowerCase()),
+				conf;
+					
+			if( options ) context.configure( options );
 			if( typeof context == 'undefined' ) return true;
-			controller = Transit.controllers[name].init(attrs);			
-			self.data("transit."+name, controller);
+			context.render();
 			return self;
 		});
 };
 
-Transit.build = function( name, element ){
+Transit.build = function( name, element, options ){
 	var data = Transit.Util.Base64.decode( jQuery(element).data('context-attributes') ),
-		model,
-		model_data;
+		model;
+	data = (new Function("return " + data))();
 	
-	data =  (new Function("return " + data))();
-	data = jQuery.extend(data, { element_id: jQuery(element).attr('id'), type: name });
+	element = jQuery(element);
+	data.el = element;
+	model   = Transit[name].init( data );
 	
-	model 	   = Transit[name].create( data );
-	model_data = element.data('transit.models') || {};
-	model_data[name] = model.id;
+	if( options ) model.configure( options );
 	
-	element.data('transit.models', model_data);
+	element.data('transit.' + name.toLowerCase(), model );
 	return element;
 	
 };
+
+Transit.Context = Spine.Controller.create({
+	init: function( attrs ){
+		this.config = jQuery.extend({}, this.parent.config);
+		for( var name in attrs ) this[name] = attrs[name];
+	},
+	// Instance level configure
+	configure: function( options ){
+		this.config = jQuery.extend(this.config, attrs);
+	},
+	// Instance configuration
+	config: {},
+	render: jQuery.noop
+},{	
+	// Class configuration
+	config: {},
+	// Class level configure
+	configure: function( attrs ){
+		this.config = jQuery.extend(this.config, attrs);
+	}
+});
 
 
 // Transit.Model       = Backbone.Model.extend({});

@@ -1,5 +1,3 @@
-//= require './expose'
-
 /**
  * @license 
  * jQuery Tools @VERSION Overlay - Overlay base. Extend it.
@@ -292,3 +290,4 @@
 	}; 
 	
 })(jQuery);
+

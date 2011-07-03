@@ -18,7 +18,7 @@ class Video < Transit::Context
   end
   
   def to_js( attrs = {} )
-    super({ source: source, type: video_type, ext: file_ext }.reverse_merge!(attrs))
+    super({ src: source, type: video_type }.reverse_merge!(attrs))
   end
   
 end

@@ -7,14 +7,10 @@
 */
 
 
-@import "blueprint/reset";
-@import "blueprint/grid";
-@import 'blueprint/typography';
-@import 'includes/setup';
-@import 'transit/forms';
+
 ///////////////////////////////////////////////
 // Setup typography
 ///////////////////////////////////////////////
-
-@include blueprint-typography;
-#wrapper{ @include container; }
+div.video_player{ width:640px; height:350px; 
+	div.me-plugin{ width:100%; height:100%; }
+}

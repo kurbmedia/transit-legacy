@@ -20,7 +20,7 @@ module Transit
         unless field.media_context?
           render(partial: "contexts/#{field.class.to_s.underscore}", format: :html, locals: { context: field }).html_safe
         else
-          deliver_media_context(field, field.to_backbone)          
+          deliver_media_context(field)          
         end
       end.join("\n").html_safe
     end
@@ -32,9 +32,10 @@ module Transit
     private
   
     def deliver_media_context(context, attrs = {})
-      type = context.class.name.underscore
-      attrs = { context_type: context.class.name.classify, context_id: context.id.to_s, context_attributes: attrs }
-      content_tag(:div, "", { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" })
+      attrs = attrs.reverse_merge!( context.to_html )
+      type  = context.class.name.underscore      
+      html_attrs = { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" }
+      content_tag(:div, "", html_attrs)
     end
     
   end
