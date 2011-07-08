@@ -20,7 +20,7 @@ module Transit::Package
 
       field :display_image, :type => Boolean, :default => true
       
-      scope :published, where(:published => true, :post_date.lte => Date.today.to_time.midnight)
+      scope :published, lambda{ where(:published => true, :post_date.lte => Date.today.to_time.midnight) }
       before_validation :make_slugged_title, :if => lambda{ |p| p.published? }
       before_save :make_slugged_title, :if => lambda{ |p| p.published? }
       before_save :force_post_date_to_midnight
