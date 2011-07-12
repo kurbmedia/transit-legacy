@@ -12,6 +12,15 @@ module TransitHelper
     javascript_include_tag('transit/admin')
   end
   
+  def transit_metadata
+    return "" unless @_transit_metadata && @_transit_metadata.is_a?(Hash)
+    out = ""
+    @_transit_metadata.each do |name, data|
+      out << tag(:meta, name: name, content: data)
+    end
+    out.html_safe
+  end
+  
   def video_player(source, html_attrs = {})
     attrs = { 
       id: "video_player_#{Time.now.to_i}",

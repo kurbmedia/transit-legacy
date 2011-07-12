@@ -31,10 +31,19 @@ module Transit
   
     private
   
+    def add_transit_meta( context )
+      @_transit_metadata ||= {}      
+      metadata = ::Base64.encode64s(context.to_json)
+      @_transit_metadata.merge!("context:#{context.id}" => metadata )
+    end
+  
     def deliver_media_context(context, attrs = {})
-      attrs = attrs.reverse_merge!( context.to_html )
-      type  = context.class.name.underscore      
-      html_attrs = { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" }
+      add_transit_meta( context )
+      type = context.class.name.underscore 
+      meta = context.to_html.dup
+      meta.delete(:context_attributes)
+      attrs.merge!( meta )
+      html_attrs = { id: "#{type}_context_#{context.id}", data: attrs, class: "#{type}_player" }      
       content_tag(:div, "", html_attrs)
     end
     

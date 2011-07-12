@@ -1,7 +1,0 @@
-<% Transit.contexts.map(&:to_s).map(&:classify).each do |context| %>
-Transit.<%= context %> = Transit.Context.create({
-	<%= context.constantize.new.to_js.collect do |key, value|
-	"#{key}: '#{value}'"
-	end.join(",\n\t") %>
-});
-<% end %>

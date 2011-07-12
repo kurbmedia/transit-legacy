@@ -11,7 +11,7 @@ module Transit
         pathname = scope.logical_path.inspect
         pathname = pathname.sub("transit/views/", '')
         <<-JST
-        Transit.views[#{pathname}] = "#{sanitize_js(data)}";
+        Transit.tpl[#{pathname}] = "#{sanitize_js(data)}";
         JST
       end
 

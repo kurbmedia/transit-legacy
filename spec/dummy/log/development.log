@@ -9982,3 +9982,934 @@ ActionController::RoutingError (No route matches [GET] "/OQNNqKQs_F4"):
   
 
 Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-11 23:57:35 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (117.5ms)
+Completed 200 OK in 208ms (Views: 207.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-11 23:57:35 -0400
+Compiled app/assets/javascripts/application.js  (19ms)  (pid 86701)
+Compiled app/assets/javascripts/rails.js  (1ms)  (pid 86701)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 86701)
+Served asset /application.js - 200 OK  (23ms)  (pid 86701)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-11 23:57:35 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (5ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (8ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (4ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/media.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/to_query.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (89ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/audio.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/text.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/video.js  (2ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/jqtools/flashembed.js  (22ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/jqtools/rangeinput.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js.erb  (2ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/mediaelement.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 86701)
+Served asset /transit.js - 200 OK  (154ms)  (pid 86701)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-11 23:57:36 -0400
+Compiled app/assets/stylesheets/application.css.scss  (72ms)  (pid 86701)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (803ms)  (pid 86701)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (34ms)  (pid 86701)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 86701)
+Served asset /application.css - 200 OK  (914ms)  (pid 86701)
+
+
+Started GET "/OQNNqKQs_F4" for 127.0.0.1 at 2011-07-11 23:57:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/OQNNqKQs_F4"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:16:46 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (133.4ms)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/spine.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/media.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/to_query.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/setup.js.erb  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/audio.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/text.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/jqtools/flashembed.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/jqtools/rangeinput.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/contexts/video.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video/show.tjst  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/mediaelement.js  (0ms)  (pid 86701)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js.erb  (0ms)  (pid 86701)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (0ms)  (pid 86701)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 86701)
+Completed 500 Internal Server Error in 970ms
+
+ActionView::Template::Error (undefined local variable or method `transit_metadata' for #<#<Class:0x00000104446718>:0x00000104442de8>):
+    4:   <title>Dummy</title>
+    5:   <%= include_javascripts :jquery => '1.6.0', :source => :google %>
+    6:   <%= javascript_include_tag "application", "transit" %>
+    7:   <%= transit_metadata %>
+    8:   <%= csrf_meta_tags %>
+    9:   <%= stylesheet_link_tag 'application' %>
+    10:   <%= transit_assets %>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1409241665446236405_2183280220'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:17:12 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (118.4ms)
+Completed 200 OK in 197ms (Views: 196.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:17:13 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 90013)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 90013)
+Served asset /application.js - 304 Not Modified  (3ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:17:13 -0400
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/config'
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:4)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:17:13 -0400
+Compiled app/assets/stylesheets/application.css.scss  (9ms)  (pid 90013)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (731ms)  (pid 90013)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 90013)
+Served asset /application.css - 304 Not Modified  (745ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:17:15 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (95.9ms)
+Completed 200 OK in 100ms (Views: 99.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:19:50 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (140.1ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (undefined method `merge!' for "":ActiveSupport::SafeBuffer):
+    1: <% model = Video.new(source: '/OQNNqKQs_F4', video_type:'youtube') %>
+    2: <%= deliver_media_context(model) %>
+  app/views/index/index.html.erb:2:in `_app_views_index_index_html_erb___3984745960305122760_2184747900'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:22:11 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 98ms (Views: 97.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:22:11 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:22:12 -0400
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/config'
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:4)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:22:12 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:22:13 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 54ms (Views: 54.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:22:27 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 56ms (Views: 55.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:23:31 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (95.8ms)
+Completed 200 OK in 101ms (Views: 100.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:23:47 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.3ms)
+Completed 200 OK in 98ms (Views: 97.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:26:43 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (96.7ms)
+Completed 200 OK in 101ms (Views: 100.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:31:49 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 98ms (Views: 97.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:33:22 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 97ms (Views: 96.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:33:22 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:33:23 -0400
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/config'
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:4)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:33:23 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:33:45 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 98ms (Views: 97.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:33:46 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:33:46 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (5ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/backbone.js  (35ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/inflate.js  (39ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (93ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:33:46 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:34:44 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 96ms (Views: 95.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:36:58 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 54ms (Views: 53.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:37:05 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 54ms (Views: 53.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:37:05 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:37:06 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:37:06 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:38:39 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 56ms (Views: 56.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:38:39 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:38:40 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:38:40 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:45:22 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 96ms (Views: 95.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:45:22 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:45:23 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (5ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (1ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (12ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:45:23 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:45:30 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 102ms (Views: 101.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:45:30 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:45:31 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (5ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (8ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:45:31 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:45:45 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 109ms (Views: 108.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:45:46 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:45:46 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (5ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (9ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:45:47 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:48:04 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (97.8ms)
+Completed 200 OK in 102ms (Views: 101.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:48:04 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:48:05 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/json2.js  (1ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (11ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:48:05 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:49:18 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 99ms (Views: 98.9ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:49:18 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (10ms)  (pid 90013)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:49:18 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:49:19 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:49:37 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 97ms (Views: 97.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:49:38 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:49:38 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (45ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (49ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:49:38 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:50:03 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 96ms (Views: 95.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:50:04 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:50:04 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (10ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:50:04 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:52:53 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 55ms (Views: 54.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:52:54 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:52:54 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (11ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:52:54 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:53:33 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 53ms (Views: 52.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:53:34 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:53:34 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (10ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:53:34 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:54:56 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 58ms (Views: 58.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:54:57 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:54:57 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (1ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (14ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:54:57 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:55:51 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (97.6ms)
+Completed 200 OK in 102ms (Views: 101.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:55:52 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:55:52 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Error compiling asset transit.js:
+Errno::ENOENT: No such file or directory - /_Work/gems/transit/app/assets/javascripts/transit/lib/models
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:55:52 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:56:04 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (98.0ms)
+Completed 200 OK in 103ms (Views: 102.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:56:05 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:56:05 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (13ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:56:05 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:56:47 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (97.8ms)
+Completed 200 OK in 102ms (Views: 101.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:56:48 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:56:48 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (11ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:56:48 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 01:59:35 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (100.9ms)
+Completed 200 OK in 105ms (Views: 104.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 01:59:35 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 01:59:35 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (13ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 01:59:36 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:00:09 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 105ms (Views: 105.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:00:10 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:00:10 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (13ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:00:10 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:00:50 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 100ms (Views: 99.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:00:50 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:00:51 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (14ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:00:51 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:02:43 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (99.3ms)
+Completed 200 OK in 103ms (Views: 103.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:02:43 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:02:44 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:02:44 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (13ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:03:38 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 103ms (Views: 102.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:03:38 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:03:39 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (3ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (16ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:03:39 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:11:42 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 101ms (Views: 101.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:11:43 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:11:43 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core-ext/string.js  (0ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (15ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:11:44 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:15:41 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 100ms (Views: 99.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:15:41 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 90013)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:15:42 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 90013)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 90013)
+Served asset /transit.js - 200 OK  (10ms)  (pid 90013)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:15:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 90013)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:21:08 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (120.3ms)
+Completed 200 OK in 236ms (Views: 235.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:21:08 -0400
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 94983)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 94983)
+Served asset /application.js - 304 Not Modified  (3ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:21:09 -0400
+Error compiling asset transit.js:
+Sprockets::ArgumentError: require_tree argument must be a relative path
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:6)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:21:09 -0400
+Compiled app/assets/stylesheets/application.css.scss  (8ms)  (pid 94983)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (576ms)  (pid 94983)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 94983)
+Served asset /application.css - 304 Not Modified  (589ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:21:28 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 59ms (Views: 58.2ms)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:21:29 -0400
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/views/*'
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:6)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:21:29 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:21:30 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:21:40 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 95ms (Views: 94.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:21:41 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:21:41 -0400
+Error compiling asset transit.js:
+Sprockets::ArgumentError: require_directory argument must be a relative path
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:6)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:21:41 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:23:16 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 97ms (Views: 96.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:23:16 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:23:16 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:23:17 -0400
+Error compiling asset transit.js:
+Sprockets::FileNotFound: couldn't find file 'transit/views/*'
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:6)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:24:46 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 101ms (Views: 100.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:24:47 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:24:47 -0400
+Error compiling asset transit.js:
+Sprockets::ArgumentError: require_tree argument must be a relative path
+  (in /_Work/gems/transit/app/assets/javascripts/transit.js:6)
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:24:47 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:24:54 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (94.0ms)
+Completed 200 OK in 98ms (Views: 97.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:24:55 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:24:55 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/json2.js  (1ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/backbone.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core-ext/string.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 94983)
+Error compiling asset transit.js:
+Errno::ENOENT: No such file or directory - /_Work/gems/transit/app/assets/javascripts/transit/views/*
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:24:56 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:25:09 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 53ms (Views: 52.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:25:10 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:25:10 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (6ms)  (pid 94983)
+Error compiling asset transit.js:
+Errno::ENOENT: No such file or directory - /_Work/gems/transit/app/assets/javascripts/transit/views/*
+Served asset /transit.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:25:10 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:25:23 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (98.2ms)
+Completed 200 OK in 103ms (Views: 102.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:25:24 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:25:24 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/media.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video.tjst  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 94983)
+Served asset /transit.js - 200 OK  (13ms)  (pid 94983)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:25:24 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-12 02:25:43 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 100ms (Views: 99.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-12 02:25:43 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 94983)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-12 02:25:44 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (7ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/media.js  (0ms)  (pid 94983)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 94983)
+Served asset /transit.js - 200 OK  (12ms)  (pid 94983)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-12 02:25:44 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 94983)

@@ -39,12 +39,8 @@ module Transit
       false
     end
     
-    def to_js( attrs = {} )
-      { resource_url: "#{package_type.pluralize}/#{self.package.nil? ? '' : self.package.id.to_s}" }.merge!( attrs )
-    end
-    
     def to_html( attrs = {} )
-      { context_id: self.id.to_s, context_type: self.class.name, context_attributes: ::Base64.encode64s(to_js(attrs).to_json) }
+      { context_id: self.id.to_s, context_type: self.class.name }
     end
     
   end
