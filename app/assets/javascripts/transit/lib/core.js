@@ -13,15 +13,23 @@ Transit.tpl     = {};
 Transit.Asset   = Backbone.Model.extend({});
 Transit.View    = Backbone.View.extend({});
 
-Transit.Context = Backbone.Model.extend({}, {
+
+Transit.Model   = Backbone.Model.extend({}, {
 	instances:[],
 	find: function( id ){
 		return _.detect( this.instances, 
 			function( inst ){ 
 				return inst.id.toString() == id.toString(); 
 			});
-	}
+	},
+	first: function(){
+		return this.instances[0];
+	},
+	last: function(){
+		return this.instances[ this.instances.length - 1];
+	}	
 });
 
+Transit.Context = Transit.Model.extend({});
+
 Transit.Audio = Transit.Context.extend({});
-Transit.Video = Transit.Context.extend({});
