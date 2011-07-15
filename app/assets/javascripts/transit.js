@@ -6,6 +6,31 @@
 //= require_tree ./transit/views
 //= require_self
 
+(function( jQuery, undefined ){
+	
+	jQuery.fn.transit = function(){
+		
+		var self, cid, ctype;
+		
+		if( this.length > 1 ) return false;
+		
+		self = jQuery(this);
+		cid  = jQuery(this).data('context-id');
+		type = jQuery(this).data('context-type');
+		
+		if( typeof cid == 'undefined' || typeof type == 'undefined' ) 
+			return this;
+		
+		if( Transit[type] ){
+			return Transit[type].find( cid );
+		}
+		
+		return this;
+		
+	};
+	
+})( jQuery );
+
 
 jQuery(function(){
 

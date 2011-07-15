@@ -1,2 +1,9 @@
 <% model = Video.new(source: 'OQNNqKQs_F4', video_type:'youtube') %>
-<%= deliver_media_context(model) %>
+<%#= deliver_media_context(model) %>
+
+<%= form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
+	<%= f.text_field :name %>
+	<%= f.file_field :file %>
+	<%= f.file_field :file2 %>
+	<%= f.submit %>
+<% end %>

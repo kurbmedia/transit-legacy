@@ -13,6 +13,7 @@ gem "motr", "0.1.1", :require => false
 gem "paperclip", "~> 2.3"
 gem 'sass-rails'
 gem 'inherited_resources', '1.2.2'
+gem 'jquery-rails-multipart-xhr', :path => '/_Work/gems/jquery-rails-multipart-xhr'
 
 gem "mongrel",'1.2.0.pre2'  
 gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"

@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application' %>
   <%= transit_assets %>
+	<style type="text/css" media="screen">
+		input[type=file]{ width:200px; }
+		span.uploadable{ border:1px dashed #ccc; display:inline-block; white-space:nowrap; }
+		span.uploadable var{ display:inline-block; white-space:nowrap; overflow:hidden; padding:5px;}
+	</style>
 </head>
 <body id="<%= page_id %>">
 	<div id="wrapper">

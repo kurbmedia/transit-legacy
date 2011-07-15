@@ -114,7 +114,7 @@
           url = element.attr('href');
           data = element.data('params') || null; 
        }
-
+		
         rails.ajax({
           url: url, type: method || 'GET', data: data, dataType: dataType,
           // stopping the "ajax:beforeSend" event will cancel the ajax request
