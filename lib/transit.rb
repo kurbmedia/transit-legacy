@@ -32,12 +32,6 @@ module Transit
     autoload :InvalidContext,   'transit/errors/invalid_context'
     autoload :ResourceNotFound, 'transit/errors/resource_not_found'
   end
-  
-  module Builders
-    autoload :JstBuilder,      'transit/builders/jst_builder'
-    autoload :FormBuilder,     'transit/builders/form_builder'
-    autoload :PackageBuilder,  'transit/builders/package_builder'
-  end
     
   DESCRIPTIONS = {}
   

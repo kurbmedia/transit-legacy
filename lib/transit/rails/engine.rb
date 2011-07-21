@@ -5,9 +5,11 @@ module Transit
   class Engine < Rails::Engine
 
     isolate_namespace Transit
-    paths['app/models'] << 'app/models/contexts'
+    
+    paths['app/models']  << 'app/models/contexts'
     paths['app/helpers'] << 'app/helpers/transit'
     
+    config.transit = Transit::Config
     
     ##
     # After initialization, dynamically create controllers for models 
@@ -34,5 +36,3 @@ module Transit
 end
 
 require 'transit/rails/railtie'
-Sprockets::Engines
-Sprockets.register_engine '.tjst', Transit::Builders::JstBuilder

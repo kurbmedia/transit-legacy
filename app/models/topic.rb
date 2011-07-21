@@ -1,3 +1,14 @@
+##
+# Topics are a method of grouping posts by a common name/categorization.
+# Topics can be global, or can be based on a particular post class/subclass. 
+# 
+# @example A global topic
+# topic = Topic.create(title: 'Awesome posts')
+# 
+# @example A topic which only applies to posts of class 'Blog'
+# topic = Topic.create(title: 'Awesome posts', post_types: ['Blog'])
+# 
+# 
 class Topic
   include Mongoid::Document
   
@@ -5,15 +16,10 @@ class Topic
   field :slug,        :type => String
   field :post_types,  :type => Array
   
+  slug_with :title, :before_create
+  
   validates :title, :presence => true
-  before_create :generate_slug
-   
   scope :for_type, lambda{ |type| where(:post_types => type) }
   scope :for_editing, lambda{ |klass, inst| ascending(:title) }
-  
-  def generate_slug
-    return true unless self.slug.to_s.blank?
-    self.slug = self.title.to_slug
-  end
   
 end

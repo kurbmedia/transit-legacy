@@ -3,11 +3,9 @@
 <head>
   <title>Dummy</title>
   <%= include_javascripts :jquery => '1.6.0', :source => :google %>
-  <%= javascript_include_tag "application", "transit" %>
-  <%= transit_metadata %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application' %>
-  <%= transit_assets %>
 	<style type="text/css" media="screen">
 		input[type=file]{ width:200px; }
 		span.uploadable{ border:1px dashed #ccc; display:inline-block; white-space:nowrap; }

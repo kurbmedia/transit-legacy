@@ -9,12 +9,11 @@ gem 'mongoid', '~> 2.0'
 gem "devise", "~> 1.3"
 gem "paperclip", "~> 2.3"
 gem 'rack-raw-upload', '0.1.1'
-gem "motr", "0.1.1", :require => false
 gem "paperclip", "~> 2.3"
 gem 'sass-rails'
 gem 'inherited_resources', '1.2.2'
 gem 'jquery-rails-multipart-xhr', :path => '/_Work/gems/jquery-rails-multipart-xhr'
-
+gem 'simple_form', '1.4.2'
 gem "mongrel",'1.2.0.pre2'  
 gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"
 

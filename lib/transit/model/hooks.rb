@@ -25,6 +25,16 @@ module Transit
         include Transit::Model::AutoIncrement
       end
       
+      # Provide attribute 'slugging' on any model
+      def slug_with(field, callback = :before_create, callback_options = {})        
+        define_method "generate_slug" do
+          return true unless self.slug.to_s.blank?
+          self.slug = self.send(field.to_sym).to_slug
+        end
+        self.send(:field, :slug, type: String)
+        self.send(callback, :generate_slug, callback_options)
+      end
+      
     end
     
   end

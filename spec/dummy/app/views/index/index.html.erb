@@ -1,9 +1,14 @@
 <% model = Video.new(source: 'OQNNqKQs_F4', video_type:'youtube') %>
 <%#= deliver_media_context(model) %>
 
-<%= form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
-	<%= f.text_field :name %>
-	<%= f.file_field :file %>
-	<%= f.file_field :file2 %>
-	<%= f.submit %>
+<%= simple_form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
+	<%= f.input :name, as: :string %>
+	<%= f.input :file, as: :file %>
+	<%= f.input :file2, as: :file %>
+	<%= f.button :submit %>
+<% end %>
+
+<%= simple_form_for [transit, Post.new] do |f| %>
+	<%= f.input :title %>
+	<%= f.input :post_date, as: :date, order: [:month, :day, :year] %>
 <% end %>

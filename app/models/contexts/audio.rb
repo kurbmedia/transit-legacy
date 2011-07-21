@@ -5,8 +5,4 @@ class Audio < Transit::Context
     true
   end
   
-  def to_js( attrs = {} )
-    super({ src: source }.reverse_merge!(attrs))
-  end
-  
 end

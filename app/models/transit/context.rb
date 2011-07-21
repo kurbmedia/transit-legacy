@@ -38,10 +38,5 @@ module Transit
     def media_context?
       false
     end
-    
-    def to_html( attrs = {} )
-      { context_id: self.id.to_s, context_type: self.class.name }
-    end
-    
   end
 end

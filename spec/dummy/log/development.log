@@ -11069,3 +11069,520 @@ Started POST "/" for 192.168.1.75 at 2011-07-13 10:00:27 -0400
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"snUq/NxtD3sTGd/9hQzE+CGXrQOAlK2hib5V75rUeNk=", "file_test"=>{"name"=>""}, "commit"=>"Save File test"}
 Rendered index/index.html.erb within layouts/application (98.2ms)
 Completed 200 OK in 112ms (Views: 111.5ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 12:29:06 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (221.4ms)
+Completed 200 OK in 318ms (Views: 317.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 12:29:07 -0400
+Compiled app/assets/javascripts/application.js  (3ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (45ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/underscore.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/json2.js  (1ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/libs/backbone.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core.js  (2ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/prefix.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/core-ext/string.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/util/base64.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/models/video.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/lib/suffix.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/config.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/audio.tjst  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/media.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit/views/video.tjst  (0ms)  (pid 49281)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 49281)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (13ms)  (pid 49281)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 49281)
+Served asset /application.js - 200 OK  (87ms)  (pid 49281)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-21 12:29:07 -0400
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (8ms)  (pid 49281)
+Compiled /_Work/gems/transit/app/assets/javascripts/transit.js  (0ms)  (pid 49281)
+Served asset /transit.js - 200 OK  (13ms)  (pid 49281)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 12:29:07 -0400
+Compiled app/assets/stylesheets/application.css.scss  (29ms)  (pid 49281)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (784ms)  (pid 49281)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (35ms)  (pid 49281)
+Compiled app/assets/stylesheets/application.css.scss  (0ms)  (pid 49281)
+Served asset /application.css - 200 OK  (852ms)  (pid 49281)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 12:29:31 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (99.5ms)
+Completed 200 OK in 104ms (Views: 103.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 12:29:31 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 49281)
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-21 12:29:32 -0400
+Served asset /transit.js - 304 Not Modified  (0ms)  (pid 49281)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 12:29:32 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 49281)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:02:31 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (207.8ms)
+Completed 500 Internal Server Error in 555ms
+
+ActionView::Template::Error (undefined local variable or method `transit_metadata' for #<#<Class:0x000001035d5580>:0x000001035d1de0>):
+    4:   <title>Dummy</title>
+    5:   <%= include_javascripts :jquery => '1.6.0', :source => :google %>
+    6:   <%= javascript_include_tag "application", "transit" %>
+    7:   <%= transit_metadata %>
+    8:   <%= csrf_meta_tags %>
+    9:   <%= stylesheet_link_tag 'application' %>
+    10:   <%= transit_assets %>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4443687260030077297_2175753500'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:02:43 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (136.6ms)
+Completed 500 Internal Server Error in 242ms
+
+ActionView::Template::Error (undefined local variable or method `transit_assets' for #<#<Class:0x00000100b465a8>:0x00000100af7408>):
+    6:   <%= javascript_include_tag "application", "transit" %>
+    7:   <%= csrf_meta_tags %>
+    8:   <%= stylesheet_link_tag 'application' %>
+    9:   <%= transit_assets %>
+    10: 	<style type="text/css" media="screen">
+    11: 		input[type=file]{ width:200px; }
+    12: 		span.uploadable{ border:1px dashed #ccc; display:inline-block; white-space:nowrap; }
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__4443687260030077297_2153401480'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:02:47 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 124ms (Views: 124.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:02:48 -0400
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'transit'
+  (in /_Work/gems/transit/spec/dummy/app/assets/javascripts/application.js:7)
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/transit.js" for 127.0.0.1 at 2011-07-21 16:02:48 -0400
+Served asset /transit.js - 404 Not Found  (2ms)  (pid 54460)
+
+ActionController::RoutingError (No route matches [GET] "/assets/transit.js"):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:02:49 -0400
+Compiled app/assets/stylesheets/application.css.scss  (48ms)  (pid 54460)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (630ms)  (pid 54460)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (1ms)  (pid 54460)
+Served asset /application.css - 304 Not Modified  (684ms)  (pid 54460)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:03:22 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 58ms (Views: 57.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:03:23 -0400
+Error compiling asset application.js:
+Sprockets::FileNotFound: couldn't find file 'transit'
+  (in /_Work/gems/transit/spec/dummy/app/assets/javascripts/application.js:7)
+Served asset /application.js - 500 Internal Server Error
+
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:03:23 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:03:41 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (109.2ms)
+Completed 200 OK in 113ms (Views: 113.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:03:41 -0400
+Compiled app/assets/javascripts/application.js  (1ms)  (pid 54460)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 54460)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (29ms)  (pid 54460)
+Compiled app/assets/javascripts/application.js  (0ms)  (pid 54460)
+Served asset /application.js - 200 OK  (35ms)  (pid 54460)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:03:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:04:07 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (100.2ms)
+Completed 200 OK in 105ms (Views: 104.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:04:08 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:04:08 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:04:44 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (143.3ms)
+Completed 200 OK in 148ms (Views: 147.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:04:45 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:04:45 -0400
+Served asset /application.css - 304 Not Modified  (1ms)  (pid 54460)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:05:54 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (125.1ms)
+Completed 200 OK in 129ms (Views: 128.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:05:55 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54460)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:05:55 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54460)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:12:35 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (195.1ms)
+Completed 200 OK in 282ms (Views: 281.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:12:36 -0400
+Compiled app/assets/javascripts/application.js  (3ms)  (pid 54711)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 54711)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (0ms)  (pid 54711)
+Served asset /application.js - 304 Not Modified  (9ms)  (pid 54711)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:12:36 -0400
+Compiled app/assets/stylesheets/application.css.scss  (9ms)  (pid 54711)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (540ms)  (pid 54711)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 54711)
+Served asset /application.css - 304 Not Modified  (554ms)  (pid 54711)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:15:02 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (144.2ms)
+Completed 200 OK in 149ms (Views: 148.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:15:03 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:15:03 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:15:11 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (134.8ms)
+Completed 200 OK in 139ms (Views: 138.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:15:12 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:15:12 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:23:52 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (222.0ms)
+Completed 500 Internal Server Error in 226ms
+
+ActionView::Template::Error (undefined method `hash_for_posts_path' for #<Module:0x00000100a940d8>):
+    8: 	<%= f.button :submit %>
+    9: <% end %>
+    10: 
+    11: <%= form_for Post.new do |f| %>
+    12: 	<%= f.input :title %>
+    13: <% end %>
+  app/views/index/index.html.erb:11:in `_app_views_index_index_html_erb___3554558459012677830_2181415100'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:24:15 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (199.5ms)
+Completed 200 OK in 204ms (Views: 203.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:24:16 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:24:16 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:24:46 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (135.1ms)
+Completed 500 Internal Server Error in 138ms
+
+ActionView::Template::Error (undefined method `model_name' for FalseClass:Class):
+    8: 	<%= f.button :submit %>
+    9: <% end %>
+    10: 
+    11: <%= form_for [transit, Post.new.valid?] do |f| %>
+    12: 	<%= f.input :title %>
+    13: <% end %>
+  app/views/index/index.html.erb:11:in `_app_views_index_index_html_erb___3554558459012677830_2181311980'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:24:56 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (154.1ms)
+Completed 200 OK in 158ms (Views: 158.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:24:57 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54711)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:24:57 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54711)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:26:28 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (244.4ms)
+Completed 200 OK in 326ms (Views: 326.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:26:28 -0400
+Compiled app/assets/javascripts/application.js  (2ms)  (pid 54908)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 54908)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (0ms)  (pid 54908)
+Served asset /application.js - 304 Not Modified  (6ms)  (pid 54908)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:26:29 -0400
+Compiled app/assets/stylesheets/application.css.scss  (53ms)  (pid 54908)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (503ms)  (pid 54908)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 54908)
+Served asset /application.css - 304 Not Modified  (561ms)  (pid 54908)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:27:38 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (147.8ms)
+Completed 200 OK in 152ms (Views: 151.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:27:38 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54908)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:27:39 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54908)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:27:53 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (192.3ms)
+Completed 200 OK in 316ms (Views: 316.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:27:54 -0400
+Compiled app/assets/javascripts/application.js  (1ms)  (pid 54935)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 54935)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (0ms)  (pid 54935)
+Served asset /application.js - 304 Not Modified  (6ms)  (pid 54935)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:27:54 -0400
+Compiled app/assets/stylesheets/application.css.scss  (9ms)  (pid 54935)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (523ms)  (pid 54935)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (2ms)  (pid 54935)
+Served asset /application.css - 304 Not Modified  (538ms)  (pid 54935)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1})
+MONGODB admin['$cmd'].find({:ismaster=>1})
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:30:47 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (317.5ms)
+Completed 500 Internal Server Error in 404ms
+
+ActionView::Template::Error (undefined method `input' for #<ActionView::Helpers::FormBuilder:0x00000104030908>):
+    2: <%#= deliver_media_context(model) %>
+    3: 
+    4: <%= form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
+    5: 	<%= f.input :name, as: :string %>
+    6: 	<%= f.input :file, as: :file %>
+    7: 	<%= f.input :file2, as: :file %>
+    8: 	<%= f.button :submit %>
+  app/views/index/index.html.erb:5:in `block in _app_views_index_index_html_erb__1315731229988764392_2181178000'
+  app/views/index/index.html.erb:4:in `_app_views_index_index_html_erb__1315731229988764392_2181178000'
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:31:00 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (592.2ms)
+Completed 200 OK in 597ms (Views: 596.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:31:01 -0400
+Compiled app/assets/javascripts/application.js  (1ms)  (pid 54985)
+Compiled app/assets/javascripts/rails.js  (0ms)  (pid 54985)
+Compiled /_Work/gems/jquery-rails-multipart-xhr/vendor/assets/javascripts/jquery_ujs_multipart_xhr.js  (0ms)  (pid 54985)
+Served asset /application.js - 304 Not Modified  (6ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:31:02 -0400
+Compiled app/assets/stylesheets/application.css.scss  (49ms)  (pid 54985)
+Compiled app/assets/stylesheets/includes/_setup.css.scss  (501ms)  (pid 54985)
+Compiled app/assets/stylesheets/includes/_transit.css.scss  (0ms)  (pid 54985)
+Served asset /application.css - 304 Not Modified  (555ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:43:37 -0400
+  Processing by IndexController#index as HTML
+MONGODB transit_dev['comments'].find({"commentable_id"=>BSON::ObjectId('4e288f7a4dd962d6c9000005')})
+Rendered index/index.html.erb within layouts/application (594.4ms)
+Completed 200 OK in 599ms (Views: 598.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:43:38 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:43:39 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:43:51 -0400
+  Processing by IndexController#index as HTML
+MONGODB transit_dev['comments'].find({"commentable_id"=>BSON::ObjectId('4e288f884dd962d6c9000007')})
+Rendered index/index.html.erb within layouts/application (291.7ms)
+Completed 200 OK in 297ms (Views: 296.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:43:52 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:43:53 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:44:09 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (159.2ms)
+Completed 200 OK in 164ms (Views: 163.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:44:09 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:44:10 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:44:17 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (267.4ms)
+Completed 200 OK in 272ms (Views: 271.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:44:18 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:44:18 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 16:44:50 -0400
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (182.6ms)
+Completed 200 OK in 187ms (Views: 186.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 16:44:51 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:44:51 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)

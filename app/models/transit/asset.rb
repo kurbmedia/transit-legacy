@@ -23,7 +23,7 @@ module Transit
     before_create :set_file_type
     
     def self.asset_config_with_default
-      styles = Transit::Config.assets
+      styles = Transit::Config.assets.marshal_dump.symbolize_keys!
       return styles unless styles[:styles].present?
       styles[:styles].reverse_merge!(preview: '50x50#')
       styles

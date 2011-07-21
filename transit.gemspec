@@ -26,9 +26,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency("mongo", ["~> 1.3"])
   s.add_development_dependency("bson_ext", ["~> 1.3"])  
 
-  s.add_dependency("nokogiri", ["~> 1.4"])
+  s.add_dependency("nokogiri", ["~> 1.5"])
   s.add_dependency("paperclip", ["~> 2.3"])
   s.add_dependency("inherited_resources", ["= 1.2.2"])
   s.add_dependency("responders", ["= 0.6.4"])
+  s.add_dependency("simple_form", ["= 1.4.2"])
   
 end
