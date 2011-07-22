@@ -1,6 +1,6 @@
 <% model = Video.new(source: 'OQNNqKQs_F4', video_type:'youtube') %>
 <%#= deliver_media_context(model) %>
-
+<%= render inline: "<%= tester %>", locals: { tester: 'weee' } %>
 <%= simple_form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
 	<%= f.input :name, as: :string %>
 	<%= f.input :file, as: :file %>

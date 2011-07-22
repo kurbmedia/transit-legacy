@@ -11,18 +11,6 @@ module Transit::AdminHelper
    end.html_safe
   end
 
-  def transit_toolbar(model, &block)
-   content_tag(:div, capture(&block), { class: 'ui-widget-header ui-state-default', id: 'transit_toolbar' })
-  end
-
-  def toolbar_button(text, url, attrs)
-   klasses = attrs[:class].to_s.split(" ").push('transit_toolbar_button')
-   if attrs[:icon].present?
-     (attrs[:data] ||= {}).merge!("ui-icon" => "ui-icon-#{attrs.delete(:icon)}")
-   end
-   link_to text.html_safe, url, attrs.merge(class: klasses.join(" ")) 
-  end
-
   def file_icon_class(asset)
    ext = File.extname(asset.file_file_name.to_s.downcase).gsub('.', '')
    extnames = { 

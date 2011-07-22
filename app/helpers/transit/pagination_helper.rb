@@ -11,7 +11,7 @@ module Transit
       window_min   = [(current_page - 5), 1].max
       window_max   = [(current_page + 5), total_pages].min
       page_links   = []
-    
+      
       html_attrs.merge!('class' => html_classes.push('pagination_link').uniq.join(" "))
     
       (window_min..window_max).to_a.each do |page|
@@ -29,9 +29,9 @@ module Transit
         page_links << pagination_link_next(current_page + 1, total_pages, html_attrs).html_safe
       end
     
-      content_tag(:p, class: 'pagination') do
+      content_tag(:nav, class: 'pagination') do
         content_tag(:span, "Viewing page #{current_page} of #{total_pages}", class: 'pagination_detail') <<
-        content_tag(:span, page_links.join(" ").html_safe, class: 'pagination_links')
+        ( total_pages > 1 ? content_tag(:span, page_links.join(" ").html_safe, class: 'pagination_links') : "" )
       end.html_safe
 
     end

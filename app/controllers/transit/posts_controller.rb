@@ -4,7 +4,7 @@ class Transit::PostsController < TransitController
   respond_to :html, :js, :json
   
   def collection
-    @posts ||= end_of_association_chain.page((params[:page] || 1), per: 20)
+    @posts ||= end_of_association_chain.page((params[:page] || 1), admin: true)
   end
   
   def create

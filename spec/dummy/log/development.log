@@ -11586,3 +11586,708 @@ Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
 
 Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 16:44:51 -0400
 Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:14:53 -0400
+  Processing by Transit::PostsController#new as HTML
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `authenticate_admin!' for #<Transit::PostsController:0x000001044bf988>):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.2ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:15:17 -0400
+  Processing by Transit::PostsController#new as HTML
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `authenticate_admin!' for #<Transit::PostsController:0x00000104599e30>):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.2ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:15:49 -0400
+  Processing by Transit::PostsController#new as HTML
+Rendered /_Work/gems/transit/app/views/transit/interface/post_panel.html.erb (3.8ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/new.html.erb within layouts/application (212.8ms)
+Completed 500 Internal Server Error in 256ms
+
+ActionView::Template::Error (undefined method `button' for #<ActionView::Helpers::FormBuilder:0x00000104628888>):
+    16: <%= render(template: 'transit/interface/post_panel', locals: { form: f }) %>
+    17: <%= f.hidden_field :title %>
+    18: <p style="clear:both">
+    19: 	<%= f.button 'Create Post!', class: 'green' %>
+    20: </p>
+    21: <% end %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.3ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:17:04 -0400
+  Processing by Transit::PostsController#new as HTML
+Rendered /_Work/gems/transit/app/views/transit/interface/post_panel.html.erb (2.4ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/new.html.erb within layouts/application (210.2ms)
+Completed 500 Internal Server Error in 215ms
+
+ActionView::Template::Error (undefined method `button' for #<ActionView::Helpers::FormBuilder:0x00000104743560>):
+    16: <%= render(template: 'transit/interface/post_panel', locals: { form: f }) %>
+    17: <%= f.hidden_field :title %>
+    18: <p style="clear:both">
+    19: 	<%= f.button 'Create Post!', class: 'green' %>
+    20: </p>
+    21: <% end %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:17:45 -0400
+  Processing by Transit::PostsController#new as HTML
+Rendered /_Work/gems/transit/app/views/transit/contexts/index.html.erb (0.9ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/_form.html.erb (33.8ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/new.html.erb within layouts/application (85.3ms)
+Completed 200 OK in 93ms (Views: 91.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 17:17:46 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 17:17:46 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:21:05 -0400
+  Processing by Transit::PostsController#new as HTML
+ERROR: compiling ____ork_gems_transit_app_views_transit_posts__form_html_erb__2749798092066380556_2184037280 RAISED /_Work/gems/transit/app/views/transit/posts/_form.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...end= ( if resource.persisted? );@output_buffer.safe_concat('
+...                               ^
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def ____ork_gems_transit_app_views_transit_posts__form_html_erb__2749798092066380556_2184037280(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "transit/posts/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.append=  simple_form_for resource, as: :post do |f| @output_buffer.safe_concat('	
+');@output_buffer.safe_concat('	<div id="post_form_attributes" class=\'transit-post-form post ');@output_buffer.append= ( resource.persisted? ? 'new-post-form' : 'edit-post-form' );@output_buffer.safe_concat('\'>
+		<ol>
+			');@output_buffer.append= ( f.input :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= ( f.input :post_date );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		</ol>		
+	</div>
+	');@output_buffer.append= ( if resource.persisted? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	<div id="post_form_contexts" class=\'transit-post-contexts\'>
+		');@output_buffer.append= ( render template: 'transit/contexts/index', locals: { form: f } );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</div>
+');	 end 
+ end ;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:282:in `module_eval'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:282:in `compile'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:190:in `compile!'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:143:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:57:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:142:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/partial_renderer.rb:237:in `block (2 levels) in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/partial_renderer.rb:236:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/partial_renderer.rb:228:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:15:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/_Work/gems/transit/app/views/transit/posts/new.html.erb:3:in `____ork_gems_transit_app_views_transit_posts_new_html_erb___3127780969330019159_2184058740'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:144:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:57:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:142:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/streaming.rb:258:in `_render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:99:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/brent/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/_Work/gems/transit/app/controllers/transit_controller.rb:14:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/mime_responds.rb:268:in `block in retrieve_response_from_mimes'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/responder.rb:226:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/responder.rb:226:in `default_render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/responder.rb:160:in `to_html'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/responders-0.6.4/lib/responders/flash_responder.rb:93:in `to_html'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/responder.rb:153:in `respond'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/responder.rb:146:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/mime_responds.rb:238:in `respond_with'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/inherited_resources-1.2.2/lib/inherited_resources/actions.rb:19:in `new'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:425:in `_run__2640487813248874327__process_action__4131600653423281032__callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/params_wrapper.rb:202:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/base.rb:121:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal.rb:193:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal.rb:236:in `block in action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:141:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/engine.rb:438:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/prefix.rb:26:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:141:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:35:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/etag.rb:23:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/conditionalget.rb:25:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/cookies.rb:321:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/sendfile.rb:102:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/logger.rb:13:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/runtime.rb:17:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/lock.rb:34:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/engine.rb:438:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/content_length.rb:16:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/handler/mongrel.rb:77:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered /_Work/gems/transit/app/views/transit/posts/_form.html.erb (1.0ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (/_Work/gems/transit/app/views/transit/posts/_form.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...end= ( if resource.persisted? );@output_buffer.safe_concat('
+...                               ^
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+/_Work/gems/transit/app/views/transit/posts/_form.html.erb:16: syntax error, unexpected keyword_end, expecting ')'):
+    5: 			<%= f.input :post_date %>
+    6: 		</ol>		
+    7: 	</div>
+    8: 	<%= if resource.persisted? %>
+    9: 	<div id="post_form_contexts" class='transit-post-contexts'>
+    10: 		<%= render template: 'transit/contexts/index', locals: { form: f } %>
+    11: 	</div>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.8ms)
+
+
+Started GET "/transit/posts/new" for 127.0.0.1 at 2011-07-21 17:21:11 -0400
+  Processing by Transit::PostsController#new as HTML
+Rendered /_Work/gems/transit/app/views/transit/posts/_form.html.erb (26.9ms)
+Rendered /_Work/gems/transit/app/views/transit/posts/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 34ms (Views: 32.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 17:21:12 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 17:21:12 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:11:13 -0400
+  Processing by Transit::PostsController#index as HTML
+Rendered transit/posts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:11:13 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:11:14 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:11:29 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `column_hash' for nil:NilClass):
+    5: <table border="0" id="listing">
+    6: 	<thead>
+    7: 		<tr>
+    8: 		<% resource_class.admin_options.column_hash.each do |name, value| %>
+    9: 			<% if value.is_a?(Array) %>
+    10: 			<th><%= value.first %></th>
+    11: 			<% else %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.6ms)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:12:07 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (Missing template transit/table with {:handlers=>[:erb, :builder], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/_Work/gems/transit/spec/dummy/app/views"
+  * "/_Work/gems/transit/app/views"
+  * "/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/devise-1.3.4/app/views"
+):
+    17: 		</tr>
+    18: 	</thead>
+    19: 	<tbody>
+    20: 		<%= render template: 'transit/table' %>
+    21: 	</tbody>
+    22: </table>
+    23: <%= paginate(collection, :remote => true) %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.9ms)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:12:31 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(20)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.9ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:12:32 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:12:32 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:14:22 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(20)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.3ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 13ms (Views: 12.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:14:23 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:14:23 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:14:38 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(20)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.7ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 18ms (Views: 17.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:14:39 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:14:39 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:16:31 -0400
+  Processing by Transit::PostsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:17:08 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `total_count' for #<Array:0x000001040a9538>):
+    1: <%= page_id('transit_index') %>
+    2: <%= page_title("Transit: Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
+    3: <h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
+    4: <%= paginate(collection, :remote => true) %>
+    5: <table border="0" id="listing">
+    6: 	<thead>
+    7: 		<tr>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:19:07 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.1ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 14ms (Views: 13.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:19:07 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:19:08 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:19:42 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (55.2ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 65ms (Views: 64.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:19:43 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:19:43 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:22:43 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `html_safe=' for "<span class=\"pagination_detail\">Viewing page 1 of 1</span>":ActiveSupport::SafeBuffer):
+    1: <%= page_id('transit_index') %>
+    2: <%= page_title("Transit: Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
+    3: <h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
+    4: <%= paginate(collection, :remote => true) %>
+    5: <table border="0" id="listing">
+    6: 	<thead>
+    7: 		<tr>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.8ms)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:22:51 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.4ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 14ms (Views: 13.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:22:51 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:22:52 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:23:37 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.1ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:23:37 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:23:38 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/" for 127.0.0.1 at 2011-07-21 18:24:41 -0400
+  Processing by Transit::PostsController#index as HTML
+MONGODB transit_dev['$cmd'].find({"count"=>"posts", "query"=>{}, "fields"=>nil})
+MONGODB transit_dev['posts'].find({}).limit(10)
+Rendered /_Work/gems/transit/app/views/transit/table.html.erb (3.2ms)
+Rendered /_Work/gems/transit/app/views/transit/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 14ms (Views: 13.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:24:41 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:24:42 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-07-21 18:24:59 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Rendered application/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 18:25:00 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 18:25:00 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/transit/posts/4dfacc9c4dd96209f5000024/edit" for 127.0.0.1 at 2011-07-21 19:06:24 -0400
+  Processing by Transit::PostsController#edit as HTML
+  Parameters: {"id"=>"4dfacc9c4dd96209f5000024"}
+MONGODB transit_dev['posts'].find({:_id=>BSON::ObjectId('4dfacc9c4dd96209f5000024')})
+Rendered application/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-21 19:06:25 -0400
+Served asset /application.js - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-21 19:06:25 -0400
+Served asset /application.css - 304 Not Modified  (0ms)  (pid 54985)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 19:06:30 -0400
+  Processing by IndexController#index as HTML
+ERROR: compiling _app_views_index_index_html_erb__1315731229988764392_2184014080 RAISED /_Work/gems/transit/spec/dummy/app/views/index/index.html.erb:3: syntax error, unexpected $undefined
+..._concat('", locals: { tester: \'weee\' } %>
+...                               ^
+Function body:           def _app_views_index_index_html_erb__1315731229988764392_2184014080(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "index/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; model = Video.new(source: 'OQNNqKQs_F4', video_type:'youtube') 
+
+@output_buffer.append= ( render inline: "<%= tester );@output_buffer.safe_concat('", locals: { tester: \'weee\' } %>
+');@output_buffer.append=  simple_form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :name, as: :string );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :file, as: :file );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :file2, as: :file );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append=  simple_form_for [transit, Post.new] do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :post_date, as: :date, order: [:month, :day, :year] );@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:282:in `module_eval'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:282:in `compile'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:190:in `compile!'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:143:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:57:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/template.rb:142:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/streaming.rb:258:in `_render_template'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:99:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/brent/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:416:in `_run__4300104144550538074__process_action__2600689538445504624__callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/notifications.rb:55:in `instrument'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/params_wrapper.rb:202:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/base.rb:121:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal.rb:193:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_controller/metal.rb:236:in `block in action'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:141:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:35:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/etag.rb:23:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/conditionalget.rb:25:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/cookies.rb:321:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/sendfile.rb:102:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/logger.rb:13:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/runtime.rb:17:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/activesupport-3.1.0.rc4/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/lock.rb:34:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/engine.rb:438:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/content_length.rb:16:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/railties-3.1.0.rc4/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/rack-1.3.0/lib/rack/handler/mongrel.rb:77:in `process'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/brent/.rvm/gems/ruby-1.9.2-p180@global/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered index/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (/_Work/gems/transit/spec/dummy/app/views/index/index.html.erb:3: syntax error, unexpected $undefined
+..._concat('", locals: { tester: \'weee\' } %>
+...                               ^):
+    1: <% model = Video.new(source: 'OQNNqKQs_F4', video_type:'youtube') %>
+    2: <%#= deliver_media_context(model) %>
+    3: <%= render inline: "<%= tester %>", locals: { tester: 'weee' } %>
+    4: <%= simple_form_for :file_test, url: root_path, html: { style: 'clear:both' }, remote: true do |f| %>
+    5: 	<%= f.input :name, as: :string %>
+    6: 	<%= f.input :file, as: :file %>
+  
+
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/brent/.rvm/gems/ruby-1.9.2-p180@transit_dev/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.8ms)

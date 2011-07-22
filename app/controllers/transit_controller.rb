@@ -1,4 +1,5 @@
-class TransitController < InheritedResources::Base  
+class TransitController < ApplicationController
+  inherit_resources
   
   helper_method :edit_mode_enabled?
   respond_to :html, :js  

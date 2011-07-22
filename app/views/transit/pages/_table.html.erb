@@ -1,7 +1,0 @@
-<% @pages.each do |page| %>
-<tr<%= cycle(""," class='even'") %>>
-	<td><%= page.name %></td>
-	<td><%= page.url %></td>
-	<td><%= link_to 'Edit', edit_polymorphic_path(page) %></td>
-</tr>
-<% end %>

@@ -22,5 +22,5 @@
 </table>
 <%= paginate(collection, :remote => true) %>
 <div class='buttons'>
-	<%= button_link "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , new_polymorphic_path(resource_class.new) %>
+	<%= link_to "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , new_polymorphic_path(resource_class.new), class: 'button' %>
 </div>

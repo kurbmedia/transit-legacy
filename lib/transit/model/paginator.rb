@@ -52,16 +52,13 @@ module Transit::Model
         #
         scope :page, Proc.new { |*opts|
           options       = opts.extract_options!
-          show_per_page = options.delete(:per) || pagination_options[:default]
+          admin_option  = options.delete(:admin) || false
+          show_per_page = options.delete(:per) || pagination_options[(admin_option ? :admin : :default)]
           current_index = (opts.first.to_i || 1)
           limit(show_per_page).offset(show_per_page * ([current_index.to_i, 1].max - 1))
         } do
           include Transit::Model::Paginator::Scoping
         end
-        
-        # Add an 'admin' scope method for convenience.
-        # 
-        scope :admin_page, lambda{ |pg| page(pg, pagination_options[:admin]) }
         
       end  
     end 
@@ -72,7 +69,7 @@ module Transit::Model
       end      
       # Total number of pages
       def total_pages
-        (total_count.to_f / options[:limit]).ceil
+        (total_count.to_f / options[:limit]).ceil.to_i
       end
       # Current page number
       def current_page

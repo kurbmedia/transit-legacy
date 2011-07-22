@@ -1,8 +1,0 @@
-$("#listing tbody").slideUp('fast',
-	function(){
-		$(this)
-			.empty()
-			.html("<%= escape_javascript(render(template: "transit/table.html.erb")) %>")
-			.slideDown('fast');
-			$('p.pagination').replaceWith("<%= escape_javascript(paginate(collection, :remote => true)) %>");	
-	});
