@@ -1,9 +1,9 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title t("transit.rss.#{scope_name.underscore}_feed_title")
+    xml.title t("transit.rss.#{resource_instance_name.to_s.underscore}_feed_title")
     xml.description ""
-    xml.link polymorphic_url(scope_class)
+    xml.link polymorphic_url(resource_class)
 
     for post in @resources
       xml.item do
