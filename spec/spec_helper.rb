@@ -13,6 +13,7 @@ require 'spork'
   require 'fabrication'
   require 'ffaker'
   require 'rails'
+  require 'mongoid-rspec'
 
 
   Mongoid.configure do |config|
@@ -47,9 +48,9 @@ require 'spork'
   
 #end
 
-Spork.each_run do
+#Spork.each_run do
   # This code will be run each time you run your specs.
   Dir["#{File.dirname(__FILE__)}/fabricators/**/*.rb"].each { |f| require f }
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
   Dir["#{File.dirname(__FILE__)}/../lib/**/*.rb"].each { |f| require f }
-end
+#end

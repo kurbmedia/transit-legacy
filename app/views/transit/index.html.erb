@@ -1,5 +1,5 @@
 <%= page_id('transit_index') %>
-<%= page_title("Transit: Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
+<%= page_title("Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
 <h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
 <%= paginate(collection, :remote => true) %>
 <table border="0" id="listing">

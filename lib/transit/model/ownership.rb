@@ -1,6 +1,6 @@
 module Transit
   module Model
-    module Owners
+    module Ownership
       
       extend ActiveSupport::Concern
       

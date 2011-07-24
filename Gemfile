@@ -1,32 +1,22 @@
 source "http://rubygems.org"
 
+source "http://rubygems.org"
+gemspec
+
 gem 'rails', '3.1.0.rc4'
-gem "rspec-rails"
-gem 'mongoid-rspec'
-gem 'mongo', '~> 1.3'
-gem 'bson_ext', '~> 1.3'
-gem 'mongoid', '~> 2.0'
-gem "devise", "~> 1.3"
-gem "paperclip", "~> 2.3"
-gem 'rack-raw-upload', '0.1.1'
-gem "paperclip", "~> 2.3"
-gem 'sass-rails'
-gem 'inherited_resources', '1.2.2'
-gem 'jquery-rails-multipart-xhr', :path => '/_Work/gems/jquery-rails-multipart-xhr'
-gem 'simple_form', '1.4.2'
-gem "mongrel",'1.2.0.pre2'  
-gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem 'mongoid'
+gem 'mongo'
+gem 'bson'
+gem 'bson_ext'
+gem 'inherited_resources'
+gem 'responders'
+gem "paperclip"
+
+group :development do
+  gem "mongrel",'1.2.0.pre2'  
+end
 
 group :test do
+  gem 'growl'
   gem 'spork', '~> 0.9.0.rc', :require => false
-  gem "mocha","0.9.12", :require => false
-  gem 'ffaker', :require => false
-  gem 'mongoid-rspec', :require => false
-  gem "capybara", ">= 0.4.0", :require => false
-  gem 'guard', :require => false
-  gem 'guard-rspec', :require => false
-  gem 'growl', '1.0.3', :require => false
-  gem "capybara", ">= 0.4.0"
-  gem "fabrication"
-  gem 'rspec-rails-mocha', '0.3.0', :require => false
 end

@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Transit do
   
-  before(:all){ Transit.track('Post', :post) }
+  before(:all) do
+    Transit.track('Post', :post)
+  end
   
   describe '#add_description' do
     
@@ -12,38 +14,56 @@ describe Transit do
       
       subject{ Transit::DESCRIPTIONS }      
       its(:keys) { should include(:post) }
+      
       it 'ensures an array for the package key' do
         subject[:post].should be_a(Array)
-      end      
+      end
+      
     end
   end
   
   describe '#lookup' do
     
-    it { subject.respond_to?(:lookup).should be_true }
+    it 'responds to lookup' do
+      subject.respond_to?(:lookup).should be_true
+    end
     it 'returns an array of classes using the passed template' do
       Transit.lookup(:post).should be_a(Array)
     end
-    specify{ Transit.lookup(:post).should include('Post') }
+    specify do
+      Transit.lookup(:post).should include('Post')
+    end
   end
   
   describe '#contexts' do
     
-    it { subject.respond_to?(:contexts).should be_true }
+    it 'responds to contexts' do
+      subject.respond_to?(:contexts).should be_true
+    end
     it 'returns an array of all available contexts' do
       Transit.contexts.should be_a(Array)
     end
-    specify{ Transit.contexts.should include('Text', 'Video') }
+    specify do
+      Transit.contexts.should include('Text', 'Video')
+    end
   end
   
   describe '#superclass_for' do
-    specify{ Transit.superclass_for(:post).should == 'Post' }
-    specify{ Transit.superclass_for(:page).should == 'Page' }
+    
+    specify do
+      Transit.superclass_for(:post).should == 'Post'
+    end
+    specify do
+      Transit.superclass_for(:page).should == 'Page'
+    end
   end
   
   describe '#configure' do
+    
     it 'yields Transit::Config' do
-      Transit.configure.should_yield Transit::Config{}
+      Transit.configure do |conf| 
+        conf.should == Transit::Config
+      end
     end
   end
   

@@ -1,3 +1,6 @@
+require 'mongoid'
+require 'active_support/deprecation'
+
 module Transit
   module Model
     
@@ -10,12 +13,16 @@ module Transit
       end
       
       def deliver_with(*opts)
-        opts.map(&:to_s).map(&:classify).each do |t|
-          begin
-            include Transit::Model.const_get(t.pluralize)          
-          rescue NameError
-            raise Transit::Errors::ResourceNotFound.new("You called deliver_with #{t.underscore} but no resource called #{t.pluralize} was found.")
+        opts.map(&:to_s).map(&:camelize).each do |t|
+          if t.to_s.downcase.match(/owner/i)
+            ActiveSupport::Deprecation.warn('deliver_with :owner has been changed and will be removed in 0.0.4. Please use deliver_with :ownership')
+            t = "Ownership"
+            self.delivery_options |= ['ownership', 'owner']
           end
+          unless Transit::Model.const_defined?(t)
+            raise Transit::Errors::ResourceNotFound.new("You called deliver_with #{t.underscore} but no resource called #{t} was found.")
+          end
+          include Transit::Model.const_get(t)
         end
         self.delivery_options |= opts.map!(&:to_s)
       end

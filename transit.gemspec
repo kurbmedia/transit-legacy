@@ -20,16 +20,18 @@ Gem::Specification.new do |s|
   
   s.add_development_dependency("mocha", ["= 0.9.12"])
   s.add_development_dependency("capybara", ["= 0.4.0"])  
-  s.add_development_dependency("fabrication", ["~> 0.9.5"])
-  s.add_development_dependency("ffaker", ["~> 1.7"])
-  s.add_development_dependency("mongoid", ["~> 2.0"])
-  s.add_development_dependency("mongo", ["~> 1.3"])
-  s.add_development_dependency("bson_ext", ["~> 1.3"])  
-
+  s.add_development_dependency("fabrication", ["~> 1.0"])
+  s.add_development_dependency("ffaker", ["~> 1.8"])
+  s.add_development_dependency("rspec", ["~> 2.6"])
+  s.add_development_dependency("mongoid-rspec", ["~> 1.4"])
+  s.add_development_dependency("rspec-rails-mocha", ["~> 0.3"])
+  
+  s.add_dependency("mongoid", ["~> 2.0"])
+  s.add_dependency("mongo", ["~> 1.3"])
+  s.add_dependency("bson_ext", ["~> 1.3"])  
   s.add_dependency("nokogiri", ["~> 1.5"])
   s.add_dependency("paperclip", ["~> 2.3"])
   s.add_dependency("inherited_resources", ["= 1.2.2"])
   s.add_dependency("responders", ["= 0.6.4"])
-  s.add_dependency("simple_form", ["= 1.4.2"])
   
 end
