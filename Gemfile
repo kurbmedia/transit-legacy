@@ -18,5 +18,6 @@ end
 
 group :test do
   gem 'growl'
+  gem 'guard'
   gem 'spork', '~> 0.9.0.rc', :require => false
 end
