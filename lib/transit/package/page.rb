@@ -9,12 +9,12 @@ module Transit::Package
       
       include Transit::Model::Base      
       
-      field :name,        :type => String
-      field :url,         :type => String
-      field :keywords,    :type => Array
-      field :description, :type => String
+      field :name,        type: String
+      field :url,         type: String
+      field :keywords,    type: Array
+      field :description, type: String
       
-      embeds_many :contexts, :as => :package, :class_name => 'Transit::Context'      
+      embeds_many :contexts, as: :package, class_name: 'Transit::Context'      
     end
     
     def timestamp

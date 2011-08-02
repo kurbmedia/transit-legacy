@@ -2,10 +2,10 @@ module Transit
   class Context
     include Mongoid::Document
     
-    field :name,      :type => String
-    field :meta,      :type => Hash, :default => {}
-    field :body,      :type => String
-    field :position,  :type => Integer
+    field :name,      type: String
+    field :meta,      type: Hash,     default: {}
+    field :body,      type: String
+    field :position,  type: Integer
     
     before_save :ensure_context_position_value
     embedded_in :package, polymorphic: true

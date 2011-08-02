@@ -7,7 +7,7 @@ module Transit
       extend ActiveSupport::Concern
       
       included do
-        field :uid, :type => Integer
+        field :uid, type: Integer
         before_create :generate_uid, :on => :create
       end
       

@@ -1,8 +1,10 @@
+require 'ostruct'
+
 module Transit
   module Config
    
     mattr_accessor :assets
-    @@assets ||= OpenStruct.new({
+    @@assets ||= ::OpenStruct.new({
       styles: {
         full:     "475x>",
         thumb:    "50x50#",

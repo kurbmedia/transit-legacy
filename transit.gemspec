@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("mongoid-rspec", ["~> 1.4"])
   s.add_development_dependency("rspec-rails-mocha", ["~> 0.3"])
   
-  s.add_dependency("mongoid", ["~> 2.0"])
+  s.add_dependency("mongoid", ["~> 2.1"])
   s.add_dependency("mongo", ["~> 1.3"])
   s.add_dependency("bson_ext", ["~> 1.3"])  
   s.add_dependency("nokogiri", ["~> 1.5"])
