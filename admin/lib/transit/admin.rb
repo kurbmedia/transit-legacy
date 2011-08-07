@@ -1,5 +1,4 @@
 module Transit
-  module Config
-    
+  module Admin
   end
 end

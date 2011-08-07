@@ -1,37 +1,6 @@
 require 'active_support'
-require 'transit/core_ext'
 
 module Transit
-  
-  autoload :Admin, 'transit/admin'
-  autoload :Config, 'transit/config'
-  
-  module Package
-    autoload :Post, 'transit/package/post'
-    autoload :Page, 'transit/package/page'
-  end
-  
-  module Model
-    autoload :Assets,        'transit/model/assets'
-    autoload :Attachments,   'transit/model/attachments'
-    autoload :AutoIncrement, 'transit/model/auto_increment'
-    autoload :Comments,      'transit/model/comments'
-    autoload :Topics,        'transit/model/topics'
-    autoload :Base,          'transit/model/base'
-    autoload :Hooks,         'transit/model/hooks'
-    autoload :Ownership,     'transit/model/ownership'
-    autoload :Paginator,     'transit/model/paginator'
-  end
-  
-  module Controller
-    autoload :Generator,  'transit/controller/generator'
-    autoload :Responder,  'transit/controller/responder'
-  end
-  
-  module Errors
-    autoload :InvalidContext,   'transit/errors/invalid_context'
-    autoload :ResourceNotFound, 'transit/errors/resource_not_found'
-  end
     
   DESCRIPTIONS = {}
   
@@ -67,5 +36,5 @@ module Transit
   end
   
 end
-require 'transit/model/hooks'
-require 'transit/rails/engine'
+
+require 'transit-core'

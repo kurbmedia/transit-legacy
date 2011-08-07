@@ -10,6 +10,9 @@ gem 'inherited_resources'
 gem 'responders'
 gem "paperclip"
 
+gem 'transit-core',     :path => "#{File.dirname(__FILE__)}/core"
+gem 'transit-mongoid',  :path => "#{File.dirname(__FILE__)}/mongoid"
+
 group :development do
   gem "mongrel",'1.2.0.pre2'  
 end

@@ -11,15 +11,6 @@ module Transit
     
     config.transit = Transit::Config
     
-    ##
-    # After initialization, dynamically create controllers for models 
-    # that have been defined in application routes.
-    # 
-    initializer 'transit.generate_controllers', :after => :eager_load! do
-      gen = Transit::Controller::Generator.new(:page, :post)
-      gen.generate!     
-    end
-    
     initializer 'transit.paperclip' do
       def Paperclip.logger
         Rails.logger 
