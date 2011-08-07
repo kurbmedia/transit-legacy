@@ -15,7 +15,7 @@ module Transit
         include Transit::Model::AutoIncrement
                 
         # All transit models embed many contexts
-        embeds_many :contexts, as: :package, autosave: true, class_name: 'Transit::Context'        
+        embeds_many :contexts, as: :package, class_name: 'Transit::Context'        
         accepts_nested_attributes_for :contexts, :allow_destroy => true
         alias :contexts_attributes= :process_context_attributes=        
         before_create :ensure_text_context

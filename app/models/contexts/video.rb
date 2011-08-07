@@ -1,6 +1,14 @@
 class Video < Transit::Context
   alias_attribute :source, :body
   
+  def source
+    body
+  end
+  
+  def source=(src)
+    body = src
+  end
+  
   def self.sources
     ['URL', 'Uploaded Video', 'YouTube', 'Vimeo', 'Ted'].collect{ |src| [src, src.underscore ] }
   end

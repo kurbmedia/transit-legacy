@@ -1,6 +1,14 @@
 class Audio < Transit::Context
   alias_attribute :source, :body
   
+  def source
+    body
+  end
+  
+  def source=(src)
+    body = src
+  end
+  
   def media_context?
     true
   end
