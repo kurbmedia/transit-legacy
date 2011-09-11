@@ -1,5 +1,0 @@
-require 'transit'
-require 'transit/definition'
-require 'transit/errors'
-require 'transit/context'
-require 'transit/engine'

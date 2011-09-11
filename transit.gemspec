@@ -18,6 +18,4 @@ Gem::Specification.new do |s|
   s.files         = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   
-  s.add_dependency("transit-core", ["= 0.0.2"])
-    
 end

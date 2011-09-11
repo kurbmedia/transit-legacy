@@ -8,4 +8,4 @@ end
 require 'transit/mongoid/definition'
 require 'transit/mongoid/context_associations'
 require 'transit/mongoid/models'
-require 'transit/plugin/auto_increment'
+require 'transit/mongoid/plugin/auto_increment'
