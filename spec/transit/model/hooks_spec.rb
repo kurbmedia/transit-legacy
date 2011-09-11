@@ -4,7 +4,7 @@ describe 'model hooks' do
   
   class TempModel
     include Mongoid::Document
-    auto_increment
+    plugin :auto_increment
     field :title, type: String
     field :something, type: String
     slug_with :title

@@ -1,5 +1,5 @@
 module Transit
-  module Package
+  module Plugin
     module Ownership      
       extend ActiveSupport::Concern      
       included do

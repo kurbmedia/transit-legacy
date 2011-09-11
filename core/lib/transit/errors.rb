@@ -1,10 +1,15 @@
 module Transit
   module Errors
+    
+    class PluginMissing < ::StandardError
+    end
+
+    class InvalidContext < ::StandardError
+    end
+    
+    class DefinitionNotFound < ::StandardError
+    end
+    
   end
 end
 
-class Transit::Errors::PluginMissing < StandardError
-end
-
-class Transit::Errors::InvalidContext < StandardError
-end

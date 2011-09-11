@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 gemspec
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails'
 gem 'mongoid'
 gem 'mongo'
 gem 'bson'
@@ -18,6 +18,13 @@ group :development do
 end
 
 group :test do
+  gem 'rspec'
+  gem 'fabrication'
+  gem 'ffaker'
+  gem 'mongoid-rspec'
+  gem 'capybara'
+  gem 'mocha'
+  gem 'rspec-rails'
   gem 'growl'
   gem 'guard'
   gem 'spork', '~> 0.9.0.rc', :require => false

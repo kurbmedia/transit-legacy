@@ -7,10 +7,9 @@ module Transit
     include ActiveSupport::DescendantsTracker
     
     autoload :Assets,      'transit/plugin/assets'
-    autoload :Attachments, 'transit/plugin/attachments'
-    autoload :Comments,    'transit/plugin/comments'
     autoload :Ownership,   'transit/plugin/ownership'
-    autoload :Topics,      'transit/plugin/topics' 
+    autoload :Attachments, 'transit/plugin/attachments'
+    autoload :Slugable,    'transit/plugin/slugable'
     
     def plugins
       @plugins ||= []
@@ -40,7 +39,7 @@ module Transit
     # @param path [String] The path where autoload should look for the plugin
     # 
     def self.register(plugin, path = nil)
-      path ||= "transit/plugin/assets/#{plugin.to_s.underscore}"
+      path ||= "transit/plugin/#{plugin.to_s.underscore}"
       self.send :autoload, plugin, path
     end
 

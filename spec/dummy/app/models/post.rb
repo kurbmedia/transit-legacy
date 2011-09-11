@@ -1,7 +1,7 @@
 class Post
   include Mongoid::Document
   deliver_as :post
-  deliver_with :attachments, :topics, :comments, :assets
+  deliver_with :attachments, :assets
   
   attach :image, 
     styles: {

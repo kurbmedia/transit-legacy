@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'core extensions' do
-  require 'transit/core_ext'
+  require 'transit/extensions/string'
   
   describe '.to_slug' do
     subject{ "Test title string" }

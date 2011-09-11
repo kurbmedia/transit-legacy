@@ -1,5 +1,5 @@
 module Transit
-  module Mongoid
+  module Plugin
     ##
     # Provides SQL style auto_incremeing id's to Mongo documents
     # 
@@ -23,4 +23,12 @@ module Transit
       
     end
   end
+end
+
+Transit.on_definition(:post) do
+  plugin :auto_increment
+end
+
+Transit.on_definition(:page) do
+  plugin :auto_increment
 end

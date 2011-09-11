@@ -1,2 +1,2 @@
-Fabricator(:topic) do
-end
+# Fabricator(:topic) do
+# end

@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Brent Kirby"]
   s.email       = ["brent@kurbmedia.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Mongoid ORM adapter for the Transit CMS Engine}
+  s.description = %q{Mongoid ORM adapter for the Transit CMS Engine}
 
   s.rubyforge_project = "transit-mongoid"
 
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   
   s.add_development_dependency("mongoid-rspec", ["~> 1.4"])
   
-  s.add_dependency("mongoid", ["~> 2.1"])
+  s.add_dependency("mongoid", ["~> 2.2"])
   s.add_dependency("mongo", ["~> 1.3"])
   s.add_dependency("bson_ext", ["~> 1.3"])  
   s.add_dependency('transit-core', [">= 0.0.2"])
