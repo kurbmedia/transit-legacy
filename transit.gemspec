@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
   s.files         = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   
+  s.add_dependency('rails', ">= 3.1")
+  
 end

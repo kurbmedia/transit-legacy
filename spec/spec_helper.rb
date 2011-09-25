@@ -35,7 +35,9 @@ require 'spork'
   # Load support files
   Dir["#{File.dirname(__FILE__)}/fabricators/**/*.rb"].each { |f| require f }
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
-
+  require 'paperclip'
+  Paperclip.logger = nil
+  
   RSpec.configure do |config|
     config.mock_with :mocha
     config.include Mongoid::Matchers
@@ -52,5 +54,4 @@ require 'spork'
   # This code will be run each time you run your specs.
   Dir["#{File.dirname(__FILE__)}/fabricators/**/*.rb"].each { |f| require f }
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
-  Dir["#{File.dirname(__FILE__)}/../lib/**/*.rb"].each { |f| require f }
 #end

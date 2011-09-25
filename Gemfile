@@ -10,8 +10,6 @@ gem 'inherited_resources'
 gem 'responders'
 gem "paperclip"
 
-gem 'transit'
-
 group :development do
   gem "mongrel",'1.2.0.pre2'  
 end

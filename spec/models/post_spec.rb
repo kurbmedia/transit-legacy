@@ -1,107 +1,117 @@
 require 'spec_helper'
 
 describe Post do
+  extend ModelHelpers
   
-  after{ Post.delete_all }
-  
-  it { Post.respond_to?(:deliver_as).should be_true }
-  it { Post.respond_to?(:deliver_with).should be_true }
-  
-  describe 'any instance' do
+  describe 'instance methods' do
     
-    its(:fields){ should include('title') }
-    its(:fields){ should include('post_date') }
-    its(:fields){ should include('published') }
-    its(:fields){ should include('slug') }
-    its(:fields){ should include('teaser') }
-    its(:fields){ should include('default_teaser') }    
-    it { should embed_many(:contexts) }
+    subject{ Post.new }
+    
+    its(:methods){ should include(:published?) }
+    its(:methods){ should include(:teaser) }
+    its(:methods){ should include(:title) }
+    its(:methods){ should include(:post_date) }
+    its(:methods){ should include(:contexts) }
+    its(:methods){ should include(:contexts_attributes=) }
+    
   end
   
-  describe 'creating posts' do
-    
-    before{ @post = Fabricate.build(:post, :title => 'Test Post') }    
-    subject{ @post }
-    
-    describe 'uid' do
-      before{ @post.save }
-      specify{ @post.uid.should_not be_nil }
-      specify{ @post.uid.should == 1}
+  describe 'class methods' do
+
+    subject{ Post }    
+    its(:methods){ should include(:published) }
+  end
+  
+  describe "published scope" do
+    before(:all) do
+      Fabricate(:post, :post_date => 1.year.ago.to_time, :published => true)
+      Fabricate(:post, :post_date => 1.year.from_now.to_time, :published => true)
+      Fabricate(:post, :post_date => 1.year.ago.to_time, :published => false)
     end
     
-    context 'when un-published' do
-      
-      before{ @post.published = false; @post.save }
-      its(:slug){ should be_nil }
+    it "only finds posts which are published and older than today" do
+      Post.published.count == 1
     end
-    context 'when published' do
+    
+  end
+  
+  describe "post properties" do
+    
+    context "when published" do
+      generate_post(1, { published: true })
       
-      before{ @post.published = true; @post.save }
-      its(:slug){ should == 'test-post' }
-      specify{ @post.reload.slug.should == 'test-post' }
+      it "validates the title" do
+        post1.title.should_not be_nil
+      end      
+      
+      it "makes a slug from the title" do
+        post1.slug.should eq(post1.title.to_slug)
+      end
+      
     end    
   end
   
-  describe 'creating or saving posts' do
-    before do 
-      @post = Fabricate.build(:post, :title => 'Test Post')
-      @post.contexts.build({ body: '<p>paragraph1</p><p>paragraph2</p>' }, Text)
+  describe "creating contexts" do
+    
+    describe "creating a new context" do
+      
+      generate_post(1, { published: true }, true)
+      
+      before do
+        post1.contexts_attributes = { "0" => { "_type" => "Text", "body" => "Sample text body" }}
+        post1.save
+      end
+      
+      context "when no contexts exist" do
+        it 'adds a context' do
+          post1.contexts.count.should == 1
+        end
+      
+        it "assigns the proper STI class to the context" do
+          post1.contexts.first.class.should == Text
+        end            
+      end
+      
+      context "when contexts exist" do
+        
+        before do
+          post1.contexts_attributes = { "0" => { "_type" => "Text", "body" => "Sample text body" }, "1" => post1.contexts.first.attributes }
+          post1.save
+        end
+        
+        it 'adds a context' do
+          post1.contexts.count.should == 2
+        end
+      
+        it "assigns the proper STI class to the context" do
+          post1.contexts.last.class.should == Text
+        end
+        
+        after do
+          post1.contexts.last.delete
+        end
+      end
     end
     
-    it 'creates a default teaser from the body copy' do
-      expect{
-        @post.save
-      }.to change(@post, :default_teaser).from('').to("paragraph1")
+    describe "updating an existing context" do
+      
+      generate_post(1, { published: true }, true, :all)
+      
+      before(:all) do
+        post1.contexts_attributes = { "0" => { "_type" => "Text", "body" => "Sample text body" }}
+        post1.save        
+      end
+   
+      let(:cxt){ post1.contexts.first }
+      
+      it 'should update the context inline' do
+        expect{
+          post1.contexts_attributes = { "0" => { "id" => cxt.id.to_s, "_type" => "Text", "body" => "Sample text body" }}
+          post1.save
+        }.to_not change(post1.contexts, :count)
+      end      
     end
-    
-  end
   
-  describe '#published scope' do
-    
-    let!(:published){ Fabricate(:post, published: true, post_date: Date.today) }
-    let!(:unpublished){ Fabricate(:post, published: true, post_date: 2.days.from_now) }
-    let!(:unpublished2){ Fabricate(:post, published: false, post_date: 2.days.ago) }
-    
-    subject{ Post.published.to_a }
-    it { should_not include(unpublished, unpublished2) }
-    it { should_not include(unpublished) }
-    it { should_not include(unpublished2) }
-    it { should include(published) }
-    
-  end
-  
-  describe '.post_date' do
-    let!(:post) do
-      Fabricate(:post, published: true, post_date: Date.today)
-    end
-    subject{ post }
-    
-    it{ post.post_date.to_time.should == Time.now.midnight }
-  end
-  
-  describe '.topic_ids' do
-    
-    before(:all) do
-      Topic.delete_all
-      @topics = (0..2).to_a.collect{ |i| Topic.create(title: "Topic #{i}") }
-    end
-    before do
-      @post = Fabricate(:post)
-      @post.topics = topic_ids
-      @post.save
-    end
-    let!(:topic_ids){ @topics.collect{ |t| t.id.to_s } }
-    
-    let(:post){ @post }
-
-    it { post.topics.should_not be_empty }
-    it { post.topic_ids.should_not be_empty }
-    it { post.topics.should include(@topics.first) }
-    
-    specify 'the topic also sets the post_id' do
-      @topics.first.reload.posts.should include(@post)
-    end
-    
   end
   
 end

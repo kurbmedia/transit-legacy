@@ -6,7 +6,6 @@ require "active_resource/railtie"
 require "rails/test_unit/railtie"
 
 Bundler.require
-require "transit"
 
 module Dummy
   class Application < Rails::Application

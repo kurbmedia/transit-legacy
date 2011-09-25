@@ -1,10 +1,9 @@
 module Transit
   module Plugin
     ##
-    # Provides SQL style auto_incremeing id's to Mongo documents
+    # Provides SQL style auto_incremeing id's to MongoDB documents
     # 
     module AutoIncrement
-      
       def auto_increment
         include Macros
       end
@@ -23,12 +22,4 @@ module Transit
       
     end
   end
-end
-
-Transit.on_definition(:post) do
-  plugin :auto_increment
-end
-
-Transit.on_definition(:page) do
-  plugin :auto_increment
 end

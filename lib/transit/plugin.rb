@@ -6,27 +6,28 @@ module Transit
   module Plugin    
     include ActiveSupport::DescendantsTracker
     
-    autoload :Assets,      'transit/plugin/assets'
-    autoload :Ownership,   'transit/plugin/ownership'
-    autoload :Attachments, 'transit/plugin/attachments'
-    autoload :Slugable,    'transit/plugin/slugable'
+    autoload :Assets,         'transit/plugin/assets'
+    autoload :Ownership,      'transit/plugin/ownership'
+    autoload :Attachments,    'transit/plugin/attachments'
+    autoload :Slugable,       'transit/plugin/slugable'
+    autoload :AutoIncrement,  'transit/plugin/auto_increment'
     
     def plugins
       @plugins ||= []
     end
     
-    def plugin(*options)
-      options.map(&:to_s).map(&:camelize).each do |mod|
-        begin
-          include Transit::Plugin.const_get(mod)
-        rescue LoadError
+    def delivers(*options)
+      options.map(&:to_s).map(&:camelize).each do |mod|        
+        unless Transit::Plugin.const_defined?(mod)
           raise Transit::Errors::PluginMissing.new("Could not load the plugin, '#{mod}'")
         end
-        direct_descendants.each{ |model| model.send(:include, mod) }
+        mod_name = Transit::Plugin.const_get(mod)
+        include mod_name
+        direct_descendants.each{ |model| model.send(:include, mod_name) }
       end
       plugins |= options
-    end    
-    alias :deliver_with :plugin
+    end
+    alias :deliver_with :delivers
     
     def included(base = nil, &block)
       direct_descendants << base if base

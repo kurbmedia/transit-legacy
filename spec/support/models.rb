@@ -11,10 +11,10 @@ module ModelHelpers
     end
   end
   
-  def generate_post(ct = 1, set_subject = true, scope = :each, remove_after = true)
+  def generate_post(ct = 1, attrs = {}, set_subject = true, scope = :each, remove_after = true)
     before(scope) do
       ct.times do |i|
-        instance_variable_set("@post#{i+1}", Fabricate(:post))                
+        instance_variable_set("@post#{i+1}", Fabricate(:post, attrs))                
       end      
     end
     ct.times{ |i| 
