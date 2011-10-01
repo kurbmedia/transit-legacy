@@ -1,0 +1,9 @@
+<% collection.each do |item| %>
+<tr<%= cycle(""," class='even'") %>>
+	<% resource_class.admin_attributes.each do |method| %>
+	<td><%= item.send(:"#{method.to_s}") %></td>
+	<% end %>
+	<td><%= link_to 'Edit', transit.edit_polymorphic_path(item) %></td>
+	<td><%= link_to 'Delete', transit.polymorphic_path(item), method: :delete, confirm: 'Are you sure?' %></td>
+</tr>
+<% end %>

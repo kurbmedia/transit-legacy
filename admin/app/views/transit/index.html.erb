@@ -1,0 +1,22 @@
+<%= page_id('transit_index') %>
+<%= page_title("Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
+<h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
+<%= paginate(collection, :remote => true, :params => {:use_route => :transit}) %>
+<table border="0" id="listing">
+	<thead>
+		<tr>
+			<% resource_class.admin_attributes.each do |heading| %>
+			<th><%= heading.to_s.titleize %></th>
+			<% end %>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render template: 'transit/table' %>
+	</tbody>
+</table>
+<%= paginate(collection, :remote => true, :params => {:use_route => :transit}) %>
+<div class='buttons'>
+	<%= link_to "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , transit.new_polymorphic_path(resource_class.new), class: 'button' %>
+</div>

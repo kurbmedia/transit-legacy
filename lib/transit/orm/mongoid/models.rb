@@ -18,6 +18,10 @@ module Transit
   end
 end
 
+::Paperclip.interpolates('uid') do |attachment, style|
+  attachment.instance.uid
+end
+
 module Transit
   class Context
     include ::Mongoid::Document

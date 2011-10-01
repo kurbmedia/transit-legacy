@@ -1,4 +1,5 @@
 require 'transit/definitions/post/validations'
+require 'transit/definitions/post/navigation'
 require 'transit/definitions/context/association'
 
 module Transit::Definition
@@ -29,7 +30,8 @@ module Transit::Definition
         :validate   => true,
         :slug_with  => :title
       })
-            
+      
+      include Navigation      
       include Validations if delivery_options.post.validate === true        
       before_save :generate_post_slug, :if => lambda{ |p| p.published? }      
     end

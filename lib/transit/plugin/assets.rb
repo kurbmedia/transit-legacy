@@ -12,7 +12,7 @@ module Transit
       end
       # Convenience method for only finding the assets that are files
       def files
-        self.assets.exclude(:asset_type => 'image')
+        self.assets.excludes(:asset_type => 'image')
       end
       
     end    

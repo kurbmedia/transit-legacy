@@ -34,7 +34,7 @@ Mongoid::Document::ClassMethods.class_eval do
   include Transit::Plugin
   include Transit::Mongoid::Context
   include Transit::Mongoid::Schema
-  include Transit::Plugin::AutoIncrement
+  include Transit::Plugin::AutoIncrement  
 end
 
 Transit.on_definition(:context) do

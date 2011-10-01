@@ -9,7 +9,7 @@ require 'transit/engine'
 
 module Transit
   mattr_accessor :orm
-  
+
   @contexts = ActiveSupport::OrderedHash.new
   
   ##
@@ -26,4 +26,12 @@ module Transit
     VERSION
   end
   
+  def self.contexts
+    @contexts
+  end
+  
 end
+
+Transit.register_context(:text, { :type => 'String' })
+Transit.register_context(:audio, { :type => 'String' })
+Transit.register_context(:video, { :type => 'String' })

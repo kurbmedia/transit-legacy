@@ -37,9 +37,9 @@ module Transit
 
         include Transit::Definition.const_get(scope)          
 
-        Transit::Schema.apply!(clean) do |attribute, options|
-          type = options.delete(:type) || String
-          apply_transit_schema(attribute, type, options)
+        Transit::Schema.apply!(clean) do |attribute, opts|
+          type = opts.delete(:type) || String
+          apply_transit_schema(attribute, type, opts)
         end          
         
         Transit.run_definition_hooks(:"#{clean}", self)
@@ -49,7 +49,8 @@ module Transit
       ##
       # ORM's should override this method to perform particular schema functionality
       # 
-      def apply_transit_schema(field, options)
+      def apply_transit_schema(field, type, options = {})
+        raise NotImplemented
       end
       
     end    

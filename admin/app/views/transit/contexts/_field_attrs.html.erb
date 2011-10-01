@@ -1,0 +1,8 @@
+<%= form.hidden_field :_type, :value => context.class.to_s %>
+<%= form.hidden_field :position, :rel => 'field_position' %>
+<% if context.new_record? %>
+	<%= link_to('Delete', '#', :class => 'delete_field icon_delete', :confirm => 'Are you sure you want to delete this field?') %>
+<% else %>
+	<%= form.hidden_field :id %>
+	<%= link_to('Delete', transit.polymorphic_path([parent, :context]), :method => :delete, :class => 'icon_delete', :remote => true, :confirm => 'Are you sure you want to delete this field?') %>
+<% end %>

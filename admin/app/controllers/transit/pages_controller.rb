@@ -6,7 +6,7 @@ class Transit::PagesController < TransitController
   respond_to :html, :js, :json
   
   def collection
-    @pages ||= end_of_association_chain.page((params[:page] || 1), per: 20)
+    @pages ||= end_of_association_chain.page((params[:page] || 1)).per(20)
   end
   
   def edit
