@@ -16,4 +16,6 @@ module Transit
   end
 end
 
-require 'transit/social/railtie'
+if defined?(Rails)
+  require 'transit/social/railtie'
+end
