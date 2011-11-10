@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('transit', '>= 0.0.2')
+  s.add_dependency('rails', ">= 3.1")
   
 end
