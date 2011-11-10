@@ -5,15 +5,15 @@ module Transit::Definition
     module Identification
       
       def image?
-        (self.file_content_type =~ %r{^(image|(x-)?application)/(x-png|pjpeg|jpeg|jpg|png|gif)$})
+        !!(self.file_content_type =~ %r{^(image|(x-)?application)/(x-png|pjpeg|jpeg|jpg|png|gif)$})
       end
       
       def video?
-        (self.file_content_type =~ %r{^(video)/.*$})
+        !!(self.file_content_type =~ %r{^(video)/.*$})
       end
       
       def audio?
-        (self.file_content_type =~ %r{^(audio)/.*$})
+        !!(self.file_content_type =~ %r{^(audio)/.*$})
       end
       
       private

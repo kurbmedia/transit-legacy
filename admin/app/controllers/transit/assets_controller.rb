@@ -1,5 +1,6 @@
 require 'mime/types'
 class Transit::AssetsController < TransitController
+  inherit_resources
   
   defaults route_instance_name: 'package_asset', resource_class: Transit::Asset
   belongs_to :post, :page, polymorphic: true, optional: true

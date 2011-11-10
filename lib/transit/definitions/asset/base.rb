@@ -6,6 +6,7 @@ module Transit::Definition
     extend ActiveSupport::Concern
     
     included do
+      belongs_to    :assetable, :polymorphic => true
       before_save   :set_default_name
       before_create :set_default_file_type
       if self.respond_to?(:descends_from_active_record?)
@@ -42,7 +43,7 @@ module Transit::Definition
   end
 end
 
-Transit::Schema.add(:assets, {
+Transit::Schema.add(:asset, {
   :name               => { :type => String },
   :meta               => { :type => Hash, :default => {} },
   :file_file_name     => { :type => String },

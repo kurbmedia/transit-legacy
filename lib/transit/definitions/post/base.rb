@@ -48,7 +48,7 @@ module Transit::Definition
     end
     
     def timestamp
-      self.created_at.strftime("%B %d, %Y")
+      self.post_date.strftime("%B %d, %Y")
     end
     
     private

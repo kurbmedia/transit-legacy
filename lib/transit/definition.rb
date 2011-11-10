@@ -31,7 +31,7 @@ module Transit
           raise Transit::Errors::DefinitionNotFound.new("Definition not found: #{scope}")
         end
         
-        self.send(:class_attribute, :delivery_options, :instance_writer => false)        
+        self.send(:class_attribute, :delivery_options, :instance_writer => false)
         self.delivery_options ||= ::ActiveSupport::OrderedOptions.new
         delivery_options[clean] = ::ActiveSupport::OrderedOptions.new(options)
 

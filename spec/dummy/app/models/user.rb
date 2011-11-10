@@ -1,4 +1,8 @@
 class User
+  if ENV['TRANSIT_ORM'] == "mongoid"
+    include Mongoid::Document
+    include Mongoid::Timestamps
+  end
   
   include ActiveModel::Validations
   include ActiveModel::Conversion

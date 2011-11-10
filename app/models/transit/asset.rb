@@ -2,9 +2,7 @@ require 'mime/types'
 
 module Transit
   class Asset
-    deliver_as :asset
-    belongs_to :assetable, :polymorphic => true
-        
+    include Paperclip::Glue
     has_attached_file :file
     before_post_process :skip_processing_unless_image
 

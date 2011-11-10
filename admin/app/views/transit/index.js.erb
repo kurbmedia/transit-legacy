@@ -2,7 +2,4 @@
 <%= render(template: 'transit/table') %>
 <% end %>
 
-jQuery('#listing tbody').slideUp('fast',
-	function(){
-		jQuery(this).html("<%= escape_javascript(content) %>");
-	});
+jQuery('#listing tbody').html("<%= escape_javascript(content) %>");

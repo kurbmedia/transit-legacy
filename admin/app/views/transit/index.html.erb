@@ -1,12 +1,10 @@
-<%= page_id('transit_index') %>
-<%= page_title("Manage #{t("transit.collection_names.#{resource_collection_name}")}") %>
-<h1>Manage <%= t("transit.collection_names.#{resource_collection_name}") %></h1>
-<%= paginate(collection, :remote => true, :params => {:use_route => :transit}) %>
+<% contents = capture do %>
+<%= paginate(collection, :remote => true) %>
 <table border="0" id="listing">
 	<thead>
 		<tr>
 			<% resource_class.admin_attributes.each do |heading| %>
-			<th><%= heading.to_s.titleize %></th>
+			<th><%= admin_table_heading(heading) %></th>
 			<% end %>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -16,7 +14,9 @@
 		<%= render template: 'transit/table' %>
 	</tbody>
 </table>
-<%= paginate(collection, :remote => true, :params => {:use_route => :transit}) %>
-<div class='buttons'>
-	<%= link_to "Add a New #{t(resource_class.to_s.underscore, :scope => :transit)}" , transit.new_polymorphic_path(resource_class.new), class: 'button' %>
+<%= paginate(collection, :remote => true) %>
+<div class='action-buttons buttons'>
+	<%= link_to "Add a New #{t("transit.resource_names." + resource_class.to_s.underscore)}" , transit.new_polymorphic_path(resource_class.new), class: 'button' %>
 </div>
+<% end %>
+<%= render :partial => 'layout.html.erb', :locals => { :content => contents, :action => 'index' } %>

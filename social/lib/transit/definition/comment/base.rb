@@ -5,7 +5,9 @@ module Transit::Definition
     included do
       belongs_to :commentable, :polymorphic => true
       belongs_to :user
-      validates :body, :presence => { :allow_blank => false, :message => 'required' }
+      validates :body,    :presence => { :allow_blank => false, :message => 'required' }
+      validates :user_id, :presence => { :message => 'a user is required' }
+      
       after_create  :update_comment_count
       after_destroy :cleanup_comment_count
       delegate :username, :to => :user  
@@ -27,6 +29,12 @@ module Transit::Definition
       # 
       def update_comment_count
         return true unless self.commentable.respond_to?(:comment_count)
+        if self.commentable.respond_to?(:inc)
+          self.commentable.inc(:comment_count, 1)
+        else
+          self.commentable.increment(:comment_count)
+        end
+        true
       end
 
       ##

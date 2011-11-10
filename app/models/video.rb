@@ -1,3 +1,5 @@
+require 'transit/context'
+
 class Video < Transit::Context
   apply_transit_schema(:poster, String, :default => nil)
   alias_attribute :source, :body

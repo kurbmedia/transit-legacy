@@ -1,6 +1,6 @@
 class Transit::PagesController < TransitController
-  respond_to :html, :js, :json
-  
+  inherit_resources
+  respond_to :html, :js, :json  
   defaults collection_name: 'pages', instance_name: 'page'
 
   respond_to :html, :js, :json

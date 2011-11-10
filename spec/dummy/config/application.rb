@@ -36,7 +36,10 @@ module Dummy
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-
+    
+    ENV['TRANSIT_ORM'] ||= 'mongoid'
+    require "transit/orm/#{ENV['TRANSIT_ORM']}"
+    
     # Enable the asset pipeline
     config.assets.enabled = true
   end

@@ -16,4 +16,4 @@ module Transit
   end
 end
 
-require 'transit/social/engine'
+require 'transit/social/railtie'

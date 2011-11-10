@@ -33,15 +33,18 @@ Mongoid::Document::ClassMethods.class_eval do
   include Transit::Definition::Hook
   include Transit::Plugin
   include Transit::Mongoid::Context
+  extend  Transit::Mongoid::Context
   include Transit::Mongoid::Schema
   include Transit::Plugin::AutoIncrement  
 end
 
 Transit.on_definition(:context) do
+  include ::Mongoid::Timestamps
   embedded_in :package, :polymorphic => true
 end
 
 Transit.on_definition(:asset) do
+  include ::Mongoid::Timestamps
   store_in :assets
   begin
     include ::Paperclip::Glue  
@@ -50,11 +53,13 @@ Transit.on_definition(:asset) do
 end
 
 Transit.on_definition(:post) do
-  deliver_with :auto_increment
+  include ::Mongoid::Timestamps
+  auto_increment
 end
 
 Transit.on_definition(:page) do
-  deliver_with :auto_increment
+  include ::Mongoid::Timestamps
+  auto_increment
 end
 
 require 'transit/orm/mongoid/models'

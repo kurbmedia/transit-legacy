@@ -1,3 +1,5 @@
+require 'transit/context'
+
 class Audio < Transit::Context
   alias_attribute :source, :body
   

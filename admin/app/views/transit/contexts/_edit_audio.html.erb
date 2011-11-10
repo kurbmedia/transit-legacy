@@ -1,0 +1,9 @@
+<div class="edit-<%= context.class.name.underscore %>-context">
+	<%= deliver(context) %>
+	<ol class="fields">
+		<li>
+			<%= form.label :source %>
+			<%= form.text_field :source, :value => context.body %>
+		</li>
+	</ol>
+</div>
