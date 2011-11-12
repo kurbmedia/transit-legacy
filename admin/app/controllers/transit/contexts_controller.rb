@@ -10,7 +10,7 @@ class Transit::ContextsController < TransitController
     context_class   = params[:type].classify.constantize
     set_resource_ivar(parent_resource)
     type_col = context_class.inheritance_column
-    
+    @parent = parent_resource
     # Build a new context on the parent, casting to the 
     # specified type.
     # 
@@ -21,6 +21,7 @@ class Transit::ContextsController < TransitController
   
     
   def destroy
+    parent = create_parent
     parent.contexts.find(params[:id])
     @context.destroy
     flash[:success] = "The selected field has been removed."

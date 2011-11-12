@@ -1,8 +1,7 @@
 require 'transit/definitions/asset/identification'
 
 module Transit::Definition
-  module Asset
-    include Identification
+  module Asset    
     extend ActiveSupport::Concern
     
     included do
@@ -12,6 +11,7 @@ module Transit::Definition
       if self.respond_to?(:descends_from_active_record?)
         serialize :meta 
       end
+      include Identification
     end
     
     ##

@@ -13,10 +13,10 @@ module TransitHelper
   end
   
   def deliver_audio_context(context, attrs = {}, show = false)
-    return '' if context.source.to_s.blank? && show == false
+    #return '' if context.source.to_s.blank? && show == false
     attrs ||= {}
-    attrs.merge!({ :data => { :context_id => context.id.to_s }, :class => 'audio-context', :controls => false })
-    content_tag(:audio, "", attrs.merge(:src => context.source))
+    attrs.merge!({ :data => { :context_id => context.id.to_s, :src => context.source }, :class => 'audio-context'})
+    content_tag(:div, "", attrs)
   end
 
   def deliver_rss(post)

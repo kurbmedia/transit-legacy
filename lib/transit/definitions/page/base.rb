@@ -22,7 +22,7 @@ module Transit::Definition
   module Page
     include Metadata
     extend ActiveSupport::Concern
-    
+
     included do
       include Transit::Definition::Context::Association
       create_context_association!
