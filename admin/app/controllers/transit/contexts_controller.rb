@@ -22,7 +22,7 @@ class Transit::ContextsController < TransitController
     
   def destroy
     parent = create_parent
-    parent.contexts.find(params[:id])
+    @context = parent.contexts.find(params[:id])
     @context.destroy
     flash[:success] = "The selected field has been removed."
     respond_with(@context)
