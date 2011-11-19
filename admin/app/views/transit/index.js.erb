@@ -1,5 +1,9 @@
 <% content = capture do %>
 <%= render(template: 'transit/table') %>
 <% end %>
+<% paging = capture do %>
+<%= paginate(collection, :remote => true) %>
+<% end %>
 
 jQuery('#listing tbody').html("<%= escape_javascript(content) %>");
+jQuery('nav.pagination').replaceWith("<%= escape_javascript(paging) %>");
