@@ -22,7 +22,7 @@ class Video < Transit::Context
 
   def source
     return "" if self.body.to_s.blank?
-    source_method = :"#{video_type.downcase}_source"
+    source_method = :"#{video_type.to_s.downcase}_source"
     return self.body if video_type.to_s.blank? || !respond_to?(source_method)
     send(source_method)
   end
