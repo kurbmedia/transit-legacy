@@ -9,11 +9,11 @@ class Video < Transit::Context
   end
 
   def video_type=(t)
-    self.meta['video_type'] = t
+    (self.meta ||= {})['video_type'] = t
   end
 
   def video_type
-    self.meta['video_type']
+    (self.meta ||= {})['video_type']
   end
   
   def media_context?
