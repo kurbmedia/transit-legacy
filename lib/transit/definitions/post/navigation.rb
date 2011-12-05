@@ -7,7 +7,7 @@ module Transit::Definition
       #   @post.previous_post
       # 
       def previous_post
-        @previous_post ||= self.class.only(:title, :slug).where(:post_date.lt => self.post_date).descending(:post_date).first
+        @previous_post ||= self.class.where(:post_date.lt => self.post_date, :published => true).descending(:post_date).first
       end
 
       # Grab the post "next" to this one, ordered by post date
@@ -15,7 +15,7 @@ module Transit::Definition
       #   @post.next_post
       #
       def next_post
-        @next_post ||= self.class.only(:title, :slug).where(:post_date.gt => self.post_date).ascending(:post_date).first
+        @next_post ||= self.class.where(:post_date.gt => self.post_date, :published => true).ascending(:post_date).first
       end
 
     end
